@@ -66,6 +66,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				qit: {
+					purple: '#6b4e9b', // Couleur violette du logo pour "Qit"
+					coral: '#e37676',  // Couleur corail/rouge de l'icône maison
+					beige: '#f5f0df'   // Couleur de fond beige clair
 				}
 			},
 			borderRadius: {

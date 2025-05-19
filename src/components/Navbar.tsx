@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { HomeHeart } from 'lucide-react';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,24 +13,28 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <h1 className="text-2xl font-serif font-bold text-primary">Qit Concierge</h1>
+            <HomeHeart className="h-6 w-6 text-qit-coral mr-2" />
+            <h1 className="text-2xl font-serif font-bold">
+              <span className="text-qit-purple">Qit</span>
+              <span className="text-gray-700">Concierge</span>
+            </h1>
           </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#services" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Nos Services
             </a>
-            <a href="#properties" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#properties" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Propriétés
             </a>
-            <a href="#testimonials" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#testimonials" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Témoignages
             </a>
-            <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#contact" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Contact
             </a>
-            <Button>Réserver</Button>
+            <Button className="bg-qit-coral hover:bg-qit-coral/90 text-white">Réserver</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,7 +88,7 @@ const Navbar = () => {
             Contact
           </a>
           <div className="px-3 py-2">
-            <Button className="w-full">Réserver</Button>
+            <Button className="w-full bg-qit-coral hover:bg-qit-coral/90">Réserver</Button>
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@ const Services = () => {
     <section id="services" className="py-20 bg-accent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Nos Services Premium</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Nos Services</h2>
           <p className="text-lg text-muted-foreground">
             Une gestion complète et personnalisée pour maximiser vos revenus locatifs et satisfaire vos invités.
           </p>

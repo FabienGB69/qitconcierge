@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-serif font-bold mb-4">ConciergeElite</h3>
+            <h3 className="text-xl font-serif font-bold mb-4">Qit Concierge</h3>
             <p className="mb-4 text-gray-400">
               La solution complète pour la gestion de vos locations courte durée. 
               Maximisez vos revenus, minimisez vos tracas.
@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2025 ConciergeElite. Tous droits réservés.
+              © 2025 Qit Concierge. Tous droits réservés.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm">

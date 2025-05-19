@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <h1 className="text-2xl font-serif font-bold text-primary">ConciergeElite</h1>
+            <h1 className="text-2xl font-serif font-bold text-primary">Qit Concierge</h1>
           </a>
 
           {/* Desktop Menu */}

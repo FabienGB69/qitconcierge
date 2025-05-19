@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { HomeHeart } from 'lucide-react';
+import { Home, Heart } from 'lucide-react';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,8 +13,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <HomeHeart className="h-6 w-6 text-qit-coral mr-2" />
-            <h1 className="text-2xl font-serif font-bold">
+            <div className="relative">
+              <Home className="h-6 w-6 text-qit-coral" />
+              <Heart className="h-3 w-3 absolute bottom-0 right-0 text-qit-coral" />
+            </div>
+            <h1 className="text-2xl font-serif font-bold ml-2">
               <span className="text-qit-purple">Qit</span>
               <span className="text-gray-700">Concierge</span>
             </h1>

@@ -1,7 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { HomeHeart } from 'lucide-react';
+import { Home, Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -10,8 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <HomeHeart className="h-5 w-5 text-qit-coral mr-2" />
-              <h3 className="text-xl font-serif font-bold">
+              <div className="relative">
+                <Home className="h-5 w-5 text-qit-coral" />
+                <Heart className="h-2.5 w-2.5 absolute bottom-0 right-0 text-qit-coral" />
+              </div>
+              <h3 className="text-xl font-serif font-bold ml-2">
                 <span className="text-qit-purple">Qit</span>
                 <span className="text-white">Concierge</span>
               </h3>

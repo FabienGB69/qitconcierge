@@ -1,6 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Home, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -83,15 +85,15 @@ const Footer = () => {
               © 2025 Qit Concierge. Tous droits réservés.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm">
+              <Link to="/mentions-legales" className="text-gray-400 hover:text-white text-sm">
                 Mentions légales
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">
+              </Link>
+              <Link to="/politique-confidentialite" className="text-gray-400 hover:text-white text-sm">
                 Politique de confidentialité
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">
+              </Link>
+              <Link to="/cgv" className="text-gray-400 hover:text-white text-sm">
                 CGV
-              </a>
+              </Link>
             </div>
           </div>
         </div>

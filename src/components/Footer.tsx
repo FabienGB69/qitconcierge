@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Home, Heart } from 'lucide-react';
@@ -60,7 +59,6 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="text-gray-400">Email: guest.qitconcierge@gmail.com</li>
               <li className="text-gray-400">WhatsApp: +330601777633</li>
-              <li className="text-gray-400">123 Avenue des Champs-Élysées, 75008 Paris</li>
             </ul>
           </div>
           

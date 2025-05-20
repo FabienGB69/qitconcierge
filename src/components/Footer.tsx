@@ -59,7 +59,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-qit-coral">Contact</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">Email: guest.qitconcierge@gmail.com</li>
-              <li className="text-gray-400">WhatsApp: +3306017776</li>
+              <li className="text-gray-400">WhatsApp: +330601777633</li>
               <li className="text-gray-400">123 Avenue des Champs-Élysées, 75008 Paris</li>
             </ul>
           </div>

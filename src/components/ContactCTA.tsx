@@ -41,7 +41,7 @@ const ContactCTA = () => {
                 </div>
                 <div>
                   <p className="font-semibold">Téléphone / WhatsApp</p>
-                  <p>+3306017776</p>
+                  <p>+330601777633</p>
                 </div>
               </div>
               

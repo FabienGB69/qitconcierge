@@ -40,8 +40,8 @@ const ContactCTA = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold">Téléphone</p>
-                  <p>+33 1 23 45 67 89</p>
+                  <p className="font-semibold">Téléphone / WhatsApp</p>
+                  <p>+3306017776</p>
                 </div>
               </div>
               
@@ -54,7 +54,7 @@ const ContactCTA = () => {
                 </div>
                 <div>
                   <p className="font-semibold">Email</p>
-                  <p>contact@conciergerie.fr</p>
+                  <p>guest.qitconcierge@gmail.com</p>
                 </div>
               </div>
               

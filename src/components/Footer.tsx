@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Home, Heart } from 'lucide-react';
@@ -55,12 +56,11 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-qit-coral">Services</h3>
+            <h3 className="text-lg font-semibold mb-4 text-qit-coral">Contact</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">Gestion complète</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Check-in / Check-out</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Ménage professionnel</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Conciergerie d'entreprise</a></li>
+              <li className="text-gray-400">Email: guest.qitconcierge@gmail.com</li>
+              <li className="text-gray-400">WhatsApp: +3306017776</li>
+              <li className="text-gray-400">123 Avenue des Champs-Élysées, 75008 Paris</li>
             </ul>
           </div>
           

@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      properties: {
+        Row: {
+          airbnb_url: string | null
+          bathrooms: number | null
+          bedrooms: number | null
+          booking_url: string | null
+          created_at: string
+          description: string | null
+          guests: number | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          location: string
+          other_platform_name: string | null
+          other_platform_url: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          airbnb_url?: string | null
+          bathrooms?: number | null
+          bedrooms?: number | null
+          booking_url?: string | null
+          created_at?: string
+          description?: string | null
+          guests?: number | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          location: string
+          other_platform_name?: string | null
+          other_platform_url?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          airbnb_url?: string | null
+          bathrooms?: number | null
+          bedrooms?: number | null
+          booking_url?: string | null
+          created_at?: string
+          description?: string | null
+          guests?: number | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          location?: string
+          other_platform_name?: string | null
+          other_platform_url?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

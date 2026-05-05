@@ -94,7 +94,8 @@ const Navbar = () => {
                 />
               )}
             </svg>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
 

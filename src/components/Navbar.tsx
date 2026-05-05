@@ -3,6 +3,29 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Home, Heart } from 'lucide-react';
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const LanguageToggle = ({ className = "" }: { className?: string }) => {
+  const { language, setLanguage } = useLanguage();
+  return (
+    <div className={cn("inline-flex items-center rounded-md border border-border overflow-hidden text-xs font-medium", className)}>
+      <button
+        onClick={() => setLanguage("fr")}
+        className={cn("px-2 py-1 transition-colors", language === "fr" ? "bg-qit-purple text-white" : "bg-transparent hover:bg-accent")}
+        aria-label="Français"
+      >
+        FR
+      </button>
+      <button
+        onClick={() => setLanguage("en")}
+        className={cn("px-2 py-1 transition-colors", language === "en" ? "bg-qit-purple text-white" : "bg-transparent hover:bg-accent")}
+        aria-label="English"
+      >
+        EN
+      </button>
+    </div>
+  );
+};
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,13 +61,16 @@ const Navbar = () => {
               Contact
             </a>
             <Button className="bg-qit-coral hover:bg-qit-coral/90 text-white">Réserver</Button>
+            <LanguageToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden flex items-center" 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
+          {/* Mobile: language + menu */}
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageToggle />
+            <button
+              className="flex items-center"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"

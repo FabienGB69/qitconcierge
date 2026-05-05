@@ -115,7 +115,7 @@ const ContactCTA = () => {
                 />
               </div>
               
-              <Button type="submit" className="w-full bg-qit-coral hover:bg-qit-coral/90">Envoyer</Button>
+              <Button type="submit" className="w-full bg-qit-coral hover:bg-qit-coral/90">Demander une estimation gratuite</Button>
             </form>
           </div>
         </div>

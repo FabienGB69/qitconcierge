@@ -1,76 +1,79 @@
-
 import { Button } from "@/components/ui/button";
-import { Calendar, Users, MapPin } from "lucide-react";
-import { useState } from "react";
+import { CheckCircle2, MessageCircle, ArrowRight } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/330601777633";
 
 const Hero = () => {
-  const [searchLocation, setSearchLocation] = useState("");
-  const [guests, setGuests] = useState("2");
-  
   return (
-    <div className="relative h-[90vh] min-h-[600px] w-full bg-cover bg-center" 
-         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')" }}>
-      <div className="absolute inset-0 hero-gradient"></div>
-      
-      <div className="relative container mx-auto h-full flex flex-col justify-center px-4 sm:px-6">
+    <div
+      className="relative min-h-[100svh] w-full bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')",
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-qit-purple/85 via-qit-purple/70 to-black/60" />
+
+      <div className="relative container mx-auto h-full flex flex-col justify-center px-4 sm:px-6 py-24 md:py-32">
         <div className="max-w-3xl animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
-            Votre conciergerie de location premium
+          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm px-3 py-1.5 rounded-full mb-6">
+            <span className="w-2 h-2 rounded-full bg-qit-coral" />
+            Conciergerie courte durée — pour propriétaires
+          </span>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
+            Rentabilisez votre logement courte durée{" "}
+            <span className="text-qit-coral">sans gérer</span> les voyageurs, le ménage ni les imprévus
           </h1>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl">
-            Maximisez vos revenus locatifs et offrez une expérience exceptionnelle à vos invités grâce à nos services de conciergerie haut de gamme.
+
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 max-w-2xl leading-relaxed">
+            Qit Concierge accompagne les propriétaires dans la gestion complète de leur location courte durée :
+            mise en ligne, optimisation des prix, communication voyageurs, ménage, linge, check-in, suivi qualité et assistance.
           </p>
-          
-          <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg max-w-3xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700 flex items-center">
-                  <MapPin className="w-4 h-4 mr-2 text-primary" />
-                  Destination
-                </label>
-                <input
-                  type="text"
-                  value={searchLocation}
-                  onChange={(e) => setSearchLocation(e.target.value)}
-                  className="w-full p-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="Paris, Nice, Lyon..."
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700 flex items-center">
-                  <Calendar className="w-4 h-4 mr-2 text-primary" />
-                  Dates
-                </label>
-                <div className="w-full p-2 border border-gray-200 rounded-md text-gray-500">
-                  Sélectionner des dates
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700 flex items-center">
-                  <Users className="w-4 h-4 mr-2 text-primary" />
-                  Voyageurs
-                </label>
-                <select
-                  value={guests}
-                  onChange={(e) => setGuests(e.target.value)}
-                  className="w-full p-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  <option value="1">1 voyageur</option>
-                  <option value="2">2 voyageurs</option>
-                  <option value="3">3 voyageurs</option>
-                  <option value="4">4 voyageurs</option>
-                  <option value="5+">5+ voyageurs</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className="mt-4">
-              <Button className="w-full md:w-auto">
-                Rechercher
-              </Button>
-            </div>
+
+          <div className="flex items-start gap-2 text-white/90 text-sm sm:text-base mb-8 max-w-2xl">
+            <CheckCircle2 className="w-5 h-5 text-qit-coral mt-0.5 flex-shrink-0" />
+            <p>
+              Expérience terrain : gestion de plus de 30 logements courte durée, automatisation des opérations
+              et optimisation des revenus.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-qit-coral hover:bg-qit-coral/90 text-white shadow-lg shadow-qit-coral/30 h-12 sm:h-14 text-base"
+            >
+              <a href="#contact">
+                Demander une estimation de revenus
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white hover:text-qit-purple h-12 sm:h-14 text-base"
+            >
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Échanger sur WhatsApp
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-white/80 text-xs sm:text-sm">
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-qit-coral" /> Sans engagement
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-qit-coral" /> Réponse sous 24h
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-qit-coral" /> Suivi transparent
+            </span>
           </div>
         </div>
       </div>

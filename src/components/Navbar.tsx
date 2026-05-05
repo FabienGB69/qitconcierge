@@ -120,7 +120,9 @@ const Navbar = () => {
             Contact
           </a>
           <div className="px-3 py-2">
-            <Button className="w-full bg-qit-coral hover:bg-qit-coral/90">Réserver</Button>
+            <Button asChild className="w-full bg-qit-coral hover:bg-qit-coral/90">
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Demander une estimation gratuite</a>
+            </Button>
           </div>
         </div>
       </div>

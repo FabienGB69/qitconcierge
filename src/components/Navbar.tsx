@@ -60,7 +60,9 @@ const Navbar = () => {
             <a href="#contact" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Contact
             </a>
-            <Button className="bg-qit-coral hover:bg-qit-coral/90 text-white">Réserver</Button>
+            <Button asChild className="bg-qit-coral hover:bg-qit-coral/90 text-white">
+              <a href="#contact">Demander une estimation gratuite</a>
+            </Button>
             <LanguageToggle />
           </div>
 

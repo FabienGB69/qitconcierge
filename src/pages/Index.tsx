@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Difference from "@/components/Difference";
 import Properties from "@/components/Properties";
 import Testimonials from "@/components/Testimonials";
 import ContactCTA from "@/components/ContactCTA";
@@ -15,6 +16,7 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
+        <Difference />
         <div className="container mx-auto px-4 md:px-6 -mt-6 mb-16">
           <SectionCTA
             title="Faites analyser votre logement"

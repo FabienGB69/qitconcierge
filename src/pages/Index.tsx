@@ -5,6 +5,7 @@ import Difference from "@/components/Difference";
 import Properties from "@/components/Properties";
 import Trust from "@/components/Trust";
 import Testimonials from "@/components/Testimonials";
+import Compliance from "@/components/Compliance";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 import LocalSEO from "@/components/LocalSEO";
@@ -35,6 +36,7 @@ const Index = () => {
         </div>
         <Trust />
         <Testimonials />
+        <Compliance />
         <div className="container mx-auto px-4 md:px-6 mb-16">
           <SectionCTA
             title="Prêt à augmenter vos revenus locatifs ?"

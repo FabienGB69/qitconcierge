@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Difference from "@/components/Difference";
 import Properties from "@/components/Properties";
+import Trust from "@/components/Trust";
 import Testimonials from "@/components/Testimonials";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
@@ -31,6 +32,7 @@ const Index = () => {
             variant="dark"
           />
         </div>
+        <Trust />
         <Testimonials />
         <div className="container mx-auto px-4 md:px-6 mb-16">
           <SectionCTA

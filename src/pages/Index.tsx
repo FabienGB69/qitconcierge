@@ -7,6 +7,7 @@ import Trust from "@/components/Trust";
 import Testimonials from "@/components/Testimonials";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
+import LocalSEO from "@/components/LocalSEO";
 import SectionCTA from "@/components/SectionCTA";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
@@ -41,6 +42,7 @@ const Index = () => {
           />
         </div>
         <ContactCTA />
+        <LocalSEO />
       </main>
       <Footer />
       <WhatsAppFloat />

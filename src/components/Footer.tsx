@@ -80,11 +80,11 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
               © 2025 Qit Concierge. Tous droits réservés.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
               <Link to="/mentions-legales" className="text-gray-400 hover:text-white text-sm">
                 Mentions légales
               </Link>
@@ -95,6 +95,9 @@ const Footer = () => {
                 CGV
               </Link>
             </div>
+          </div>
+          <div className="mt-6 text-center text-xs text-gray-500">
+            Site réalisé par <span className="text-gray-300 font-medium">Pixeloria</span> — Création & refonte de sites pour artisans, indépendants et PME.
           </div>
         </div>
       </div>

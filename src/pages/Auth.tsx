@@ -10,7 +10,7 @@ const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isSignUp, setIsSignUp] = useState(false);
+  const isSignUp = false;
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -102,14 +102,8 @@ const Auth = () => {
             </Button>
           </form>
           
-          <div className="mt-4 text-center">
-            <button
-              type="button"
-              onClick={() => setIsSignUp(!isSignUp)}
-              className="text-sm text-primary hover:underline"
-            >
-              {isSignUp ? "Déjà un compte ? Se connecter" : "Pas de compte ? S'inscrire"}
-            </button>
+          <div className="mt-4 text-center text-xs text-muted-foreground">
+            Espace réservé aux administrateurs.
           </div>
         </CardContent>
       </Card>

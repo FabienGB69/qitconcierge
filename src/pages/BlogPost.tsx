@@ -125,7 +125,7 @@ const BlogPost = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-5 leading-tight">
               {post.title}
             </h1>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
+            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8">
               <span className="inline-flex items-center gap-1.5">
                 <Calendar className="h-4 w-4" />
                 {new Date(post.date).toLocaleDateString("fr-FR", {
@@ -140,7 +140,17 @@ const BlogPost = () => {
               </span>
             </div>
 
-            <div className="prose-custom">{renderContent(post.content)}</div>
+            <div className="rounded-2xl overflow-hidden border border-border bg-qit-beige/40 mb-10">
+              <img
+                src={post.image}
+                alt={post.title}
+                width={1280}
+                height={720}
+                className="w-full h-auto aspect-[16/9] object-cover"
+              />
+            </div>
+
+            <div className="prose-custom border-t border-border pt-8">{renderContent(post.content)}</div>
 
             <div className="mt-12 rounded-2xl bg-qit-beige/40 border border-border p-6 md:p-8 text-center">
               <h3 className="text-xl md:text-2xl font-bold text-qit-purple mb-2">

@@ -86,9 +86,9 @@ const goFurtherPosts: { href: string; label: string }[] = [
   { href: "/blog/louer-en-courte-duree-drome-ardeche", label: "Les zones qui marchent en Drôme-Ardèche" },
 ];
 
-const whatsappUrl =
-  "https://wa.me/330601777633?text=" +
-  encodeURIComponent("Bonjour, j'ai une question concernant Qit Concierge.");
+const whatsappUrl = buildWhatsAppUrl(
+  "Bonjour, j'ai une question concernant Qit Concierge."
+);
 
 const FAQ = () => {
   return (

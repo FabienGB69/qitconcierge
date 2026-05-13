@@ -4,19 +4,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { renderInlineLinks } from "@/lib/inlineLinks";
+import { Link } from "react-router-dom";
 
 const faqs = [
   {
     q: "Quel est le tarif de Qit Concierge ?",
-    a: "Qit Concierge fonctionne avec une commission de 25% TTC sur les revenus locatifs générés. Cette rémunération est liée à la performance du logement : si votre bien ne génère pas de réservation, vous ne payez pas de commission de gestion.",
+    a: "Qit Concierge fonctionne avec une commission de 25% TTC sur les revenus locatifs générés. Cette rémunération est liée à la performance du logement : si votre bien ne génère pas de réservation, vous ne payez pas de commission de gestion. Voir notre [gestion location courte durée Drôme-Ardèche](/gestion-location-courte-duree-drome-ardeche).",
   },
   {
     q: "Que comprend la commission de 25% TTC ?",
-    a: "La commission comprend la gestion complète de votre location courte durée : gestion des annonces Airbnb, Booking et Abritel, communication voyageurs, suivi des réservations, coordination ménage et linge, suivi qualité, pilotage du calendrier et optimisation tarifaire avec PriceLabs.",
+    a: "La commission comprend la gestion complète de votre location courte durée : gestion des annonces [Airbnb, Booking et Abritel](/gestion-booking-abritel-drome-ardeche), communication voyageurs, suivi des réservations, coordination ménage et linge, suivi qualité, pilotage du calendrier et [optimisation tarifaire avec PriceLabs](/revenue-management-airbnb-drome-ardeche).",
   },
   {
     q: "Y a-t-il un abonnement mensuel ?",
-    a: "Non. Qit Concierge ne facture pas d'abonnement mensuel de gestion. Le modèle repose sur une commission de 25% TTC sur les revenus locatifs générés.",
+    a: "Non. Qit Concierge ne facture pas d'abonnement mensuel de gestion. Le modèle repose sur une commission de 25% TTC sur les revenus locatifs générés — voir [comment choisir sa conciergerie](/blog/conciergerie-airbnb-drome-choisir-prestataire).",
   },
   {
     q: "Le ménage est-il inclus dans les 25% TTC ?",
@@ -24,11 +26,11 @@ const faqs = [
   },
   {
     q: "Pourquoi choisir une commission plutôt qu'un forfait fixe ?",
-    a: "La commission permet d'aligner les intérêts du propriétaire et de la conciergerie. Qit Concierge est rémunérée en fonction des revenus générés, ce qui encourage une gestion active du calendrier, des prix et de la visibilité du logement.",
+    a: "La commission permet d'aligner les intérêts du propriétaire et de la conciergerie. Qit Concierge est rémunérée en fonction des revenus générés, ce qui encourage une gestion active du calendrier, des prix et de la visibilité du logement — voir [comment combler les trous de calendrier](/blog/trous-de-calendrier-comment-les-combler).",
   },
   {
     q: "Pourquoi 25% TTC ?",
-    a: "Le tarif de 25% TTC correspond à une gestion complète incluant l'opérationnel, les voyageurs, les plateformes Airbnb / Booking / Abritel et l'optimisation tarifaire avec PriceLabs. L'objectif n'est pas seulement de gérer les séjours, mais de piloter la performance du logement.",
+    a: "Le tarif de 25% TTC correspond à une gestion complète incluant l'opérationnel, les voyageurs, les plateformes Airbnb / Booking / Abritel et l'optimisation tarifaire avec [PriceLabs](/blog/pricelabs-comment-ca-marche). L'objectif n'est pas seulement de gérer les séjours, mais de [piloter la performance du logement](/revenue-management-airbnb-drome-ardeche).",
   },
 ];
 
@@ -56,11 +58,22 @@ const PricingFAQ = () => {
                   {item.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">
-                  {item.a}
+                  {renderInlineLinks(item.a, `pfaq-${i}`)}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
+
+          <p className="text-sm text-center text-muted-foreground mt-8">
+            Découvrez aussi nos zones :{" "}
+            <Link to="/conciergerie-airbnb-drome" className="text-qit-coral underline underline-offset-2">Drôme</Link>
+            {" · "}
+            <Link to="/conciergerie-airbnb-ardeche" className="text-qit-coral underline underline-offset-2">Ardèche</Link>
+            {" · "}
+            <Link to="/conciergerie-airbnb-tain-hermitage" className="text-qit-coral underline underline-offset-2">Tain-l'Hermitage</Link>
+            {" · "}
+            <Link to="/conciergerie-airbnb-valence" className="text-qit-coral underline underline-offset-2">Valence</Link>
+          </p>
         </div>
       </div>
     </section>

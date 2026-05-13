@@ -48,7 +48,7 @@ const Hero = () => {
               className="bg-qit-coral hover:bg-qit-coral/90 text-white shadow-xl shadow-qit-coral/40 h-14 sm:h-14 text-base font-semibold w-full sm:w-auto"
             >
               <a href="#contact">
-                Demander une estimation de revenus
+                Demander une estimation gratuite
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

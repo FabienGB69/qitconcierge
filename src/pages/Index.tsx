@@ -94,8 +94,9 @@ const Index = () => {
         <BlogTeaser />
         <div className="container mx-auto px-4 md:px-6 mb-16">
           <SectionCTA
-            title="Prêt à augmenter vos revenus locatifs ?"
-            subtitle="Discutons de votre projet — sans engagement."
+            title="Vous avez un bien en Drôme ou en Ardèche ?"
+            subtitle="Parlons de son potentiel locatif — estimation gratuite, sans engagement."
+            variant="dark"
           />
         </div>
         <ContactCTA />

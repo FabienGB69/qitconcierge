@@ -161,18 +161,42 @@ const ContactCTA = () => {
     return parsed.data;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const persistRequest = async (d: FormState, source: "email" | "whatsapp") => {
+    try {
+      const { error } = await supabase.from("estimation_requests").insert({
+        name: d.fullName,
+        email: d.email,
+        phone: d.phone,
+        city: d.city,
+        property_type: d.propertyType,
+        surface: d.surface || null,
+        beds: d.beds || null,
+        online_status: d.online,
+        platform: d.platform,
+        listing_url: d.listingUrl || null,
+        goal: d.goal,
+        message: d.message || null,
+        source,
+      });
+      if (error) console.error("estimation_requests insert error", error);
+    } catch (err) {
+      console.error("estimation_requests insert exception", err);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const d = validateAll();
     if (!d) return;
 
     setSubmitting(true);
+    await persistRequest(d, "email");
     const subject = encodeURIComponent(
       `Demande d'estimation — ${d.fullName} (${d.city})`
     );
     const body = encodeURIComponent(buildRecap(d));
     window.location.href = `mailto:guest.qitconcierge@gmail.com?subject=${subject}&body=${body}`;
-    toast.success("Merci ! Votre client mail s'ouvre pour finaliser l'envoi.");
+    toast.success("Merci ! Votre demande a été enregistrée et votre client mail s'ouvre.");
     setDone(true);
     setSubmitting(false);
   };

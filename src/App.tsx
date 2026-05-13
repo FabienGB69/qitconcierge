@@ -32,6 +32,8 @@ const App = () => (
           <Route path="/cgv" element={<CGV />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/conciergerie-airbnb-tain-hermitage" element={
             <LocalLanding
               slug="conciergerie-airbnb-tain-hermitage"

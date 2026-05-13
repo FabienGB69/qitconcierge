@@ -294,7 +294,7 @@ Une annonce existante a déjà un historique (avis, ancienneté, classement). Il
 
 ## Ce qu'on observe sur le terrain
 
-La majorité des annonces ont des paramètres mal réglés ou des équipements non déclarés. Les corrections simples ont souvent un impact rapide sur la visibilité.`,
+La majorité des annonces ont des paramètres mal réglés ou des équipements non déclarés. Les corrections simples ont souvent un impact rapide sur la visibilité. Lire aussi : [les erreurs qui font perdre des réservations en zone rurale](/blog/location-courte-duree-zone-rurale-erreurs).`,
   },
   {
     slug: "pricelabs-comment-ca-marche",

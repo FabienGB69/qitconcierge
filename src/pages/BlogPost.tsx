@@ -105,6 +105,28 @@ const BlogPost = () => {
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3);
 
+  const landingsByCategory: Record<string, { href: string; label: string }[]> = {
+    "Drôme-Ardèche": [
+      { href: "/conciergerie-airbnb-drome", label: "Conciergerie Airbnb Drôme" },
+      { href: "/conciergerie-airbnb-ardeche", label: "Conciergerie Airbnb Ardèche" },
+      { href: "/conciergerie-airbnb-tain-hermitage", label: "Conciergerie Tain-l'Hermitage" },
+      { href: "/gestion-location-courte-duree-drome-ardeche", label: "Gestion courte durée Drôme-Ardèche" },
+    ],
+    "Revenue management": [
+      { href: "/revenue-management-airbnb-drome-ardeche", label: "Revenue management PriceLabs" },
+      { href: "/gestion-booking-abritel-drome-ardeche", label: "Gestion Booking & Abritel" },
+      { href: "/gestion-location-courte-duree-drome-ardeche", label: "Gestion courte durée Drôme-Ardèche" },
+      { href: "/conciergerie-airbnb-drome", label: "Conciergerie Airbnb Drôme" },
+    ],
+    "Conseils propriétaires": [
+      { href: "/conciergerie-residence-secondaire-drome-ardeche", label: "Résidence secondaire Drôme-Ardèche" },
+      { href: "/gestion-gite-drome", label: "Gestion de gîte Drôme" },
+      { href: "/gestion-gite-ardeche", label: "Gestion de gîte Ardèche" },
+      { href: "/conciergerie-airbnb-valence", label: "Conciergerie Valence" },
+    ],
+  };
+  const relatedLandings = landingsByCategory[post.category] ?? [];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />

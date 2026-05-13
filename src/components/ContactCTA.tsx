@@ -15,6 +15,7 @@ import { z } from "zod";
 import { toast } from "@/components/ui/sonner";
 import { Phone, Mail, ArrowLeft, ArrowRight, Check, MessageCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { trackEvent } from "@/lib/analytics";
 
 /* -------------------------------------------------------------------------- */
 /*  Schemas — one per step + a final composed schema                          */

@@ -4,6 +4,13 @@ import giteVillage from "@/assets/blog/gite-village-ardeche.jpg";
 import dashboardRevenue from "@/assets/blog/dashboard-revenue.jpg";
 import annonceLaptop from "@/assets/blog/annonce-laptop.jpg";
 import obligationsChecklist from "@/assets/blog/obligations-checklist.jpg";
+import maisonCampagne from "@/assets/blog/maison-campagne-ardeche.jpg";
+import tainHermitageVillage from "@/assets/blog/tain-hermitage-village.jpg";
+import remiseCles from "@/assets/blog/remise-cles-residence.jpg";
+import annonceSmartphone from "@/assets/blog/annonce-smartphone.jpg";
+import pricelabsTarif from "@/assets/blog/pricelabs-tarification.jpg";
+import calendrierTrous from "@/assets/blog/calendrier-trous.jpg";
+import dromeArdecheZones from "@/assets/blog/drome-ardeche-zones.jpg";
 
 export type BlogCategory = "Conseils propriétaires" | "Revenue management" | "Drôme-Ardèche";
 
@@ -31,7 +38,7 @@ export const posts: BlogPost[] = [
     excerpt:
       "Conciergerie Airbnb en Drôme : les critères concrets pour choisir un prestataire local fiable, en gestion courte durée autour de Tain-l'Hermitage, Romans, Valence et Drôme des Collines.",
     category: "Conseils propriétaires",
-    date: "2025-05-08",
+    date: "2026-04-08",
     readTime: "9 min",
     image: vignesHermitage,
     content: `Louer son logement en courte durée dans la Drôme peut être réellement rentable. Maisons de campagne, gîtes, appartements en ville ou résidences secondaires : la demande touristique et professionnelle existe toute l'année autour de Tain-l'Hermitage, Romans-sur-Isère, Valence, Saint-Vallier ou en Drôme des Collines.
@@ -114,9 +121,9 @@ Vous avez un logement en Drôme ou Ardèche ? [Demandez une estimation de revenu
     excerpt:
       "Réglementation, équipements, accès, photos, saisonnalité : la liste des vérifications avant de mettre une maison en location.",
     category: "Conseils propriétaires",
-    date: "2025-04-22",
+    date: "2026-02-22",
     readTime: "6 min",
-    image: maisonPierre,
+    image: maisonCampagne,
     content: `## Avant de publier l'annonce
 
 - Déclaration en mairie et numéro d'enregistrement si applicable.
@@ -146,7 +153,7 @@ Nous réalisons cet audit pour chaque bien que nous prenons en gestion en Ardèc
     excerpt:
       "Saisonnalité marquée, événements locaux, vignobles, ViaRhôna : pourquoi la tarification dynamique a un vrai impact dans la région.",
     category: "Revenue management",
-    date: "2025-05-01",
+    date: "2026-03-15",
     readTime: "6 min",
     image: dashboardRevenue,
     content: `## Une demande très inégale dans le temps
@@ -174,7 +181,7 @@ Chaque bien géré par Qit Concierge est paramétré dans PriceLabs avec des rè
     excerpt:
       "Forces et limites de chaque plateforme, et comment combiner les trois selon le type de bien et la clientèle visée.",
     category: "Conseils propriétaires",
-    date: "2025-03-28",
+    date: "2026-01-12",
     readTime: "6 min",
     image: annonceLaptop,
     content: `## Airbnb
@@ -203,9 +210,9 @@ Nous choisissons les plateformes adaptées à chaque bien et synchronisons les a
     excerpt:
       "Typologies, capacités, équipements et localisation : ce qui fait la différence dans le bassin de Tain-l'Hermitage.",
     category: "Drôme-Ardèche",
-    date: "2025-04-10",
+    date: "2026-02-08",
     readTime: "6 min",
-    image: vignesHermitage,
+    image: tainHermitageVillage,
     content: `## Un bassin touristique cohérent
 
 Vignobles de l'Hermitage et de Crozes-Hermitage, ViaRhôna, vallée du Rhône, gastronomie : la zone autour de Tain-l'Hermitage attire une clientèle régulière, étalée sur l'année.
@@ -233,7 +240,7 @@ Nous accompagnons les propriétaires de ce bassin avec une stratégie adaptée �
     excerpt:
       "Photos peu valorisantes, annonce trop courte, prix figé, équipements oubliés : les erreurs récurrentes sur les biens en zone rurale.",
     category: "Drôme-Ardèche",
-    date: "2025-05-05",
+    date: "2026-04-02",
     readTime: "5 min",
     image: giteVillage,
     content: `## Les erreurs les plus fréquentes
@@ -263,9 +270,9 @@ Nous réalisons ce travail systématiquement sur chaque bien que nous prenons en
     excerpt:
       "Les étapes concrètes pour transformer une résidence secondaire en bien locatif courte durée, sans y passer ses week-ends.",
     category: "Conseils propriétaires",
-    date: "2025-04-12",
+    date: "2026-01-28",
     readTime: "6 min",
-    image: maisonPierre,
+    image: remiseCles,
     content: `## Pourquoi se poser la question
 
 Une résidence secondaire occupée quelques semaines par an peut générer des revenus significatifs sur le reste de l'année, à condition d'être correctement positionnée et pilotée.
@@ -292,9 +299,9 @@ Qit Concierge prend en charge l'ensemble de ces étapes pour les propriétaires 
     excerpt:
       "Titre, photos, description, équipements, paramètres : ce qu'il faut revoir pour améliorer la visibilité d'une annonce déjà en ligne.",
     category: "Conseils propriétaires",
-    date: "2025-05-02",
+    date: "2026-03-22",
     readTime: "5 min",
-    image: annonceLaptop,
+    image: annonceSmartphone,
     content: `## Pourquoi optimiser plutôt que recréer
 
 Une annonce existante a déjà un historique (avis, ancienneté, classement). Il est souvent plus efficace de la retravailler que de repartir de zéro.
@@ -318,9 +325,9 @@ La majorité des annonces ont des paramètres mal réglés ou des équipements n
     excerpt:
       "Explication concrète du fonctionnement de PriceLabs et de ce que cela change pour un propriétaire de location courte durée.",
     category: "Revenue management",
-    date: "2025-03-20",
+    date: "2025-12-15",
     readTime: "7 min",
-    image: dashboardRevenue,
+    image: pricelabsTarif,
     content: `## Le principe
 
 PriceLabs ajuste automatiquement les prix de votre annonce en fonction de la demande, de la saison, des événements locaux, de la concurrence et de votre taux d'occupation.
@@ -346,9 +353,9 @@ Nous configurons et surveillons PriceLabs pour chaque bien que nous gérons. L'o
     excerpt:
       "Last minute, durée minimum dynamique, remises ciblées : les leviers concrets pour limiter les nuits non réservées.",
     category: "Revenue management",
-    date: "2025-04-28",
+    date: "2026-02-18",
     readTime: "5 min",
-    image: dashboardRevenue,
+    image: calendrierTrous,
     content: `## Pourquoi les trous coûtent cher
 
 Une nuit non réservée ne se rattrape jamais. Sur l'année, ces trous représentent souvent une part significative du revenu manqué.
@@ -370,9 +377,9 @@ Garder un prix plancher cohérent avec la qualité du bien et éviter les nuits 
     excerpt:
       "Tour d'horizon des secteurs porteurs autour de Tain-l'Hermitage : vignobles, vallée du Rhône, Ardèche verte, Drôme des Collines.",
     category: "Drôme-Ardèche",
-    date: "2025-02-15",
+    date: "2025-11-10",
     readTime: "6 min",
-    image: maisonPierre,
+    image: dromeArdecheZones,
     content: `## Une demande touristique réelle et étalée
 
 La Drôme-Ardèche bénéficie d'une demande étalée sur l'année : œnotourisme autour de l'Hermitage, ViaRhôna, Ardèche verte, festivals et événements locaux, week-ends depuis Lyon ou la vallée du Rhône.
@@ -395,7 +402,7 @@ Un bien bien équipé, des photos soignées et une annonce travaillée localemen
     excerpt:
       "Déclaration en mairie, numéro d'enregistrement, taxe de séjour, copropriété : les points à vérifier avant de mettre en location.",
     category: "Drôme-Ardèche",
-    date: "2025-03-05",
+    date: "2025-12-02",
     readTime: "5 min",
     image: obligationsChecklist,
     content: `## Les principales obligations

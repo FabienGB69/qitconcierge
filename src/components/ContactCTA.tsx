@@ -10,11 +10,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { z } from "zod";
 import { toast } from "@/components/ui/sonner";
 import { Phone, Mail, ArrowLeft, ArrowRight, Check, MessageCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { trackEvent } from "@/lib/analytics";
 
 /* -------------------------------------------------------------------------- */
 /*  Schemas — one per step + a final composed schema                          */
@@ -95,8 +96,21 @@ const ContactCTA = () => {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [started, setStarted] = useState(false);
+
+  // Track first interaction (form_started) and each step view.
+  useEffect(() => {
+    trackEvent("estimation_step_view", {
+      step_index: step + 1,
+      step_name: STEPS[step].key,
+    });
+  }, [step]);
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
+    if (!started) {
+      setStarted(true);
+      trackEvent("estimation_started");
+    }
     setForm((f) => ({ ...f, [key]: value }));
     setErrors((e) => ({ ...e, [key]: undefined }));
   };
@@ -120,6 +134,11 @@ const ContactCTA = () => {
         if (path) newErrors[path] = iss.message;
       });
       setErrors(newErrors);
+      trackEvent("estimation_step_error", {
+        step_index: step + 1,
+        step_name: STEPS[step].key,
+        first_error: parsed.error.issues[0]?.path[0]?.toString() ?? "unknown",
+      });
       toast.error(parsed.error.issues[0]?.message ?? "Veuillez compléter cette étape");
       return false;
     }
@@ -128,6 +147,10 @@ const ContactCTA = () => {
 
   const next = () => {
     if (!validateCurrentStep()) return;
+    trackEvent("estimation_step_completed", {
+      step_index: step + 1,
+      step_name: STEPS[step].key,
+    });
     setStep((s) => Math.min(s + 1, STEPS.length - 1));
   };
   const back = () => setStep((s) => Math.max(s - 1, 0));
@@ -191,6 +214,13 @@ const ContactCTA = () => {
 
     setSubmitting(true);
     await persistRequest(d, "email");
+    trackEvent("estimation_submit", {
+      method: "email",
+      city: d.city,
+      property_type: d.propertyType,
+      goal: d.goal,
+      online_status: d.online,
+    });
     const subject = encodeURIComponent(
       `Demande d'estimation — ${d.fullName} (${d.city})`
     );
@@ -204,8 +234,21 @@ const ContactCTA = () => {
   const handleWhatsApp = async () => {
     const d = validateAll();
     if (!d) return;
+    trackEvent("estimation_whatsapp_click", {
+      city: d.city,
+      property_type: d.propertyType,
+      goal: d.goal,
+      online_status: d.online,
+    });
     setSubmitting(true);
     await persistRequest(d, "whatsapp");
+    trackEvent("estimation_submit", {
+      method: "whatsapp",
+      city: d.city,
+      property_type: d.propertyType,
+      goal: d.goal,
+      online_status: d.online,
+    });
     const text = encodeURIComponent(buildRecap(d));
     // wa.me requires the number in international format, no +, no spaces.
     const url = `https://wa.me/330601777633?text=${text}`;
@@ -220,6 +263,8 @@ const ContactCTA = () => {
     setErrors({});
     setStep(0);
     setDone(false);
+    setStarted(false);
+    trackEvent("estimation_restart");
   };
 
   /* ----- field error helper ----- */

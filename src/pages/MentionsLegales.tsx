@@ -1,8 +1,14 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 const MentionsLegales = () => {
+  useSEO({
+    title: "Mentions légales — Qit Concierge",
+    description: "Mentions légales du site Qit Concierge : éditeur, hébergement, propriété intellectuelle et contact.",
+    path: "/mentions-legales",
+  });
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />

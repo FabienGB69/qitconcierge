@@ -46,7 +46,8 @@ const MentionsLegales = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackEvent("pixeloria_click", { location: "mentions_legales_name" })}
-                    className="font-medium text-qit-purple hover:underline"
+                    aria-label="Pixeloria — création de sites web (ouvre dans un nouvel onglet)"
+                    className="inline-block font-medium text-qit-purple hover:underline rounded-sm px-1 py-1 -mx-1 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
                   >
                     Pixeloria
                   </a>
@@ -57,7 +58,8 @@ const MentionsLegales = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent("pixeloria_click", { location: "mentions_legales_url" })}
-                  className="text-qit-coral hover:underline"
+                  aria-label="Site web Pixeloria : https://pixeloria.fr (ouvre dans un nouvel onglet)"
+                  className="inline-block text-qit-coral hover:underline rounded-sm px-1 py-1 -mx-1 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2 break-all"
                 >https://pixeloria.fr</a></p>
                 <p>Email : <a href="mailto:contact@pixeloria.fr" className="text-qit-coral hover:underline">contact@pixeloria.fr</a></p>
                 <p>Téléphone : 07 86 12 53 13</p>

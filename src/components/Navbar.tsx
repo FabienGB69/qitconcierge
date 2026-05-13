@@ -57,6 +57,9 @@ const Navbar = () => {
             <a href="#testimonials" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Témoignages
             </a>
+            <a href="/blog" className="text-sm font-medium hover:text-qit-purple transition-colors">
+              Blog
+            </a>
             <a href="#contact" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Contact
             </a>
@@ -115,6 +118,9 @@ const Navbar = () => {
           </a>
           <a href="#testimonials" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>
             Témoignages
+          </a>
+          <a href="/blog" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>
+            Blog
           </a>
           <a href="#contact" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>
             Contact

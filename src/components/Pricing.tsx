@@ -1,20 +1,16 @@
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const included = [
-  "Gestion opérationnelle du logement",
-  "Communication voyageurs",
-  "Suivi des réservations",
+  "Gestion Airbnb, Booking et Abritel",
+  "Communication avec les voyageurs",
+  "Suivi des arrivées et départs",
   "Coordination du ménage",
-  "Suivi du linge",
-  "Optimisation des prix avec PriceLabs",
-  "Diffusion et pilotage sur Airbnb, Booking et Abritel",
-];
-
-const excluded = [
-  "Pas d'abonnement mensuel",
-  "Pas de frais fixes de gestion",
-  "Une rémunération liée à la performance réelle de votre logement",
+  "Gestion du linge",
+  "Suivi qualité entre les séjours",
+  "Optimisation tarifaire avec PriceLabs",
+  "Ajustement du calendrier et des durées de séjour",
+  "Accompagnement propriétaire",
 ];
 
 const Pricing = () => {
@@ -26,10 +22,10 @@ const Pricing = () => {
             Tarif
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-5 md:mb-6 leading-tight">
-            Un tarif clair : 25% TTC sur les revenus générés
+            25% TTC : une commission simple, transparente et orientée performance
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Chez Qit Concierge, notre rémunération est simple : nous prenons une commission de 25% TTC sur les revenus locatifs générés. Ce modèle aligne nos intérêts avec les vôtres : plus votre logement est performant, plus la gestion est rentable pour vous comme pour nous.
+            Qit Concierge fonctionne avec une commission de 25% TTC sur les revenus locatifs générés. Vous ne payez pas d'abonnement fixe : notre rémunération dépend directement de la performance de votre logement.
           </p>
         </div>
 
@@ -37,9 +33,9 @@ const Pricing = () => {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 pb-8 border-b border-border">
             <div>
               <p className="text-sm text-muted-foreground mb-1">Commission unique</p>
-              <div className="flex items-baseline gap-2">
+              <div className="flex items-baseline gap-2 flex-wrap">
                 <span className="text-5xl md:text-6xl font-bold text-qit-purple">25%</span>
-                <span className="text-base text-muted-foreground">TTC sur les revenus locatifs</span>
+                <span className="text-base text-muted-foreground">TTC sur les revenus locatifs générés</span>
               </div>
             </div>
             <Button
@@ -51,34 +47,24 @@ const Pricing = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-base font-semibold text-qit-purple mb-4">
-                Ce qui est inclus
-              </h3>
-              <ul className="space-y-2.5">
-                {included.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
-                    <Check className="h-4 w-4 text-qit-coral flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-base font-semibold text-qit-purple mb-4">
-                Ce que vous ne payez pas
-              </h3>
-              <ul className="space-y-2.5">
-                {excluded.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
-                    <X className="h-4 w-4 text-qit-purple/60 flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <h3 className="text-base font-semibold text-qit-purple mb-4">
+            Cette commission comprend l'accompagnement complet de votre location courte durée
+          </h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+            {included.map((item, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed"
+              >
+                <Check className="h-4 w-4 text-qit-coral flex-shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-8 pt-6 border-t border-border text-sm md:text-base text-muted-foreground leading-relaxed">
+            Notre objectif est simple : vous libérer de la gestion quotidienne tout en pilotant votre logement avec une vraie logique de rentabilité.
+          </p>
         </div>
       </div>
     </section>

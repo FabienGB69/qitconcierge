@@ -21,26 +21,23 @@ const Hero = () => {
             Conciergerie locale en Drôme-Ardèche
           </span>
 
-          <h1 className="text-[2rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white sm:leading-tight mb-4 sm:mb-5">
-            Meilleure rentabilité locative{" "}
-            <span className="text-qit-coral">sans gestion quotidienne</span>
+          <h1 className="text-[1.85rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-[3.4rem] font-bold text-white sm:leading-tight mb-4 sm:mb-5">
+            Conciergerie courte durée en Drôme-Ardèche pour{" "}
+            <span className="text-qit-coral">maisons, gîtes et résidences secondaires</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 max-w-2xl leading-relaxed">
-            <span className="hidden sm:inline">
-              Qit Concierge gère vos maisons de campagne, gîtes, appartements et résidences secondaires
-              à moins d'1h de Tain-l'Hermitage : optimisation Airbnb, Booking et Abritel,
-              revenue management avec PriceLabs, ménage, linge, check-in et accompagnement humain et terrain.
-            </span>
-            <span className="sm:hidden">
-              Optimisation Airbnb, Booking, Abritel + PriceLabs, ménage, check-in. Conciergerie locale en Drôme-Ardèche.
-            </span>
+            Qit Concierge accompagne les propriétaires situés à moins d'1h de
+            Tain-l'Hermitage dans la gestion complète de leur location courte
+            durée : Airbnb, Booking, Abritel, ménage, linge, voyageurs,
+            calendrier et optimisation des revenus avec PriceLabs.
           </p>
 
           <div className="flex items-start gap-2 text-white/90 text-sm sm:text-base mb-7 sm:mb-8 max-w-2xl">
             <CheckCircle2 className="w-5 h-5 text-qit-coral mt-0.5 flex-shrink-0" />
             <p>
-              Plus de 30 logements gérés sur le terrain, avec revenue management PriceLabs.
+              Conciergerie créée en 2023 — 5 biens actuellement en gestion —
+              expertise revenue management et tarification dynamique.
             </p>
           </div>
 
@@ -51,7 +48,7 @@ const Hero = () => {
               className="bg-qit-coral hover:bg-qit-coral/90 text-white shadow-xl shadow-qit-coral/40 h-14 sm:h-14 text-base font-semibold w-full sm:w-auto"
             >
               <a href="#contact">
-                Demander une estimation gratuite
+                Demander une estimation de revenus
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

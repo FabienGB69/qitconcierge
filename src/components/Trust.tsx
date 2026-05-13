@@ -1,7 +1,7 @@
 import { Award, TrendingUp, ClipboardCheck, MessageSquare, Zap, Eye } from "lucide-react";
 
 const items = [
-  { icon: Award, title: "Expérience terrain", text: "Gestion opérationnelle de plus de 30 logements courte durée avec une approche concrète, testée sur le terrain." },
+  { icon: Award, title: "Expérience terrain", text: "Conciergerie créée en 2023, 5 biens actuellement en gestion en Drôme-Ardèche, avec une approche concrète et testée sur le terrain." },
   { icon: TrendingUp, title: "Optimisation des revenus", text: "Prix ajustés selon la saison, les événements, le taux d'occupation et les contraintes du logement." },
   { icon: ClipboardCheck, title: "Suivi qualité après chaque séjour", text: "Contrôle du ménage, du linge, des équipements et remontée rapide des anomalies." },
   { icon: MessageSquare, title: "Communication voyageurs", text: "Messages clairs avant, pendant et après le séjour pour limiter les questions et améliorer l'expérience." },

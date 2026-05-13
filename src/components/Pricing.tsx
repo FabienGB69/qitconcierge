@@ -5,9 +5,9 @@ const included = [
   "Gestion Airbnb, Booking et Abritel",
   "Communication voyageurs",
   "Coordination ménage et linge",
-  "Suivi qualité",
-  "Optimisation des prix avec PriceLabs",
-  "Pilotage du calendrier",
+  "Suivi qualité entre les séjours",
+  "Optimisation tarifaire avec PriceLabs",
+  "Pilotage du calendrier et des durées de séjour",
   "Accompagnement propriétaire",
 ];
 
@@ -19,11 +19,14 @@ const Pricing = () => {
           <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">
             Tarif
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-5 md:mb-6 leading-tight">
-            Une commission simple, transparente et orientée performance
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-4 md:mb-5 leading-tight">
+            Un tarif simple : 25% TTC sur les revenus générés
           </h2>
+          <p className="text-lg md:text-xl text-qit-purple/80 font-medium mb-5">
+            Une commission transparente, alignée sur la performance réelle de votre logement.
+          </p>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Pas d'abonnement, pas de frais fixes : notre rémunération dépend directement de la performance de votre logement.
+            Qit Concierge fonctionne avec une commission de 25% TTC sur les revenus locatifs générés. Vous ne payez pas d'abonnement mensuel ni de frais fixes de gestion : notre rémunération dépend directement des réservations générées.
           </p>
         </div>
 
@@ -37,7 +40,7 @@ const Pricing = () => {
             <span className="text-base text-muted-foreground">TTC</span>
           </div>
           <p className="text-sm text-muted-foreground mb-6 pb-6 border-b border-border">
-            Sur les revenus locatifs générés
+            sur les revenus locatifs générés
           </p>
 
           <p className="text-sm font-semibold text-qit-purple mb-3">Inclus :</p>
@@ -53,11 +56,6 @@ const Pricing = () => {
             ))}
           </ul>
 
-          <div className="text-sm text-muted-foreground space-y-1 mb-6 pb-6 border-b border-border">
-            <p>Sans abonnement mensuel.</p>
-            <p>Sans frais fixes de gestion.</p>
-          </div>
-
           <Button
             asChild
             size="lg"
@@ -66,6 +64,10 @@ const Pricing = () => {
             <a href="#contact">Demander une estimation de revenus</a>
           </Button>
         </div>
+
+        <p className="max-w-2xl mx-auto text-center text-sm md:text-base text-muted-foreground leading-relaxed mt-8">
+          Notre objectif : vous libérer de la gestion quotidienne tout en optimisant le potentiel de votre logement.
+        </p>
       </div>
     </section>
   );

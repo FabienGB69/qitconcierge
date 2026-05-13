@@ -36,7 +36,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             onClick={() => trackEvent('pixeloria_click', { location: 'footer' })}
             aria-label="Pixeloria — création de sites web (ouvre dans un nouvel onglet)"
-            className="inline-block font-medium text-qit-purple hover:underline rounded-sm px-1 py-1 -mx-1 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2 focus-visible:ring-offset-qit-dark"
+            className="inline-block font-medium text-qit-coral hover:underline rounded-sm px-1 py-1 -mx-1 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
           >
             Pixeloria
           </a>

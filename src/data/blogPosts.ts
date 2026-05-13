@@ -392,7 +392,7 @@ Les règles peuvent varier selon les communes. Il est utile de vérifier auprès
 
 ## Notre rôle
 
-Nous orientons les propriétaires vers les bons interlocuteurs et identifions les points de vigilance. Cet accompagnement ne remplace pas un conseil juridique ou fiscal.`,
+Nous orientons les propriétaires vers les bons interlocuteurs et identifions les points de vigilance. Cet accompagnement ne remplace pas un conseil juridique ou fiscal. Voir aussi : [points à vérifier avant de louer une maison de campagne](/blog/louer-maison-campagne-ardeche-points-a-verifier) et [par où commencer pour louer sa résidence secondaire](/blog/louer-residence-secondaire-courte-duree).`,
   },
 ];
 

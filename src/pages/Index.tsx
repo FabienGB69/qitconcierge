@@ -21,8 +21,8 @@ import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
   useSEO({
-    title: "Qit Concierge — Conciergerie Airbnb en Drôme-Ardèche",
-    description: "Conciergerie locale en Drôme-Ardèche, à moins d'1h de Tain-l'Hermitage : Airbnb, Booking, Abritel, revenue management PriceLabs, ménage, check-in.",
+    title: "Qit Concierge | Conciergerie Airbnb Drôme-Ardèche",
+    description: "Conciergerie courte durée autour de Tain-l'Hermitage : gestion Airbnb, Booking, Abritel, ménage, voyageurs et optimisation PriceLabs pour maisons, gîtes et résidences secondaires en Drôme-Ardèche.",
     path: "/",
   });
   return (

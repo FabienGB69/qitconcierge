@@ -4,6 +4,13 @@ import giteVillage from "@/assets/blog/gite-village-ardeche.jpg";
 import dashboardRevenue from "@/assets/blog/dashboard-revenue.jpg";
 import annonceLaptop from "@/assets/blog/annonce-laptop.jpg";
 import obligationsChecklist from "@/assets/blog/obligations-checklist.jpg";
+import maisonCampagne from "@/assets/blog/maison-campagne-ardeche.jpg";
+import tainHermitageVillage from "@/assets/blog/tain-hermitage-village.jpg";
+import remiseCles from "@/assets/blog/remise-cles-residence.jpg";
+import annonceSmartphone from "@/assets/blog/annonce-smartphone.jpg";
+import pricelabsTarif from "@/assets/blog/pricelabs-tarification.jpg";
+import calendrierTrous from "@/assets/blog/calendrier-trous.jpg";
+import dromeArdecheZones from "@/assets/blog/drome-ardeche-zones.jpg";
 
 export type BlogCategory = "Conseils propriétaires" | "Revenue management" | "Drôme-Ardèche";
 

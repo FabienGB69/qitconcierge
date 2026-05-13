@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /auth
 
-Sitemap: https://qitconcierge.com/sitemap.xml
+Sitemap: https://qitconcierge.lovable.app/sitemap.xml

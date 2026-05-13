@@ -11,8 +11,14 @@ import Footer from "@/components/Footer";
 import LocalSEO from "@/components/LocalSEO";
 import SectionCTA from "@/components/SectionCTA";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
+  useSEO({
+    title: "Qit Concierge — Conciergerie Airbnb à Lyon",
+    description: "Gestion Airbnb & Booking à Lyon : ménage, linge, check-in, optimisation des revenus et assistance voyageurs.",
+    path: "/",
+  });
   return (
     <div className="min-h-screen">
       <Navbar />

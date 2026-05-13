@@ -128,14 +128,14 @@ const Properties = () => {
   }
 
   return (
-    <section id="properties" className="py-20">
+    <section id="properties" className="py-14 md:py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("properties.heading")}</h2>
-          <p className="text-lg text-muted-foreground">{t("properties.subheading")}</p>
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 leading-tight">{t("properties.heading")}</h2>
+          <p className="text-base md:text-lg text-muted-foreground">{t("properties.subheading")}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {properties.map((property) => (
             <PropertyCard key={property.id} property={property} />
           ))}

@@ -32,24 +32,36 @@ const BlogTeaser = () => {
           {featured.map((post) => (
             <article
               key={post.slug}
-              className="rounded-2xl border border-border bg-qit-beige/30 p-6 flex flex-col hover:bg-white hover:border-qit-coral/40 hover:shadow-md transition-all"
+              className="group rounded-2xl border border-border bg-white overflow-hidden flex flex-col hover:border-qit-coral/40 hover:shadow-md transition-all"
             >
-              <span className="inline-block self-start text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
-                {post.category}
-              </span>
-              <h3 className="text-base md:text-lg font-bold text-qit-purple mb-3 leading-snug">
-                {post.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
-                {post.excerpt}
-              </p>
-              <Link
-                to={`/blog/${post.slug}`}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-qit-coral hover:underline self-start"
-              >
-                Lire l'article
-                <ArrowRight className="h-4 w-4" />
+              <Link to={`/blog/${post.slug}`} className="block aspect-[16/9] overflow-hidden bg-qit-beige/40">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  width={1280}
+                  height={720}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </Link>
+              <div className="p-6 flex flex-col flex-1">
+                <span className="inline-block self-start text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
+                  {post.category}
+                </span>
+                <h3 className="text-base md:text-lg font-bold text-qit-purple mb-3 leading-snug">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
+                  {post.excerpt}
+                </p>
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-qit-coral hover:underline self-start"
+                >
+                  Lire l'article
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </article>
           ))}
         </div>

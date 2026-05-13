@@ -77,33 +77,45 @@ const Blog = () => {
                 <Link
                   key={post.slug}
                   to={`/blog/${post.slug}`}
-                  className="group rounded-2xl border border-border bg-qit-beige/30 p-6 flex flex-col hover:bg-white hover:border-qit-coral/40 hover:shadow-md transition-all"
+                  className="group rounded-2xl border border-border bg-white overflow-hidden flex flex-col hover:border-qit-coral/40 hover:shadow-md transition-all"
                 >
-                  <span className="inline-block self-start text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
-                    {post.category}
-                  </span>
-                  <h2 className="text-lg md:text-xl font-bold text-qit-purple mb-3 leading-snug group-hover:text-qit-coral transition-colors">
-                    {post.title}
-                  </h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <div className="flex items-center gap-3">
-                      <span className="inline-flex items-center gap-1">
-                        <Calendar className="h-3.5 w-3.5" />
-                        {new Date(post.date).toLocaleDateString("fr-FR", {
-                          day: "numeric",
-                          month: "short",
-                          year: "numeric",
-                        })}
-                      </span>
-                      <span className="inline-flex items-center gap-1">
-                        <Clock className="h-3.5 w-3.5" />
-                        {post.readTime}
-                      </span>
+                  <div className="aspect-[16/9] overflow-hidden bg-qit-beige/40">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      width={1280}
+                      height={720}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <span className="inline-block self-start text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
+                      {post.category}
+                    </span>
+                    <h2 className="text-lg md:text-xl font-bold text-qit-purple mb-3 leading-snug group-hover:text-qit-coral transition-colors">
+                      {post.title}
+                    </h2>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <div className="flex items-center gap-3">
+                        <span className="inline-flex items-center gap-1">
+                          <Calendar className="h-3.5 w-3.5" />
+                          {new Date(post.date).toLocaleDateString("fr-FR", {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}
+                        </span>
+                        <span className="inline-flex items-center gap-1">
+                          <Clock className="h-3.5 w-3.5" />
+                          {post.readTime}
+                        </span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-qit-coral group-hover:translate-x-0.5 transition-transform" />
                     </div>
-                    <ArrowRight className="h-4 w-4 text-qit-coral group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </Link>
               ))}

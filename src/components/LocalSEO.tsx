@@ -3,16 +3,16 @@ import { MapPin } from "lucide-react";
 const zones = [
   "Tain-l'Hermitage",
   "Tournon-sur-Rhône",
-  "Valence",
   "Romans-sur-Isère",
+  "Valence",
   "Saint-Vallier",
+  "Saint-Donat-sur-l'Herbasse",
   "Annonay",
   "Saint-Péray",
-  "Crozes-Hermitage",
+  "Guilherand-Granges",
   "Drôme des Collines",
-  "Ardèche verte",
+  "Ardèche Verte",
   "Vallée du Rhône",
-  "ViaRhôna",
 ];
 
 const internalLinks: { href: string; label: string }[] = [

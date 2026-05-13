@@ -201,15 +201,16 @@ const ContactCTA = () => {
     setSubmitting(false);
   };
 
-  const handleWhatsApp = () => {
+  const handleWhatsApp = async () => {
     const d = validateAll();
     if (!d) return;
     setSubmitting(true);
+    await persistRequest(d, "whatsapp");
     const text = encodeURIComponent(buildRecap(d));
     // wa.me requires the number in international format, no +, no spaces.
     const url = `https://wa.me/330601777633?text=${text}`;
     window.open(url, "_blank", "noopener,noreferrer");
-    toast.success("Votre message WhatsApp est prêt à être envoyé.");
+    toast.success("Votre demande a été enregistrée. WhatsApp est prêt à envoyer.");
     setDone(true);
     setSubmitting(false);
   };

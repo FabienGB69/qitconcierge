@@ -368,7 +368,7 @@ La Drôme-Ardèche bénéficie d'une demande étalée sur l'année : œnotourism
 
 ## Ce qui fait la différence
 
-Un bien bien équipé, des photos soignées et une annonce travaillée localement performent mieux qu'un bien mieux situé mais mal présenté.`,
+Un bien bien équipé, des photos soignées et une annonce travaillée localement performent mieux qu'un bien mieux situé mais mal présenté. Voir aussi : [logements qui louent le mieux autour de Tain-l'Hermitage](/blog/conciergerie-tain-hermitage-logements-qui-louent-le-mieux) et [obligations à connaître](/blog/obligations-location-courte-duree-drome-ardeche).`,
   },
   {
     slug: "obligations-location-courte-duree-drome-ardeche",

@@ -36,7 +36,7 @@ const Hero = () => {
           <div className="flex items-start gap-2 text-white/90 text-sm sm:text-base mb-7 sm:mb-8 max-w-2xl">
             <CheckCircle2 className="w-5 h-5 text-qit-coral mt-0.5 flex-shrink-0" />
             <p>
-              Depuis 2023 — 5 biens en gestion — Airbnb, Booking, Abritel —
+              Depuis 2023 — +30 biens en gestion — Airbnb, Booking, Abritel —
               expertise PriceLabs.
             </p>
           </div>

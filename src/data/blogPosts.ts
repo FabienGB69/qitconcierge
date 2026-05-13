@@ -321,7 +321,7 @@ Au lieu d'un prix figé toute l'année, le tarif suit la réalité du marché. C
 
 ## Notre approche
 
-Nous configurons et surveillons PriceLabs pour chaque bien que nous gérons. L'objectif n'est pas de maximiser un prix unitaire, mais d'optimiser le revenu global sur l'année.`,
+Nous configurons et surveillons PriceLabs pour chaque bien que nous gérons. L'objectif n'est pas de maximiser un prix unitaire, mais d'optimiser le revenu global sur l'année. Voir : [pourquoi PriceLabs en Drôme-Ardèche](/blog/pourquoi-utiliser-pricelabs-drome-ardeche) et [combler les trous de calendrier](/blog/trous-de-calendrier-comment-les-combler).`,
   },
   {
     slug: "trous-de-calendrier-comment-les-combler",

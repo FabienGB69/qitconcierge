@@ -107,6 +107,10 @@ const ContactCTA = () => {
   }, [step]);
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
+    if (!started) {
+      setStarted(true);
+      trackEvent("estimation_started");
+    }
     setForm((f) => ({ ...f, [key]: value }));
     setErrors((e) => ({ ...e, [key]: undefined }));
   };
@@ -130,6 +134,11 @@ const ContactCTA = () => {
         if (path) newErrors[path] = iss.message;
       });
       setErrors(newErrors);
+      trackEvent("estimation_step_error", {
+        step_index: step + 1,
+        step_name: STEPS[step].key,
+        first_error: parsed.error.issues[0]?.path[0]?.toString() ?? "unknown",
+      });
       toast.error(parsed.error.issues[0]?.message ?? "Veuillez compléter cette étape");
       return false;
     }
@@ -138,6 +147,10 @@ const ContactCTA = () => {
 
   const next = () => {
     if (!validateCurrentStep()) return;
+    trackEvent("estimation_step_completed", {
+      step_index: step + 1,
+      step_name: STEPS[step].key,
+    });
     setStep((s) => Math.min(s + 1, STEPS.length - 1));
   };
   const back = () => setStep((s) => Math.max(s - 1, 0));

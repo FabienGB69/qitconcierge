@@ -11,6 +11,11 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 );
 
 const CGV = () => {
+  useSEO({
+    title: "Conditions générales de vente — Qit Concierge",
+    description: "Conditions générales de vente des prestations de conciergerie et gestion locative courte durée Qit Concierge.",
+    path: "/cgv",
+  });
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />

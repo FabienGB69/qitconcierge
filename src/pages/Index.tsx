@@ -31,6 +31,7 @@ const Index = () => {
         <Services />
         <Difference />
         <RevenueManagement />
+        <Platforms />
         <div className="container mx-auto px-4 md:px-6 -mt-6 mb-16">
           <SectionCTA
             title="Faites analyser votre logement"

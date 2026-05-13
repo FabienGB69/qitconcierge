@@ -1,12 +1,12 @@
 import { TrendingUp, Calendar, Tag, BarChart3, Clock, Sparkles } from "lucide-react";
 
 const pillars = [
-  { icon: Tag, title: "Prix min / max", text: "Bornes de tarification cohérentes avec votre bien et votre marché." },
-  { icon: Calendar, title: "Saisonnalité & événements", text: "Profils saisonniers et ajustements lors des événements locaux." },
-  { icon: Clock, title: "Durée minimum dynamique", text: "Minimum stay adapté selon la période et le taux d'occupation." },
-  { icon: Sparkles, title: "Trous de calendrier", text: "Remises last minute et règles ciblées pour combler les vides." },
-  { icon: BarChart3, title: "Performance par plateforme", text: "Suivi Airbnb, Booking et Abritel pour ajuster en continu." },
-  { icon: TrendingUp, title: "Optimisation continue", text: "Pilotage avec PriceLabs pour améliorer le potentiel de revenus." },
+  { icon: TrendingUp, title: "Tarification dynamique", text: "Des prix ajustés en continu selon la demande, le marché et la concurrence locale." },
+  { icon: Tag, title: "Prix minimum et maximum", text: "Des bornes claires pour protéger la valeur de votre bien tout en restant compétitif." },
+  { icon: Calendar, title: "Ajustement saisonnier", text: "Profils saisonniers et événements locaux intégrés pour suivre les variations de demande." },
+  { icon: Clock, title: "Règles de durée minimum", text: "Minimum stay adapté à la période, pour équilibrer occupation et rentabilité." },
+  { icon: Sparkles, title: "Optimisation des trous de calendrier", text: "Remises last minute et règles ciblées pour limiter les nuits non réservées." },
+  { icon: BarChart3, title: "Suivi des performances", text: "Analyse régulière des résultats Airbnb, Booking et Abritel pour ajuster la stratégie." },
 ];
 
 const RevenueManagement = () => {

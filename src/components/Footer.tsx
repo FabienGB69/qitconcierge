@@ -34,6 +34,7 @@ const Footer = () => {
             href="https://pixeloria.fr"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('pixeloria_click', { location: 'footer' })}
             className="font-medium text-qit-purple hover:underline"
           >
             Pixeloria

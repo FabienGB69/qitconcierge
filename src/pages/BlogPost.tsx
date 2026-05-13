@@ -98,6 +98,38 @@ const BlogPost = () => {
       : "Article | Blog Qit Concierge",
     description: post?.excerpt ?? "Article du blog Qit Concierge.",
     path: post ? `/blog/${post.slug}` : "/blog",
+    jsonLd: post
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.excerpt,
+            url: `https://qitconcierge.fr/blog/${post.slug}`,
+            datePublished: post.date,
+            inLanguage: "fr-FR",
+            author: {
+              "@type": "Organization",
+              name: "Qit Concierge",
+              url: "https://qitconcierge.fr",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Qit Concierge",
+              url: "https://qitconcierge.fr",
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: "https://qitconcierge.fr/" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://qitconcierge.fr/blog" },
+              { "@type": "ListItem", position: 3, name: post.title, item: `https://qitconcierge.fr/blog/${post.slug}` },
+            ],
+          },
+        ]
+      : undefined,
   });
 
   if (!post) return <Navigate to="/blog" replace />;

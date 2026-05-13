@@ -5,6 +5,7 @@ import Difference from "@/components/Difference";
 import Properties from "@/components/Properties";
 import Trust from "@/components/Trust";
 import Testimonials from "@/components/Testimonials";
+import Cases from "@/components/Cases";
 import Compliance from "@/components/Compliance";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";

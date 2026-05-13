@@ -10,7 +10,7 @@ interface SEOOptions {
   jsonLd?: Array<Record<string, unknown>>;
 }
 
-const SITE_URL = "https://qitconcierge.com";
+const SITE_URL = "https://qitconcierge.fr";
 const JSONLD_FLAG = "data-seo-jsonld";
 
 const setMetaByName = (name: string, content: string) => {

@@ -14,6 +14,7 @@ import { useMemo, useState } from "react";
 import { z } from "zod";
 import { toast } from "@/components/ui/sonner";
 import { Phone, Mail, ArrowLeft, ArrowRight, Check, MessageCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 /* -------------------------------------------------------------------------- */
 /*  Schemas — one per step + a final composed schema                          */

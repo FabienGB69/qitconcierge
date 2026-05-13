@@ -11,6 +11,8 @@ import CGV from "./pages/CGV";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
 import LocalLanding from "./pages/LocalLanding";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CookieConsent from "./components/CookieConsent";
 

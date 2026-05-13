@@ -14,14 +14,14 @@ const Difference = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
           <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">
-            Notre différence
+            Méthode
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-5 md:mb-6 leading-tight">
-            Une conciergerie pilotée comme un vrai système
+            Notre méthode en 5 étapes
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            <span className="hidden sm:inline">Qit Concierge ne se limite pas à remettre des clés et organiser le ménage. Nous pilotons chaque logement avec une logique de performance : prix, calendrier, qualité voyageur, check-in, suivi ménage, automatisations, upsells et reporting.</span>
-            <span className="sm:hidden">On pilote chaque logement comme un vrai système : prix, calendrier, qualité, ménage et reporting.</span>
+            <span className="hidden sm:inline">De l'analyse de votre logement à l'optimisation continue de vos revenus : une approche claire, locale et structurée pour louer mieux sans gérer les voyageurs, le ménage, le linge ou le calendrier.</span>
+            <span className="sm:hidden">Cinq étapes claires pour louer mieux sans gérer le quotidien.</span>
           </p>
         </div>
 

@@ -47,6 +47,7 @@ const Index = () => {
             variant="dark"
           />
         </div>
+        <About />
         <Trust />
         <Testimonials />
         <Cases />

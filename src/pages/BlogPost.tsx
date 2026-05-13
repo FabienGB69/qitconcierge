@@ -241,7 +241,34 @@ const BlogPost = () => {
             </div>
           </section>
         )}
-      </main>
+
+        {relatedLandings.length > 0 && (
+          <section className="py-14 bg-white border-t border-border">
+            <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+              <h2 className="text-xl md:text-2xl font-bold text-qit-purple mb-2">
+                Conciergerie & gestion locale en Drôme-Ardèche
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain.
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {relatedLandings.map((l) => (
+                  <li key={l.href}>
+                    <Link
+                      to={l.href}
+                      className="group flex items-center justify-between rounded-xl border border-border bg-qit-beige/30 px-4 py-3 hover:border-qit-coral/40 hover:bg-qit-beige/60 transition-colors"
+                    >
+                      <span className="text-sm font-medium text-qit-purple group-hover:text-qit-coral">
+                        {l.label}
+                      </span>
+                      <span className="text-qit-coral text-lg leading-none">→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
       <Footer />
       <WhatsAppFloat />
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
+import { trackEvent } from "@/lib/analytics";
 
 const MentionsLegales = () => {
   useSEO({
@@ -44,13 +45,20 @@ const MentionsLegales = () => {
                     href="https://pixeloria.fr"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("pixeloria_click", { location: "mentions_legales_name" })}
                     className="font-medium text-qit-purple hover:underline"
                   >
                     Pixeloria
                   </a>
                 </p>
                 <p>Création & refonte de sites pour artisans, indépendants et PME</p>
-                <p>Site web : <a href="https://pixeloria.fr" target="_blank" rel="noopener noreferrer" className="text-qit-coral hover:underline">https://pixeloria.fr</a></p>
+                <p>Site web : <a
+                  href="https://pixeloria.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("pixeloria_click", { location: "mentions_legales_url" })}
+                  className="text-qit-coral hover:underline"
+                >https://pixeloria.fr</a></p>
                 <p>Email : contact@pixeloria.fr</p>
                 <p>Téléphone : 07 86 12 53 13</p>
               </div>

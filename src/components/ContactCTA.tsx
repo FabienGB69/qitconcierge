@@ -96,6 +96,15 @@ const ContactCTA = () => {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [started, setStarted] = useState(false);
+
+  // Track first interaction (form_started) and each step view.
+  useEffect(() => {
+    trackEvent("estimation_step_view", {
+      step_index: step + 1,
+      step_name: STEPS[step].key,
+    });
+  }, [step]);
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setForm((f) => ({ ...f, [key]: value }));

@@ -269,6 +269,7 @@ const BlogPost = () => {
             </div>
           </section>
         )}
+      </main>
       <Footer />
       <WhatsAppFloat />
     </div>

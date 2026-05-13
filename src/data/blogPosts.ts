@@ -128,7 +128,7 @@ Vous avez un logement en Drôme ou Ardèche ? [Demandez une estimation de revenu
 
 ## Notre rôle
 
-Nous réalisons cet audit pour chaque bien que nous prenons en gestion en Ardèche.`,
+Nous réalisons cet audit pour chaque bien que nous prenons en gestion en Ardèche. Pour aller plus loin, voyez aussi notre [checklist d'optimisation d'annonce Airbnb](/blog/annonce-airbnb-optimisation-checklist) et les [obligations à connaître en Drôme-Ardèche](/blog/obligations-location-courte-duree-drome-ardeche).`,
   },
   {
     slug: "pourquoi-utiliser-pricelabs-drome-ardeche",

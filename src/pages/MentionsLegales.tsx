@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
+import { trackEvent } from "@/lib/analytics";
 
 const MentionsLegales = () => {
   useSEO({

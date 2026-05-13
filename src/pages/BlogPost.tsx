@@ -6,10 +6,11 @@ import { useSEO } from "@/hooks/useSEO";
 import { getPostBySlug, posts } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowLeft, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
-const whatsappUrl =
-  "https://wa.me/330601777633?text=" +
-  encodeURIComponent("Bonjour, je viens de lire un article sur votre blog.");
+const whatsappUrl = buildWhatsAppUrl(
+  "Bonjour, je viens de lire un article sur votre blog."
+);
 
 const linkClass = "text-qit-coral underline underline-offset-2 hover:text-qit-coral/80";
 

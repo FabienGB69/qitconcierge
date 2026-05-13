@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section>

@@ -16,6 +16,7 @@ import RevenueManagement from "@/components/RevenueManagement";
 import Platforms from "@/components/Platforms";
 import About from "@/components/About";
 import BlogTeaser from "@/components/BlogTeaser";
+import Pricing from "@/components/Pricing";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 

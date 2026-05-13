@@ -9,10 +9,10 @@ const Hero = () => {
       className="relative min-h-[100svh] w-full bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')",
+          "url('https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-qit-purple/85 via-qit-purple/70 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-qit-purple/75 via-qit-purple/55 to-black/65" />
 
       <div className="relative container mx-auto h-full flex flex-col justify-center px-4 sm:px-6 pt-24 pb-16 md:py-32">
         <div className="max-w-3xl animate-fade-in">

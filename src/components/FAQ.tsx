@@ -9,44 +9,64 @@ import { MessageCircle } from "lucide-react";
 
 const faqs = [
   {
-    q: "Combien puis-je gagner avec mon logement en courte durée ?",
-    a: "Les revenus dépendent de la ville, de la saison, du type de logement et de sa capacité. Nous établissons une estimation basée sur les données du marché local, le taux d'occupation réaliste et un prix moyen ajusté par période. L'objectif : une projection prudente plutôt qu'une promesse.",
+    q: "Qu'est-ce que Qit Concierge prend en charge ?",
+    a: "Qit Concierge peut prendre en charge la gestion complète de votre location courte durée : mise en ligne ou optimisation de l'annonce, gestion Airbnb, Booking et Abritel, communication voyageurs, instructions d'arrivée, ménage, linge, suivi qualité, calendrier et optimisation des prix.",
   },
   {
-    q: "Est-ce que Qit Concierge s'occupe de créer mon annonce Airbnb ou Booking ?",
-    a: "Oui. Nous prenons en charge la création des annonces sur les plateformes pertinentes (Airbnb, Booking, Abritel…), le descriptif, les photos lorsque c'est nécessaire, le paramétrage du calendrier, des prix et des règles de réservation.",
+    q: "Dans quelles zones intervenez-vous ?",
+    a: "Nous intervenons principalement en Drôme-Ardèche, dans un rayon d'environ 1h autour de Tain-l'Hermitage : Tournon-sur-Rhône, Romans-sur-Isère, Valence, Saint-Vallier, Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, Drôme des Collines, Ardèche Verte et Vallée du Rhône.",
   },
   {
-    q: "Qui gère le ménage et le linge ?",
-    a: "Nous coordonnons le ménage et la fourniture du linge entre chaque séjour. Les frais de ménage sont en général facturés au voyageur ; selon la stratégie choisie, ils peuvent être intégrés au tarif. Un contrôle qualité est effectué après chaque départ.",
+    q: "Travaillez-vous uniquement avec des logements haut de gamme ?",
+    a: "Non. Qit Concierge accompagne des biens adaptés à la location courte durée : maisons de campagne, gîtes, appartements, résidences secondaires et logements touristiques bien situés. Le plus important est le potentiel du logement, sa localisation, son niveau d'équipement et la qualité de l'expérience proposée aux voyageurs.",
   },
   {
-    q: "Comment sont gérés les voyageurs problématiques ?",
-    a: "Sélection en amont (vérification des profils, communication, règlement intérieur), dépôt de garantie selon la plateforme, suivi pendant le séjour et contrôle complet du logement après le départ. En cas d'incident, nous gérons les démarches auprès de la plateforme.",
+    q: "Combien de biens gérez-vous actuellement ?",
+    a: "Qit Concierge gère actuellement 5 biens. Nous assumons une approche à taille humaine afin de garder un suivi précis, réactif et personnalisé pour chaque propriétaire.",
   },
   {
-    q: "Puis-je bloquer des dates pour utiliser mon logement ?",
-    a: "Oui, à tout moment. Vous nous indiquez vos périodes d'utilisation personnelle et nous bloquons le calendrier sur l'ensemble des plateformes. Le logement reste le vôtre.",
+    q: "Depuis quand existe la conciergerie ?",
+    a: "Qit Concierge existe depuis 2023. La conciergerie s'est construite autour d'une expérience terrain en location courte durée, en gestion opérationnelle et en revenue management.",
   },
   {
-    q: "Est-ce que vous optimisez les prix selon la saison ?",
-    a: "Oui. Les tarifs sont ajustés en fonction de la saison, des événements locaux, du taux d'occupation, de la concurrence et des contraintes spécifiques du logement. Les ajustements sont réguliers, pas figés sur l'année.",
+    q: "Utilisez-vous PriceLabs ?",
+    a: "Oui. Qit Concierge utilise PriceLabs pour piloter la tarification dynamique, ajuster les prix selon la saison, les événements, la demande, les durées de séjour et les périodes creuses.",
   },
   {
-    q: "Est-ce que vous m'aidez à vérifier les obligations réglementaires ?",
-    a: "Nous vous orientons sur les principales obligations applicables à la location courte durée : déclaration en mairie, numéro d'enregistrement, taxe de séjour, assurance. Nous ne nous substituons pas à un conseil juridique mais nous vous aidons à savoir où regarder.",
+    q: "Sur quelles plateformes travaillez-vous ?",
+    a: "Nous travaillons avec Airbnb, Booking et Abritel. Selon le type de logement, nous adaptons la stratégie de diffusion pour améliorer la visibilité et éviter de dépendre d'une seule plateforme.",
   },
   {
-    q: "Quels logements acceptez-vous ?",
-    a: "Nous gérons des appartements, maisons, gîtes et résidences secondaires en Drôme-Ardèche, principalement. Avant tout engagement, nous évaluons le potentiel du logement et la cohérence avec notre approche.",
+    q: "Est-ce que vous pouvez optimiser une annonce déjà existante ?",
+    a: "Oui. Nous pouvons analyser une annonce existante, retravailler le titre, les photos, la description, les équipements, les paramètres de réservation, les prix et les règles de séjour.",
   },
   {
-    q: "Quels sont les frais de gestion ?",
-    a: "Les frais dépendent du périmètre confié (gestion complète, gestion partielle, lancement). Nous les présentons clairement dans la proposition envoyée après l'estimation, sans frais cachés.",
+    q: "Est-ce que vous gérez les maisons et les gîtes ?",
+    a: "Oui. Les maisons de campagne, gîtes et résidences secondaires sont particulièrement adaptés à notre positionnement en Drôme-Ardèche, notamment lorsqu'ils sont bien équipés et situés dans une zone touristique ou de passage.",
+  },
+  {
+    q: "Comment estimez-vous le potentiel de revenus d'un logement ?",
+    a: "Nous analysons la localisation, la capacité d'accueil, la qualité du logement, la saisonnalité, les plateformes adaptées, les prix du marché, les événements locaux et les règles de séjour possibles. L'objectif est de construire une estimation réaliste, pas une promesse artificielle.",
+  },
+  {
+    q: "Qui s'occupe du ménage et du linge ?",
+    a: "Qit Concierge organise le ménage, le linge et le suivi qualité entre les séjours. L'objectif est d'assurer une expérience propre, fluide et fiable pour les voyageurs.",
+  },
+  {
+    q: "Comment sont gérés les voyageurs ?",
+    a: "Nous gérons les échanges avant, pendant et après le séjour : instructions d'arrivée, réponses aux questions, demandes spécifiques, rappels importants et suivi en cas d'imprévu.",
+  },
+  {
+    q: "Puis-je continuer à utiliser mon logement ?",
+    a: "Oui. Le calendrier peut être bloqué selon vos besoins personnels. L'objectif est d'adapter la gestion à votre usage du bien.",
+  },
+  {
+    q: "Est-ce que vous accompagnez sur les obligations réglementaires ?",
+    a: "Nous aidons les propriétaires à identifier les points de vigilance : déclaration en mairie, numéro d'enregistrement si applicable, règlement de copropriété, fiscalité, DPE et règles locales. Cet accompagnement ne remplace pas un conseil juridique ou fiscal.",
   },
   {
     q: "Comment démarrer avec Qit Concierge ?",
-    a: "Vous remplissez le formulaire d'estimation. Nous revenons vers vous sous 24h ouvrées avec une première analyse. Si l'approche vous convient, nous planifions un échange, validons le périmètre et lançons la mise en ligne.",
+    a: "Il suffit de demander une estimation. Nous analysons votre logement, sa localisation, son potentiel, vos objectifs, puis nous vous proposons une stratégie adaptée.",
   },
 ];
 

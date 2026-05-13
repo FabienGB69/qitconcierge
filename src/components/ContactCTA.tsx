@@ -16,6 +16,7 @@ import { toast } from "@/components/ui/sonner";
 import { Phone, Mail, ArrowLeft, ArrowRight, Check, MessageCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
+import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 /* -------------------------------------------------------------------------- */
 /*  Schemas — one per step + a final composed schema                          */

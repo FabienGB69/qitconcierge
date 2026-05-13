@@ -35,20 +35,25 @@ const LocalSEO = () => {
     <section className="py-14 md:py-20 bg-qit-beige/50 border-t border-border">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <h2 className="text-2xl md:text-3xl font-bold text-qit-purple mb-6 leading-tight">
-          Conciergerie Airbnb et location courte durée en Drôme-Ardèche
+          Conciergerie courte durée autour de Tain-l'Hermitage, en Drôme-Ardèche
         </h2>
         <p className="text-base text-muted-foreground leading-relaxed mb-6">
-          Qit Concierge accompagne les propriétaires de maisons de campagne, gîtes,
-          appartements et résidences secondaires en Drôme-Ardèche, à moins d'1h de
-          Tain-l'Hermitage. Une conciergerie locale pensée pour les villages
-          touristiques, les zones rurales, les bords de la ViaRhôna, les vignobles
-          de l'Hermitage et de Crozes-Hermitage, l'Ardèche verte, la Drôme des
-          Collines et la vallée du Rhône.
+          Qit Concierge accompagne les propriétaires de maisons, gîtes,
+          appartements et résidences secondaires situés en Drôme-Ardèche, dans
+          un rayon d'environ 1h autour de Tain-l'Hermitage. Nous intervenons
+          sur les secteurs de Tain-l'Hermitage, Tournon-sur-Rhône,
+          Romans-sur-Isère, Valence, Saint-Vallier,
+          Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray,
+          Guilherand-Granges, Drôme des Collines, Ardèche Verte et Vallée du
+          Rhône.
         </p>
         <p className="text-base text-muted-foreground leading-relaxed mb-8">
-          Optimisation Airbnb, Booking et Abritel, revenue management avec
-          PriceLabs, ménage, linge, check-in et accompagnement humain et terrain —
-          pensé pour les propriétaires non disponibles sur place.
+          Conciergerie Airbnb Drôme et conciergerie Airbnb Ardèche : gestion
+          location courte durée Drôme-Ardèche, gestion Booking Drôme, gestion
+          Abritel Ardèche, gestion de gîte en Drôme-Ardèche, ménage, linge,
+          accueil voyageurs et revenue management location courte durée avec
+          PriceLabs — un accompagnement humain et terrain pensé pour les
+          propriétaires non disponibles sur place.
         </p>
 
         <h3 className="text-sm uppercase tracking-widest text-qit-coral font-semibold mb-4">

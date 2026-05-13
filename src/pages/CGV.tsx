@@ -36,8 +36,7 @@ const CGV = () => {
               </p>
               <p>
                 Qit Concierge intervient principalement auprès de propriétaires de maisons, gîtes, appartements,
-                logements touristiques et résidences secondaires situés en Drôme-Ardèche, notamment dans un rayon
-                d'environ 1h autour de Tain-l'Hermitage.
+                logements touristiques et résidences secondaires situés en Drôme-Ardèche.
               </p>
             </Section>
 
@@ -77,8 +76,7 @@ const CGV = () => {
 
             <Section title="4. Zone d'intervention">
               <p>
-                Qit Concierge intervient principalement en Drôme-Ardèche, dans un rayon d'environ 1h autour de
-                Tain-l'Hermitage.
+                Qit Concierge intervient principalement en Drôme-Ardèche, dans les départements de la Drôme et de l'Ardèche.
               </p>
               <p>
                 Toute demande située en dehors de cette zone pourra faire l'objet d'une étude spécifique et d'une
@@ -321,6 +319,19 @@ const CGV = () => {
               <p>À défaut d'accord amiable, le litige sera porté devant les juridictions compétentes.</p>
             </Section>
           </div>
+        </div>
+        <div className="max-w-3xl mx-auto mt-12 pt-8 border-t border-border flex flex-col sm:flex-row gap-4 items-center justify-between text-sm text-muted-foreground">
+          <a href="/" className="text-qit-purple hover:text-qit-coral font-medium transition-colors">
+            ← Retour à l'accueil
+          </a>
+          <a
+            href="https://wa.me/33601777633"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-qit-coral text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-qit-coral/90 transition-colors"
+          >
+            Une question ? Écrivez-nous sur WhatsApp
+          </a>
         </div>
       </main>
       <Footer />

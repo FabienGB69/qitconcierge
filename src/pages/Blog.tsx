@@ -160,6 +160,13 @@ const Blog = () => {
                 Aucun article dans cette catégorie pour le moment.
               </p>
             )}
+            <div className="mt-16 pt-8 border-t border-border">
+              <SectionCTA
+                title="Vous êtes propriétaire en Drôme-Ardèche ?"
+                subtitle="Demandez une estimation gratuite de vos revenus potentiels en location courte durée — sans engagement."
+                variant="dark"
+              />
+            </div>
           </div>
         </section>
       </main>

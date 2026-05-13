@@ -39,6 +39,23 @@ const CookieConsent = () => {
     } catch {
       setVisible(true);
     }
+
+    const handleOpen = () => {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const parsed: Consent = JSON.parse(stored);
+          setAnalytics(!!parsed.analytics);
+          setMarketing(!!parsed.marketing);
+        }
+      } catch {
+        /* ignore */
+      }
+      setVisible(false);
+      setSettingsOpen(true);
+    };
+    window.addEventListener("open-cookie-settings", handleOpen);
+    return () => window.removeEventListener("open-cookie-settings", handleOpen);
   }, []);
 
   const save = (consent: Omit<Consent, "date" | "necessary">) => {

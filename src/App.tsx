@@ -30,40 +30,40 @@ const App = () => (
           <Route path="/cgv" element={<CGV />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/conciergerie-airbnb-lyon" element={
+          <Route path="/conciergerie-airbnb-tain-hermitage" element={
             <LocalLanding
-              slug="conciergerie-airbnb-lyon"
-              title="Conciergerie Airbnb à Lyon | Qit Concierge"
-              metaDescription="Conciergerie Airbnb à Lyon : gestion complète de votre location courte durée, ménage, check-in, optimisation des revenus et assistance voyageurs."
-              h1="Conciergerie Airbnb à Lyon"
-              intro="Qit Concierge gère votre logement Airbnb à Lyon de A à Z : mise en ligne, pricing dynamique, communication voyageurs, ménage, linge, check-in et suivi qualité."
+              slug="conciergerie-airbnb-tain-hermitage"
+              title="Conciergerie Airbnb à Tain-l'Hermitage | Qit Concierge"
+              metaDescription="Conciergerie Airbnb à Tain-l'Hermitage : gestion locale de votre maison, gîte ou résidence secondaire, revenue management PriceLabs, ménage et check-in."
+              h1="Conciergerie Airbnb à Tain-l'Hermitage"
+              intro="Qit Concierge gère votre logement courte durée à Tain-l'Hermitage et alentours : optimisation Airbnb, Booking et Abritel, revenue management avec PriceLabs, ménage, linge, check-in et accompagnement humain et terrain."
             />
           } />
-          <Route path="/conciergerie-airbnb-oullins" element={
+          <Route path="/conciergerie-airbnb-tournon" element={
             <LocalLanding
-              slug="conciergerie-airbnb-oullins"
-              title="Conciergerie Airbnb à Oullins | Qit Concierge"
-              metaDescription="Conciergerie Airbnb à Oullins : gestion locative courte durée, ménage, linge, check-in et optimisation des revenus pour votre logement."
-              h1="Conciergerie Airbnb à Oullins"
-              intro="Qit Concierge accompagne les propriétaires d'Oullins dans la gestion complète de leur location courte durée : annonces, voyageurs, ménage et performance."
+              slug="conciergerie-airbnb-tournon"
+              title="Conciergerie Airbnb à Tournon-sur-Rhône | Qit Concierge"
+              metaDescription="Conciergerie Airbnb à Tournon-sur-Rhône : gestion courte durée locale, revenue management PriceLabs, ménage, check-in et suivi qualité."
+              h1="Conciergerie Airbnb à Tournon-sur-Rhône"
+              intro="Qit Concierge accompagne les propriétaires de Tournon-sur-Rhône dans la gestion de leur location courte durée : annonces Airbnb / Booking / Abritel, pricing PriceLabs, ménage et accompagnement humain."
             />
           } />
-          <Route path="/gestion-location-courte-duree-lyon" element={
+          <Route path="/conciergerie-airbnb-valence" element={
             <LocalLanding
-              slug="gestion-location-courte-duree-lyon"
-              title="Gestion Location Courte Durée à Lyon | Qit Concierge"
-              metaDescription="Gestion de location courte durée à Lyon : pricing, communication voyageurs, ménage, linge, check-in, suivi qualité et reporting transparent."
-              h1="Gestion de location courte durée à Lyon"
-              intro="Une gestion complète et pilotée pour votre location courte durée à Lyon : optimisation des revenus, expérience voyageur soignée et suivi transparent."
+              slug="conciergerie-airbnb-valence"
+              title="Conciergerie Airbnb à Valence | Qit Concierge"
+              metaDescription="Conciergerie Airbnb à Valence : gestion courte durée d'appartements et résidences secondaires, revenue management PriceLabs, ménage et check-in."
+              h1="Conciergerie Airbnb à Valence"
+              intro="Qit Concierge gère votre appartement, maison ou résidence secondaire à Valence : optimisation Airbnb, Booking et Abritel, revenue management avec PriceLabs, ménage et suivi qualité."
             />
           } />
-          <Route path="/conciergerie-booking-lyon" element={
+          <Route path="/gestion-location-courte-duree-drome-ardeche" element={
             <LocalLanding
-              slug="conciergerie-booking-lyon"
-              title="Conciergerie Booking à Lyon | Qit Concierge"
-              metaDescription="Conciergerie Booking à Lyon : gestion multi-plateformes de votre logement, optimisation des revenus, ménage et assistance voyageurs."
-              h1="Conciergerie Booking à Lyon"
-              intro="Qit Concierge gère votre logement sur Booking et les autres plateformes à Lyon : annonces, calendrier, voyageurs, ménage et performance."
+              slug="gestion-location-courte-duree-drome-ardeche"
+              title="Gestion Location Courte Durée en Drôme-Ardèche | Qit Concierge"
+              metaDescription="Gestion locative courte durée en Drôme-Ardèche : revenue management PriceLabs, optimisation Airbnb / Booking / Abritel, ménage, check-in, accompagnement humain."
+              h1="Gestion de location courte durée en Drôme-Ardèche"
+              intro="Une gestion locale et pilotée pour vos maisons de campagne, gîtes, appartements et résidences secondaires en Drôme-Ardèche : meilleure rentabilité, sans gestion quotidienne."
             />
           } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

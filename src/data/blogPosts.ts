@@ -212,7 +212,7 @@ Vignobles de l'Hermitage et de Crozes-Hermitage, ViaRhôna, vallée du Rhône, g
 
 ## Notre rôle
 
-Nous accompagnons les propriétaires de ce bassin avec une stratégie adaptée à chaque typologie de bien.`,
+Nous accompagnons les propriétaires de ce bassin avec une stratégie adaptée à chaque typologie de bien. Voir aussi : [les zones qui marchent en Drôme-Ardèche](/blog/louer-en-courte-duree-drome-ardeche) et [pourquoi utiliser PriceLabs ici](/blog/pourquoi-utiliser-pricelabs-drome-ardeche).`,
   },
   {
     slug: "location-courte-duree-zone-rurale-erreurs",

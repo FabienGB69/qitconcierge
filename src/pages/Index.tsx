@@ -7,6 +7,7 @@ import Trust from "@/components/Trust";
 import Testimonials from "@/components/Testimonials";
 import Cases from "@/components/Cases";
 import Compliance from "@/components/Compliance";
+import FAQ from "@/components/FAQ";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 import LocalSEO from "@/components/LocalSEO";

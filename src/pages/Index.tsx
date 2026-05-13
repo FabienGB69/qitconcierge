@@ -14,6 +14,7 @@ import LocalSEO from "@/components/LocalSEO";
 import SectionCTA from "@/components/SectionCTA";
 import RevenueManagement from "@/components/RevenueManagement";
 import Platforms from "@/components/Platforms";
+import About from "@/components/About";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -46,6 +47,7 @@ const Index = () => {
             variant="dark"
           />
         </div>
+        <About />
         <Trust />
         <Testimonials />
         <Cases />

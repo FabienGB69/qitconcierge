@@ -105,6 +105,28 @@ const BlogPost = () => {
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3);
 
+  const landingsByCategory: Record<string, { href: string; label: string }[]> = {
+    "Drôme-Ardèche": [
+      { href: "/conciergerie-airbnb-drome", label: "Conciergerie Airbnb Drôme" },
+      { href: "/conciergerie-airbnb-ardeche", label: "Conciergerie Airbnb Ardèche" },
+      { href: "/conciergerie-airbnb-tain-hermitage", label: "Conciergerie Tain-l'Hermitage" },
+      { href: "/gestion-location-courte-duree-drome-ardeche", label: "Gestion courte durée Drôme-Ardèche" },
+    ],
+    "Revenue management": [
+      { href: "/revenue-management-airbnb-drome-ardeche", label: "Revenue management PriceLabs" },
+      { href: "/gestion-booking-abritel-drome-ardeche", label: "Gestion Booking & Abritel" },
+      { href: "/gestion-location-courte-duree-drome-ardeche", label: "Gestion courte durée Drôme-Ardèche" },
+      { href: "/conciergerie-airbnb-drome", label: "Conciergerie Airbnb Drôme" },
+    ],
+    "Conseils propriétaires": [
+      { href: "/conciergerie-residence-secondaire-drome-ardeche", label: "Résidence secondaire Drôme-Ardèche" },
+      { href: "/gestion-gite-drome", label: "Gestion de gîte Drôme" },
+      { href: "/gestion-gite-ardeche", label: "Gestion de gîte Ardèche" },
+      { href: "/conciergerie-airbnb-valence", label: "Conciergerie Valence" },
+    ],
+  };
+  const relatedLandings = landingsByCategory[post.category] ?? [];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -216,6 +238,34 @@ const BlogPost = () => {
                   </Link>
                 ))}
               </div>
+            </div>
+          </section>
+        )}
+
+        {relatedLandings.length > 0 && (
+          <section className="py-14 bg-white border-t border-border">
+            <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+              <h2 className="text-xl md:text-2xl font-bold text-qit-purple mb-2">
+                Conciergerie & gestion locale en Drôme-Ardèche
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain.
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {relatedLandings.map((l) => (
+                  <li key={l.href}>
+                    <Link
+                      to={l.href}
+                      className="group flex items-center justify-between rounded-xl border border-border bg-qit-beige/30 px-4 py-3 hover:border-qit-coral/40 hover:bg-qit-beige/60 transition-colors"
+                    >
+                      <span className="text-sm font-medium text-qit-purple group-hover:text-qit-coral">
+                        {l.label}
+                      </span>
+                      <span className="text-qit-coral text-lg leading-none">→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
         )}

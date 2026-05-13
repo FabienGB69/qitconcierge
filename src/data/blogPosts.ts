@@ -241,7 +241,7 @@ Audit photo, réécriture du titre et de la description, mise à jour des équip
 
 ## Notre rôle
 
-Nous réalisons ce travail systématiquement sur chaque bien que nous prenons en gestion.`,
+Nous réalisons ce travail systématiquement sur chaque bien que nous prenons en gestion. Voir notre [checklist d'optimisation d'annonce Airbnb](/blog/annonce-airbnb-optimisation-checklist) pour aller plus loin.`,
   },
   {
     slug: "louer-residence-secondaire-courte-duree",

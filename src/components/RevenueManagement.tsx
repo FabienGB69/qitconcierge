@@ -29,7 +29,7 @@ const RevenueManagement = () => {
             plateforme.
           </p>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Nous travaillons avec <span className="font-semibold text-qit-purple">PriceLabs</span> pour
+            Nous utilisons <span className="font-semibold text-qit-purple">PriceLabs</span> pour
             ajuster les prix et améliorer le potentiel de revenus sur Airbnb,
             Booking et Abritel.
           </p>

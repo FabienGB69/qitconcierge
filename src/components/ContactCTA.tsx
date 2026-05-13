@@ -252,7 +252,7 @@ const ContactCTA = () => {
     });
     const text = encodeURIComponent(buildRecap(d));
     // wa.me requires the number in international format, no +, no spaces.
-    const url = `https://wa.me/330601777633?text=${text}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
     window.open(url, "_blank", "noopener,noreferrer");
     toast.success("Votre demande a été enregistrée. WhatsApp est prêt à envoyer.");
     setDone(true);

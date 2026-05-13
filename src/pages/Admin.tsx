@@ -10,6 +10,8 @@ import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Plus, Pencil, Trash2, LogOut, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import EstimationRequestsAdmin from "@/components/admin/EstimationRequestsAdmin";
 
 const PropertyForm = ({ 
   property, 
@@ -242,98 +244,111 @@ const Admin = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold">Mes propriétés</h2>
-          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-            <DialogTrigger asChild>
-              <Button onClick={openCreateDialog}>
-                <Plus className="w-4 h-4 mr-2" />
-                Ajouter une propriété
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-              <DialogHeader>
-                <DialogTitle>
-                  {editingProperty ? "Modifier la propriété" : "Nouvelle propriété"}
-                </DialogTitle>
-              </DialogHeader>
-              <PropertyForm
-                property={editingProperty}
-                onSubmit={editingProperty ? handleUpdate : handleCreate}
-                onClose={() => setIsDialogOpen(false)}
-              />
-            </DialogContent>
-          </Dialog>
-        </div>
+        <Tabs defaultValue="properties" className="space-y-6">
+          <TabsList>
+            <TabsTrigger value="properties">Propriétés</TabsTrigger>
+            <TabsTrigger value="requests">Demandes d'estimation</TabsTrigger>
+          </TabsList>
 
-        {properties?.length === 0 ? (
-          <Card>
-            <CardContent className="py-12 text-center">
-              <p className="text-muted-foreground mb-4">Aucune propriété pour le moment</p>
-              <Button onClick={openCreateDialog}>
-                <Plus className="w-4 h-4 mr-2" />
-                Ajouter votre première propriété
-              </Button>
-            </CardContent>
-          </Card>
-        ) : (
-          <div className="grid gap-4">
-            {properties?.map((property) => (
-              <Card key={property.id}>
-                <CardContent className="p-4">
-                  <div className="flex items-start gap-4">
-                    {property.image_url && (
-                      <img
-                        src={property.image_url}
-                        alt={property.title}
-                        className="w-24 h-24 object-cover rounded"
-                      />
-                    )}
-                    <div className="flex-1">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <h3 className="font-semibold">{property.title}</h3>
-                          <p className="text-sm text-muted-foreground">{property.location}</p>
-                          <p className="text-sm mt-1">
-                            {property.guests} voyageurs · {property.bedrooms} chambres · {property.bathrooms} SdB
-                          </p>
-                          <div className="flex gap-2 mt-2">
-                            {property.airbnb_url && (
-                              <a href={property.airbnb_url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">
-                                Airbnb
-                              </a>
-                            )}
-                            {property.booking_url && (
-                              <a href={property.booking_url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">
-                                Booking
-                              </a>
-                            )}
-                            {property.other_platform_url && (
-                              <a href={property.other_platform_url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">
-                                {property.other_platform_name || "Autre"}
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className={`text-xs px-2 py-1 rounded ${property.is_active ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"}`}>
-                            {property.is_active ? "Actif" : "Masqué"}
-                          </span>
-                          <Button variant="ghost" size="icon" onClick={() => openEditDialog(property)}>
-                            <Pencil className="w-4 h-4" />
-                          </Button>
-                          <Button variant="ghost" size="icon" onClick={() => handleDelete(property.id)}>
-                            <Trash2 className="w-4 h-4 text-destructive" />
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <TabsContent value="properties" className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold">Mes propriétés</h2>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button onClick={openCreateDialog}>
+                    <Plus className="w-4 h-4 mr-2" />
+                    Ajouter une propriété
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle>
+                      {editingProperty ? "Modifier la propriété" : "Nouvelle propriété"}
+                    </DialogTitle>
+                  </DialogHeader>
+                  <PropertyForm
+                    property={editingProperty}
+                    onSubmit={editingProperty ? handleUpdate : handleCreate}
+                    onClose={() => setIsDialogOpen(false)}
+                  />
+                </DialogContent>
+              </Dialog>
+            </div>
+
+            {properties?.length === 0 ? (
+              <Card>
+                <CardContent className="py-12 text-center">
+                  <p className="text-muted-foreground mb-4">Aucune propriété pour le moment</p>
+                  <Button onClick={openCreateDialog}>
+                    <Plus className="w-4 h-4 mr-2" />
+                    Ajouter votre première propriété
+                  </Button>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        )}
+            ) : (
+              <div className="grid gap-4">
+                {properties?.map((property) => (
+                  <Card key={property.id}>
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-4">
+                        {property.image_url && (
+                          <img
+                            src={property.image_url}
+                            alt={property.title}
+                            className="w-24 h-24 object-cover rounded"
+                          />
+                        )}
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h3 className="font-semibold">{property.title}</h3>
+                              <p className="text-sm text-muted-foreground">{property.location}</p>
+                              <p className="text-sm mt-1">
+                                {property.guests} voyageurs · {property.bedrooms} chambres · {property.bathrooms} SdB
+                              </p>
+                              <div className="flex gap-2 mt-2">
+                                {property.airbnb_url && (
+                                  <a href={property.airbnb_url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">
+                                    Airbnb
+                                  </a>
+                                )}
+                                {property.booking_url && (
+                                  <a href={property.booking_url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">
+                                    Booking
+                                  </a>
+                                )}
+                                {property.other_platform_url && (
+                                  <a href={property.other_platform_url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline">
+                                    {property.other_platform_name || "Autre"}
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className={`text-xs px-2 py-1 rounded ${property.is_active ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"}`}>
+                                {property.is_active ? "Actif" : "Masqué"}
+                              </span>
+                              <Button variant="ghost" size="icon" onClick={() => openEditDialog(property)}>
+                                <Pencil className="w-4 h-4" />
+                              </Button>
+                              <Button variant="ghost" size="icon" onClick={() => handleDelete(property.id)}>
+                                <Trash2 className="w-4 h-4 text-destructive" />
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </TabsContent>
+
+          <TabsContent value="requests">
+            <EstimationRequestsAdmin />
+          </TabsContent>
+        </Tabs>
       </main>
     </div>
   );

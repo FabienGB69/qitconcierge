@@ -183,7 +183,7 @@ Ne pas dépendre d'une seule plateforme. La combinaison Airbnb + Booking + Abrit
 
 ## Notre rôle
 
-Nous choisissons les plateformes adaptées à chaque bien et synchronisons les annonces et les prix.`,
+Nous choisissons les plateformes adaptées à chaque bien et synchronisons les annonces et les prix. Lire aussi : [bien choisir sa conciergerie Airbnb en Drôme](/blog/conciergerie-airbnb-drome-choisir-prestataire).`,
   },
   {
     slug: "conciergerie-tain-hermitage-logements-qui-louent-le-mieux",

@@ -50,13 +50,13 @@ Demandez concrètement comment ces étapes sont organisées : qui intervient, à
 
 C'est sans doute le critère le plus sous-estimé. Un prix figé sur l'année passe à côté d'une part importante du revenu potentiel.
 
-Une bonne conciergerie pratique le revenue management location courte durée : prix minimum et maximum, ajustement saisonnier, événements locaux, durée minimum dynamique, optimisation des trous de calendrier et remises last minute ciblées.
+Une bonne conciergerie pratique le [revenue management location courte durée](/blog/pricelabs-comment-ca-marche) : prix minimum et maximum, ajustement saisonnier, événements locaux, durée minimum dynamique, [optimisation des trous de calendrier](/blog/trous-de-calendrier-comment-les-combler) et remises last minute ciblées.
 
-Chez Qit Concierge, nous utilisons PriceLabs pour piloter la tarification dynamique sur Airbnb, Booking et Abritel, avec des règles propres à chaque bien et à chaque zone.
+Chez Qit Concierge, nous utilisons [PriceLabs](/blog/pourquoi-utiliser-pricelabs-drome-ardeche) pour piloter la tarification dynamique sur Airbnb, Booking et Abritel, avec des règles propres à chaque bien et à chaque zone.
 
 ## 4. Vérifier les plateformes utilisées : Airbnb, Booking, Abritel
 
-Dépendre d'une seule plateforme est un risque. Selon le type de bien et la cible visée, il est souvent pertinent de diffuser sur plusieurs canaux :
+Dépendre d'une seule plateforme est un risque. Selon le type de bien et la cible visée, il est souvent pertinent de [diffuser sur plusieurs canaux](/blog/airbnb-booking-abritel-quelle-plateforme-choisir) :
 
 - Airbnb pour les courts séjours, week-ends, couples et familles ;
 - Booking pour une clientèle plus large, mobile, internationale ou en déplacement ;
@@ -91,13 +91,13 @@ Qit Concierge est une conciergerie locale, créée en 2023, qui accompagne aujou
 
 Notre approche est volontairement sélective : moins de biens, mieux suivis. L'objectif n'est pas de gérer un volume, mais de garantir à chaque propriétaire une meilleure disponibilité, un suivi précis et un accompagnement humain et terrain.
 
-Nous intervenons à Tain-l'Hermitage, Tournon-sur-Rhône, Romans-sur-Isère, Valence, Saint-Vallier, Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, Drôme des Collines, Ardèche Verte et vallée du Rhône.
+Nous intervenons à [Tain-l'Hermitage](/blog/conciergerie-tain-hermitage-logements-qui-louent-le-mieux), Tournon-sur-Rhône, Romans-sur-Isère, Valence, Saint-Vallier, Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, [Drôme des Collines, Ardèche Verte et vallée du Rhône](/blog/louer-en-courte-duree-drome-ardeche).
 
 ## En résumé
 
 Bien choisir sa conciergerie Airbnb en Drôme, c'est vérifier l'ancrage local, la qualité opérationnelle, la maîtrise des prix, la diversification des plateformes, le suivi propriétaire et la sincérité des engagements pris.
 
-Vous avez un logement en Drôme ou Ardèche ? Demandez une estimation de revenus avec Qit Concierge.`,
+Vous avez un logement en Drôme ou Ardèche ? [Demandez une estimation de revenus](/#contact) avec Qit Concierge.`,
   },
   {
     slug: "louer-maison-campagne-ardeche-points-a-verifier",
@@ -128,7 +128,7 @@ Vous avez un logement en Drôme ou Ardèche ? Demandez une estimation de revenus
 
 ## Notre rôle
 
-Nous réalisons cet audit pour chaque bien que nous prenons en gestion en Ardèche.`,
+Nous réalisons cet audit pour chaque bien que nous prenons en gestion en Ardèche. Pour aller plus loin, voyez aussi notre [checklist d'optimisation d'annonce Airbnb](/blog/annonce-airbnb-optimisation-checklist) et les [obligations à connaître en Drôme-Ardèche](/blog/obligations-location-courte-duree-drome-ardeche).`,
   },
   {
     slug: "pourquoi-utiliser-pricelabs-drome-ardeche",
@@ -155,7 +155,7 @@ PriceLabs ne remplace pas l'analyse humaine. C'est un outil que nous configurons
 
 ## Notre pratique
 
-Chaque bien géré par Qit Concierge est paramétré dans PriceLabs avec des règles propres à sa zone, sa typologie et sa saisonnalité.`,
+Chaque bien géré par Qit Concierge est paramétré dans PriceLabs avec des règles propres à sa zone, sa typologie et sa saisonnalité. Voir aussi : [comment combler les trous de calendrier](/blog/trous-de-calendrier-comment-les-combler) et [comment fonctionne la tarification dynamique](/blog/pricelabs-comment-ca-marche).`,
   },
   {
     slug: "airbnb-booking-abritel-quelle-plateforme-choisir",
@@ -183,7 +183,7 @@ Ne pas dépendre d'une seule plateforme. La combinaison Airbnb + Booking + Abrit
 
 ## Notre rôle
 
-Nous choisissons les plateformes adaptées à chaque bien et synchronisons les annonces et les prix.`,
+Nous choisissons les plateformes adaptées à chaque bien et synchronisons les annonces et les prix. Lire aussi : [bien choisir sa conciergerie Airbnb en Drôme](/blog/conciergerie-airbnb-drome-choisir-prestataire).`,
   },
   {
     slug: "conciergerie-tain-hermitage-logements-qui-louent-le-mieux",
@@ -212,7 +212,7 @@ Vignobles de l'Hermitage et de Crozes-Hermitage, ViaRhôna, vallée du Rhône, g
 
 ## Notre rôle
 
-Nous accompagnons les propriétaires de ce bassin avec une stratégie adaptée à chaque typologie de bien.`,
+Nous accompagnons les propriétaires de ce bassin avec une stratégie adaptée à chaque typologie de bien. Voir aussi : [les zones qui marchent en Drôme-Ardèche](/blog/louer-en-courte-duree-drome-ardeche) et [pourquoi utiliser PriceLabs ici](/blog/pourquoi-utiliser-pricelabs-drome-ardeche).`,
   },
   {
     slug: "location-courte-duree-zone-rurale-erreurs",
@@ -241,7 +241,7 @@ Audit photo, réécriture du titre et de la description, mise à jour des équip
 
 ## Notre rôle
 
-Nous réalisons ce travail systématiquement sur chaque bien que nous prenons en gestion.`,
+Nous réalisons ce travail systématiquement sur chaque bien que nous prenons en gestion. Voir notre [checklist d'optimisation d'annonce Airbnb](/blog/annonce-airbnb-optimisation-checklist) pour aller plus loin.`,
   },
   {
     slug: "louer-residence-secondaire-courte-duree",
@@ -269,7 +269,7 @@ Publier rapidement une annonce sans travail de positionnement, ne pas bloquer se
 
 ## Notre rôle
 
-Qit Concierge prend en charge l'ensemble de ces étapes pour les propriétaires de Drôme-Ardèche, dans un rayon d'environ 1h autour de Tain-l'Hermitage.`,
+Qit Concierge prend en charge l'ensemble de ces étapes pour les propriétaires de Drôme-Ardèche, dans un rayon d'environ 1h autour de Tain-l'Hermitage. Voir aussi : [points à vérifier avant de louer une maison de campagne](/blog/louer-maison-campagne-ardeche-points-a-verifier) et [obligations à connaître](/blog/obligations-location-courte-duree-drome-ardeche).`,
   },
   {
     slug: "annonce-airbnb-optimisation-checklist",
@@ -294,7 +294,7 @@ Une annonce existante a déjà un historique (avis, ancienneté, classement). Il
 
 ## Ce qu'on observe sur le terrain
 
-La majorité des annonces ont des paramètres mal réglés ou des équipements non déclarés. Les corrections simples ont souvent un impact rapide sur la visibilité.`,
+La majorité des annonces ont des paramètres mal réglés ou des équipements non déclarés. Les corrections simples ont souvent un impact rapide sur la visibilité. Lire aussi : [les erreurs qui font perdre des réservations en zone rurale](/blog/location-courte-duree-zone-rurale-erreurs).`,
   },
   {
     slug: "pricelabs-comment-ca-marche",
@@ -321,7 +321,7 @@ Au lieu d'un prix figé toute l'année, le tarif suit la réalité du marché. C
 
 ## Notre approche
 
-Nous configurons et surveillons PriceLabs pour chaque bien que nous gérons. L'objectif n'est pas de maximiser un prix unitaire, mais d'optimiser le revenu global sur l'année.`,
+Nous configurons et surveillons PriceLabs pour chaque bien que nous gérons. L'objectif n'est pas de maximiser un prix unitaire, mais d'optimiser le revenu global sur l'année. Voir : [pourquoi PriceLabs en Drôme-Ardèche](/blog/pourquoi-utiliser-pricelabs-drome-ardeche) et [combler les trous de calendrier](/blog/trous-de-calendrier-comment-les-combler).`,
   },
   {
     slug: "trous-de-calendrier-comment-les-combler",
@@ -344,7 +344,7 @@ Une nuit non réservée ne se rattrape jamais. Sur l'année, ces trous représen
 
 ## Limites à respecter
 
-Garder un prix plancher cohérent avec la qualité du bien et éviter les nuits isolées qui dégradent l'expérience (rotation, ménage, voyageurs).`,
+Garder un prix plancher cohérent avec la qualité du bien et éviter les nuits isolées qui dégradent l'expérience (rotation, ménage, voyageurs). Pour le cadre général, voir [comment fonctionne PriceLabs](/blog/pricelabs-comment-ca-marche).`,
   },
   {
     slug: "louer-en-courte-duree-drome-ardeche",
@@ -368,7 +368,7 @@ La Drôme-Ardèche bénéficie d'une demande étalée sur l'année : œnotourism
 
 ## Ce qui fait la différence
 
-Un bien bien équipé, des photos soignées et une annonce travaillée localement performent mieux qu'un bien mieux situé mais mal présenté.`,
+Un bien bien équipé, des photos soignées et une annonce travaillée localement performent mieux qu'un bien mieux situé mais mal présenté. Voir aussi : [logements qui louent le mieux autour de Tain-l'Hermitage](/blog/conciergerie-tain-hermitage-logements-qui-louent-le-mieux) et [obligations à connaître](/blog/obligations-location-courte-duree-drome-ardeche).`,
   },
   {
     slug: "obligations-location-courte-duree-drome-ardeche",
@@ -392,7 +392,7 @@ Les règles peuvent varier selon les communes. Il est utile de vérifier auprès
 
 ## Notre rôle
 
-Nous orientons les propriétaires vers les bons interlocuteurs et identifions les points de vigilance. Cet accompagnement ne remplace pas un conseil juridique ou fiscal.`,
+Nous orientons les propriétaires vers les bons interlocuteurs et identifions les points de vigilance. Cet accompagnement ne remplace pas un conseil juridique ou fiscal. Voir aussi : [points à vérifier avant de louer une maison de campagne](/blog/louer-maison-campagne-ardeche-points-a-verifier) et [par où commencer pour louer sa résidence secondaire](/blog/louer-residence-secondaire-courte-duree).`,
   },
 ];
 

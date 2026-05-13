@@ -39,7 +39,16 @@ const MentionsLegales = () => {
             <section>
               <h2 className="text-xl font-semibold mb-3 text-qit-purple">Site réalisé par</h2>
               <div className="bg-qit-beige/40 rounded-lg p-4 border border-border text-sm">
-                <p className="font-medium text-qit-purple">Pixeloria</p>
+                <p>
+                  <a
+                    href="https://pixeloria.fr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-qit-purple hover:underline"
+                  >
+                    Pixeloria
+                  </a>
+                </p>
                 <p>Création & refonte de sites pour artisans, indépendants et PME</p>
                 <p>Site web : <a href="https://pixeloria.fr" target="_blank" rel="noopener noreferrer" className="text-qit-coral hover:underline">https://pixeloria.fr</a></p>
                 <p>Email : contact@pixeloria.fr</p>

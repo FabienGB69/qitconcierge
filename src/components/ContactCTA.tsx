@@ -131,40 +131,60 @@ const ContactCTA = () => {
   };
   const back = () => setStep((s) => Math.max(s - 1, 0));
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateCurrentStep()) return;
+  const buildRecap = (d: FormState) => [
+    `Bonjour Qit Concierge,`,
+    `Je souhaite une estimation pour mon logement.`,
+    ``,
+    `Nom : ${d.fullName}`,
+    `Téléphone / WhatsApp : ${d.phone}`,
+    `Email : ${d.email}`,
+    `Ville : ${d.city}`,
+    `Type de logement : ${d.propertyType}`,
+    `Surface : ${d.surface || "—"}`,
+    `Couchages : ${d.beds || "—"}`,
+    `Déjà en ligne : ${d.online}`,
+    `Plateforme : ${d.platform}`,
+    `Objectif : ${d.goal}`,
+    `Lien annonce : ${d.listingUrl || "—"}`,
+    ``,
+    `Message : ${d.message || "—"}`,
+  ].join("\n");
+
+  const validateAll = () => {
+    if (!validateCurrentStep()) return null;
     const parsed = fullSchema.safeParse(form);
     if (!parsed.success) {
       toast.error(parsed.error.issues[0]?.message ?? "Formulaire invalide");
-      return;
+      return null;
     }
+    return parsed.data;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const d = validateAll();
+    if (!d) return;
 
     setSubmitting(true);
-    const d = parsed.data;
     const subject = encodeURIComponent(
       `Demande d'estimation — ${d.fullName} (${d.city})`
     );
-    const body = encodeURIComponent(
-      [
-        `Nom : ${d.fullName}`,
-        `Téléphone / WhatsApp : ${d.phone}`,
-        `Email : ${d.email}`,
-        `Ville : ${d.city}`,
-        `Type de logement : ${d.propertyType}`,
-        `Surface : ${d.surface || "—"}`,
-        `Couchages : ${d.beds || "—"}`,
-        `Déjà en ligne : ${d.online}`,
-        `Plateforme : ${d.platform}`,
-        `Objectif : ${d.goal}`,
-        `Lien annonce : ${d.listingUrl || "—"}`,
-        ``,
-        `Message :`,
-        d.message || "—",
-      ].join("\n")
-    );
+    const body = encodeURIComponent(buildRecap(d));
     window.location.href = `mailto:guest.qitconcierge@gmail.com?subject=${subject}&body=${body}`;
     toast.success("Merci ! Votre client mail s'ouvre pour finaliser l'envoi.");
+    setDone(true);
+    setSubmitting(false);
+  };
+
+  const handleWhatsApp = () => {
+    const d = validateAll();
+    if (!d) return;
+    setSubmitting(true);
+    const text = encodeURIComponent(buildRecap(d));
+    // wa.me requires the number in international format, no +, no spaces.
+    const url = `https://wa.me/330601777633?text=${text}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    toast.success("Votre message WhatsApp est prêt à être envoyé.");
     setDone(true);
     setSubmitting(false);
   };

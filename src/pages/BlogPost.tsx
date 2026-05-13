@@ -193,14 +193,26 @@ const BlogPost = () => {
                   <Link
                     key={p.slug}
                     to={`/blog/${p.slug}`}
-                    className="rounded-2xl border border-border bg-white p-5 hover:border-qit-coral/40 hover:shadow-md transition-all"
+                    className="group rounded-2xl border border-border bg-white overflow-hidden hover:border-qit-coral/40 hover:shadow-md transition-all"
                   >
-                    <h3 className="font-semibold text-qit-purple mb-2 leading-snug">
-                      {p.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {p.excerpt}
-                    </p>
+                    <div className="aspect-[16/9] overflow-hidden bg-qit-beige/40">
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        width={1280}
+                        height={720}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-semibold text-qit-purple mb-2 leading-snug">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {p.excerpt}
+                      </p>
+                    </div>
                   </Link>
                 ))}
               </div>

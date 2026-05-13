@@ -27,10 +27,10 @@ const Hero = () => {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 max-w-2xl leading-relaxed">
-            Qit Concierge accompagne les propriétaires situés à moins d'1h de
-            Tain-l'Hermitage dans la gestion complète de leur location courte
-            durée : Airbnb, Booking, Abritel, ménage, linge, voyageurs,
-            calendrier et optimisation des revenus avec PriceLabs.
+            Qit Concierge accompagne les propriétaires en Drôme-Ardèche dans la
+            gestion complète de leur location courte durée : Airbnb, Booking,
+            Abritel, ménage, linge, voyageurs, calendrier et optimisation des
+            revenus avec PriceLabs.
           </p>
 
           <div className="flex items-start gap-2 text-white/90 text-sm sm:text-base mb-7 sm:mb-8 max-w-2xl">

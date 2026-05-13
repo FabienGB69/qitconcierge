@@ -13,7 +13,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useMemo, useState } from "react";
 import { z } from "zod";
 import { toast } from "@/components/ui/sonner";
-import { Phone, Mail, ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { Phone, Mail, ArrowLeft, ArrowRight, Check, MessageCircle } from "lucide-react";
 
 /* -------------------------------------------------------------------------- */
 /*  Schemas — one per step + a final composed schema                          */

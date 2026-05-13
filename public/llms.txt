@@ -1,0 +1,14 @@
+# Qit Concierge
+
+> Conciergerie courte durée en Drôme-Ardèche : gestion Airbnb & Booking, ménage, linge, check-in, optimisation des revenus et assistance voyageurs.
+
+## Pages
+
+- [Accueil](/): Présentation de Qit Concierge et de ses services de conciergerie courte durée.
+- [Conciergerie Airbnb à Lyon](/conciergerie-airbnb-lyon): Gestion complète de votre logement Airbnb à Lyon.
+- [Conciergerie Airbnb à Oullins](/conciergerie-airbnb-oullins): Gestion locative courte durée à Oullins.
+- [Gestion location courte durée à Lyon](/gestion-location-courte-duree-lyon): Pricing, voyageurs, ménage et reporting.
+- [Conciergerie Booking à Lyon](/conciergerie-booking-lyon): Gestion multi-plateformes à Lyon.
+- [Mentions légales](/mentions-legales): Informations légales du site.
+- [Politique de confidentialité](/politique-confidentialite): Traitement des données personnelles.
+- [Conditions générales de vente](/cgv): CGV des prestations Qit Concierge.

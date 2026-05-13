@@ -23,12 +23,7 @@ const About = () => {
             Une conciergerie locale, créée en 2023, avec un suivi vraiment personnalisé
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 md:mb-10">
-            Qit Concierge est une conciergerie à taille humaine. Depuis 2023,
-            nous accompagnons des propriétaires dans la gestion de leurs
-            logements courte durée. Aujourd'hui, 5 biens sont suivis avec une
-            approche volontairement sélective : meilleure disponibilité,
-            meilleure qualité de suivi et accompagnement plus précis pour
-            chaque propriétaire.
+            Qit Concierge accompagne un nombre maîtrisé de logements en Drôme-Ardèche pour garantir un suivi de qualité, réactif et personnalisé à chaque propriétaire.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 mb-6 md:mb-8">

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /auth
 
-Sitemap: https://qitconcierge.lovable.app/sitemap.xml
+Sitemap: https://qitconcierge.fr/sitemap.xml

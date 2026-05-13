@@ -530,14 +530,28 @@ const ContactCTA = () => {
                         <ArrowRight className="h-4 w-4" />
                       </Button>
                     ) : (
-                      <Button
-                        type="submit"
-                        disabled={submitting}
-                        size="lg"
-                        className="w-full bg-qit-coral hover:bg-qit-coral/90 text-white h-12 text-base font-semibold shadow-md shadow-qit-coral/30 sm:ml-auto"
-                      >
-                        Envoyer ma demande
-                      </Button>
+                      <div className="flex flex-col gap-2 w-full sm:ml-auto sm:w-auto">
+                        <Button
+                          type="button"
+                          onClick={handleWhatsApp}
+                          disabled={submitting}
+                          size="lg"
+                          className="w-full bg-qit-coral hover:bg-qit-coral/90 text-white h-12 text-base font-semibold shadow-md shadow-qit-coral/30"
+                        >
+                          <MessageCircle className="h-4 w-4" />
+                          Envoyer sur WhatsApp
+                        </Button>
+                        <Button
+                          type="submit"
+                          disabled={submitting}
+                          variant="outline"
+                          size="lg"
+                          className="w-full h-11 text-sm"
+                        >
+                          <Mail className="h-4 w-4" />
+                          Envoyer par email
+                        </Button>
+                      </div>
                     )}
                   </div>
 

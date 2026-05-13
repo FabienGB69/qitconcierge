@@ -56,7 +56,7 @@ Chez Qit Concierge, nous utilisons [PriceLabs](/blog/pourquoi-utiliser-pricelabs
 
 ## 4. Vérifier les plateformes utilisées : Airbnb, Booking, Abritel
 
-Dépendre d'une seule plateforme est un risque. Selon le type de bien et la cible visée, il est souvent pertinent de diffuser sur plusieurs canaux :
+Dépendre d'une seule plateforme est un risque. Selon le type de bien et la cible visée, il est souvent pertinent de [diffuser sur plusieurs canaux](/blog/airbnb-booking-abritel-quelle-plateforme-choisir) :
 
 - Airbnb pour les courts séjours, week-ends, couples et familles ;
 - Booking pour une clientèle plus large, mobile, internationale ou en déplacement ;

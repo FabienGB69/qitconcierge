@@ -27,8 +27,9 @@ const Hero = () => {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 max-w-2xl leading-relaxed">
-            Qit Concierge accompagne les propriétaires dans la gestion complète de leur location courte durée :
-            mise en ligne, optimisation des prix, communication voyageurs, ménage, linge, check-in, suivi qualité et assistance.
+            Qit Concierge accompagne les propriétaires d'appartements, maisons et gîtes
+            (T1, T2, T3, biens urbains et touristiques) dans la gestion complète de leur location courte durée :
+            mise en ligne, optimisation des prix, communication voyageurs, ménage, linge, check-in et suivi qualité.
           </p>
 
           <div className="flex items-start gap-2 text-white/90 text-sm sm:text-base mb-8 max-w-2xl">

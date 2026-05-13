@@ -14,6 +14,66 @@ export type Database = {
   }
   public: {
     Tables: {
+      estimation_requests: {
+        Row: {
+          beds: string | null
+          city: string | null
+          created_at: string
+          email: string
+          goal: string | null
+          id: string
+          listing_url: string | null
+          message: string | null
+          name: string
+          online_status: string | null
+          phone: string
+          platform: string | null
+          property_type: string | null
+          source: string
+          status: string
+          surface: string | null
+          updated_at: string
+        }
+        Insert: {
+          beds?: string | null
+          city?: string | null
+          created_at?: string
+          email: string
+          goal?: string | null
+          id?: string
+          listing_url?: string | null
+          message?: string | null
+          name: string
+          online_status?: string | null
+          phone: string
+          platform?: string | null
+          property_type?: string | null
+          source?: string
+          status?: string
+          surface?: string | null
+          updated_at?: string
+        }
+        Update: {
+          beds?: string | null
+          city?: string | null
+          created_at?: string
+          email?: string
+          goal?: string | null
+          id?: string
+          listing_url?: string | null
+          message?: string | null
+          name?: string
+          online_status?: string | null
+          phone?: string
+          platform?: string | null
+          property_type?: string | null
+          source?: string
+          status?: string
+          surface?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       properties: {
         Row: {
           airbnb_url: string | null

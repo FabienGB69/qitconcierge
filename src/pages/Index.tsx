@@ -18,6 +18,7 @@ import About from "@/components/About";
 import BlogTeaser from "@/components/BlogTeaser";
 import Pricing from "@/components/Pricing";
 import PricingFAQ from "@/components/PricingFAQ";
+import RevenueEstimator from "@/components/RevenueEstimator";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -56,6 +57,7 @@ const Index = () => {
         <Cases />
         <Pricing />
         <PricingFAQ />
+        <RevenueEstimator />
         <Compliance />
         <FAQ />
         <BlogTeaser />

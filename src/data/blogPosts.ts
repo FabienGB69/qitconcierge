@@ -91,7 +91,7 @@ Qit Concierge est une conciergerie locale, créée en 2023, qui accompagne aujou
 
 Notre approche est volontairement sélective : moins de biens, mieux suivis. L'objectif n'est pas de gérer un volume, mais de garantir à chaque propriétaire une meilleure disponibilité, un suivi précis et un accompagnement humain et terrain.
 
-Nous intervenons à Tain-l'Hermitage, Tournon-sur-Rhône, Romans-sur-Isère, Valence, Saint-Vallier, Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, Drôme des Collines, Ardèche Verte et vallée du Rhône.
+Nous intervenons à [Tain-l'Hermitage](/blog/conciergerie-tain-hermitage-logements-qui-louent-le-mieux), Tournon-sur-Rhône, Romans-sur-Isère, Valence, Saint-Vallier, Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, [Drôme des Collines, Ardèche Verte et vallée du Rhône](/blog/louer-en-courte-duree-drome-ardeche).
 
 ## En résumé
 

@@ -1,3 +1,10 @@
+import maisonPierre from "@/assets/blog/maison-pierre-drome.jpg";
+import vignesHermitage from "@/assets/blog/vignes-hermitage.jpg";
+import giteVillage from "@/assets/blog/gite-village-ardeche.jpg";
+import dashboardRevenue from "@/assets/blog/dashboard-revenue.jpg";
+import annonceLaptop from "@/assets/blog/annonce-laptop.jpg";
+import obligationsChecklist from "@/assets/blog/obligations-checklist.jpg";
+
 export type BlogCategory = "Conseils propriétaires" | "Revenue management" | "Drôme-Ardèche";
 
 export interface BlogPost {
@@ -7,6 +14,7 @@ export interface BlogPost {
   category: BlogCategory;
   date: string; // ISO
   readTime: string;
+  image: string;
   content: string; // markdown-lite (paragraphs separated by \n\n, ## headings supported)
 }
 

@@ -59,7 +59,7 @@ const MentionsLegales = () => {
                   onClick={() => trackEvent("pixeloria_click", { location: "mentions_legales_url" })}
                   className="text-qit-coral hover:underline"
                 >https://pixeloria.fr</a></p>
-                <p>Email : contact@pixeloria.fr</p>
+                <p>Email : <a href="mailto:contact@pixeloria.fr" className="text-qit-coral hover:underline">contact@pixeloria.fr</a></p>
                 <p>Téléphone : 07 86 12 53 13</p>
               </div>
             </section>

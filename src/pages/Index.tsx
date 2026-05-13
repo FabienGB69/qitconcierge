@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 import LocalSEO from "@/components/LocalSEO";
 import SectionCTA from "@/components/SectionCTA";
 import RevenueManagement from "@/components/RevenueManagement";
+import Platforms from "@/components/Platforms";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 

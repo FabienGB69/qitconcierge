@@ -344,7 +344,7 @@ Une nuit non réservée ne se rattrape jamais. Sur l'année, ces trous représen
 
 ## Limites à respecter
 
-Garder un prix plancher cohérent avec la qualité du bien et éviter les nuits isolées qui dégradent l'expérience (rotation, ménage, voyageurs).`,
+Garder un prix plancher cohérent avec la qualité du bien et éviter les nuits isolées qui dégradent l'expérience (rotation, ménage, voyageurs). Pour le cadre général, voir [comment fonctionne PriceLabs](/blog/pricelabs-comment-ca-marche).`,
   },
   {
     slug: "louer-en-courte-duree-drome-ardeche",

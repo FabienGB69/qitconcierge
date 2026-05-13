@@ -1,55 +1,125 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useState } from "react";
+import { z } from "zod";
+import { toast } from "@/components/ui/sonner";
+import { Phone, Mail } from "lucide-react";
+
+const schema = z.object({
+  fullName: z.string().trim().min(2, "Nom requis").max(100),
+  phone: z.string().trim().min(6, "Téléphone requis").max(30),
+  email: z.string().trim().email("Email invalide").max(255),
+  city: z.string().trim().min(2, "Ville requise").max(100),
+  propertyType: z.string().min(1, "Type requis"),
+  surface: z.string().trim().max(20).optional().or(z.literal("")),
+  beds: z.string().trim().max(20).optional().or(z.literal("")),
+  online: z.enum(["oui", "non"], { required_error: "Veuillez répondre" }),
+  platform: z.string().min(1, "Plateforme requise"),
+  goal: z.string().min(1, "Objectif requis"),
+  listingUrl: z.string().trim().max(500).optional().or(z.literal("")),
+  message: z.string().trim().max(1000).optional().or(z.literal("")),
+});
+
+const initialState = {
+  fullName: "",
+  phone: "",
+  email: "",
+  city: "",
+  propertyType: "",
+  surface: "",
+  beds: "",
+  online: "" as "" | "oui" | "non",
+  platform: "",
+  goal: "",
+  listingUrl: "",
+  message: "",
+};
 
 const ContactCTA = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
+  const [form, setForm] = useState(initialState);
+  const [submitting, setSubmitting] = useState(false);
+
+  const update = <K extends keyof typeof form>(key: K, value: (typeof form)[K]) =>
+    setForm((f) => ({ ...f, [key]: value }));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ name, email, phone, message });
-    // Here you would typically send the form data to your backend
-    alert("Votre message a été envoyé. Nous vous contacterons très prochainement!");
-    setName("");
-    setEmail("");
-    setPhone("");
-    setMessage("");
+    const parsed = schema.safeParse(form);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0]?.message ?? "Formulaire invalide");
+      return;
+    }
+
+    setSubmitting(true);
+    const d = parsed.data;
+    const subject = encodeURIComponent(
+      `Demande d'estimation — ${d.fullName} (${d.city})`
+    );
+    const body = encodeURIComponent(
+      [
+        `Nom : ${d.fullName}`,
+        `Téléphone / WhatsApp : ${d.phone}`,
+        `Email : ${d.email}`,
+        `Ville : ${d.city}`,
+        `Type de logement : ${d.propertyType}`,
+        `Surface : ${d.surface || "—"}`,
+        `Couchages : ${d.beds || "—"}`,
+        `Déjà en ligne : ${d.online}`,
+        `Plateforme : ${d.platform}`,
+        `Objectif : ${d.goal}`,
+        `Lien annonce : ${d.listingUrl || "—"}`,
+        ``,
+        `Message :`,
+        d.message || "—",
+      ].join("\n")
+    );
+    window.location.href = `mailto:guest.qitconcierge@gmail.com?subject=${subject}&body=${body}`;
+    toast.success("Merci ! Votre client mail s'ouvre pour finaliser l'envoi.");
+    setForm(initialState);
+    setSubmitting(false);
   };
 
   return (
     <section id="contact" className="py-20 bg-qit-purple text-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Contactez-nous</h2>
-            <p className="text-lg text-white/80 mb-6">
-              Vous souhaitez nous confier la gestion de votre bien ou en savoir plus sur nos services ? 
-              Remplissez le formulaire et nous vous répondrons dans les plus brefs délais.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Demander une estimation gratuite de votre logement
+            </h2>
+            <p className="text-lg text-white/80 mb-4">
+              Réponse sous 24h ouvrées avec une première analyse claire de votre
+              potentiel locatif.
             </p>
-            
+            <p className="text-white/70 mb-8 text-sm">
+              Quelques informations sur votre logement suffisent pour évaluer
+              vos revenus possibles et la stratégie la plus adaptée.
+            </p>
+
             <div className="space-y-4">
               <div className="flex items-center">
                 <div className="bg-white/10 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
+                  <Phone className="h-5 w-5" />
                 </div>
                 <div>
                   <p className="font-semibold">Téléphone / WhatsApp</p>
-                  <p>+330601777633</p>
+                  <p>+33 6 01 77 76 33</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <div className="bg-white/10 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
+                  <Mail className="h-5 w-5" />
                 </div>
                 <div>
                   <p className="font-semibold">Email</p>
@@ -58,64 +128,226 @@ const ContactCTA = () => {
               </div>
             </div>
           </div>
-          
-          <div className="bg-white text-foreground rounded-lg p-6 shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-4">
+
+          <div className="bg-white text-foreground rounded-lg p-5 md:p-7 shadow-lg">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">
-                  Nom
-                </label>
-                <Input 
-                  id="name" 
-                  value={name} 
-                  onChange={(e) => setName(e.target.value)} 
-                  required 
-                  placeholder="Votre nom"
+                <Label htmlFor="fullName" className="mb-1.5 block">
+                  Nom et prénom
+                </Label>
+                <Input
+                  id="fullName"
+                  value={form.fullName}
+                  onChange={(e) => update("fullName", e.target.value)}
+                  required
+                  maxLength={100}
                 />
               </div>
-              
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="phone" className="mb-1.5 block">
+                    Téléphone / WhatsApp
+                  </Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => update("phone", e.target.value)}
+                    required
+                    maxLength={30}
+                    placeholder="+33 6 ..."
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="email" className="mb-1.5 block">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => update("email", e.target.value)}
+                    required
+                    maxLength={255}
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="city" className="mb-1.5 block">
+                    Ville du logement
+                  </Label>
+                  <Input
+                    id="city"
+                    value={form.city}
+                    onChange={(e) => update("city", e.target.value)}
+                    required
+                    maxLength={100}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="propertyType" className="mb-1.5 block">
+                    Type de logement
+                  </Label>
+                  <Select
+                    value={form.propertyType}
+                    onValueChange={(v) => update("propertyType", v)}
+                  >
+                    <SelectTrigger id="propertyType">
+                      <SelectValue placeholder="Sélectionner" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="appartement">Appartement</SelectItem>
+                      <SelectItem value="maison">Maison</SelectItem>
+                      <SelectItem value="gite">Gîte</SelectItem>
+                      <SelectItem value="studio">Studio</SelectItem>
+                      <SelectItem value="autre">Autre</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="surface" className="mb-1.5 block">
+                    Surface approximative (m²)
+                  </Label>
+                  <Input
+                    id="surface"
+                    type="text"
+                    inputMode="numeric"
+                    value={form.surface}
+                    onChange={(e) => update("surface", e.target.value)}
+                    maxLength={20}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="beds" className="mb-1.5 block">
+                    Nombre de couchages
+                  </Label>
+                  <Input
+                    id="beds"
+                    type="text"
+                    inputMode="numeric"
+                    value={form.beds}
+                    onChange={(e) => update("beds", e.target.value)}
+                    maxLength={20}
+                  />
+                </div>
+              </div>
+
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email
-                </label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  value={email} 
-                  onChange={(e) => setEmail(e.target.value)} 
-                  required 
-                  placeholder="votre@email.com"
+                <Label className="mb-2 block">
+                  Le logement est-il déjà en ligne ?
+                </Label>
+                <RadioGroup
+                  value={form.online}
+                  onValueChange={(v) => update("online", v as "oui" | "non")}
+                  className="flex gap-6"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="oui" id="online-oui" />
+                    <Label htmlFor="online-oui" className="font-normal">
+                      Oui
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="non" id="online-non" />
+                    <Label htmlFor="online-non" className="font-normal">
+                      Non
+                    </Label>
+                  </div>
+                </RadioGroup>
+              </div>
+
+              <div>
+                <Label htmlFor="platform" className="mb-1.5 block">
+                  Plateforme actuelle
+                </Label>
+                <Select
+                  value={form.platform}
+                  onValueChange={(v) => update("platform", v)}
+                >
+                  <SelectTrigger id="platform">
+                    <SelectValue placeholder="Sélectionner" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="airbnb">Airbnb</SelectItem>
+                    <SelectItem value="booking">Booking</SelectItem>
+                    <SelectItem value="abritel">Abritel</SelectItem>
+                    <SelectItem value="autre">Autre</SelectItem>
+                    <SelectItem value="pas-encore">Pas encore</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="goal" className="mb-1.5 block">
+                  Objectif principal
+                </Label>
+                <Select
+                  value={form.goal}
+                  onValueChange={(v) => update("goal", v)}
+                >
+                  <SelectTrigger id="goal">
+                    <SelectValue placeholder="Sélectionner" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="louer-plus-souvent">
+                      Louer plus souvent
+                    </SelectItem>
+                    <SelectItem value="augmenter-revenus">
+                      Augmenter les revenus
+                    </SelectItem>
+                    <SelectItem value="deleguer">
+                      Déléguer la gestion
+                    </SelectItem>
+                    <SelectItem value="lancer">Lancer le logement</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <Label htmlFor="listingUrl" className="mb-1.5 block">
+                  Lien de l'annonce existante (si disponible)
+                </Label>
+                <Input
+                  id="listingUrl"
+                  type="url"
+                  value={form.listingUrl}
+                  onChange={(e) => update("listingUrl", e.target.value)}
+                  maxLength={500}
+                  placeholder="https://..."
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-1">
-                  Téléphone
-                </label>
-                <Input 
-                  id="phone" 
-                  type="tel" 
-                  value={phone} 
-                  onChange={(e) => setPhone(e.target.value)} 
-                  placeholder="+33 1 23 45 67 89"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  Message
-                </label>
-                <Textarea 
-                  id="message" 
-                  value={message} 
-                  onChange={(e) => setMessage(e.target.value)} 
-                  required 
-                  placeholder="Votre message..."
+                <Label htmlFor="message" className="mb-1.5 block">
+                  Message complémentaire
+                </Label>
+                <Textarea
+                  id="message"
+                  value={form.message}
+                  onChange={(e) => update("message", e.target.value)}
+                  maxLength={1000}
                   rows={4}
+                  placeholder="Précisions sur votre projet, contraintes, calendrier..."
                 />
               </div>
-              
-              <Button type="submit" className="w-full bg-qit-coral hover:bg-qit-coral/90">Demander une estimation gratuite</Button>
+
+              <Button
+                type="submit"
+                disabled={submitting}
+                className="w-full bg-qit-coral hover:bg-qit-coral/90 text-white"
+              >
+                Demander mon estimation gratuite
+              </Button>
+
+              <p className="text-xs text-muted-foreground text-center">
+                Réponse sous 24h ouvrées — sans engagement.
+              </p>
             </form>
           </div>
         </div>

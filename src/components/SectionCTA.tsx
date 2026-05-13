@@ -41,7 +41,7 @@ const SectionCTA = ({
         <Button
           asChild
           size="lg"
-          className="bg-qit-coral hover:bg-qit-coral/90 text-white"
+          className="bg-qit-coral hover:bg-qit-coral/90 text-white h-12 sm:h-11 text-base font-semibold w-full sm:w-auto shadow-md shadow-qit-coral/30"
         >
           <a href="#contact">
             Demander une estimation gratuite
@@ -52,11 +52,11 @@ const SectionCTA = ({
           asChild
           size="lg"
           variant="outline"
-          className={
+          className={`h-12 sm:h-11 text-base w-full sm:w-auto ${
             isDark
               ? "bg-white/10 border-white/40 text-white hover:bg-white hover:text-qit-purple"
               : ""
-          }
+          }`}
         >
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
             <MessageCircle className="mr-2 h-4 w-4" />

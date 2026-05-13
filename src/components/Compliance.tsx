@@ -9,17 +9,18 @@ const items = [
 
 const Compliance = () => {
   return (
-    <section className="py-20 md:py-28 bg-qit-beige/40">
+    <section className="py-14 md:py-28 bg-qit-beige/40">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-10 md:mb-12">
+          <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">
             Conformité
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-5 md:mb-6 leading-tight">
             Une gestion courte durée plus sereine et conforme
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            La location courte durée évolue rapidement : déclaration en mairie, numéro d'enregistrement, règlement de copropriété, fiscalité, durée de location, DPE et règles locales. Qit Concierge aide les propriétaires à identifier les points de vigilance avant la mise en location afin d'éviter les erreurs coûteuses.
+            <span className="hidden sm:inline">La location courte durée évolue rapidement : déclaration en mairie, numéro d'enregistrement, règlement de copropriété, fiscalité, durée de location, DPE et règles locales. Qit Concierge aide les propriétaires à identifier les points de vigilance avant la mise en location afin d'éviter les erreurs coûteuses.</span>
+            <span className="sm:hidden">Déclaration, numéro d'enregistrement, copropriété, fiscalité… On vous aide à identifier les points de vigilance avant la mise en location.</span>
           </p>
         </div>
 

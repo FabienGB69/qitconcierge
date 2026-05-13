@@ -83,16 +83,42 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-qit-beige text-foreground;
     font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5 {
     font-family: 'Playfair Display', serif;
   }
 
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
   .hero-gradient {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  }
+}
+
+@layer components {
+  @media (max-width: 767px) {
+    .form-touch input,
+    .form-touch [role="combobox"],
+    .form-touch button[type="submit"] {
+      min-height: 48px;
+      font-size: 16px;
+    }
+    .form-touch textarea {
+      font-size: 16px;
+    }
+    main {
+      padding-bottom: 5rem;
+    }
   }
 }

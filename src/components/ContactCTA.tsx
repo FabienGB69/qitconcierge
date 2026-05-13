@@ -90,12 +90,12 @@ const ContactCTA = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-qit-purple text-white">
+    <section id="contact" className="py-14 md:py-20 bg-qit-purple text-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Demander une estimation gratuite de votre logement
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+              Estimation gratuite de votre logement
             </h2>
             <p className="text-lg text-white/80 mb-4">
               Réponse sous 24h ouvrées avec une première analyse claire de votre
@@ -130,7 +130,7 @@ const ContactCTA = () => {
           </div>
 
           <div className="bg-white text-foreground rounded-lg p-5 md:p-7 shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5 form-touch">
               <div>
                 <Label htmlFor="fullName" className="mb-1.5 block">
                   Nom et prénom
@@ -340,7 +340,8 @@ const ContactCTA = () => {
               <Button
                 type="submit"
                 disabled={submitting}
-                className="w-full bg-qit-coral hover:bg-qit-coral/90 text-white"
+                size="lg"
+                className="w-full bg-qit-coral hover:bg-qit-coral/90 text-white h-12 text-base font-semibold shadow-md shadow-qit-coral/30"
               >
                 Demander mon estimation gratuite
               </Button>

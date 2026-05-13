@@ -56,18 +56,17 @@ const whatsappUrl =
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-16 md:py-20 bg-white">
+    <section id="faq" className="py-14 md:py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-2xl mx-auto text-center mb-12">
+        <div className="max-w-2xl mx-auto text-center mb-10 md:mb-12">
           <p className="text-sm uppercase tracking-wider text-qit-coral font-medium mb-2">
             Vos questions
           </p>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-qit-purple mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-qit-purple mb-3 md:mb-4 leading-tight">
             Questions fréquentes des propriétaires
           </h2>
           <p className="text-muted-foreground">
-            Les réponses concrètes aux questions que se posent la plupart des
-            propriétaires avant de nous confier leur logement.
+            Les réponses concrètes que se posent la plupart des propriétaires.
           </p>
         </div>
 

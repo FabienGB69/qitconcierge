@@ -1,8 +1,14 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 const PolitiqueConfidentialite = () => {
+  useSEO({
+    title: "Politique de confidentialité — Qit Concierge",
+    description: "Comment Qit Concierge collecte, utilise et protège vos données personnelles conformément au RGPD.",
+    path: "/politique-confidentialite",
+  });
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />

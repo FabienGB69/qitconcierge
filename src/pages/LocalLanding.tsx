@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionCTA from "@/components/SectionCTA";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import LocalSEO from "@/components/LocalSEO";
+import { useSEO } from "@/hooks/useSEO";
 
 interface LocalLandingProps {
   title: string;
@@ -15,27 +15,11 @@ interface LocalLandingProps {
 }
 
 const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingProps) => {
-  useEffect(() => {
-    document.title = title;
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement("meta");
-        el.name = name;
-        document.head.appendChild(el);
-      }
-      el.content = content;
-    };
-    setMeta("description", metaDescription);
-
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = `https://qitconcierge.com/${slug}`;
-  }, [title, metaDescription, slug]);
+  useSEO({
+    title,
+    description: metaDescription,
+    path: `/${slug}`,
+  });
 
   return (
     <div className="min-h-screen">

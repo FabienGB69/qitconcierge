@@ -10,8 +10,8 @@ interface LanguageContextValue {
 
 const translations: Record<Language, Record<string, string>> = {
   fr: {
-    "properties.heading": "Nos Propriétés Sélectionnées",
-    "properties.subheading": "Découvrez notre sélection de propriétés exceptionnelles que nous gérons avec le plus grand soin.",
+    "properties.heading": "Quelques logements que nous gérons",
+    "properties.subheading": "Un aperçu d'appartements, maisons et gîtes confiés à Qit Concierge — du studio urbain au logement familial.",
     "properties.loading": "Chargement des propriétés...",
     "properties.guests": "pers.",
     "properties.bedrooms": "ch.",
@@ -19,8 +19,8 @@ const translations: Record<Language, Record<string, string>> = {
     "properties.book": "Réserver",
   },
   en: {
-    "properties.heading": "Our Selected Properties",
-    "properties.subheading": "Discover our selection of remarkable properties that we manage with the utmost care.",
+    "properties.heading": "A few properties we manage",
+    "properties.subheading": "A look at the apartments, houses and gîtes entrusted to Qit Concierge — from urban studios to family homes.",
     "properties.loading": "Loading properties...",
     "properties.guests": "guests",
     "properties.bedrooms": "bd",

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://qitconcierge.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://qitconcierge.com/conciergerie-airbnb-lyon</loc><priority>0.9</priority></url>
-  <url><loc>https://qitconcierge.com/conciergerie-airbnb-oullins</loc><priority>0.8</priority></url>
-  <url><loc>https://qitconcierge.com/gestion-location-courte-duree-lyon</loc><priority>0.9</priority></url>
-  <url><loc>https://qitconcierge.com/conciergerie-booking-lyon</loc><priority>0.8</priority></url>
-  <url><loc>https://qitconcierge.com/mentions-legales</loc><priority>0.3</priority></url>
-  <url><loc>https://qitconcierge.com/politique-confidentialite</loc><priority>0.3</priority></url>
-  <url><loc>https://qitconcierge.com/cgv</loc><priority>0.3</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-airbnb-drome</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-airbnb-ardeche</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-location-courte-duree-drome</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-location-courte-duree-ardeche</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/gestion-location-courte-duree-drome-ardeche</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-airbnb-tain-hermitage</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-airbnb-tournon</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-airbnb-valence</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-airbnb-romans-sur-isere</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-airbnb-saint-vallier</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/gestion-gite-drome</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/gestion-gite-ardeche</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/conciergerie-residence-secondaire-drome-ardeche</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/revenue-management-airbnb-drome-ardeche</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/gestion-booking-abritel-drome-ardeche</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/mentions-legales</loc><priority>0.3</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/politique-confidentialite</loc><priority>0.3</priority></url>
+  <url><loc>https://qitconcierge.lovable.app/cgv</loc><priority>0.3</priority></url>
 </urlset>

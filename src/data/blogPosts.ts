@@ -97,7 +97,7 @@ Nous intervenons à [Tain-l'Hermitage](/blog/conciergerie-tain-hermitage-logemen
 
 Bien choisir sa conciergerie Airbnb en Drôme, c'est vérifier l'ancrage local, la qualité opérationnelle, la maîtrise des prix, la diversification des plateformes, le suivi propriétaire et la sincérité des engagements pris.
 
-Vous avez un logement en Drôme ou Ardèche ? Demandez une estimation de revenus avec Qit Concierge.`,
+Vous avez un logement en Drôme ou Ardèche ? [Demandez une estimation de revenus](/#contact) avec Qit Concierge.`,
   },
   {
     slug: "louer-maison-campagne-ardeche-points-a-verifier",

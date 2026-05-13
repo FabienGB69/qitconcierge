@@ -57,6 +57,9 @@ const Navbar = () => {
             <a href="#testimonials" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Témoignages
             </a>
+            <a href="/blog" className="text-sm font-medium hover:text-qit-purple transition-colors">
+              Blog
+            </a>
             <a href="#contact" className="text-sm font-medium hover:text-qit-purple transition-colors">
               Contact
             </a>

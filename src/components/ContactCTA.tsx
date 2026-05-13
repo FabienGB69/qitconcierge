@@ -214,6 +214,13 @@ const ContactCTA = () => {
 
     setSubmitting(true);
     await persistRequest(d, "email");
+    trackEvent("estimation_submit", {
+      method: "email",
+      city: d.city,
+      property_type: d.propertyType,
+      goal: d.goal,
+      online_status: d.online,
+    });
     const subject = encodeURIComponent(
       `Demande d'estimation — ${d.fullName} (${d.city})`
     );
@@ -227,8 +234,21 @@ const ContactCTA = () => {
   const handleWhatsApp = async () => {
     const d = validateAll();
     if (!d) return;
+    trackEvent("estimation_whatsapp_click", {
+      city: d.city,
+      property_type: d.propertyType,
+      goal: d.goal,
+      online_status: d.online,
+    });
     setSubmitting(true);
     await persistRequest(d, "whatsapp");
+    trackEvent("estimation_submit", {
+      method: "whatsapp",
+      city: d.city,
+      property_type: d.propertyType,
+      goal: d.goal,
+      online_status: d.online,
+    });
     const text = encodeURIComponent(buildRecap(d));
     // wa.me requires the number in international format, no +, no spaces.
     const url = `https://wa.me/330601777633?text=${text}`;
@@ -243,6 +263,8 @@ const ContactCTA = () => {
     setErrors({});
     setStep(0);
     setDone(false);
+    setStarted(false);
+    trackEvent("estimation_restart");
   };
 
   /* ----- field error helper ----- */

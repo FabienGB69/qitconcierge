@@ -269,7 +269,7 @@ Publier rapidement une annonce sans travail de positionnement, ne pas bloquer se
 
 ## Notre rôle
 
-Qit Concierge prend en charge l'ensemble de ces étapes pour les propriétaires de Drôme-Ardèche, dans un rayon d'environ 1h autour de Tain-l'Hermitage.`,
+Qit Concierge prend en charge l'ensemble de ces étapes pour les propriétaires de Drôme-Ardèche, dans un rayon d'environ 1h autour de Tain-l'Hermitage. Voir aussi : [points à vérifier avant de louer une maison de campagne](/blog/louer-maison-campagne-ardeche-points-a-verifier) et [obligations à connaître](/blog/obligations-location-courte-duree-drome-ardeche).`,
   },
   {
     slug: "annonce-airbnb-optimisation-checklist",

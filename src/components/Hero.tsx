@@ -18,7 +18,7 @@ const Hero = () => {
         <div className="max-w-3xl animate-fade-in">
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm px-3 py-1.5 rounded-full mb-6">
             <span className="w-2 h-2 rounded-full bg-qit-coral" />
-            Conciergerie courte durée — pour propriétaires
+            Conciergerie premium, humaine et performante
           </span>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">

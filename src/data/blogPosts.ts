@@ -50,9 +50,9 @@ Demandez concrètement comment ces étapes sont organisées : qui intervient, à
 
 C'est sans doute le critère le plus sous-estimé. Un prix figé sur l'année passe à côté d'une part importante du revenu potentiel.
 
-Une bonne conciergerie pratique le revenue management location courte durée : prix minimum et maximum, ajustement saisonnier, événements locaux, durée minimum dynamique, optimisation des trous de calendrier et remises last minute ciblées.
+Une bonne conciergerie pratique le [revenue management location courte durée](/blog/pricelabs-comment-ca-marche) : prix minimum et maximum, ajustement saisonnier, événements locaux, durée minimum dynamique, [optimisation des trous de calendrier](/blog/trous-de-calendrier-comment-les-combler) et remises last minute ciblées.
 
-Chez Qit Concierge, nous utilisons PriceLabs pour piloter la tarification dynamique sur Airbnb, Booking et Abritel, avec des règles propres à chaque bien et à chaque zone.
+Chez Qit Concierge, nous utilisons [PriceLabs](/blog/pourquoi-utiliser-pricelabs-drome-ardeche) pour piloter la tarification dynamique sur Airbnb, Booking et Abritel, avec des règles propres à chaque bien et à chaque zone.
 
 ## 4. Vérifier les plateformes utilisées : Airbnb, Booking, Abritel
 

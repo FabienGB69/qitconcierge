@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
-export const WHATSAPP_URL = "https://wa.me/330601777633";
+export { WHATSAPP_URL } from "@/lib/whatsapp";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 interface SectionCTAProps {
   title?: string;

@@ -28,7 +28,15 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-4 text-center text-xs text-gray-500">
-          Site réalisé par Pixeloria — Création & refonte de sites pour artisans, indépendants et PME.
+          Site réalisé avec ❤️ par{" "}
+          <a
+            href="https://pixeloria.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-qit-purple hover:underline"
+          >
+            Pixeloria
+          </a>
         </div>
       </div>
     </footer>

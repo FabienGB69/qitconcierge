@@ -68,6 +68,30 @@ const faqs = [
     q: "Comment démarrer avec Qit Concierge ?",
     a: "Il suffit de demander une estimation. Nous analysons votre logement, sa localisation, son potentiel, vos objectifs, puis nous vous proposons une stratégie adaptée.",
   },
+  {
+    q: "Quel est le tarif de Qit Concierge ?",
+    a: "Qit Concierge fonctionne avec une commission de 25% TTC sur les revenus locatifs générés. Cette rémunération est liée à la performance du logement : si votre bien ne génère pas de réservation, vous ne payez pas de commission de gestion.",
+  },
+  {
+    q: "Que comprend la commission de 25% TTC ?",
+    a: "La commission comprend la gestion complète de votre location courte durée : gestion des annonces Airbnb, Booking et Abritel, communication voyageurs, suivi des réservations, coordination ménage et linge, suivi qualité, pilotage du calendrier et optimisation tarifaire avec PriceLabs.",
+  },
+  {
+    q: "Y a-t-il un abonnement mensuel ?",
+    a: "Non. Qit Concierge ne facture pas d'abonnement mensuel de gestion. Le modèle repose sur une commission de 25% TTC sur les revenus locatifs générés.",
+  },
+  {
+    q: "Le ménage est-il inclus dans les 25% TTC ?",
+    a: "La commission de 25% TTC correspond à la gestion du logement. Les frais de ménage peuvent être facturés séparément au voyageur ou intégrés dans la stratégie tarifaire selon le bien, la plateforme et le positionnement choisi.",
+  },
+  {
+    q: "Pourquoi choisir une commission plutôt qu'un forfait fixe ?",
+    a: "La commission permet d'aligner les intérêts du propriétaire et de la conciergerie. Qit Concierge est rémunérée en fonction des revenus générés, ce qui encourage une gestion active du calendrier, des prix et de la visibilité du logement.",
+  },
+  {
+    q: "Pourquoi 25% TTC ?",
+    a: "Le tarif de 25% TTC correspond à une gestion complète incluant l'opérationnel, les voyageurs, les plateformes Airbnb / Booking / Abritel et l'optimisation tarifaire avec PriceLabs. L'objectif n'est pas seulement de gérer les séjours, mais de piloter la performance du logement.",
+  },
 ];
 
 const whatsappUrl =

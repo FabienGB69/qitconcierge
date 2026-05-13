@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, MapPin, BookOpen } from "lucide-react";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { Link } from "react-router-dom";
 import { renderInlineLinks } from "@/lib/inlineLinks";
 

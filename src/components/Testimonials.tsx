@@ -18,7 +18,7 @@ const pillars = [
   },
   {
     icon: Heart,
-    title: "Premium, sans excès",
+    title: "Rigoureux",
     text: "Une exigence de qualité adaptée à votre logement, qu'il soit T1 urbain, T3 familial ou gîte.",
   },
 ];

@@ -17,8 +17,8 @@ import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
   useSEO({
-    title: "Qit Concierge — Conciergerie Airbnb à Lyon",
-    description: "Gestion Airbnb & Booking à Lyon : ménage, linge, check-in, optimisation des revenus et assistance voyageurs.",
+    title: "Qit Concierge — Conciergerie Airbnb en Drôme-Ardèche",
+    description: "Conciergerie locale en Drôme-Ardèche, à moins d'1h de Tain-l'Hermitage : Airbnb, Booking, Abritel, revenue management PriceLabs, ménage, check-in.",
     path: "/",
   });
   return (

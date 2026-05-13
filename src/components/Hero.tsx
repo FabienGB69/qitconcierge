@@ -18,29 +18,29 @@ const Hero = () => {
         <div className="max-w-3xl animate-fade-in">
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm px-3 py-1.5 rounded-full mb-5 sm:mb-6">
             <span className="w-2 h-2 rounded-full bg-qit-coral" />
-            Conciergerie premium, humaine et performante
+            Conciergerie locale en Drôme-Ardèche
           </span>
 
           <h1 className="text-[2rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white sm:leading-tight mb-4 sm:mb-5">
-            Rentabilisez votre logement courte durée{" "}
-            <span className="text-qit-coral">sans rien gérer</span>
+            Meilleure rentabilité locative{" "}
+            <span className="text-qit-coral">sans gestion quotidienne</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 max-w-2xl leading-relaxed">
             <span className="hidden sm:inline">
-              Qit Concierge accompagne les propriétaires d'appartements, maisons et gîtes
-              (T1, T2, T3, biens urbains et touristiques) dans la gestion complète de leur location courte durée :
-              mise en ligne, optimisation des prix, communication voyageurs, ménage, linge, check-in et suivi qualité.
+              Qit Concierge gère vos maisons de campagne, gîtes, appartements et résidences secondaires
+              à moins d'1h de Tain-l'Hermitage : optimisation Airbnb, Booking et Abritel,
+              revenue management avec PriceLabs, ménage, linge, check-in et accompagnement humain et terrain.
             </span>
             <span className="sm:hidden">
-              Mise en ligne, prix, voyageurs, ménage, linge et check-in — on s'occupe de tout, vous touchez vos revenus.
+              Optimisation Airbnb, Booking, Abritel + PriceLabs, ménage, check-in. Conciergerie locale en Drôme-Ardèche.
             </span>
           </p>
 
           <div className="flex items-start gap-2 text-white/90 text-sm sm:text-base mb-7 sm:mb-8 max-w-2xl">
             <CheckCircle2 className="w-5 h-5 text-qit-coral mt-0.5 flex-shrink-0" />
             <p>
-              Plus de 30 logements gérés sur le terrain, avec optimisation des revenus.
+              Plus de 30 logements gérés sur le terrain, avec revenue management PriceLabs.
             </p>
           </div>
 

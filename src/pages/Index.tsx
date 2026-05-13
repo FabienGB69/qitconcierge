@@ -15,6 +15,7 @@ import SectionCTA from "@/components/SectionCTA";
 import RevenueManagement from "@/components/RevenueManagement";
 import Platforms from "@/components/Platforms";
 import About from "@/components/About";
+import BlogTeaser from "@/components/BlogTeaser";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -53,6 +54,7 @@ const Index = () => {
         <Cases />
         <Compliance />
         <FAQ />
+        <BlogTeaser />
         <div className="container mx-auto px-4 md:px-6 mb-16">
           <SectionCTA
             title="Prêt à augmenter vos revenus locatifs ?"

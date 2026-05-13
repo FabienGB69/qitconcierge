@@ -18,7 +18,7 @@ const Hero = () => {
         <div className="max-w-3xl animate-fade-in">
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm px-3 py-1.5 rounded-full mb-6">
             <span className="w-2 h-2 rounded-full bg-qit-coral" />
-            Conciergerie courte durée — pour propriétaires
+            Conciergerie premium, humaine et performante
           </span>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
@@ -27,8 +27,9 @@ const Hero = () => {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 max-w-2xl leading-relaxed">
-            Qit Concierge accompagne les propriétaires dans la gestion complète de leur location courte durée :
-            mise en ligne, optimisation des prix, communication voyageurs, ménage, linge, check-in, suivi qualité et assistance.
+            Qit Concierge accompagne les propriétaires d'appartements, maisons et gîtes
+            (T1, T2, T3, biens urbains et touristiques) dans la gestion complète de leur location courte durée :
+            mise en ligne, optimisation des prix, communication voyageurs, ménage, linge, check-in et suivi qualité.
           </p>
 
           <div className="flex items-start gap-2 text-white/90 text-sm sm:text-base mb-8 max-w-2xl">

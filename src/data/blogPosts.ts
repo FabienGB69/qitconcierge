@@ -155,7 +155,7 @@ PriceLabs ne remplace pas l'analyse humaine. C'est un outil que nous configurons
 
 ## Notre pratique
 
-Chaque bien géré par Qit Concierge est paramétré dans PriceLabs avec des règles propres à sa zone, sa typologie et sa saisonnalité.`,
+Chaque bien géré par Qit Concierge est paramétré dans PriceLabs avec des règles propres à sa zone, sa typologie et sa saisonnalité. Voir aussi : [comment combler les trous de calendrier](/blog/trous-de-calendrier-comment-les-combler) et [comment fonctionne la tarification dynamique](/blog/pricelabs-comment-ca-marche).`,
   },
   {
     slug: "airbnb-booking-abritel-quelle-plateforme-choisir",

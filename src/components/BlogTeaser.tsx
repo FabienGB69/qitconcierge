@@ -34,7 +34,10 @@ const BlogTeaser = () => {
               key={post.slug}
               className="group rounded-2xl border border-border bg-white overflow-hidden flex flex-col hover:border-qit-coral/40 hover:shadow-md transition-all"
             >
-              <Link to={`/blog/${post.slug}`} className="block aspect-[16/9] overflow-hidden bg-qit-beige/40">
+              <Link
+                to={`/blog/${post.slug}`}
+                className="block aspect-[16/9] overflow-hidden bg-qit-beige/40"
+              >
                 <img
                   src={post.image}
                   alt={post.title}
@@ -48,19 +51,31 @@ const BlogTeaser = () => {
                 <span className="inline-block self-start text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
                   {post.category}
                 </span>
-                <h3 className="text-base md:text-lg font-bold text-qit-purple mb-3 leading-snug">
-                  {post.title}
+                <h3 className="text-lg md:text-xl font-bold text-qit-purple mb-3 leading-snug line-clamp-2 min-h-[3.5rem]">
+                  <Link to={`/blog/${post.slug}`} className="hover:text-qit-coral transition-colors">
+                    {post.title}
+                  </Link>
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5 line-clamp-3 flex-1">
                   {post.excerpt}
                 </p>
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-qit-coral hover:underline self-start"
-                >
-                  Lire l'article
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mt-auto pt-2 border-t border-border/60">
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex items-center gap-1">
+                      <Calendar className="h-3.5 w-3.5" />
+                      {new Date(post.date).toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <Clock className="h-3.5 w-3.5" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-qit-coral group-hover:translate-x-0.5 transition-transform" />
+                </div>
               </div>
             </article>
           ))}

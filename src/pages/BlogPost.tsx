@@ -260,11 +260,11 @@ const BlogPost = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="p-5">
-                      <h3 className="font-semibold text-qit-purple mb-2 leading-snug">
+                    <div className="p-6 flex flex-col">
+                      <h3 className="text-lg md:text-xl font-bold text-qit-purple mb-3 leading-snug line-clamp-2 min-h-[3.5rem] group-hover:text-qit-coral transition-colors">
                         {p.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
                         {p.excerpt}
                       </p>
                     </div>

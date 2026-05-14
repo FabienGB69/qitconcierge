@@ -6,11 +6,12 @@ interface SEOOptions {
   path: string; // e.g. "/", "/cgv"
   ogTitle?: string;
   ogDescription?: string;
+  ogImage?: string;
   /** Optional list of JSON-LD objects to inject into <head>. */
   jsonLd?: Array<Record<string, unknown>>;
 }
 
-const SITE_URL = "https://qitconcierge.com";
+const SITE_URL = "https://qitconcierge.fr";
 const JSONLD_FLAG = "data-seo-jsonld";
 
 const setMetaByName = (name: string, content: string) => {
@@ -33,7 +34,7 @@ const setMetaByProperty = (property: string, content: string) => {
   el.setAttribute("content", content);
 };
 
-export const useSEO = ({ title, description, path, ogTitle, ogDescription, jsonLd }: SEOOptions) => {
+export const useSEO = ({ title, description, path, ogTitle, ogDescription, ogImage, jsonLd }: SEOOptions) => {
   useEffect(() => {
     document.title = title;
     setMetaByName("description", description);
@@ -51,6 +52,13 @@ export const useSEO = ({ title, description, path, ogTitle, ogDescription, jsonL
     setMetaByProperty("og:description", ogDescription ?? description);
     setMetaByProperty("og:url", url);
     setMetaByProperty("og:type", "website");
+
+    const image = ogImage ?? "https://qitconcierge.fr/og-image.jpg";
+    setMetaByProperty("og:image", image);
+    setMetaByName("twitter:card", "summary_large_image");
+    setMetaByName("twitter:title", ogTitle ?? title);
+    setMetaByName("twitter:description", ogDescription ?? description);
+    setMetaByName("twitter:image", image);
 
     // JSON-LD: replace any previously injected JSON-LD scripts (per route).
     document
@@ -71,5 +79,5 @@ export const useSEO = ({ title, description, path, ogTitle, ogDescription, jsonL
         .querySelectorAll(`script[${JSONLD_FLAG}="true"]`)
         .forEach((el) => el.remove());
     };
-  }, [title, description, path, ogTitle, ogDescription, jsonLd]);
+  }, [title, description, path, ogTitle, ogDescription, ogImage, jsonLd]);
 };

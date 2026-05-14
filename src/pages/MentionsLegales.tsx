@@ -132,6 +132,11 @@ const MentionsLegales = () => {
             </section>
           </div>
         </div>
+        <div className="max-w-3xl mx-auto mt-10 pt-6 border-t border-border text-sm">
+          <a href="/" className="text-qit-purple hover:text-qit-coral font-medium transition-colors">
+            ← Retour à l'accueil
+          </a>
+        </div>
       </main>
       <Footer />
     </div>

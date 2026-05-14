@@ -1,11 +1,11 @@
-import { Award, TrendingUp, ClipboardCheck, MessageSquare, Zap, Eye } from "lucide-react";
+import { Award, TrendingUp, ClipboardCheck, MessageSquare, Globe, Eye } from "lucide-react";
 
 const items = [
-  { icon: Award, title: "Expérience terrain", text: "Conciergerie créée en 2023, 5 biens actuellement en gestion en Drôme-Ardèche, avec une approche concrète et testée sur le terrain." },
-  { icon: TrendingUp, title: "Optimisation des revenus", text: "Prix ajustés selon la saison, les événements, le taux d'occupation et les contraintes du logement." },
+  { icon: Award, title: "Expérience terrain", text: "Conciergerie créée en 2023 en Drôme-Ardèche, avec une approche terrain concrète, locale et axée sur la rentabilité propriétaire." },
+  { icon: TrendingUp, title: "Revenue management & PriceLabs", text: "Tarification dynamique avec PriceLabs : prix ajustés chaque jour selon la saison, les événements locaux, la demande et la concurrence pour maximiser vos revenus." },
   { icon: ClipboardCheck, title: "Suivi qualité après chaque séjour", text: "Contrôle du ménage, du linge, des équipements et remontée rapide des anomalies." },
   { icon: MessageSquare, title: "Communication voyageurs", text: "Messages clairs avant, pendant et après le séjour pour limiter les questions et améliorer l'expérience." },
-  { icon: Zap, title: "Gestion des imprévus", text: "Réactivité en cas de problème d'accès, de ménage, de matériel ou de demande voyageur." },
+  { icon: Globe, title: "Diffusion Airbnb, Booking & Abritel", text: "Annonces synchronisées sur les trois principales plateformes, calendrier unifié et stratégie de diffusion adaptée à chaque bien pour maximiser la visibilité." },
   { icon: Eye, title: "Transparence propriétaire", text: "Suivi clair des performances, des interventions et des actions menées sur le logement." },
 ];
 

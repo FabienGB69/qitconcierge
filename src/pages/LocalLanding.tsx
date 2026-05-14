@@ -18,7 +18,7 @@ interface LocalLandingProps {
   slug: string;
 }
 
-const SITE_URL = "https://qitconcierge.com";
+const SITE_URL = "https://qitconcierge.fr";
 
 const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingProps) => {
   const data = getLocalPage(slug);

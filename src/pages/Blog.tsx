@@ -5,6 +5,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 import { posts, categories, BlogCategory } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import SectionCTA from "@/components/SectionCTA";
 
 const Blog = () => {
   const [params, setParams] = useSearchParams();
@@ -15,6 +16,40 @@ const Blog = () => {
     description:
       "Conseils propriétaires, revenue management PriceLabs et actualités locales en Drôme-Ardèche pour mieux gérer votre location courte durée.",
     path: "/blog",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "Blog Qit Concierge",
+        description:
+          "Conseils propriétaires, revenue management PriceLabs et actualités locales en Drôme-Ardèche pour mieux gérer votre location courte durée.",
+        url: "https://qitconcierge.fr/blog",
+        publisher: {
+          "@type": "Organization",
+          name: "Qit Concierge",
+          url: "https://qitconcierge.fr",
+        },
+        inLanguage: "fr-FR",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: "https://qitconcierge.fr/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: "https://qitconcierge.fr/blog",
+          },
+        ],
+      },
+    ],
   });
 
   const filtered = activeCategory
@@ -125,6 +160,13 @@ const Blog = () => {
                 Aucun article dans cette catégorie pour le moment.
               </p>
             )}
+            <div className="mt-16 pt-8 border-t border-border">
+              <SectionCTA
+                title="Vous êtes propriétaire en Drôme-Ardèche ?"
+                subtitle="Demandez une estimation gratuite de vos revenus potentiels en location courte durée — sans engagement."
+                variant="dark"
+              />
+            </div>
           </div>
         </section>
       </main>

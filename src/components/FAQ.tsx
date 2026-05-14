@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Dans quelles zones intervenez-vous ?",
-    a: "Nous intervenons principalement en [Drôme-Ardèche](/gestion-location-courte-duree-drome-ardeche), dans un rayon d'environ 1h autour de [Tain-l'Hermitage](/conciergerie-airbnb-tain-hermitage) : [Tournon-sur-Rhône](/conciergerie-airbnb-tournon), [Romans-sur-Isère](/conciergerie-airbnb-romans-sur-isere), [Valence](/conciergerie-airbnb-valence), [Saint-Vallier](/conciergerie-airbnb-saint-vallier), Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, Drôme des Collines, Ardèche Verte et Vallée du Rhône.",
+    a: "Nous intervenons principalement en [Drôme-Ardèche](/gestion-location-courte-duree-drome-ardeche) : [Tain-l'Hermitage](/conciergerie-airbnb-tain-hermitage), [Tournon-sur-Rhône](/conciergerie-airbnb-tournon), [Romans-sur-Isère](/conciergerie-airbnb-romans-sur-isere), [Valence](/conciergerie-airbnb-valence), [Saint-Vallier](/conciergerie-airbnb-saint-vallier), Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, Drôme des Collines, Ardèche Verte et Vallée du Rhône.",
   },
   {
     q: "Travaillez-vous uniquement avec des logements haut de gamme ?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Combien de biens gérez-vous actuellement ?",
-    a: "Qit Concierge gère actuellement 5 biens. Nous assumons une approche à taille humaine afin de garder un suivi précis, réactif et personnalisé pour chaque propriétaire.",
+    a: "Qit Concierge accompagne un nombre sélectionné de logements pour maintenir une qualité de suivi élevée, réactive et personnalisée pour chaque propriétaire.",
   },
   {
     q: "Depuis quand existe la conciergerie ?",

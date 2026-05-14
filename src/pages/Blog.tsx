@@ -128,10 +128,10 @@ const Blog = () => {
                     <span className="inline-block self-start text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
                       {post.category}
                     </span>
-                    <h2 className="text-lg md:text-xl font-bold text-qit-purple mb-3 leading-snug group-hover:text-qit-coral transition-colors">
+                    <h2 className="text-lg md:text-xl font-bold text-qit-purple mb-3 leading-snug line-clamp-2 min-h-[3.5rem] group-hover:text-qit-coral transition-colors">
                       {post.title}
                     </h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-5 line-clamp-3 flex-1">
                       {post.excerpt}
                     </p>
                     <div className="flex items-center justify-between text-xs text-muted-foreground">

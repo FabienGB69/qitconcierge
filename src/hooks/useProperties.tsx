@@ -16,6 +16,9 @@ export interface Property {
   bathrooms: number;
   guests: number;
   is_active: boolean;
+  airbnb_id: string | null;
+  airbnb_rating: number | null;
+  airbnb_synced_at: string | null;
   created_at: string;
   updated_at: string;
 }

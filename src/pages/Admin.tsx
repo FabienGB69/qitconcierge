@@ -83,6 +83,38 @@ const PropertyForm = ({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="rounded-md border bg-muted/40 p-3 space-y-2">
+        <label className="block text-sm font-medium">Synchronisation Airbnb</label>
+        <p className="text-xs text-muted-foreground">
+          Colle un lien Airbnb, l'ID du logement, ou le code embed. Le titre, l'image, la note et le lien seront récupérés automatiquement.
+        </p>
+        <div className="flex gap-2">
+          <Input
+            value={airbnbInput}
+            onChange={(e) => setAirbnbInput(e.target.value)}
+            placeholder='https://airbnb.fr/rooms/123… ou <div data-id="123…">'
+          />
+          <Button type="button" variant="secondary" onClick={handleSync} disabled={syncing}>
+            <RefreshCw className={`w-4 h-4 mr-2 ${syncing ? "animate-spin" : ""}`} />
+            {syncing ? "Sync…" : "Synchroniser"}
+          </Button>
+        </div>
+        {(formData.airbnb_id || formData.airbnb_rating != null) && (
+          <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground pt-1">
+            {formData.airbnb_id && <span>ID : <code>{formData.airbnb_id}</code></span>}
+            {formData.airbnb_rating != null && (
+              <span className="inline-flex items-center gap-1">
+                <Star className="w-3 h-3 fill-current text-yellow-500" />
+                {Number(formData.airbnb_rating).toFixed(2)}
+              </span>
+            )}
+            {formData.airbnb_synced_at && (
+              <span>Mis à jour le {new Date(formData.airbnb_synced_at).toLocaleString("fr-FR")}</span>
+            )}
+          </div>
+        )}
+      </div>
+
       <div>
         <label className="block text-sm font-medium mb-1">Titre *</label>
         <Input

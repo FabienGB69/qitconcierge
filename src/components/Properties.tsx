@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { MapPin, Users, Bed } from "lucide-react";
+import { MapPin, Users, Bed, Star } from "lucide-react";
 import { useActiveProperties, type Property } from "@/hooks/useProperties";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useQuery } from "@tanstack/react-query";
@@ -50,9 +50,17 @@ const PropertyCard = ({ property }: { property: Property }) => {
       </div>
 
       <CardContent className="pt-6 flex-grow">
-        <div className="flex items-center text-sm text-muted-foreground mb-2">
-          <MapPin className="mr-1 h-4 w-4" />
-          <span>{property.location}</span>
+        <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
+          <div className="flex items-center">
+            <MapPin className="mr-1 h-4 w-4" />
+            <span>{property.location}</span>
+          </div>
+          {property.airbnb_rating != null && (
+            <span className="inline-flex items-center gap-1 text-foreground">
+              <Star className="h-4 w-4 fill-current text-yellow-500" />
+              {Number(property.airbnb_rating).toFixed(2)}
+            </span>
+          )}
         </div>
 
         <h3 className={`text-xl font-semibold mb-4 ${language !== "fr" && isLoading ? "opacity-60" : ""}`}>

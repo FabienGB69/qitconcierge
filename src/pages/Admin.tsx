@@ -8,10 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Plus, Pencil, Trash2, LogOut, Home } from "lucide-react";
+import { Plus, Pencil, Trash2, LogOut, Home, RefreshCw, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EstimationRequestsAdmin from "@/components/admin/EstimationRequestsAdmin";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/components/ui/sonner";
 
 const PropertyForm = ({ 
   property, 
@@ -35,7 +37,43 @@ const PropertyForm = ({
     bathrooms: property?.bathrooms || 1,
     guests: property?.guests || 2,
     is_active: property?.is_active ?? true,
+    airbnb_id: property?.airbnb_id ?? null,
+    airbnb_rating: property?.airbnb_rating ?? null,
+    airbnb_synced_at: property?.airbnb_synced_at ?? null,
   });
+  const [airbnbInput, setAirbnbInput] = useState(property?.airbnb_id || property?.airbnb_url || "");
+  const [syncing, setSyncing] = useState(false);
+
+  const handleSync = async () => {
+    if (!airbnbInput.trim()) {
+      toast.error("Colle un lien, un ID ou un embed Airbnb");
+      return;
+    }
+    setSyncing(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("sync-airbnb-property", {
+        body: { input: airbnbInput },
+      });
+      if (error) throw error;
+      if (data?.error) throw new Error(data.error);
+      setFormData((prev) => ({
+        ...prev,
+        airbnb_id: data.airbnb_id ?? prev.airbnb_id,
+        airbnb_url: data.airbnb_url ?? prev.airbnb_url,
+        airbnb_rating: data.airbnb_rating ?? prev.airbnb_rating,
+        airbnb_synced_at: data.airbnb_synced_at ?? prev.airbnb_synced_at,
+        title: data.title || prev.title,
+        image_url: data.image_url || prev.image_url,
+      }));
+      toast.success(
+        data.title ? `Synchronisé : ${data.title}` : "Identifiant Airbnb enregistré",
+      );
+    } catch (e: any) {
+      toast.error(e.message || "Échec de la synchronisation");
+    } finally {
+      setSyncing(false);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

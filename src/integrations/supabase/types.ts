@@ -76,6 +76,9 @@ export type Database = {
       }
       properties: {
         Row: {
+          airbnb_id: string | null
+          airbnb_rating: number | null
+          airbnb_synced_at: string | null
           airbnb_url: string | null
           bathrooms: number | null
           bedrooms: number | null
@@ -93,6 +96,9 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          airbnb_id?: string | null
+          airbnb_rating?: number | null
+          airbnb_synced_at?: string | null
           airbnb_url?: string | null
           bathrooms?: number | null
           bedrooms?: number | null
@@ -110,6 +116,9 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          airbnb_id?: string | null
+          airbnb_rating?: number | null
+          airbnb_synced_at?: string | null
           airbnb_url?: string | null
           bathrooms?: number | null
           bedrooms?: number | null

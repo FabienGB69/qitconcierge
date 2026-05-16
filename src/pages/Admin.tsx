@@ -8,10 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Plus, Pencil, Trash2, LogOut, Home } from "lucide-react";
+import { Plus, Pencil, Trash2, LogOut, Home, RefreshCw, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EstimationRequestsAdmin from "@/components/admin/EstimationRequestsAdmin";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/components/ui/sonner";
 
 const PropertyForm = ({ 
   property, 
@@ -35,7 +37,43 @@ const PropertyForm = ({
     bathrooms: property?.bathrooms || 1,
     guests: property?.guests || 2,
     is_active: property?.is_active ?? true,
+    airbnb_id: property?.airbnb_id ?? null,
+    airbnb_rating: property?.airbnb_rating ?? null,
+    airbnb_synced_at: property?.airbnb_synced_at ?? null,
   });
+  const [airbnbInput, setAirbnbInput] = useState(property?.airbnb_id || property?.airbnb_url || "");
+  const [syncing, setSyncing] = useState(false);
+
+  const handleSync = async () => {
+    if (!airbnbInput.trim()) {
+      toast.error("Colle un lien, un ID ou un embed Airbnb");
+      return;
+    }
+    setSyncing(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("sync-airbnb-property", {
+        body: { input: airbnbInput },
+      });
+      if (error) throw error;
+      if (data?.error) throw new Error(data.error);
+      setFormData((prev) => ({
+        ...prev,
+        airbnb_id: data.airbnb_id ?? prev.airbnb_id,
+        airbnb_url: data.airbnb_url ?? prev.airbnb_url,
+        airbnb_rating: data.airbnb_rating ?? prev.airbnb_rating,
+        airbnb_synced_at: data.airbnb_synced_at ?? prev.airbnb_synced_at,
+        title: data.title || prev.title,
+        image_url: data.image_url || prev.image_url,
+      }));
+      toast.success(
+        data.title ? `Synchronisé : ${data.title}` : "Identifiant Airbnb enregistré",
+      );
+    } catch (e: any) {
+      toast.error(e.message || "Échec de la synchronisation");
+    } finally {
+      setSyncing(false);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,6 +83,38 @@ const PropertyForm = ({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="rounded-md border bg-muted/40 p-3 space-y-2">
+        <label className="block text-sm font-medium">Synchronisation Airbnb</label>
+        <p className="text-xs text-muted-foreground">
+          Colle un lien Airbnb, l'ID du logement, ou le code embed. Le titre, l'image, la note et le lien seront récupérés automatiquement.
+        </p>
+        <div className="flex gap-2">
+          <Input
+            value={airbnbInput}
+            onChange={(e) => setAirbnbInput(e.target.value)}
+            placeholder='https://airbnb.fr/rooms/123… ou <div data-id="123…">'
+          />
+          <Button type="button" variant="secondary" onClick={handleSync} disabled={syncing}>
+            <RefreshCw className={`w-4 h-4 mr-2 ${syncing ? "animate-spin" : ""}`} />
+            {syncing ? "Sync…" : "Synchroniser"}
+          </Button>
+        </div>
+        {(formData.airbnb_id || formData.airbnb_rating != null) && (
+          <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground pt-1">
+            {formData.airbnb_id && <span>ID : <code>{formData.airbnb_id}</code></span>}
+            {formData.airbnb_rating != null && (
+              <span className="inline-flex items-center gap-1">
+                <Star className="w-3 h-3 fill-current text-yellow-500" />
+                {Number(formData.airbnb_rating).toFixed(2)}
+              </span>
+            )}
+            {formData.airbnb_synced_at && (
+              <span>Mis à jour le {new Date(formData.airbnb_synced_at).toLocaleString("fr-FR")}</span>
+            )}
+          </div>
+        )}
+      </div>
+
       <div>
         <label className="block text-sm font-medium mb-1">Titre *</label>
         <Input

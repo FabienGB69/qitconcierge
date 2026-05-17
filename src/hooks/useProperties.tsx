@@ -8,6 +8,7 @@ export interface Property {
   description: string | null;
   location: string;
   image_url: string | null;
+  images: string[] | null;
   airbnb_url: string | null;
   booking_url: string | null;
   other_platform_url: string | null;

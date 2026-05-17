@@ -24,8 +24,8 @@ export interface Property {
   updated_at: string;
 }
 
-export type PropertyInsert = Partial<Pick<Property, "airbnb_id" | "airbnb_rating" | "airbnb_synced_at">> &
-  Omit<Property, "id" | "created_at" | "updated_at" | "airbnb_id" | "airbnb_rating" | "airbnb_synced_at">;
+export type PropertyInsert = Partial<Pick<Property, "airbnb_id" | "airbnb_rating" | "airbnb_synced_at" | "images">> &
+  Omit<Property, "id" | "created_at" | "updated_at" | "airbnb_id" | "airbnb_rating" | "airbnb_synced_at" | "images">;
 export type PropertyUpdate = Partial<PropertyInsert> & { id: string };
 
 export const useProperties = () => {

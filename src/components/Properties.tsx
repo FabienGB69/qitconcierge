@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { MapPin, Users, Bed, Star } from "lucide-react";
 import { useActiveProperties, type Property } from "@/hooks/useProperties";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -36,17 +37,41 @@ const PropertyCard = ({ property }: { property: Property }) => {
       ? property.description
       : translation?.description ?? property.description;
 
+  const fallback =
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
+  const gallery =
+    property.images && property.images.length > 0
+      ? property.images
+      : property.image_url
+        ? [property.image_url]
+        : [fallback];
+
   return (
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative">
-        <img
-          src={
-            property.image_url ||
-            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-          }
-          alt={title}
-          className="w-full h-64 object-cover"
-        />
+        {gallery.length > 1 ? (
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {gallery.map((src, i) => (
+                <CarouselItem key={i}>
+                  <img
+                    src={src}
+                    alt={`${title} — photo ${i + 1}`}
+                    loading="lazy"
+                    className="w-full h-64 object-cover"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-3" />
+            <CarouselNext className="right-3" />
+            <div className="absolute bottom-2 right-3 rounded-full bg-black/55 text-white text-xs px-2 py-0.5">
+              {gallery.length} photos
+            </div>
+          </Carousel>
+        ) : (
+          <img src={gallery[0]} alt={title} className="w-full h-64 object-cover" />
+        )}
       </div>
 
       <CardContent className="pt-6 flex-grow">

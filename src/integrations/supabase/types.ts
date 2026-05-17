@@ -88,6 +88,7 @@ export type Database = {
           guests: number | null
           id: string
           image_url: string | null
+          images: string[]
           is_active: boolean | null
           location: string
           other_platform_name: string | null
@@ -108,6 +109,7 @@ export type Database = {
           guests?: number | null
           id?: string
           image_url?: string | null
+          images?: string[]
           is_active?: boolean | null
           location: string
           other_platform_name?: string | null
@@ -128,6 +130,7 @@ export type Database = {
           guests?: number | null
           id?: string
           image_url?: string | null
+          images?: string[]
           is_active?: boolean | null
           location?: string
           other_platform_name?: string | null

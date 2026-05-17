@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { MapPin, Users, Bed, Star } from "lucide-react";
 import { useActiveProperties, type Property } from "@/hooks/useProperties";
 import { useLanguage } from "@/contexts/LanguageContext";

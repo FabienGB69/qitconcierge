@@ -5,6 +5,31 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-100">
       <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col items-center gap-3 pb-6 mb-6 border-b border-gray-800">
+          <p className="text-xs uppercase tracking-wider text-gray-500">
+            Vos biens publiés sur
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+            <img
+              src="https://cdn.simpleicons.org/airbnb/ffffff"
+              alt="Airbnb"
+              loading="lazy"
+              className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="https://cdn.simpleicons.org/bookingdotcom/ffffff"
+              alt="Booking.com"
+              loading="lazy"
+              className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity"
+            />
+            <span
+              aria-label="Abritel"
+              className="font-bold text-lg tracking-tight text-white opacity-80 hover:opacity-100 transition-opacity"
+            >
+              abritel
+            </span>
+          </div>
+        </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>
             © Qit Concierge — Conciergerie courte durée en Drôme-Ardèche.

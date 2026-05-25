@@ -1,46 +1,55 @@
 import { FileCheck, Hash, Building2, ShieldCheck, Home, Info } from "lucide-react";
-
-const items = [
-  { icon: FileCheck, title: "Déclaration en mairie", text: "Identifier les démarches à effectuer auprès de votre commune avant la mise en location." },
-  { icon: Hash, title: "Numéro d'enregistrement", text: "Obtenir et afficher le numéro requis sur les annonces, lorsqu'il est applicable." },
-  { icon: Building2, title: "Règlement de copropriété", text: "Vérifier que la location courte durée est compatible avec votre copropriété." },
-  { icon: ShieldCheck, title: "Assurance et fiscalité", text: "Adapter votre couverture et comprendre le régime fiscal applicable à votre situation." },
-  { icon: Home, title: "DPE et qualité du logement", text: "Anticiper les exigences sur la performance énergétique, la capacité d'accueil et le confort." },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Compliance = () => {
+  const { isFR } = useLanguage();
+  const t = isFR
+    ? {
+        label: "Réglementation",
+        heading: "Location courte durée : les points à vérifier avant de se lancer",
+        body: "Avant de louer un logement en courte durée, plusieurs points doivent être vérifiés : déclaration en mairie, numéro d'enregistrement si applicable, règlement de copropriété, assurance, fiscalité, DPE, capacité d'accueil et règles locales. Qit Concierge aide les propriétaires à identifier ces sujets avant la mise en location.",
+        disclaimer: "Cet accompagnement ne remplace pas un conseil juridique ou fiscal, mais permet de partir sur de bonnes bases.",
+        items: [
+          { icon: FileCheck, title: "Déclaration en mairie", text: "Identifier les démarches à effectuer auprès de votre commune avant la mise en location." },
+          { icon: Hash, title: "Numéro d'enregistrement", text: "Obtenir et afficher le numéro requis sur les annonces, lorsqu'il est applicable." },
+          { icon: Building2, title: "Règlement de copropriété", text: "Vérifier que la location courte durée est compatible avec votre copropriété." },
+          { icon: ShieldCheck, title: "Assurance et fiscalité", text: "Adapter votre couverture et comprendre le régime fiscal applicable à votre situation." },
+          { icon: Home, title: "DPE et qualité du logement", text: "Anticiper les exigences sur la performance énergétique, la capacité d'accueil et le confort." },
+        ],
+      }
+    : {
+        label: "Regulation",
+        heading: "Short-term rental: what to check before getting started",
+        body: "Before renting a property short-term, several points need to be checked: city hall declaration, registration number where required, condo rules, insurance, taxation, energy performance (DPE), occupancy and local rules. Qit Concierge helps owners identify these topics before listing.",
+        disclaimer: "This guidance is not a substitute for legal or tax advice, but it helps you start on solid ground.",
+        items: [
+          { icon: FileCheck, title: "City hall declaration", text: "Identify the steps required with your local council before listing." },
+          { icon: Hash, title: "Registration number", text: "Obtain and display the required number on listings where applicable." },
+          { icon: Building2, title: "Condo rules", text: "Make sure short-term rental is compatible with your building's regulations." },
+          { icon: ShieldCheck, title: "Insurance & taxes", text: "Adjust your coverage and understand the tax regime that applies to you." },
+          { icon: Home, title: "Energy rating & quality", text: "Anticipate requirements on energy performance, capacity and comfort." },
+        ],
+      };
+
   return (
     <section className="py-14 md:py-28 bg-qit-beige/40">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-10 md:mb-12">
-          <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">
-            Réglementation
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-5 md:mb-6 leading-tight">
-            Location courte durée : les points à vérifier avant de se lancer
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Avant de louer un logement en courte durée, plusieurs points doivent être vérifiés : déclaration en mairie, numéro d'enregistrement si applicable, règlement de copropriété, assurance, fiscalité, DPE, capacité d'accueil et règles locales. Qit Concierge aide les propriétaires à identifier ces sujets avant la mise en location.
-          </p>
+          <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">{t.label}</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-5 md:mb-6 leading-tight">{t.heading}</h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{t.body}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-6xl mx-auto mb-10">
-          {items.map((item, idx) => {
+          {t.items.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div
-                key={idx}
-                className="rounded-2xl border border-border bg-white p-6 hover:shadow-md transition-shadow"
-              >
+              <div key={idx} className="rounded-2xl border border-border bg-white p-6 hover:shadow-md transition-shadow">
                 <div className="w-11 h-11 rounded-xl bg-qit-purple/5 flex items-center justify-center mb-4">
                   <Icon className="h-5 w-5 text-qit-purple" />
                 </div>
-                <h3 className="text-base font-semibold text-qit-purple mb-2 leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.text}
-                </p>
+                <h3 className="text-base font-semibold text-qit-purple mb-2 leading-snug">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
               </div>
             );
           })}
@@ -48,9 +57,7 @@ const Compliance = () => {
 
         <div className="max-w-3xl mx-auto flex items-start gap-3 rounded-xl bg-white/70 border border-border px-5 py-4">
           <Info className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-            Cet accompagnement ne remplace pas un conseil juridique ou fiscal, mais permet de partir sur de bonnes bases.
-          </p>
+          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{t.disclaimer}</p>
         </div>
       </div>
     </section>

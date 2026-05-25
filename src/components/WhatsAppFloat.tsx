@@ -1,14 +1,16 @@
 import { MessageCircle } from "lucide-react";
-
 import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WhatsAppFloat = () => {
+  const { isFR } = useLanguage();
+  const label = isFR ? "Échanger sur WhatsApp" : "Chat on WhatsApp";
   return (
     <a
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Échanger sur WhatsApp"
+      aria-label={label}
       className="fixed right-4 z-50 group"
       style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 1rem)" }}
     >

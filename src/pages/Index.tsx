@@ -21,44 +21,31 @@ import PricingFAQ from "@/components/PricingFAQ";
 import RevenueEstimator from "@/components/RevenueEstimator";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { isFR } = useLanguage();
   useSEO({
-    title: "Qit Concierge | Conciergerie Airbnb Drôme-Ardèche",
-    description: "Conciergerie courte durée en Drôme-Ardèche : gestion Airbnb, Booking et Abritel, ménage, linge, voyageurs et optimisation PriceLabs pour maisons, gîtes et résidences secondaires. Commission 25% TTC, sans abonnement.",
+    title: isFR
+      ? "Qit Concierge | Conciergerie Airbnb Drôme-Ardèche"
+      : "Qit Concierge | Airbnb concierge in Drôme-Ardèche, France",
+    description: isFR
+      ? "Conciergerie courte durée en Drôme-Ardèche : gestion Airbnb, Booking et Abritel, ménage, linge, voyageurs et optimisation PriceLabs pour maisons, gîtes et résidences secondaires. Commission 25% TTC, sans abonnement."
+      : "Short-term rental concierge in Drôme-Ardèche, France: Airbnb, Booking and Abritel management, cleaning, linen, guests and PriceLabs optimisation for houses, gîtes and second homes. 25% commission incl. tax, no subscription.",
     path: "/",
     ogImage: "https://qitconcierge.fr/og-image.jpg",
-    jsonLd: [
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "Qit Concierge",
-        description: "Conciergerie courte durée en Drôme-Ardèche, gestion Airbnb, Booking et Abritel depuis 2023. Commission 25% TTC, optimisation PriceLabs.",
-        url: "https://qitconcierge.fr",
-        email: "guest.qitconcierge@gmail.com",
-        telephone: "+33601777633",
-        foundingDate: "2023",
-        priceRange: "25% TTC",
-        areaServed: [
-          { "@type": "Place", name: "Drôme" },
-          { "@type": "Place", name: "Ardèche" },
-          { "@type": "Place", name: "Drôme-Ardèche" },
-        ],
-        serviceType: [
-          "Conciergerie Airbnb",
-          "Gestion location courte durée",
-          "Revenue management PriceLabs",
-          "Gestion Booking et Abritel",
-        ],
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "Qit Concierge",
-        url: "https://qitconcierge.fr",
-      },
-    ],
   });
+
+  const cta1 = isFR
+    ? { title: "Faites analyser votre logement", subtitle: "En quelques minutes, recevez une estimation personnalisée de vos revenus en location courte durée." }
+    : { title: "Have your property analysed", subtitle: "In a few minutes, get a tailored estimate of your short-term rental revenue." };
+  const cta2 = isFR
+    ? { title: "Confiez-nous votre bien", subtitle: "Rejoignez les propriétaires qui nous font confiance pour la gestion complète de leur location." }
+    : { title: "Entrust us with your property", subtitle: "Join the owners who rely on us for the full management of their rental." };
+  const cta3 = isFR
+    ? { title: "Vous avez un bien en Drôme ou en Ardèche ?", subtitle: "Parlons de son potentiel locatif — estimation gratuite, sans engagement." }
+    : { title: "Do you own a property in Drôme or Ardèche?", subtitle: "Let's talk about its rental potential — free estimate, no commitment." };
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -69,18 +56,11 @@ const Index = () => {
         <RevenueManagement />
         <Platforms />
         <div className="container mx-auto px-4 md:px-6 -mt-6 mb-16">
-          <SectionCTA
-            title="Faites analyser votre logement"
-            subtitle="En quelques minutes, recevez une estimation personnalisée de vos revenus en location courte durée."
-          />
+          <SectionCTA title={cta1.title} subtitle={cta1.subtitle} />
         </div>
         <Properties />
         <div className="container mx-auto px-4 md:px-6 mb-16">
-          <SectionCTA
-            title="Confiez-nous votre bien"
-            subtitle="Rejoignez les propriétaires qui nous font confiance pour la gestion complète de leur location."
-            variant="dark"
-          />
+          <SectionCTA title={cta2.title} subtitle={cta2.subtitle} variant="dark" />
         </div>
         <About />
         <Trust />
@@ -93,11 +73,7 @@ const Index = () => {
         <FAQ />
         <BlogTeaser />
         <div className="container mx-auto px-4 md:px-6 mb-16">
-          <SectionCTA
-            title="Vous avez un bien en Drôme ou en Ardèche ?"
-            subtitle="Parlons de son potentiel locatif — estimation gratuite, sans engagement."
-            variant="dark"
-          />
+          <SectionCTA title={cta3.title} subtitle={cta3.subtitle} variant="dark" />
         </div>
         <ContactCTA />
         <LocalSEO />

@@ -6,6 +6,8 @@ interface LanguageContextValue {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  isFR: boolean;
+  isEN: boolean;
 }
 
 const translations: Record<Language, Record<string, string>> = {
@@ -33,13 +35,34 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(undefine
 
 const STORAGE_KEY = "qit-language";
 
+const detectBrowserLanguage = (): Language => {
+  if (typeof navigator === "undefined") return "fr";
+  const langs = (navigator.languages && navigator.languages.length
+    ? navigator.languages
+    : [navigator.language || "fr"]
+  ).map((l) => l.toLowerCase());
+  // FR if user has any french preference, else EN
+  if (langs.some((l) => l.startsWith("fr"))) return "fr";
+  return "en";
+};
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<Language>("fr");
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "fr" || stored === "en") setLanguageState(stored);
+    if (stored === "fr" || stored === "en") {
+      setLanguageState(stored);
+    } else {
+      setLanguageState(detectBrowserLanguage());
+    }
   }, []);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = language;
+    }
+  }, [language]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -49,7 +72,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const t = (key: string) => translations[language][key] ?? key;
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage, t, isFR: language === "fr", isEN: language === "en" }}
+    >
       {children}
     </LanguageContext.Provider>
   );

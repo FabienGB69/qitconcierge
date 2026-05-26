@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section>
@@ -11,6 +12,7 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 );
 
 const CGV = () => {
+  const { isEN } = useLanguage();
   useSEO({
     title: "Conditions générales de vente — Qit Concierge",
     description: "Conditions générales de vente des prestations de conciergerie et gestion locative courte durée Qit Concierge.",
@@ -21,6 +23,11 @@ const CGV = () => {
       <Navbar />
       <main className="flex-1 container mx-auto px-4 pt-28 pb-16">
         <div className="max-w-3xl mx-auto">
+          {isEN && (
+            <div className="mb-6 rounded-md border border-qit-coral/30 bg-qit-coral/5 px-4 py-3 text-sm text-qit-purple">
+              These terms of sale are kept in French as they govern services delivered in France. Contact us at guest.qitconcierge@gmail.com for an English summary.
+            </div>
+          )}
           <header className="mb-10 border-b border-border pb-6">
             <p className="text-sm uppercase tracking-wider text-qit-coral font-medium mb-2">Cadre contractuel</p>
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-qit-purple">Conditions générales de vente</h1>

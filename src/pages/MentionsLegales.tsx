@@ -3,8 +3,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
 import { trackEvent } from "@/lib/analytics";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const MentionsLegales = () => {
+  const { isEN } = useLanguage();
   useSEO({
     title: "Mentions légales — Qit Concierge",
     description: "Mentions légales du site Qit Concierge : éditeur, hébergement, propriété intellectuelle et contact.",
@@ -15,6 +17,11 @@ const MentionsLegales = () => {
       <Navbar />
       <main className="flex-1 container mx-auto px-4 pt-28 pb-16">
         <div className="max-w-3xl mx-auto">
+          {isEN && (
+            <div className="mb-6 rounded-md border border-qit-coral/30 bg-qit-coral/5 px-4 py-3 text-sm text-qit-purple">
+              Legal notices required by French law are kept in French for compliance. Contact us at guest.qitconcierge@gmail.com for an English summary.
+            </div>
+          )}
           <header className="mb-10 border-b border-border pb-6">
             <p className="text-sm uppercase tracking-wider text-qit-coral font-medium mb-2">Informations légales</p>
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-qit-purple">Mentions légales</h1>

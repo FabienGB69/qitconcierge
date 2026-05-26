@@ -2,8 +2,10 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PolitiqueConfidentialite = () => {
+  const { isEN } = useLanguage();
   useSEO({
     title: "Politique de confidentialité — Qit Concierge",
     description: "Comment Qit Concierge collecte, utilise et protège vos données personnelles conformément au RGPD.",
@@ -14,6 +16,11 @@ const PolitiqueConfidentialite = () => {
       <Navbar />
       <main className="flex-1 container mx-auto px-4 pt-28 pb-16">
         <div className="max-w-3xl mx-auto">
+          {isEN && (
+            <div className="mb-6 rounded-md border border-qit-coral/30 bg-qit-coral/5 px-4 py-3 text-sm text-qit-purple">
+              This GDPR privacy policy is kept in French for legal compliance. Contact us at guest.qitconcierge@gmail.com for an English summary.
+            </div>
+          )}
           <header className="mb-10 border-b border-border pb-6">
             <p className="text-sm uppercase tracking-wider text-qit-coral font-medium mb-2">Vos données personnelles</p>
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-qit-purple">Politique de confidentialité</h1>

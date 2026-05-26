@@ -2,10 +2,15 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { posts } from "@/data/blogPosts";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const BlogTeaser = () => {
+  const { isFR, language } = useLanguage();
   // Show the 6 cards requested by Qit Concierge (latest curated set)
   const featured = posts.slice(0, 6);
+  const t = isFR
+    ? { heading: "Conseils pour mieux louer en Drôme-Ardèche", all: "Voir tous les articles", cta: "Faire analyser mon logement" }
+    : { heading: "Tips to better rent in Drôme-Ardèche", all: "See all articles", cta: "Have my property analysed" };
 
   return (
     <section className="py-14 md:py-20 bg-white border-t border-border">
@@ -16,14 +21,14 @@ const BlogTeaser = () => {
               Blog
             </span>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-qit-purple leading-tight">
-              Conseils pour mieux louer en Drôme-Ardèche
+              {t.heading}
             </h2>
           </div>
           <Link
             to="/blog"
             className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-qit-coral hover:underline"
           >
-            Voir tous les articles
+            {t.all}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -63,7 +68,7 @@ const BlogTeaser = () => {
                   <div className="flex items-center gap-3">
                     <span className="inline-flex items-center gap-1">
                       <Calendar className="h-3.5 w-3.5" />
-                      {new Date(post.date).toLocaleDateString("fr-FR", {
+                      {new Date(post.date).toLocaleDateString(language === "fr" ? "fr-FR" : "en-GB", {
                         day: "numeric",
                         month: "short",
                         year: "numeric",
@@ -87,10 +92,10 @@ const BlogTeaser = () => {
             size="lg"
             className="bg-qit-coral hover:bg-qit-coral/90 text-white"
           >
-            <a href="#contact">Faire analyser mon logement</a>
+            <a href="#contact">{t.cta}</a>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link to="/blog">Voir tous les articles</Link>
+            <Link to="/blog">{t.all}</Link>
           </Button>
         </div>
       </div>

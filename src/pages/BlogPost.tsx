@@ -7,6 +7,7 @@ import { getPostBySlug, posts } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowLeft, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const whatsappUrl = buildWhatsAppUrl(
   "Bonjour, je viens de lire un article sur votre blog."
@@ -89,8 +90,12 @@ const renderContent = (content: string) =>
   });
 
 const BlogPost = () => {
+  const { isFR, language } = useLanguage();
   const { slug } = useParams();
   const post = slug ? getPostBySlug(slug) : null;
+  const L = isFR
+    ? { back: "Retour au blog", qTitle: "Une question sur votre logement ?", qSub: "Demandez une estimation gratuite ou discutez avec nous sur WhatsApp.", estimate: "Demander une estimation", whatsapp: "Échanger sur WhatsApp", related: "À lire aussi dans", localTitle: "Conciergerie & gestion locale en Drôme-Ardèche", localSub: "Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain." }
+    : { back: "Back to blog", qTitle: "A question about your property?", qSub: "Request a free estimate or chat with us on WhatsApp.", estimate: "Request an estimate", whatsapp: "Chat on WhatsApp", related: "Also read in", localTitle: "Local concierge & management in Drôme-Ardèche", localSub: "Discover how Qit Concierge supports owners on the ground." };
 
   useSEO({
     title: post
@@ -171,7 +176,7 @@ const BlogPost = () => {
               className="inline-flex items-center gap-1.5 text-sm text-qit-coral hover:underline mb-6"
             >
               <ArrowLeft className="h-4 w-4" />
-              Retour au blog
+              {L.back}
             </Link>
 
             <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
@@ -183,7 +188,7 @@ const BlogPost = () => {
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8">
               <span className="inline-flex items-center gap-1.5">
                 <Calendar className="h-4 w-4" />
-                {new Date(post.date).toLocaleDateString("fr-FR", {
+                {new Date(post.date).toLocaleDateString(language === "fr" ? "fr-FR" : "en-GB", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
@@ -209,18 +214,17 @@ const BlogPost = () => {
 
             <div className="mt-12 rounded-2xl bg-qit-beige/40 border border-border p-6 md:p-8 text-center">
               <h3 className="text-xl md:text-2xl font-bold text-qit-purple mb-2">
-                Une question sur votre logement ?
+                {L.qTitle}
               </h3>
               <p className="text-muted-foreground mb-5">
-                Demandez une estimation gratuite ou discutez avec nous sur
-                WhatsApp.
+                {L.qSub}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
                   asChild
                   className="bg-qit-coral hover:bg-qit-coral/90 text-white"
                 >
-                  <Link to="/#contact">Demander une estimation</Link>
+                  <Link to="/#contact">{L.estimate}</Link>
                 </Button>
                 <Button asChild variant="outline">
                   <a
@@ -229,7 +233,7 @@ const BlogPost = () => {
                     rel="noopener noreferrer"
                   >
                     <MessageCircle className="h-4 w-4" />
-                    Échanger sur WhatsApp
+                    {L.whatsapp}
                   </a>
                 </Button>
               </div>
@@ -241,7 +245,7 @@ const BlogPost = () => {
           <section className="py-14 bg-qit-beige/40 border-t border-border">
             <div className="container mx-auto px-4 md:px-6 max-w-5xl">
               <h2 className="text-xl md:text-2xl font-bold text-qit-purple mb-6">
-                À lire aussi dans {post.category}
+                {L.related} {post.category}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {related.map((p) => (
@@ -279,10 +283,10 @@ const BlogPost = () => {
           <section className="py-14 bg-white border-t border-border">
             <div className="container mx-auto px-4 md:px-6 max-w-5xl">
               <h2 className="text-xl md:text-2xl font-bold text-qit-purple mb-2">
-                Conciergerie & gestion locale en Drôme-Ardèche
+                {L.localTitle}
               </h2>
               <p className="text-muted-foreground mb-6">
-                Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain.
+                {L.localSub}
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {relatedLandings.map((l) => (

@@ -8,6 +8,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { getLocalPage, localPages } from "@/data/localPages";
 import { posts } from "@/data/blogPosts";
 import { CheckCircle2, MapPin, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface LocalLandingProps {
   title: string;
@@ -21,7 +22,11 @@ interface LocalLandingProps {
 const SITE_URL = "https://qitconcierge.fr";
 
 const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingProps) => {
+  const { isFR } = useLanguage();
   const data = getLocalPage(slug);
+  const L = isFR
+    ? { home: "Accueil", breadcrumb: "Fil d'ariane", ctaTitle: "Demandez votre estimation", ctaSub: "Évaluation gratuite et sans engagement des revenus que votre logement peut générer.", notice: null }
+    : { home: "Home", breadcrumb: "Breadcrumb", ctaTitle: "Request your estimate", ctaSub: "Free, no-commitment evaluation of the revenue your property can generate.", notice: "This local page targets the French market and is kept in French." };
 
   const jsonLd = useMemo(() => {
     if (!data) return undefined;
@@ -86,11 +91,16 @@ const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingP
         {/* Hero */}
         <section className="pt-32 pb-12 md:pt-40 md:pb-16 bg-qit-beige/40">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <nav aria-label="Fil d'ariane" className="text-xs text-muted-foreground mb-4">
-              <a href="/" className="hover:text-qit-purple">Accueil</a>
+            <nav aria-label={L.breadcrumb} className="text-xs text-muted-foreground mb-4">
+              <a href="/" className="hover:text-qit-purple">{L.home}</a>
               <ChevronRight className="inline h-3 w-3 mx-1" />
               <span className="text-qit-purple">{data?.area ?? slug}</span>
             </nav>
+            {L.notice && (
+              <p className="text-xs text-qit-purple/70 italic mb-3 border-l-2 border-qit-coral pl-3">
+                {L.notice}
+              </p>
+            )}
             <h1 className="text-3xl md:text-5xl font-bold text-qit-purple mb-6 leading-tight">
               {h1}
             </h1>
@@ -103,8 +113,8 @@ const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingP
               </p>
             )}
             <SectionCTA
-              title="Demandez votre estimation"
-              subtitle="Évaluation gratuite et sans engagement des revenus que votre logement peut générer."
+              title={L.ctaTitle}
+              subtitle={L.ctaSub}
             />
           </div>
         </section>

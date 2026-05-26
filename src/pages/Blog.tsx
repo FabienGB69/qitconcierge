@@ -6,15 +6,41 @@ import { useSEO } from "@/hooks/useSEO";
 import { posts, categories, BlogCategory } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import SectionCTA from "@/components/SectionCTA";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Blog = () => {
+  const { isFR, language } = useLanguage();
   const [params, setParams] = useSearchParams();
   const activeCategory = params.get("cat") as BlogCategory | null;
 
+  const L = isFR
+    ? {
+        title: "Blog Qit Concierge — Conseils, revenue management & Drôme-Ardèche",
+        desc: "Conseils propriétaires, revenue management PriceLabs et actualités locales en Drôme-Ardèche pour mieux gérer votre location courte durée.",
+        eyebrow: "Blog",
+        h1: "Conseils pour mieux louer en courte durée en Drôme-Ardèche",
+        intro: "Conseils propriétaires, revenue management avec PriceLabs et actualités locales en Drôme-Ardèche.",
+        all: "Toutes les catégories",
+        empty: "Aucun article dans cette catégorie pour le moment.",
+        ctaTitle: "Vous êtes propriétaire en Drôme-Ardèche ?",
+        ctaSub: "Demandez une estimation gratuite de vos revenus potentiels en location courte durée — sans engagement.",
+      }
+    : {
+        title: "Blog Qit Concierge — Tips, revenue management & Drôme-Ardèche",
+        desc: "Owner tips, PriceLabs revenue management and local news in Drôme-Ardèche to better manage your short-term rental.",
+        eyebrow: "Blog",
+        h1: "Tips to rent better in Drôme-Ardèche",
+        intro: "Owner tips, revenue management with PriceLabs and local news in Drôme-Ardèche.",
+        all: "All categories",
+        empty: "No article in this category yet.",
+        ctaTitle: "Own a property in Drôme-Ardèche?",
+        ctaSub: "Request a free estimate of your potential short-term rental revenue — no commitment.",
+      };
+
+
   useSEO({
-    title: "Blog Qit Concierge — Conseils, revenue management & Drôme-Ardèche",
-    description:
-      "Conseils propriétaires, revenue management PriceLabs et actualités locales en Drôme-Ardèche pour mieux gérer votre location courte durée.",
+    title: L.title,
+    description: L.desc,
     path: "/blog",
     jsonLd: [
       {
@@ -63,14 +89,13 @@ const Blog = () => {
         <section className="bg-qit-purple text-white py-14 md:py-20">
           <div className="container mx-auto px-4 md:px-6 max-w-5xl">
             <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
-              Blog
+              {L.eyebrow}
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-              Conseils pour mieux louer en courte durée en Drôme-Ardèche
+              {L.h1}
             </h1>
             <p className="text-base md:text-lg text-white/80 max-w-2xl">
-              Conseils propriétaires, revenue management avec PriceLabs et
-              actualités locales en Drôme-Ardèche.
+              {L.intro}
             </p>
           </div>
         </section>
@@ -86,7 +111,7 @@ const Blog = () => {
                     : "bg-white text-qit-purple border-border hover:border-qit-purple/40"
                 }`}
               >
-                Toutes les catégories
+                {L.all}
               </button>
               {categories.map((cat) => (
                 <button
@@ -138,7 +163,7 @@ const Blog = () => {
                       <div className="flex items-center gap-3">
                         <span className="inline-flex items-center gap-1">
                           <Calendar className="h-3.5 w-3.5" />
-                          {new Date(post.date).toLocaleDateString("fr-FR", {
+                          {new Date(post.date).toLocaleDateString(language === "fr" ? "fr-FR" : "en-GB", {
                             day: "numeric",
                             month: "short",
                             year: "numeric",
@@ -157,13 +182,13 @@ const Blog = () => {
             </div>
             {filtered.length === 0 && (
               <p className="text-center text-muted-foreground py-12">
-                Aucun article dans cette catégorie pour le moment.
+                {L.empty}
               </p>
             )}
             <div className="mt-16 pt-8 border-t border-border">
               <SectionCTA
-                title="Vous êtes propriétaire en Drôme-Ardèche ?"
-                subtitle="Demandez une estimation gratuite de vos revenus potentiels en location courte durée — sans engagement."
+                title={L.ctaTitle}
+                subtitle={L.ctaSub}
                 variant="dark"
               />
             </div>

@@ -6,15 +6,41 @@ import { useSEO } from "@/hooks/useSEO";
 import { posts, categories, BlogCategory } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import SectionCTA from "@/components/SectionCTA";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Blog = () => {
+  const { isFR, language } = useLanguage();
   const [params, setParams] = useSearchParams();
   const activeCategory = params.get("cat") as BlogCategory | null;
 
+  const L = isFR
+    ? {
+        title: "Blog Qit Concierge — Conseils, revenue management & Drôme-Ardèche",
+        desc: "Conseils propriétaires, revenue management PriceLabs et actualités locales en Drôme-Ardèche pour mieux gérer votre location courte durée.",
+        eyebrow: "Blog",
+        h1: "Conseils pour mieux louer en courte durée en Drôme-Ardèche",
+        intro: "Conseils propriétaires, revenue management avec PriceLabs et actualités locales en Drôme-Ardèche.",
+        all: "Toutes les catégories",
+        empty: "Aucun article dans cette catégorie pour le moment.",
+        ctaTitle: "Vous êtes propriétaire en Drôme-Ardèche ?",
+        ctaSub: "Demandez une estimation gratuite de vos revenus potentiels en location courte durée — sans engagement.",
+      }
+    : {
+        title: "Blog Qit Concierge — Tips, revenue management & Drôme-Ardèche",
+        desc: "Owner tips, PriceLabs revenue management and local news in Drôme-Ardèche to better manage your short-term rental.",
+        eyebrow: "Blog",
+        h1: "Tips to rent better in Drôme-Ardèche",
+        intro: "Owner tips, revenue management with PriceLabs and local news in Drôme-Ardèche.",
+        all: "All categories",
+        empty: "No article in this category yet.",
+        ctaTitle: "Own a property in Drôme-Ardèche?",
+        ctaSub: "Request a free estimate of your potential short-term rental revenue — no commitment.",
+      };
+
+
   useSEO({
-    title: "Blog Qit Concierge — Conseils, revenue management & Drôme-Ardèche",
-    description:
-      "Conseils propriétaires, revenue management PriceLabs et actualités locales en Drôme-Ardèche pour mieux gérer votre location courte durée.",
+    title: L.title,
+    description: L.desc,
     path: "/blog",
     jsonLd: [
       {

@@ -237,7 +237,7 @@ export const localPages: Record<string, LocalPageData> = {
       },
       {
         q: "Quels types de biens gérez-vous ?",
-        a: "Maisons de campagne, gîtes, appartements et résidences secondaires. Nous travaillons surtout avec des propriétaires non disponibles sur place.",
+        a: "Maisons de campagne, appartements et résidences secondaires. Nous travaillons surtout avec des propriétaires non disponibles sur place.",
       },
       PRICING_FAQ,
       {
@@ -314,7 +314,7 @@ export const localPages: Record<string, LocalPageData> = {
     area: "Ardèche",
     region: "Ardèche",
     keywordsLine:
-      "Conciergerie Airbnb Ardèche, gestion gîte Ardèche, ménage Airbnb Ardèche verte, revenue management PriceLabs.",
+      "Conciergerie Airbnb Ardèche, gestion maison Ardèche, ménage Airbnb Ardèche verte, revenue management PriceLabs.",
     whyParagraph:
       "Qit Concierge est une conciergerie Airbnb en Ardèche, spécialisée dans la gestion de maisons de campagne et résidences secondaires en Ardèche verte, vallée du Rhône et autour de Tournon-sur-Rhône.",
     whyBullets: [
@@ -364,7 +364,7 @@ export const localPages: Record<string, LocalPageData> = {
     keywordsLine:
       "Conciergerie location courte durée Drôme, gestion Airbnb Booking Abritel Drôme, revenue management PriceLabs.",
     whyParagraph:
-      "Conciergerie spécialisée location courte durée dans la Drôme : Qit Concierge prend en charge l'intégralité de la gestion locative de votre maison, gîte, appartement ou résidence secondaire — annonces, voyageurs, ménage, tarification, reporting.",
+      "Conciergerie spécialisée location courte durée dans la Drôme : Qit Concierge prend en charge l'intégralité de la gestion locative de votre maison de campagne, appartement ou résidence secondaire — annonces, voyageurs, ménage, tarification, reporting.",
     whyBullets: [
       "Conciergerie indépendante en Drôme",
       "Gestion multi-plateformes Airbnb, Booking, Abritel",

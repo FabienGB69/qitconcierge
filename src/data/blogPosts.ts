@@ -219,7 +219,7 @@ Vignobles de l'Hermitage et de Crozes-Hermitage, ViaRhôna, vallée du Rhône, g
 
 ## Les biens qui performent
 
-- Maisons et gîtes pour 4 à 8 personnes, avec extérieur.
+- Maisons de campagne pour 4 à 8 personnes, avec extérieur.
 - Appartements bien situés à Tain-l'Hermitage, Tournon-sur-Rhône ou Valence.
 - Résidences secondaires équipées pour le télétravail et les séjours mixtes.
 

@@ -25,7 +25,7 @@ const internalLinksFR: { href: string; label: string }[] = [
   { href: "/conciergerie-airbnb-romans-sur-isere", label: "Conciergerie Romans-sur-Isère" },
   { href: "/conciergerie-airbnb-saint-vallier", label: "Conciergerie Saint-Vallier" },
   { href: "/gestion-gite-drome", label: "Gestion maison Drôme" },
-  { href: "/gestion-gite-ardeche", label: "Gestion de gîte Ardèche" },
+  { href: "/gestion-gite-ardeche", label: "Gestion maison Ardèche" },
   { href: "/conciergerie-residence-secondaire-drome-ardeche", label: "Résidence secondaire Drôme-Ardèche" },
   { href: "/revenue-management-airbnb-drome-ardeche", label: "Revenue management PriceLabs" },
   { href: "/gestion-booking-abritel-drome-ardeche", label: "Gestion Booking & Abritel" },

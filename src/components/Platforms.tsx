@@ -12,7 +12,7 @@ const Platforms = () => {
         platforms: [
           { name: "Airbnb", text: "Idéal pour les courts séjours, les week-ends, les couples, familles et voyageurs en recherche d'expériences locales." },
           { name: "Booking", text: "Intéressant pour capter une clientèle plus large, mobile, internationale ou en déplacement." },
-          { name: "Abritel", text: "Pertinent pour les maisons, gîtes, séjours familiaux, résidences secondaires et locations de vacances." },
+          { name: "Abritel", text: "Pertinent pour les maisons, séjours familiaux, résidences secondaires et locations de vacances." },
         ],
       }
     : {
@@ -24,7 +24,7 @@ const Platforms = () => {
         platforms: [
           { name: "Airbnb", text: "Great for short stays, weekends, couples, families and travellers looking for local experiences." },
           { name: "Booking", text: "Useful to reach a broader, mobile, international or business audience." },
-          { name: "Abritel", text: "Well suited to houses, gîtes, family stays, second homes and holiday rentals." },
+          { name: "Abritel", text: "Well suited to houses, family stays, second homes and holiday rentals." },
         ],
       };
 

@@ -82,7 +82,7 @@ const ContactCTA = () => {
         // step1
         cityLbl: "Ville du logement *", cityPh: "Tain-l'Hermitage, Valence...",
         typeLbl: "Type de logement *", select: "Sélectionner",
-        types: { appartement: "Appartement", maison: "Maison", gite: "Gîte", studio: "Studio", autre: "Autre" },
+        types: { appartement: "Appartement", maison: "Maison", gite: "Maison de campagne", studio: "Studio", autre: "Autre" },
         surfaceLbl: "Surface approx. (m²)", bedsLbl: "Nombre de couchages",
         // step2
         onlineLbl: "Le logement est-il déjà en ligne ? *", yes: "Oui", no: "Non",
@@ -129,7 +129,7 @@ const ContactCTA = () => {
         savedWa: "Your request has been saved. WhatsApp is ready to send.",
         cityLbl: "Property city *", cityPh: "Tain-l'Hermitage, Valence...",
         typeLbl: "Property type *", select: "Select",
-        types: { appartement: "Apartment", maison: "House", gite: "Gîte", studio: "Studio", autre: "Other" },
+        types: { appartement: "Apartment", maison: "House", gite: "Maison de campagne", studio: "Studio", autre: "Other" },
         surfaceLbl: "Approx. surface (m²)", bedsLbl: "Number of beds",
         onlineLbl: "Is the property already listed? *", yes: "Yes", no: "No",
         platformLbl: "Current platform *",

@@ -9,7 +9,7 @@ const Hero = () => {
     ? {
         badge: "Conciergerie locale en Drôme-Ardèche",
         h1a: "Conciergerie courte durée en Drôme-Ardèche pour ",
-        h1b: "maisons, gîtes et résidences secondaires",
+        h1b: "maisons de campagne et résidences secondaires",
         sub: "Qit Concierge accompagne les propriétaires en Drôme-Ardèche dans la gestion complète de leur location courte durée : Airbnb, Booking, Abritel, ménage, linge, voyageurs, calendrier et optimisation des revenus avec PriceLabs.",
         check: "Depuis 2023 — +30 biens en gestion — Airbnb, Booking, Abritel — expertise PriceLabs.",
         cta: "Demander une estimation gratuite",
@@ -21,7 +21,7 @@ const Hero = () => {
     : {
         badge: "Local short-term rental concierge in Drôme-Ardèche",
         h1a: "Short-term rental concierge in Drôme-Ardèche for ",
-        h1b: "country homes, gîtes and second homes",
+        h1b: "country homes and second homes",
         sub: "Qit Concierge helps property owners in Drôme-Ardèche fully manage their short-term rental: Airbnb, Booking, Abritel, cleaning, linen, guests, calendar and revenue optimisation with PriceLabs.",
         check: "Since 2023 — 30+ properties under management — Airbnb, Booking, Abritel — PriceLabs expertise.",
         cta: "Request a free estimate",

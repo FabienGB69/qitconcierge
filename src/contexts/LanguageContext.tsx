@@ -13,7 +13,7 @@ interface LanguageContextValue {
 const translations: Record<Language, Record<string, string>> = {
   fr: {
     "properties.heading": "Quelques logements que nous gérons",
-    "properties.subheading": "Un aperçu d'appartements, maisons et gîtes confiés à Qit Concierge — du studio urbain au logement familial.",
+    "properties.subheading": "Un aperçu d'appartements, maisons de campagne et résidences secondaires confiés à Qit Concierge — du studio urbain au logement familial.",
     "properties.loading": "Chargement des propriétés...",
     "properties.guests": "pers.",
     "properties.bedrooms": "ch.",
@@ -22,7 +22,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   en: {
     "properties.heading": "A few properties we manage",
-    "properties.subheading": "A look at the apartments, houses and gîtes entrusted to Qit Concierge — from urban studios to family homes.",
+    "properties.subheading": "A look at the apartments, country houses and second homes entrusted to Qit Concierge — from urban studios to family homes.",
     "properties.loading": "Loading properties...",
     "properties.guests": "guests",
     "properties.bedrooms": "bd",

@@ -41,7 +41,7 @@ export const posts: BlogPost[] = [
     date: "2026-04-08",
     readTime: "9 min",
     image: vignesHermitage,
-    content: `Louer son logement en courte durée dans la Drôme peut être réellement rentable. Maisons de campagne, gîtes, appartements en ville ou résidences secondaires : la demande touristique et professionnelle existe toute l'année autour de Tain-l'Hermitage, Romans-sur-Isère, Valence, Saint-Vallier ou en Drôme des Collines.
+    content: `Louer son logement en courte durée dans la Drôme peut être réellement rentable. Maisons de campagne, appartements en ville ou résidences secondaires : la demande touristique et professionnelle existe toute l'année autour de Tain-l'Hermitage, Romans-sur-Isère, Valence, Saint-Vallier ou en Drôme des Collines.
 
 Mais derrière une annonce qui tourne bien, il y a du temps, de la méthode et une gestion sérieuse : annonces optimisées, prix ajustés, ménage carré, voyageurs accompagnés et suivi régulier. C'est exactement ce que doit apporter une conciergerie Airbnb en Drôme — et tous les prestataires ne se valent pas. Voici comment faire le bon choix.
 
@@ -76,7 +76,7 @@ Dépendre d'une seule plateforme est un risque. Selon le type de bien et la cibl
 
 - Airbnb pour les courts séjours, week-ends, couples et familles ;
 - Booking pour une clientèle plus large, mobile, internationale ou en déplacement ;
-- Abritel pour les maisons, gîtes, séjours familiaux et locations de vacances — particulièrement adapté à la gestion gîte Drôme et aux résidences secondaires.
+- Abritel pour les maisons, séjours familiaux et locations de vacances — particulièrement adapté à la gestion maison de campagne Drôme et aux résidences secondaires.
 
 Vérifiez que la conciergerie maîtrise réellement les trois plateformes et qu'elle adapte la stratégie de diffusion à votre logement, plutôt que d'appliquer un modèle unique.
 
@@ -99,7 +99,7 @@ Une conciergerie qui « garantit » des revenus sans avoir vu le logement, ou qu
 
 Les revenus dépendent de la localisation, de la capacité, des équipements, de la saisonnalité, de la qualité de l'annonce et du pilotage des prix. Une estimation honnête doit être prudente, basée sur des données et présentée comme une projection, pas comme une promesse.
 
-C'est aussi vrai pour la gestion gîte Drôme ou les résidences secondaires : un bon prestataire vous expliquera ce qui peut être amélioré, et ce qui restera contraint par le marché local.
+C'est aussi vrai pour la gestion maison de campagne Drôme ou les résidences secondaires : un bon prestataire vous expliquera ce qui peut être amélioré, et ce qui restera contraint par le marché local.
 
 ## 7. Pourquoi Qit Concierge accompagne les propriétaires en Drôme-Ardèche
 
@@ -194,7 +194,7 @@ Audience large, internationale et mobile. Intéressant pour capter des clientèl
 
 ## Abritel (Vrbo)
 
-Bien positionnée sur les locations de vacances, maisons et gîtes pour familles. Souvent pertinente en complément en Drôme-Ardèche.
+Bien positionnée sur les locations de vacances, maisons de campagne pour familles. Souvent pertinente en complément en Drôme-Ardèche.
 
 ## La bonne stratégie
 
@@ -219,7 +219,7 @@ Vignobles de l'Hermitage et de Crozes-Hermitage, ViaRhôna, vallée du Rhône, g
 
 ## Les biens qui performent
 
-- Maisons et gîtes pour 4 à 8 personnes, avec extérieur.
+- Maisons de campagne pour 4 à 8 personnes, avec extérieur.
 - Appartements bien situés à Tain-l'Hermitage, Tournon-sur-Rhône ou Valence.
 - Résidences secondaires équipées pour le télétravail et les séjours mixtes.
 
@@ -390,7 +390,7 @@ La Drôme-Ardèche bénéficie d'une demande étalée sur l'année : œnotourism
 - Romans-sur-Isère et Drôme des Collines : campagne, calme, accès facile.
 - Valence et alentours : déplacements professionnels, courts séjours.
 - Saint-Vallier et vallée du Rhône : axes touristiques et fluviaux.
-- Annonay, Saint-Péray, Guilherand-Granges : maisons et gîtes en Ardèche verte.
+- Annonay, Saint-Péray, Guilherand-Granges : maisons et maisons de campagne en Ardèche verte.
 
 ## Ce qui fait la différence
 

@@ -42,7 +42,7 @@ const CGV = () => {
                 d'accompagnement à la location courte durée.
               </p>
               <p>
-                Qit Concierge intervient principalement auprès de propriétaires de maisons, gîtes, appartements,
+                Qit Concierge intervient principalement auprès de propriétaires de maisons de campagne, appartements,
                 logements touristiques et résidences secondaires situés en Drôme-Ardèche.
               </p>
             </Section>

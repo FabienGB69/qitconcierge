@@ -158,8 +158,8 @@ const BlogPost = () => {
     ],
     "Conseils propriétaires": [
       { href: "/conciergerie-residence-secondaire-drome-ardeche", label: "Résidence secondaire Drôme-Ardèche" },
-      { href: "/gestion-gite-drome", label: "Gestion de gîte Drôme" },
-      { href: "/gestion-gite-ardeche", label: "Gestion de gîte Ardèche" },
+      { href: "/gestion-gite-drome", label: "Gestion maison Drôme" },
+      { href: "/gestion-gite-ardeche", label: "Gestion maison Ardèche" },
       { href: "/conciergerie-airbnb-valence", label: "Conciergerie Valence" },
     ],
   };

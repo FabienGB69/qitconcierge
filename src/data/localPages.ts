@@ -92,7 +92,7 @@ export const localPages: Record<string, LocalPageData> = {
       },
       {
         q: "Quels types de logements gérez-vous à Tain-l'Hermitage ?",
-        a: "Maisons de village, appartements, gîtes et résidences secondaires. Nous accompagnons en priorité les propriétaires non disponibles sur place qui veulent louer en courte durée sans gérer le quotidien.",
+        a: "Maisons de village, appartements et résidences secondaires. Nous accompagnons en priorité les propriétaires non disponibles sur place qui veulent louer en courte durée sans gérer le quotidien.",
       },
       {
         q: "Comment se passent les vendanges côté location courte durée ?",
@@ -219,7 +219,7 @@ export const localPages: Record<string, LocalPageData> = {
     keywordsLine:
       "Gestion location courte durée Drôme-Ardèche, conciergerie Airbnb Drôme, conciergerie Airbnb Ardèche, revenue management PriceLabs.",
     whyParagraph:
-      "Qit Concierge est une conciergerie locale dédiée à la gestion de location courte durée en Drôme-Ardèche. Nous accompagnons les propriétaires de maisons de campagne, gîtes, appartements et résidences secondaires qui veulent rentabiliser leur bien sans avoir à le gérer au quotidien.",
+      "Qit Concierge est une conciergerie locale dédiée à la gestion de location courte durée en Drôme-Ardèche. Nous accompagnons les propriétaires de maisons de campagne, appartements et résidences secondaires qui veulent rentabiliser leur bien sans avoir à le gérer au quotidien.",
     whyBullets: [
       "Présence terrain Drôme-Ardèche, à moins d'1h de Tain-l'Hermitage",
       "Gestion complète Airbnb, Booking et Abritel",
@@ -237,7 +237,7 @@ export const localPages: Record<string, LocalPageData> = {
       },
       {
         q: "Quels types de biens gérez-vous ?",
-        a: "Maisons de campagne, gîtes, appartements et résidences secondaires. Nous travaillons surtout avec des propriétaires non disponibles sur place.",
+        a: "Maisons de campagne, appartements et résidences secondaires. Nous travaillons surtout avec des propriétaires non disponibles sur place.",
       },
       PRICING_FAQ,
       {
@@ -268,7 +268,7 @@ export const localPages: Record<string, LocalPageData> = {
     keywordsLine:
       "Conciergerie Airbnb Drôme, gestion location courte durée Drôme, ménage Airbnb Drôme, revenue management PriceLabs.",
     whyParagraph:
-      "Qit Concierge est une conciergerie Airbnb dans la Drôme, dédiée aux propriétaires de maisons, gîtes, appartements et résidences secondaires sur Tain-l'Hermitage, Romans-sur-Isère, Valence, Saint-Vallier, Drôme des Collines et vallée du Rhône.",
+      "Qit Concierge est une conciergerie Airbnb dans la Drôme, dédiée aux propriétaires de maisons de campagne, appartements et résidences secondaires sur Tain-l'Hermitage, Romans-sur-Isère, Valence, Saint-Vallier, Drôme des Collines et vallée du Rhône.",
     whyBullets: [
       "Conciergerie indépendante implantée en Drôme",
       "Gestion Airbnb, Booking, Abritel synchronisés",
@@ -285,7 +285,7 @@ export const localPages: Record<string, LocalPageData> = {
       },
       {
         q: "Quels logements sont les plus adaptés à la courte durée en Drôme ?",
-        a: "Les maisons de caractère, gîtes ruraux, résidences secondaires bien situées et appartements en centre-ville (Valence, Romans, Tain) fonctionnent très bien si l'annonce est optimisée et la tarification dynamique en place.",
+        a: "Les maisons de caractère, résidences secondaires bien situées et appartements en centre-ville (Valence, Romans, Tain) fonctionnent très bien si l'annonce est optimisée et la tarification dynamique en place.",
       },
       PRICING_FAQ,
       {
@@ -314,12 +314,12 @@ export const localPages: Record<string, LocalPageData> = {
     area: "Ardèche",
     region: "Ardèche",
     keywordsLine:
-      "Conciergerie Airbnb Ardèche, gestion gîte Ardèche, ménage Airbnb Ardèche verte, revenue management PriceLabs.",
+      "Conciergerie Airbnb Ardèche, gestion maison Ardèche, ménage Airbnb Ardèche verte, revenue management PriceLabs.",
     whyParagraph:
-      "Qit Concierge est une conciergerie Airbnb en Ardèche, spécialisée dans la gestion de gîtes, maisons de campagne et résidences secondaires en Ardèche verte, vallée du Rhône et autour de Tournon-sur-Rhône.",
+      "Qit Concierge est une conciergerie Airbnb en Ardèche, spécialisée dans la gestion de maisons de campagne et résidences secondaires en Ardèche verte, vallée du Rhône et autour de Tournon-sur-Rhône.",
     whyBullets: [
       "Conciergerie locale implantée Drôme-Ardèche",
-      "Spécialistes des gîtes et maisons rurales",
+      "Spécialistes des maisons de campagne et maisons rurales",
       "Annonces Airbnb, Booking, Abritel optimisées",
       "Revenue management PriceLabs adapté à la saisonnalité",
     ],
@@ -332,8 +332,8 @@ export const localPages: Record<string, LocalPageData> = {
         a: "Notre zone d'intervention couvre la rive ardéchoise du Rhône (Tournon, Saint-Péray, Guilherand-Granges, Annonay) et l'Ardèche verte. Le sud Ardèche (gorges, Vallon-Pont-d'Arc) sort de notre zone principale.",
       },
       {
-        q: "Mon gîte est isolé, est-ce un problème ?",
-        a: "Non, à condition que l'accès et les équipements soient bien décrits. Les gîtes isolés en Ardèche verte fonctionnent très bien en courte durée s'ils sont valorisés correctement.",
+        q: "Ma maison de campagne est isolé, est-ce un problème ?",
+        a: "Non, à condition que l'accès et les équipements soient bien décrits. Les maisons de campagne isolées en Ardèche verte fonctionnent très bien en courte durée s'ils sont valorisés correctement.",
       },
       PRICING_FAQ,
       {
@@ -364,7 +364,7 @@ export const localPages: Record<string, LocalPageData> = {
     keywordsLine:
       "Conciergerie location courte durée Drôme, gestion Airbnb Booking Abritel Drôme, revenue management PriceLabs.",
     whyParagraph:
-      "Conciergerie spécialisée location courte durée dans la Drôme : Qit Concierge prend en charge l'intégralité de la gestion locative de votre maison, gîte, appartement ou résidence secondaire — annonces, voyageurs, ménage, tarification, reporting.",
+      "Conciergerie spécialisée location courte durée dans la Drôme : Qit Concierge prend en charge l'intégralité de la gestion locative de votre maison de campagne, appartement ou résidence secondaire — annonces, voyageurs, ménage, tarification, reporting.",
     whyBullets: [
       "Conciergerie indépendante en Drôme",
       "Gestion multi-plateformes Airbnb, Booking, Abritel",
@@ -408,10 +408,10 @@ export const localPages: Record<string, LocalPageData> = {
     keywordsLine:
       "Conciergerie location courte durée Ardèche, gestion Airbnb Booking Abritel Ardèche, revenue management PriceLabs.",
     whyParagraph:
-      "Qit Concierge est une conciergerie locale spécialisée dans la location courte durée en Ardèche. Nous gérons votre gîte, maison de campagne ou résidence secondaire à proximité de la ViaRhôna, des vignobles et de l'Ardèche verte.",
+      "Qit Concierge est une conciergerie locale spécialisée dans la location courte durée en Ardèche. Nous gérons votre maison de campagne, maison de campagne ou résidence secondaire à proximité de la ViaRhôna, des vignobles et de l'Ardèche verte.",
     whyBullets: [
       "Implantation locale Drôme-Ardèche",
-      "Spécialistes des gîtes et maisons rurales",
+      "Spécialistes des maisons de campagne et maisons rurales",
       "Gestion Airbnb, Booking, Abritel",
       "Revenue management PriceLabs",
     ],
@@ -538,30 +538,30 @@ export const localPages: Record<string, LocalPageData> = {
     area: "Drôme",
     region: "Drôme",
     keywordsLine:
-      "Gestion gîte Drôme, conciergerie gîte Airbnb Drôme, ménage gîte rural, revenue management PriceLabs.",
+      "Gestion maison Drôme, conciergerie maison Airbnb Drôme, ménage maison rural, revenue management PriceLabs.",
     whyParagraph:
-      "Vous possédez un gîte dans la Drôme et vous n'êtes pas disponible sur place ? Qit Concierge prend en charge la gestion complète de votre gîte : annonces multi-plateformes, voyageurs, ménage, linge, check-in et tarification dynamique avec PriceLabs.",
+      "Vous possédez une maison de campagne dans la Drôme et vous n'êtes pas disponible sur place ? Qit Concierge prend en charge la gestion complète de votre maison de campagne : annonces multi-plateformes, voyageurs, ménage, linge, check-in et tarification dynamique avec PriceLabs.",
     whyBullets: [
-      "Spécialistes des gîtes ruraux Drôme-Ardèche",
-      "Annonces optimisées Airbnb, Booking, Abritel + Gîtes de France compatible",
+      "Spécialistes des maisons de campagne ruraux Drôme-Ardèche",
+      "Annonces optimisées Airbnb, Booking et Abritel",
       "Revenue management PriceLabs",
       "Ménage hôtelier et linge fournis",
     ],
     services: SHARED_SERVICES,
     localContext:
-      "Les gîtes en Drôme tournent surtout sur les saisons douces et l'été. Une bonne gestion des durées minimales (semaines en haute saison, courts séjours en basse saison) maximise à la fois le taux d'occupation et le prix moyen.",
+      "Les maisons de campagne en Drôme tournent surtout sur les saisons douces et l'été. Une bonne gestion des durées minimales (semaines en haute saison, courts séjours en basse saison) maximise à la fois le taux d'occupation et le prix moyen.",
     faq: [
       {
-        q: "Mon gîte est déjà sur Gîtes de France, est-ce compatible ?",
+        q: "Ma maison de campagne est déjà sur d'autres plateformes ?",
         a: "Oui. Nous pouvons gérer en complément vos annonces Airbnb, Booking et Abritel, en synchronisant le calendrier pour éviter tout double booking.",
       },
       {
-        q: "Quel taux d'occupation viser pour un gîte rural ?",
+        q: "Quel taux d'occupation viser pour une maison de campagne ?",
         a: "Cela varie fortement selon la zone, l'équipement et la stratégie tarifaire. Nous donnons une fourchette prudente lors de l'estimation, basée sur des biens comparables.",
       },
       PRICING_FAQ,
       {
-        q: "Mon gîte est loin, comment gérez-vous les imprévus ?",
+        q: "Ma maison de campagne est loin, comment gérez-vous les imprévus ?",
         a: "Nous travaillons avec des prestataires locaux (ménage, maintenance) et nous nous déplaçons pour les situations qui le justifient. Un interlocuteur unique côté propriétaire.",
       },
     ],
@@ -582,26 +582,26 @@ export const localPages: Record<string, LocalPageData> = {
     area: "Ardèche",
     region: "Ardèche",
     keywordsLine:
-      "Gestion gîte Ardèche, conciergerie gîte Airbnb Ardèche verte, ménage gîte rural, PriceLabs.",
+      "Gestion maison Ardèche, conciergerie maison Airbnb Ardèche verte, ménage maison rural, PriceLabs.",
     whyParagraph:
-      "Confiez la gestion de votre gîte en Ardèche — Ardèche verte, vallée du Rhône, vignobles — à une conciergerie locale. Qit Concierge prend en charge annonces, voyageurs, ménage, linge, check-in et revenue management PriceLabs.",
+      "Confiez la gestion de votre maison de campagne en Ardèche — Ardèche verte, vallée du Rhône, vignobles — à une conciergerie locale. Qit Concierge prend en charge annonces, voyageurs, ménage, linge, check-in et revenue management PriceLabs.",
     whyBullets: [
-      "Spécialistes des gîtes en Ardèche verte et vallée du Rhône",
+      "Spécialistes des maisons de campagne en Ardèche verte et vallée du Rhône",
       "Annonces multi-plateformes Airbnb, Booking, Abritel",
       "Revenue management PriceLabs adapté à la saisonnalité ardéchoise",
       "Présence terrain pour ménage et check-in",
     ],
     services: SHARED_SERVICES,
     localContext:
-      "Les gîtes ardéchois bénéficient d'une demande forte d'avril à octobre. Le bon réglage de PriceLabs et un travail soigné sur les avis voyageurs sont essentiels pour rester en haut des résultats sur les plateformes.",
+      "Les maisons de campagne ardéchoises bénéficient d'une demande forte d'avril à octobre. Le bon réglage de PriceLabs et un travail soigné sur les avis voyageurs sont essentiels pour rester en haut des résultats sur les plateformes.",
     faq: [
       {
-        q: "Quels secteurs ardéchois couvrez-vous pour un gîte ?",
+        q: "Quels secteurs ardéchois couvrez-vous pour une maison de campagne ?",
         a: "Ardèche verte (Annonay, Lamastre, Saint-Félicien), vallée du Rhône (Tournon, Saint-Péray, Guilherand-Granges) et alentours, dans un rayon d'environ 1h de Tain-l'Hermitage.",
       },
       {
-        q: "Mon gîte est en hameau isolé, ça marche ?",
-        a: "Oui, à condition de bien décrire l'accès et les équipements. Les gîtes isolés en Ardèche verte fonctionnent très bien si l'annonce est honnête et les photos soignées.",
+        q: "Ma maison de campagne est en hameau isolé, ça marche ?",
+        a: "Oui, à condition de bien décrire l'accès et les équipements. Les maisons de campagne isolées en Ardèche verte fonctionnent très bien si l'annonce est honnête et les photos soignées.",
       },
       PRICING_FAQ,
       {

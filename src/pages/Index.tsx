@@ -30,8 +30,8 @@ const Index = () => {
       ? "Qit Concierge | Conciergerie Airbnb Drôme-Ardèche"
       : "Qit Concierge | Airbnb concierge in Drôme-Ardèche, France",
     description: isFR
-      ? "Conciergerie courte durée en Drôme-Ardèche : gestion Airbnb, Booking et Abritel, ménage, linge, voyageurs et optimisation PriceLabs pour maisons, gîtes et résidences secondaires. Commission 25% TTC, sans abonnement."
-      : "Short-term rental concierge in Drôme-Ardèche, France: Airbnb, Booking and Abritel management, cleaning, linen, guests and PriceLabs optimisation for houses, gîtes and second homes. 25% commission incl. tax, no subscription.",
+      ? "Conciergerie courte durée en Drôme-Ardèche : gestion Airbnb, Booking et Abritel, ménage, linge, voyageurs et optimisation PriceLabs pour maisons de campagne et résidences secondaires. Commission 25% TTC, sans abonnement."
+      : "Short-term rental concierge in Drôme-Ardèche, France: Airbnb, Booking and Abritel management, cleaning, linen, guests and PriceLabs optimisation for country houses and second homes. 25% commission incl. tax, no subscription.",
     path: "/",
     ogImage: "https://qitconcierge.fr/og-image.jpg",
   });

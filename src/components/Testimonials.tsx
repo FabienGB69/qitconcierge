@@ -12,7 +12,7 @@ const Testimonials = () => {
           { icon: Handshake, title: "Humain", text: "Un interlocuteur dédié, des échanges directs et un suivi personnalisé pour chaque logement." },
           { icon: ShieldCheck, title: "Fiable", text: "Process clairs, sélection des voyageurs, contrôles après séjour et réactivité en cas d'imprévu." },
           { icon: LineChart, title: "Performant", text: "Pricing ajusté, calendrier optimisé et reporting transparent pour faire progresser vos revenus." },
-          { icon: Heart, title: "Rigoureux", text: "Une exigence de qualité adaptée à votre logement, qu'il soit T1 urbain, T3 familial ou gîte." },
+          { icon: Heart, title: "Rigoureux", text: "Une exigence de qualité adaptée à votre logement, qu'il soit T1 urbain ou T3 familial." },
         ],
       }
     : {
@@ -23,7 +23,7 @@ const Testimonials = () => {
           { icon: Handshake, title: "Human", text: "A dedicated contact, direct conversations and tailored follow-up for every property." },
           { icon: ShieldCheck, title: "Reliable", text: "Clear processes, guest screening, post-stay inspections and quick reaction when things go sideways." },
           { icon: LineChart, title: "Performance-driven", text: "Tuned pricing, optimised calendar and transparent reporting to grow your revenue." },
-          { icon: Heart, title: "Rigorous", text: "A level of quality matched to your property — whether it's a city studio, a family flat or a gîte." },
+          { icon: Heart, title: "Rigorous", text: "A level of quality matched to your property — whether it is a city studio or a family flat." },
         ],
       };
 

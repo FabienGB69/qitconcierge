@@ -86,7 +86,7 @@ const Services = () => {
 
         <div className="flex justify-center mt-12">
           <Button asChild size="lg" className="bg-qit-coral hover:bg-qit-coral/90 text-white">
-            <a href="#contact">
+            <a href="/#contact">
               {data.cta}
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>

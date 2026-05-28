@@ -60,7 +60,7 @@ const Cases = () => {
 
         <div className="mt-10 flex justify-center">
           <Button asChild className="bg-qit-coral hover:bg-qit-coral/90 text-white">
-            <a href="#contact">{t.cta}</a>
+            <a href="/#contact">{t.cta}</a>
           </Button>
         </div>
       </div>

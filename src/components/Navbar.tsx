@@ -65,13 +65,13 @@ const Navbar = () => {
           </a>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/#services" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.services}</a>
-            <a href="/#properties" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.properties}</a>
-            <a href="/#approche" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.testimonials}</a>
-            <a href="/blog" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.blog}</a>
-            <a href="/#contact" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.contact}</a>
+            <Link to="/#services" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.services}</Link>
+            <Link to="/#properties" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.properties}</Link>
+            <Link to="/#approche" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.testimonials}</Link>
+            <Link to="/blog" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.blog}</Link>
+            <Link to="/#contact" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.contact}</Link>
             <Button asChild className="bg-qit-coral hover:bg-qit-coral/90 text-white">
-              <a href="/#contact">{t.cta}</a>
+              <Link to="/#contact">{t.cta}</Link>
             </Button>
             <LanguageToggle />
           </div>
@@ -93,14 +93,14 @@ const Navbar = () => {
 
       <div className={cn("md:hidden", isMobileMenuOpen ? "block" : "hidden")}>
         <div className="px-2 pt-2 pb-4 space-y-1 bg-white shadow-lg">
-          <a href="/#services" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.services}</a>
-          <a href="/#properties" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.properties}</a>
-          <a href="/#approche" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.testimonials}</a>
-          <a href="/blog" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.blog}</a>
-          <a href="/#contact" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.contact}</a>
+          <Link to="/#services" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.services}</Link>
+          <Link to="/#properties" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.properties}</Link>
+          <Link to="/#approche" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.testimonials}</Link>
+          <Link to="/blog" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.blog}</Link>
+          <Link to="/#contact" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.contact}</Link>
           <div className="px-3 py-2">
             <Button asChild className="w-full bg-qit-coral hover:bg-qit-coral/90">
-              <a href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>{t.cta}</a>
+              <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>{t.cta}</Link>
             </Button>
           </div>
         </div>

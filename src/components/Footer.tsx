@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Instagram } from "lucide-react";
 
 const Footer = () => {
   const { isFR } = useLanguage();
@@ -34,6 +35,17 @@ const Footer = () => {
             <img src="https://cdn.simpleicons.org/bookingdotcom/ffffff" alt="Booking.com" loading="lazy" className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity" />
             <span aria-label="Abritel" className="font-bold text-lg tracking-tight text-white opacity-80 hover:opacity-100 transition-opacity">abritel</span>
           </div>
+          <a
+            href="https://www.instagram.com/qitconcierge"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="flex items-center gap-2 text-white opacity-80 hover:opacity-100 transition-opacity"
+            onClick={() => trackEvent("instagram_click", { location: "footer" })}
+          >
+            <Instagram className="h-5 w-5" />
+            <span className="text-sm font-medium">@qitconcierge</span>
+          </a>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>{t.copyright}</p>

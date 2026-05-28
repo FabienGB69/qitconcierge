@@ -161,7 +161,7 @@ const RevenueEstimator = () => {
             </div>
 
             <Button asChild size="lg" className="w-full bg-qit-coral hover:bg-qit-coral/90 text-white mt-auto">
-              <a href="#contact">{t.cta}</a>
+              <a href="/#contact">{t.cta}</a>
             </Button>
           </div>
         </div>

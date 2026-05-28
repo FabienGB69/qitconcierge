@@ -68,7 +68,7 @@ const Hero = () => {
               size="lg"
               className="bg-qit-coral hover:bg-qit-coral/90 text-white shadow-xl shadow-qit-coral/40 h-14 sm:h-14 text-base font-semibold w-full sm:w-auto"
             >
-              <a href="#contact">
+              <a href="/#contact">
                 {c.cta}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>

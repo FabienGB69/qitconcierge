@@ -22,9 +22,22 @@ import RevenueEstimator from "@/components/RevenueEstimator";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
   const { isFR } = useLanguage();
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      // wait for sections to mount
+      const t = setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+      return () => clearTimeout(t);
+    }
+  }, [location.hash, location.key]);
   useSEO({
     title: isFR
       ? "Qit Concierge | Conciergerie Airbnb Drôme-Ardèche"

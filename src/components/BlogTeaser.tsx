@@ -92,7 +92,7 @@ const BlogTeaser = () => {
             size="lg"
             className="bg-qit-coral hover:bg-qit-coral/90 text-white"
           >
-            <a href="#contact">{t.cta}</a>
+            <a href="/#contact">{t.cta}</a>
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link to="/blog">{t.all}</Link>

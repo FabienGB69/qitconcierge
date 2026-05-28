@@ -34,7 +34,7 @@ const SectionCTA = ({ title, subtitle, variant = "light" }: SectionCTAProps) => 
       <p className={`text-sm sm:text-base mb-6 max-w-xl mx-auto ${isDark ? "text-white/85" : "text-muted-foreground"}`}>{t.subtitle}</p>
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <Button asChild size="lg" className="bg-qit-coral hover:bg-qit-coral/90 text-white h-12 sm:h-11 text-base font-semibold w-full sm:w-auto shadow-md shadow-qit-coral/30">
-          <a href="#contact">
+          <a href="/#contact">
             {t.cta}
             <ArrowRight className="ml-2 h-4 w-4" />
           </a>

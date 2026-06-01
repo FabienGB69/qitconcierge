@@ -169,7 +169,26 @@ const App = () => (
               intro="Qit Concierge synchronise vos annonces Airbnb, Booking et Abritel pour maximiser votre visibilité et vos revenus en Drôme-Ardèche : calendrier unifié, voyageurs, ménage et revenue management PriceLabs."
             />
           } />
+          <Route path="/conciergerie-airbnb-nyons" element={
+            <LocalLanding
+              slug="conciergerie-airbnb-nyons"
+              title="Conciergerie Airbnb Nyons (Drôme provençale) | Qit Concierge"
+              metaDescription="Conciergerie Airbnb à Nyons : accompagnement à distance + partenaires locaux. Optimisation Airbnb / Booking / Abritel, revenue management PriceLabs, ménage et accueil."
+              h1="Conciergerie Airbnb à Nyons"
+              intro="Qit Concierge accompagne les propriétaires de Nyons et de la Drôme provençale dans la gestion de leur location courte durée : annonces Airbnb, Booking et Abritel optimisées, revenue management avec PriceLabs et coordination de partenaires locaux pour le ménage, l'accueil et la maintenance."
+            />
+          } />
+          <Route path="/conciergerie-airbnb-die" element={
+            <LocalLanding
+              slug="conciergerie-airbnb-die"
+              title="Conciergerie Airbnb Die (vallée de la Drôme) | Qit Concierge"
+              metaDescription="Conciergerie Airbnb à Die : accompagnement à distance + partenaires locaux dans le Diois. Airbnb / Booking / Abritel, revenue management PriceLabs, ménage et accueil."
+              h1="Conciergerie Airbnb à Die"
+              intro="Qit Concierge gère votre location courte durée à Die et dans la vallée de la Drôme : optimisation Airbnb, Booking et Abritel, revenue management avec PriceLabs et coordination de partenaires locaux pour le ménage, l'accueil et la petite maintenance."
+            />
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />

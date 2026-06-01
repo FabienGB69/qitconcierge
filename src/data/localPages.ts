@@ -757,7 +757,106 @@ export const localPages: Record<string, LocalPageData> = {
       "pourquoi-utiliser-pricelabs-drome-ardeche",
     ],
   },
+
+  "conciergerie-airbnb-nyons": {
+    area: "Nyons",
+    region: "Drôme provençale",
+    keywordsLine:
+      "Conciergerie Airbnb Nyons, gestion location courte durée Nyons, location vacances Drôme provençale, revenue management PriceLabs.",
+    whyParagraph:
+      "Nyons et la Drôme provençale sont l'un des marchés courte durée les plus dynamiques de la Drôme : olive de Nyons AOP, lavande, climat méditerranéen, proximité du Vaucluse et des Baronnies. Qit Concierge propose un accompagnement à distance pour les propriétaires de Nyons, articulé avec un réseau de partenaires locaux (ménage, accueil, maintenance) pour piloter votre location courte durée sans relâcher la qualité.",
+    whyBullets: [
+      "Accompagnement à distance pensé pour la Drôme provençale",
+      "Partenaires locaux pour le ménage, l'accueil et la maintenance à Nyons",
+      "Gestion Airbnb, Booking et Abritel synchronisés",
+      "Revenue management PriceLabs calé sur la saisonnalité provençale",
+      "Reporting transparent et commission alignée sur la performance (25% TTC)",
+    ],
+    services: SHARED_SERVICES,
+    localContext:
+      "La demande à Nyons est portée par la saison estivale (juin-septembre), les ponts de printemps et l'œnotourisme/oléotourisme toute l'année. Les voyageurs viennent majoritairement de Lyon, Paris et du nord de l'Europe pour des séjours de 3 à 7 nuits. Une tarification dynamique et une bonne gestion des durées minimales sont essentielles pour capter les ailes de saison sans casser le prix moyen.",
+    faq: [
+      {
+        q: "Qit Concierge intervient-elle physiquement à Nyons ?",
+        a: "Notre équipe terrain est basée en Drôme-Ardèche, à plus d'1h de Nyons. Pour la Drôme provençale, nous proposons un accompagnement à distance (annonces, pricing, voyageurs, calendrier, reporting) en coordination avec un réseau de partenaires locaux pour le ménage, l'accueil et la petite maintenance.",
+      },
+      {
+        q: "Quels types de logements gérez-vous à Nyons ?",
+        a: "Maisons de village provençales, mas, résidences secondaires et appartements. Notre approche est particulièrement adaptée aux propriétaires non disponibles sur place qui veulent une gestion professionnelle sans s'occuper du quotidien.",
+      },
+      {
+        q: "Comment fonctionne la coordination avec les partenaires locaux ?",
+        a: "Nous sélectionnons et coordonnons les prestataires terrain (ménage, linge, check-in, petite maintenance) selon une checklist hôtelière unique. Vous gardez un interlocuteur unique chez Qit Concierge, qui pilote l'ensemble.",
+      },
+      PRICING_FAQ,
+      {
+        q: "Quelle saisonnalité attendre à Nyons ?",
+        a: "Très forte demande de mai à septembre, ponts de printemps, vacances scolaires et week-ends œnotouristiques toute l'année. Le creux de janvier-février se compense par une stratégie de séjours longue durée ou télétravail.",
+      },
+    ],
+    relatedSlugs: [
+      "conciergerie-airbnb-die",
+      "conciergerie-airbnb-drome",
+      "gestion-location-courte-duree-drome-ardeche",
+      "revenue-management-airbnb-drome-ardeche",
+    ],
+    relatedBlogSlugs: [
+      "louer-en-courte-duree-drome-ardeche",
+      "pourquoi-utiliser-pricelabs-drome-ardeche",
+      "annonce-airbnb-optimisation-checklist",
+    ],
+  },
+
+  "conciergerie-airbnb-die": {
+    area: "Die",
+    region: "Vallée de la Drôme",
+    keywordsLine:
+      "Conciergerie Airbnb Die, gestion location courte durée Die, location vacances vallée de la Drôme, revenue management PriceLabs.",
+    whyParagraph:
+      "Die et la vallée de la Drôme attirent une clientèle courte durée recherchant nature, Clairette de Die, Vercors et activités outdoor (randonnée, canyoning, VTT). Qit Concierge accompagne les propriétaires du Diois à distance, avec un réseau de partenaires locaux pour le ménage, l'accueil et la maintenance, afin de piloter votre location courte durée avec une vraie exigence de qualité.",
+    whyBullets: [
+      "Accompagnement à distance dédié à la vallée de la Drôme et au Diois",
+      "Partenaires locaux à Die pour ménage, accueil et maintenance",
+      "Gestion Airbnb, Booking et Abritel synchronisés",
+      "Revenue management PriceLabs adapté au tourisme nature",
+      "Reporting clair et commission alignée sur la performance (25% TTC)",
+    ],
+    services: SHARED_SERVICES,
+    localContext:
+      "Die combine une saison estivale très marquée (Vercors, festivals, activités outdoor) et un tourisme nature toute l'année. Les séjours sont souvent de 4 à 7 nuits l'été et plus courts en ailes de saison. La gestion fine du calendrier et des durées minimales fait la différence sur la rentabilité annuelle.",
+    faq: [
+      {
+        q: "Qit Concierge intervient-elle physiquement à Die ?",
+        a: "Notre équipe terrain est basée en Drôme-Ardèche, à environ 1h30 de Die. Sur le Diois, nous proposons un accompagnement à distance (annonces, pricing, voyageurs, calendrier, reporting) coordonné avec un réseau de partenaires locaux pour le ménage, l'accueil et la petite maintenance.",
+      },
+      {
+        q: "Quels types de logements gérez-vous à Die ?",
+        a: "Maisons de village, gîtes ruraux, chalets et résidences secondaires. Notre approche convient particulièrement aux propriétaires non présents sur place qui veulent une gestion professionnelle et un suivi qualité régulier.",
+      },
+      {
+        q: "Comment garantissez-vous la qualité à distance ?",
+        a: "Sélection des partenaires terrain, checklist hôtelière unique, contrôles photos après chaque ménage et suivi systématique des avis voyageurs. Vous avez un interlocuteur unique chez Qit Concierge qui pilote l'ensemble.",
+      },
+      PRICING_FAQ,
+      {
+        q: "Quelle saisonnalité attendre à Die ?",
+        a: "Très forte demande de juin à mi-septembre, vacances scolaires, ponts. Hors saison, les week-ends randonnée et les séjours nature permettent de générer un revenu complémentaire avec une tarification ajustée.",
+      },
+    ],
+    relatedSlugs: [
+      "conciergerie-airbnb-nyons",
+      "conciergerie-airbnb-drome",
+      "gestion-location-courte-duree-drome-ardeche",
+      "revenue-management-airbnb-drome-ardeche",
+    ],
+    relatedBlogSlugs: [
+      "louer-en-courte-duree-drome-ardeche",
+      "louer-maison-campagne-ardeche-points-a-verifier",
+      "pourquoi-utiliser-pricelabs-drome-ardeche",
+    ],
+  },
 };
+
 
 export const getLocalPage = (slug: string): LocalPageData | undefined =>
   localPages[slug];

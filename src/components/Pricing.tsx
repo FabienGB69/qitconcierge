@@ -61,7 +61,7 @@ const Pricing = () => {
         <div className="max-w-md mx-auto rounded-3xl border border-border bg-qit-beige/40 p-6 md:p-8 shadow-sm">
           <h3 className="text-lg font-semibold text-qit-purple mb-4">{t.card}</h3>
 
-          <div className="flex items-baseline gap-2 mb-1">
+          <div className="flex items-baseline gap-2 mb-1 text-center" style={{ textAlign: null }}>
             <span className="text-5xl md:text-6xl font-bold text-qit-purple">25%</span>
             <span className="text-base text-muted-foreground">{t.ttc}</span>
           </div>

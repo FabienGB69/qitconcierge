@@ -34,17 +34,17 @@ export const categories: BlogCategory[] = [
 
 export const posts: BlogPost[] = [
   {
-    slug: "saison-ete-2026-location-courte-duree-drome-ardeche",
-    title: "Été 2026 en Drôme-Ardèche : ce qui change pour votre location courte durée",
+    slug: "location-courte-duree-ete-2026-drome-ardeche",
+    title: "Location courte durée été 2026 : loi Le Meur, DPE, fiscalité",
     excerpt:
-      "Loi Le Meur, DPE, fiscalité, tarification dynamique : ce qu'il faut anticiper en juin 2026 pour réussir la saison estivale en location courte durée en Drôme-Ardèche.",
+      "Loi Le Meur, DPE, fiscalité : ce qui change en juin 2026 pour votre location courte durée en Drôme-Ardèche. Anticipez la saison estivale.",
     category: "Drôme-Ardèche",
     date: "2026-06-08",
     readTime: "8 min",
     image: ete2026DromeArdeche,
     content: `La saison estivale 2026 démarre dans un contexte particulier pour les propriétaires en location courte durée en Drôme-Ardèche. Entre l'entrée en application progressive de la loi Le Meur, l'évolution des règles fiscales, le durcissement du DPE et une demande touristique qui reste forte sur la vallée du Rhône, voici ce qu'il faut anticiper en juin pour réussir l'été.
 
-## 1. Loi Le Meur : ce qui s'applique vraiment en 2026
+## 1. Loi Le Meur 2026 : ce qui change pour les locations saisonnières
 
 La loi du 19 novembre 2024, dite « loi Le Meur », encadre la location de meublés de tourisme. En 2026, plusieurs points concernent directement les propriétaires en Drôme-Ardèche :
 
@@ -54,7 +54,7 @@ La loi du 19 novembre 2024, dite « loi Le Meur », encadre la location de meubl
 
 La plupart des communes rurales autour de Tain-l'Hermitage, Romans-sur-Isère, Saint-Vallier ou en Drôme des Collines ne sont pas en zone tendue, mais le cadre se resserre. Mieux vaut mettre son dossier à jour maintenant, avant la haute saison. Voir aussi : [obligations à connaître en location courte durée](/blog/obligations-location-courte-duree-drome-ardeche).
 
-## 2. DPE : un sujet à anticiper dès cet été
+## 2. DPE location saisonnière : nouvelles règles à anticiper
 
 Le calendrier d'interdiction progressive des « passoires thermiques » concerne aussi, à terme, les meublés de tourisme classés. Pour un bien en résidence secondaire ou une maison de campagne ancienne, c'est le bon moment pour :
 
@@ -64,7 +64,7 @@ Le calendrier d'interdiction progressive des « passoires thermiques » concerne
 
 Ce n'est pas une urgence immédiate pour la majorité des biens en Drôme-Ardèche, mais une bonne anticipation évite des mauvaises surprises.
 
-## 3. Fiscalité 2026 : un cadre plus serré
+## 3. Fiscalité location courte durée 2026 : ce qui se resserre
 
 Depuis la loi de finances 2025, l'abattement du micro-BIC pour les meublés de tourisme non classés est réduit, et les seuils ont été abaissés. En 2026, deux réflexes :
 
@@ -73,7 +73,7 @@ Depuis la loi de finances 2025, l'abattement du micro-BIC pour les meublés de t
 
 Un échange avec un expert-comptable ou un conseiller fiscal reste indispensable pour calibrer la meilleure option. Notre rôle est d'apporter les éléments concrets côté exploitation (revenus prévisionnels, taux d'occupation, prix moyens).
 
-## 4. Demande estivale 2026 : ce qu'on observe sur le terrain
+## 4. Demande estivale 2026 Drôme-Ardèche : tendances sur le terrain
 
 Les premières tendances pour l'été 2026 en Drôme-Ardèche :
 
@@ -83,7 +83,7 @@ Les premières tendances pour l'été 2026 en Drôme-Ardèche :
 
 Concrètement : un calendrier qui n'est pas encore bien rempli pour juillet-août en juin n'est pas anormal — la fenêtre de réservation s'est raccourcie. En revanche, un prix figé sur la saison fait perdre du revenu sur les pics et bloque le bien sur les creux. C'est là que le [revenue management](/blog/pricelabs-comment-ca-marche) fait la différence.
 
-## 5. Tarification dynamique : ne pas subir l'été
+## 5. Tarification dynamique été 2026 : ne pas subir la saison
 
 Pour l'été 2026, trois leviers concrets à activer maintenant :
 
@@ -93,7 +93,7 @@ Pour l'été 2026, trois leviers concrets à activer maintenant :
 
 Chez Qit Concierge, nous pilotons cette tarification avec [PriceLabs](/blog/pourquoi-utiliser-pricelabs-drome-ardeche) sur Airbnb, Booking et Abritel, en l'adaptant à chaque bien et à chaque micro-marché.
 
-## 6. Ce qui peut encore être fait avant juillet
+## 6. Checklist avant juillet 2026 : 4 actions concrètes
 
 Même à mi-juin, il reste du temps utile pour :
 

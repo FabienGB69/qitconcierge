@@ -98,9 +98,7 @@ const BlogPost = () => {
     : { back: "Back to blog", qTitle: "A question about your property?", qSub: "Request a free estimate or chat with us on WhatsApp.", estimate: "Request an estimate", whatsapp: "Chat on WhatsApp", related: "Also read in", localTitle: "Local concierge & management in Drôme-Ardèche", localSub: "Discover how Qit Concierge supports owners on the ground." };
 
   useSEO({
-    title: post
-      ? `${post.title} | Blog Qit Concierge`
-      : "Article | Blog Qit Concierge",
+    title: post ? post.title : "Article | Blog Qit Concierge",
     description: post?.excerpt ?? "Article du blog Qit Concierge.",
     path: post ? `/blog/${post.slug}` : "/blog",
     jsonLd: post

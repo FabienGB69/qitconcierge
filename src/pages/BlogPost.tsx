@@ -205,7 +205,7 @@ const BlogPost = () => {
             <div className="rounded-2xl overflow-hidden border border-border bg-qit-beige/40 mb-10">
               <img
                 src={post.image}
-                alt={post.title}
+                alt={post.imageAlt ?? post.title}
                 width={1280}
                 height={720}
                 className="w-full h-auto aspect-[16/9] object-cover"

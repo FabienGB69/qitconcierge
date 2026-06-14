@@ -30,7 +30,7 @@ const Trust = () => {
       };
 
   return (
-    <section className="py-14 md:py-28 bg-white">
+    <section className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
           <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">{t.label}</span>

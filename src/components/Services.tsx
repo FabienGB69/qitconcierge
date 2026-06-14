@@ -7,7 +7,7 @@ const Services = () => {
   const data = isFR
     ? {
         label: "Nos services",
-        heading: "Une gestion complète de votre location courte durée",
+        heading: "Gestion complète de votre location courte durée — maisons, appartements et résidences secondaires",
         cta: "Recevoir une proposition de gestion",
         columns: [
           {
@@ -29,7 +29,7 @@ const Services = () => {
       }
     : {
         label: "Our services",
-        heading: "Full management of your short-term rental",
+        heading: "Full management of your short-term rental — houses, apartments and second homes",
         cta: "Request a management proposal",
         columns: [
           {
@@ -51,8 +51,8 @@ const Services = () => {
       };
 
   return (
-    <section id="services" className="py-14 md:py-28 bg-accent">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="services" className="py-20 md:py-32 bg-accent">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">
             {data.label}

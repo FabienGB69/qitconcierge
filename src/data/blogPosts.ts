@@ -11,7 +11,7 @@ import annonceSmartphone from "@/assets/blog/annonce-smartphone.jpg";
 import pricelabsTarif from "@/assets/blog/pricelabs-tarification.jpg";
 import calendrierTrous from "@/assets/blog/calendrier-trous.jpg";
 import dromeArdecheZones from "@/assets/blog/drome-ardeche-zones.jpg";
-import ete2026DromeArdeche from "@/assets/blog/ete-2026-drome-ardeche.jpg";
+import ete2026DromeArdeche from "@/assets/blog/ete-2026-drome-ardeche.webp";
 
 export type BlogCategory = "Conseils propriétaires" | "Revenue management" | "Drôme-Ardèche";
 
@@ -23,6 +23,7 @@ export interface BlogPost {
   date: string; // ISO
   readTime: string;
   image: string;
+  imageAlt?: string;
   content: string; // markdown-lite (paragraphs separated by \n\n, ## headings supported)
 }
 
@@ -42,6 +43,7 @@ export const posts: BlogPost[] = [
     date: "2026-06-08",
     readTime: "8 min",
     image: ete2026DromeArdeche,
+    imageAlt: "Terrasse d'une maison de campagne en Drôme-Ardèche prête pour la saison estivale 2026 de location courte durée",
     content: `La saison estivale 2026 démarre dans un contexte particulier pour les propriétaires en location courte durée en Drôme-Ardèche. Entre l'entrée en application progressive de la loi Le Meur, l'évolution des règles fiscales, le durcissement du DPE et une demande touristique qui reste forte sur la vallée du Rhône, voici ce qu'il faut anticiper en juin pour réussir l'été.
 
 ## 1. Loi Le Meur 2026 : ce qui change pour les locations saisonnières

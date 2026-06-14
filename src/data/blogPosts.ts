@@ -23,6 +23,7 @@ export interface BlogPost {
   date: string; // ISO
   readTime: string;
   image: string;
+  imageAlt?: string;
   content: string; // markdown-lite (paragraphs separated by \n\n, ## headings supported)
 }
 

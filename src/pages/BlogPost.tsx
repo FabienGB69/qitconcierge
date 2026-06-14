@@ -101,6 +101,9 @@ const BlogPost = () => {
     title: post ? post.title : "Article | Blog Qit Concierge",
     description: post?.excerpt ?? "Article du blog Qit Concierge.",
     path: post ? `/blog/${post.slug}` : "/blog",
+    ogTitle: post?.title,
+    ogDescription: post?.excerpt,
+    ogImage: post ? `https://qitconcierge.fr${post.image}` : undefined,
     jsonLd: post
       ? [
           {
@@ -108,6 +111,7 @@ const BlogPost = () => {
             "@type": "BlogPosting",
             headline: post.title,
             description: post.excerpt,
+            image: [`https://qitconcierge.fr${post.image}`],
             url: `https://qitconcierge.fr/blog/${post.slug}`,
             datePublished: post.date,
             inLanguage: "fr-FR",

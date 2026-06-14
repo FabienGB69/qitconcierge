@@ -161,7 +161,7 @@ const Properties = () => {
   }
 
   return (
-    <section id="properties" className="py-14 md:py-20">
+    <section id="properties" className="py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 leading-tight">{t("properties.heading")}</h2>

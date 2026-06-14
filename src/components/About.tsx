@@ -28,7 +28,7 @@ const About = () => {
       };
 
   return (
-    <section className="py-14 md:py-20 bg-white border-t border-border">
+    <section className="py-20 md:py-28 bg-white border-t border-border">
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <div className="rounded-2xl border border-border bg-qit-beige/40 p-6 md:p-10">
           <div className="flex items-center gap-3 mb-4">

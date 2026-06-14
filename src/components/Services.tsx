@@ -7,7 +7,7 @@ const Services = () => {
   const data = isFR
     ? {
         label: "Nos services",
-        heading: "Une gestion complète de votre location courte durée",
+        heading: "Gestion complète de votre location courte durée — maisons, appartements et résidences secondaires",
         cta: "Recevoir une proposition de gestion",
         columns: [
           {

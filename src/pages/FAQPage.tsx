@@ -77,7 +77,16 @@ const FAQPage = () => {
 
         <FAQ />
 
-        <div className="container mx-auto px-4 md:px-6 mb-16 mt-4">
+        <div className="container mx-auto px-4 md:px-6 mb-10 mt-4 text-center">
+          <p className="text-sm text-muted-foreground">
+            {isFR ? "Questions sur le tarif ?" : "Pricing questions?"}{" "}
+            <Link to="/tarifs" className="text-qit-coral underline underline-offset-2 font-medium">
+              {isFR ? "Voir nos tarifs" : "See our pricing"}
+            </Link>
+          </p>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-6 mb-16">
           <SectionCTA title={L.ctaTitle} subtitle={L.ctaSub} variant="dark" />
         </div>
       </main>

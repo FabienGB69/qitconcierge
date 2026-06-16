@@ -60,7 +60,6 @@ const Navbar = () => {
     { id: "services", label: t.services },
     { id: "methode", label: t.methode },
     { id: "tarifs", label: t.tarifs },
-    { id: "faq", label: t.faq },
   ];
 
   useEffect(() => {

@@ -7,7 +7,6 @@ import Trust from "@/components/Trust";
 
 import Cases from "@/components/Cases";
 
-import FAQ from "@/components/FAQ";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 import LocalSEO from "@/components/LocalSEO";
@@ -82,8 +81,6 @@ const Index = () => {
         <Pricing />
         <PricingFAQ />
         <RevenueEstimator />
-        
-        <FAQ />
         
         <div className="container mx-auto px-4 md:px-6 mb-16">
           <SectionCTA title={cta3.title} subtitle={cta3.subtitle} variant="dark" />

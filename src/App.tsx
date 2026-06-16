@@ -14,6 +14,7 @@ import LocalLanding from "./pages/LocalLanding";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Reglementation from "./pages/Reglementation";
+import FAQPage from "./pages/FAQPage";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CookieConsent from "./components/CookieConsent";
 

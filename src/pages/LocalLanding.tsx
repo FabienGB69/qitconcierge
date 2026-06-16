@@ -89,26 +89,35 @@ const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingP
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-12 md:pt-40 md:pb-16 bg-qit-beige/40">
+        <section className="pt-32 pb-16 md:pt-44 md:pb-24 bg-qit-beige">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <nav aria-label={L.breadcrumb} className="text-xs text-muted-foreground mb-4">
-              <a href="/" className="hover:text-qit-purple">{L.home}</a>
-              <ChevronRight className="inline h-3 w-3 mx-1" />
+            <nav aria-label={L.breadcrumb} className="text-[11px] uppercase tracking-[0.18em] text-qit-purple/60 mb-8">
+              <a href="/" className="hover:text-qit-coral">{L.home}</a>
+              <ChevronRight className="inline h-3 w-3 mx-1.5" />
               <span className="text-qit-purple">{data?.area ?? slug}</span>
             </nav>
             {L.notice && (
-              <p className="text-xs text-qit-purple/70 italic mb-3 border-l-2 border-qit-coral pl-3">
+              <p className="text-xs text-qit-purple/70 italic mb-4 border-l-2 border-qit-coral pl-3">
                 {L.notice}
               </p>
             )}
-            <h1 className="text-3xl md:text-5xl font-bold text-qit-purple mb-6 leading-tight">
-              {h1}
+            <div className="inline-flex items-center gap-3 mb-6">
+              <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+              <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">
+                {data?.area ?? "Drôme-Ardèche"}
+              </span>
+            </div>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-qit-purple mb-8 leading-[1.05] tracking-tight">
+              {h1.split(" ").slice(0, Math.max(1, h1.split(" ").length - 2)).join(" ")}{" "}
+              <span className="italic font-normal text-qit-coral">
+                {h1.split(" ").slice(-2).join(" ")}
+              </span>
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+            <p className="text-base md:text-lg text-qit-purple/75 leading-relaxed mb-5 max-w-2xl">
               {intro}
             </p>
             {data && (
-              <p className="text-sm text-qit-purple/70 italic mb-8">
+              <p className="text-sm text-qit-purple/60 italic mb-10 max-w-2xl">
                 {data.keywordsLine}
               </p>
             )}
@@ -122,19 +131,24 @@ const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingP
         {data && (
           <>
             {/* Pourquoi Qit Concierge */}
-            <section className="py-14 md:py-20">
+            <section className="py-20 md:py-28 bg-white">
               <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-                <h2 className="text-2xl md:text-3xl font-bold text-qit-purple mb-5 leading-tight">
-                  Pourquoi choisir Qit Concierge à {data.area} ?
+                <div className="inline-flex items-center gap-3 mb-5">
+                  <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">Pourquoi nous</span>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl text-qit-purple mb-8 leading-[1.1] tracking-tight">
+                  Pourquoi choisir Qit Concierge{" "}
+                  <span className="italic font-normal text-qit-coral">à {data.area}</span> ?
                 </h2>
-                <p className="text-base text-muted-foreground leading-relaxed mb-6">
+                <p className="text-base md:text-lg text-qit-purple/75 leading-relaxed mb-8">
                   {data.whyParagraph}
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {data.whyBullets.map((b) => (
                     <li key={b} className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-qit-coral flex-shrink-0 mt-0.5" />
-                      <span className="text-base text-foreground">{b}</span>
+                      <span className="text-base text-qit-purple/85 leading-relaxed">{b}</span>
                     </li>
                   ))}
                 </ul>
@@ -142,12 +156,17 @@ const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingP
             </section>
 
             {/* Services */}
-            <section className="py-14 md:py-20 bg-qit-beige/40 border-t border-border">
+            <section className="py-20 md:py-28 bg-qit-beige/40 border-t border-border">
               <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-                <h2 className="text-2xl md:text-3xl font-bold text-qit-purple mb-3 leading-tight">
-                  Nos services de conciergerie courte durée à {data.area}
+                <div className="inline-flex items-center gap-3 mb-5">
+                  <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">Services</span>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl text-qit-purple mb-4 leading-[1.1] tracking-tight">
+                  Nos services de conciergerie courte durée{" "}
+                  <span className="italic font-normal text-qit-coral">à {data.area}</span>
                 </h2>
-                <p className="text-base text-muted-foreground leading-relaxed mb-10">
+                <p className="text-base md:text-lg text-qit-purple/70 leading-relaxed mb-12 max-w-3xl">
                   Une gestion complète Airbnb, Booking et Abritel pilotée localement,
                   avec revenue management PriceLabs et présence terrain.
                 </p>
@@ -155,12 +174,12 @@ const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingP
                   {data.services.map((s) => (
                     <article
                       key={s.h3}
-                      className="rounded-2xl bg-white border border-border p-6 shadow-sm"
+                      className="rounded-2xl bg-white border border-border p-7 hover:border-qit-coral/40 transition-colors"
                     >
-                      <h3 className="text-lg font-semibold text-qit-purple mb-2 leading-snug">
+                      <h3 className="font-serif text-xl text-qit-purple mb-3 leading-snug">
                         {s.h3}
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm md:text-base text-qit-purple/70 leading-relaxed">
                         {s.body}
                       </p>
                     </article>
@@ -170,22 +189,32 @@ const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingP
             </section>
 
             {/* Spécificités locales */}
-            <section className="py-14 md:py-20">
+            <section className="py-20 md:py-28 bg-white">
               <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-                <h2 className="text-2xl md:text-3xl font-bold text-qit-purple mb-5 leading-tight">
-                  Spécificités du marché courte durée à {data.area}
+                <div className="inline-flex items-center gap-3 mb-5">
+                  <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">Marché local</span>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl text-qit-purple mb-8 leading-[1.1] tracking-tight">
+                  Spécificités du marché courte durée{" "}
+                  <span className="italic font-normal text-qit-coral">à {data.area}</span>
                 </h2>
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-base md:text-lg text-qit-purple/75 leading-relaxed">
                   {data.localContext}
                 </p>
               </div>
             </section>
 
             {/* FAQ locale */}
-            <section className="py-14 md:py-20 bg-qit-beige/40 border-t border-border">
+            <section className="py-20 md:py-28 bg-qit-beige/40 border-t border-border">
               <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-                <h2 className="text-2xl md:text-3xl font-bold text-qit-purple mb-8 leading-tight">
-                  Questions fréquentes — {data.area}
+                <div className="inline-flex items-center gap-3 mb-5">
+                  <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">FAQ</span>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl text-qit-purple mb-10 leading-[1.1] tracking-tight">
+                  Questions fréquentes —{" "}
+                  <span className="italic font-normal text-qit-coral">{data.area}</span>
                 </h2>
                 <div className="space-y-4">
                   {data.faq.map((item) => (
@@ -193,11 +222,11 @@ const LocalLanding = ({ title, metaDescription, h1, intro, slug }: LocalLandingP
                       key={item.q}
                       className="group rounded-xl bg-white border border-border p-5 [&_summary::-webkit-details-marker]:hidden"
                     >
-                      <summary className="cursor-pointer flex justify-between items-start gap-4 text-base font-semibold text-qit-purple">
+                      <summary className="cursor-pointer flex justify-between items-start gap-4 text-base font-medium text-qit-purple">
                         <span>{item.q}</span>
                         <ChevronRight className="h-5 w-5 flex-shrink-0 transition-transform group-open:rotate-90 text-qit-coral" />
                       </summary>
-                      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                      <p className="mt-3 text-sm md:text-base text-qit-purple/75 leading-relaxed">
                         {item.a}
                       </p>
                     </details>

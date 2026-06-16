@@ -64,7 +64,7 @@ const Navbar = () => {
             </h1>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-7">
             <Link to="/#services" className="text-[13px] uppercase tracking-[0.12em] text-qit-purple/80 hover:text-qit-coral transition-colors">{t.services}</Link>
             <Link to="/#properties" className="text-[13px] uppercase tracking-[0.12em] text-qit-purple/80 hover:text-qit-coral transition-colors">{t.properties}</Link>
             <Link to="/#approche" className="text-[13px] uppercase tracking-[0.12em] text-qit-purple/80 hover:text-qit-coral transition-colors">{t.testimonials}</Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
             <LanguageToggle />
           </div>
 
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <LanguageToggle />
             <button className="flex items-center text-qit-purple" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,7 +91,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={cn("md:hidden", isMobileMenuOpen ? "block" : "hidden")}>
+      <div className={cn("lg:hidden", isMobileMenuOpen ? "block" : "hidden")}>
         <div className="px-2 pt-2 pb-4 space-y-1 bg-white shadow-lg">
           <Link to="/#services" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.services}</Link>
           <Link to="/#properties" className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md" onClick={() => setIsMobileMenuOpen(false)}>{t.properties}</Link>

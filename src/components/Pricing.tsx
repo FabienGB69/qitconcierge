@@ -51,11 +51,21 @@ const Pricing = () => {
   return (
     <section className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-10 md:mb-12">
-          <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">{t.label}</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple mb-4 md:mb-5 leading-tight">{t.heading}</h2>
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-14">
+          <div className="inline-flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+            <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">{t.label}</span>
+            <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-qit-purple mb-5 leading-[1.1] tracking-tight">
+            {isFR ? (
+              <>Un tarif simple : <span className="italic font-normal text-qit-coral">25% TTC</span> sur les revenus générés</>
+            ) : (
+              <>Simple pricing: <span className="italic font-normal text-qit-coral">25% incl. tax</span> on revenue generated</>
+            )}
+          </h2>
           <p className="text-lg md:text-xl text-qit-purple/80 font-medium mb-5">{t.lead}</p>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{t.body}</p>
+          <p className="text-base md:text-lg text-qit-purple/70 leading-relaxed">{t.body}</p>
         </div>
 
         <div className="max-w-md mx-auto rounded-3xl border border-border bg-qit-beige/40 p-6 md:p-8 shadow-sm">

@@ -14,6 +14,7 @@ const Footer = () => {
         terms: "Conditions générales de vente",
         cookies: "Gérer mes cookies",
         reglementation: "Réglementation",
+        faq: "FAQ",
         made: "Site réalisé avec ❤️ par",
         contact: "Contact",
       }
@@ -25,6 +26,7 @@ const Footer = () => {
         terms: "Terms of sale",
         cookies: "Manage my cookies",
         reglementation: "Regulation",
+        faq: "FAQ",
         made: "Site crafted with ❤️ by",
         contact: "Contact",
       };

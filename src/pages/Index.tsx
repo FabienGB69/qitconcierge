@@ -15,7 +15,7 @@ import SectionCTA from "@/components/SectionCTA";
 import RevenueManagement from "@/components/RevenueManagement";
 import Platforms from "@/components/Platforms";
 import About from "@/components/About";
-import BlogTeaser from "@/components/BlogTeaser";
+
 import Pricing from "@/components/Pricing";
 import PricingFAQ from "@/components/PricingFAQ";
 import RevenueEstimator from "@/components/RevenueEstimator";
@@ -84,7 +84,7 @@ const Index = () => {
         <RevenueEstimator />
         <Compliance />
         <FAQ />
-        <BlogTeaser />
+        
         <div className="container mx-auto px-4 md:px-6 mb-16">
           <SectionCTA title={cta3.title} subtitle={cta3.subtitle} variant="dark" />
         </div>

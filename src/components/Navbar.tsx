@@ -60,7 +60,6 @@ const Navbar = () => {
     { id: "services", label: t.services },
     { id: "methode", label: t.methode },
     { id: "tarifs", label: t.tarifs },
-    { id: "faq", label: t.faq },
   ];
 
   useEffect(() => {
@@ -168,6 +167,23 @@ const Navbar = () => {
             >
               {t.blog}
             </Link>
+            <Link
+              to="/faq"
+              className={cn(
+                "relative text-[13px] uppercase tracking-[0.12em] transition-colors py-1",
+                location.pathname === "/faq"
+                  ? "text-qit-coral"
+                  : "text-qit-purple/80 hover:text-qit-coral"
+              )}
+            >
+              {t.faq}
+              <span
+                className={cn(
+                  "absolute left-0 -bottom-0.5 h-px bg-qit-coral transition-all duration-300",
+                  location.pathname === "/faq" ? "w-full" : "w-0"
+                )}
+              />
+            </Link>
             <Button asChild className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full px-5 h-10 text-[13px] font-medium">
               <a href="/#contact" onClick={(e) => handleAnchorClick(e, "contact")}>{t.cta}</a>
             </Button>
@@ -223,6 +239,16 @@ const Navbar = () => {
             className="block px-3 py-2.5 text-[13px] uppercase tracking-[0.12em] rounded-md text-qit-purple/80 hover:bg-white/40"
           >
             {t.blog}
+          </Link>
+          <Link
+            to="/faq"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={cn(
+              "block px-3 py-2.5 text-[13px] uppercase tracking-[0.12em] rounded-md transition-colors",
+              location.pathname === "/faq" ? "text-qit-coral bg-white/60" : "text-qit-purple/80 hover:bg-white/40"
+            )}
+          >
+            {t.faq}
           </Link>
           <div className="px-3 pt-3">
             <Button asChild className="w-full bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-10 text-[13px]">

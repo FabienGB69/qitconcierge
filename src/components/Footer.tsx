@@ -14,6 +14,7 @@ const Footer = () => {
         terms: "Conditions générales de vente",
         cookies: "Gérer mes cookies",
         reglementation: "Réglementation",
+        faq: "FAQ",
         made: "Site réalisé avec ❤️ par",
         contact: "Contact",
       }
@@ -25,6 +26,7 @@ const Footer = () => {
         terms: "Terms of sale",
         cookies: "Manage my cookies",
         reglementation: "Regulation",
+        faq: "FAQ",
         made: "Site crafted with ❤️ by",
         contact: "Contact",
       };
@@ -82,6 +84,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>{t.copyright}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
+            <Link to="/faq" className="hover:text-white transition-colors">{t.faq}</Link>
             <Link to="/reglementation" className="hover:text-white transition-colors">{t.reglementation}</Link>
             <Link to="/mentions-legales" className="hover:text-white transition-colors">{t.legal}</Link>
             <Link to="/politique-confidentialite" className="hover:text-white transition-colors">{t.privacy}</Link>

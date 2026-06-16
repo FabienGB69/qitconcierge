@@ -1,4 +1,3 @@
-import { Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
@@ -30,15 +29,19 @@ const About = () => {
   return (
     <section className="py-20 md:py-28 bg-white border-t border-border">
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-        <div className="rounded-2xl border border-border bg-qit-beige/40 p-6 md:p-10">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="inline-flex items-center justify-center h-10 w-10 rounded-lg bg-qit-coral/10 text-qit-coral">
-              <Users className="h-5 w-5" />
-            </div>
-            <span className="text-xs uppercase tracking-widest text-qit-coral font-semibold">{t.eyebrow}</span>
+        <div className="rounded-2xl border border-border bg-qit-beige/40 p-8 md:p-14">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+            <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">{t.eyebrow}</span>
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-qit-purple mb-5 leading-tight">{t.heading}</h2>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 md:mb-10">{t.body}</p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-qit-purple mb-6 leading-[1.1] tracking-tight">
+            {isFR ? (
+              <>Une conciergerie locale, <span className="italic font-normal text-qit-coral">avec un suivi vraiment personnalisé</span></>
+            ) : (
+              <>A local concierge service, <span className="italic font-normal text-qit-coral">with truly personal follow-up</span></>
+            )}
+          </h2>
+          <p className="text-base md:text-lg text-qit-purple/75 leading-relaxed mb-10">{t.body}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 mb-6 md:mb-8">
             {t.stats.map((s) => (

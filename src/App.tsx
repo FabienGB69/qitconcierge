@@ -15,6 +15,10 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Reglementation from "./pages/Reglementation";
 import FAQPage from "./pages/FAQPage";
+import Tarifs from "./pages/Tarifs";
+import ServicesPage from "./pages/Services";
+import Methode from "./pages/Methode";
+import APropos from "./pages/APropos";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CookieConsent from "./components/CookieConsent";
 
@@ -38,6 +42,10 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/reglementation" element={<Reglementation />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/tarifs" element={<Tarifs />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/methode" element={<Methode />} />
+          <Route path="/a-propos" element={<APropos />} />
           <Route path="/conciergerie-airbnb-tain-hermitage" element={
             <LocalLanding
               slug="conciergerie-airbnb-tain-hermitage"

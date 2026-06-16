@@ -37,6 +37,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/reglementation" element={<Reglementation />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/conciergerie-airbnb-tain-hermitage" element={
             <LocalLanding
               slug="conciergerie-airbnb-tain-hermitage"

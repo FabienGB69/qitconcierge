@@ -50,27 +50,27 @@ const Navbar = () => {
       };
 
   return (
-    <nav className="bg-white/90 backdrop-blur-sm fixed w-full z-50 shadow-sm">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center py-4">
-          <a href="/" className="flex items-center">
+    <nav className="bg-qit-beige/80 backdrop-blur-md fixed w-full z-50 border-b border-qit-purple/10">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex justify-between items-center py-5">
+          <a href="/" className="flex items-center group">
             <div className="relative">
-              <Home className="h-6 w-6 text-qit-coral" />
-              <Heart className="h-3 w-3 absolute bottom-0 right-0 text-qit-coral" />
+              <Home className="h-5 w-5 text-qit-coral" />
+              <Heart className="h-2.5 w-2.5 absolute bottom-0 right-0 text-qit-coral" />
             </div>
-            <h1 className="text-2xl font-serif font-bold ml-2">
-              <span className="text-qit-purple">Qit</span>
-              <span className="text-gray-700">Concierge</span>
+            <h1 className="text-xl font-serif ml-2.5 tracking-tight">
+              <span className="text-qit-purple font-semibold">Qit</span>
+              <span className="text-qit-purple/60 italic font-normal ml-0.5">Concierge</span>
             </h1>
           </a>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/#services" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.services}</Link>
-            <Link to="/#properties" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.properties}</Link>
-            <Link to="/#approche" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.testimonials}</Link>
-            <Link to="/blog" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.blog}</Link>
-            <Link to="/#contact" className="text-sm font-medium hover:text-qit-purple transition-colors">{t.contact}</Link>
-            <Button asChild className="bg-qit-coral hover:bg-qit-coral/90 text-white">
+          <div className="hidden md:flex items-center gap-8">
+            <Link to="/#services" className="text-[13px] uppercase tracking-[0.12em] text-qit-purple/80 hover:text-qit-coral transition-colors">{t.services}</Link>
+            <Link to="/#properties" className="text-[13px] uppercase tracking-[0.12em] text-qit-purple/80 hover:text-qit-coral transition-colors">{t.properties}</Link>
+            <Link to="/#approche" className="text-[13px] uppercase tracking-[0.12em] text-qit-purple/80 hover:text-qit-coral transition-colors">{t.testimonials}</Link>
+            <Link to="/blog" className="text-[13px] uppercase tracking-[0.12em] text-qit-purple/80 hover:text-qit-coral transition-colors">{t.blog}</Link>
+            <Link to="/#contact" className="text-[13px] uppercase tracking-[0.12em] text-qit-purple/80 hover:text-qit-coral transition-colors">{t.contact}</Link>
+            <Button asChild className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full px-5 h-10 text-[13px] font-medium">
               <Link to="/#contact">{t.cta}</Link>
             </Button>
             <LanguageToggle />
@@ -78,7 +78,7 @@ const Navbar = () => {
 
           <div className="md:hidden flex items-center gap-2">
             <LanguageToggle />
-            <button className="flex items-center" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <button className="flex items-center text-qit-purple" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

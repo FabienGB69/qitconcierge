@@ -53,11 +53,15 @@ const Services = () => {
   return (
     <section id="services" className="py-20 md:py-32 bg-accent">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
-          <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3 md:mb-4">
-            {data.label}
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-qit-purple leading-tight">
+        <div className="max-w-3xl mx-auto mb-12 md:mb-16 text-center">
+          <div className="inline-flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+            <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">
+              {data.label}
+            </span>
+            <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-qit-purple leading-[1.1] tracking-tight">
             {data.heading}
           </h2>
         </div>

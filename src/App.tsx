@@ -13,6 +13,7 @@ import Admin from "./pages/Admin";
 import LocalLanding from "./pages/LocalLanding";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Reglementation from "./pages/Reglementation";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CookieConsent from "./components/CookieConsent";
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/admin" element={<Admin />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/reglementation" element={<Reglementation />} />
           <Route path="/conciergerie-airbnb-tain-hermitage" element={
             <LocalLanding
               slug="conciergerie-airbnb-tain-hermitage"

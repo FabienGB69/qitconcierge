@@ -6,7 +6,7 @@ import Properties from "@/components/Properties";
 import Trust from "@/components/Trust";
 
 import Cases from "@/components/Cases";
-import Compliance from "@/components/Compliance";
+
 import FAQ from "@/components/FAQ";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
@@ -82,7 +82,7 @@ const Index = () => {
         <Pricing />
         <PricingFAQ />
         <RevenueEstimator />
-        <Compliance />
+        
         <FAQ />
         
         <div className="container mx-auto px-4 md:px-6 mb-16">

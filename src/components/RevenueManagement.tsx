@@ -38,12 +38,15 @@ const RevenueManagement = () => {
   return (
     <section className="py-20 md:py-28 bg-white border-t border-border">
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-        <div className="max-w-3xl mb-10 md:mb-12">
-          <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">{t.label}</span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-qit-purple mb-5 leading-tight">{t.heading}</h2>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">{t.body1}</p>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            {t.body2pre}<span className="font-semibold text-qit-purple">PriceLabs</span>{t.body2post}
+        <div className="max-w-3xl mb-12 md:mb-14">
+          <div className="inline-flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+            <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">{t.label}</span>
+          </div>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-qit-purple mb-6 leading-[1.1] tracking-tight">{t.heading}</h2>
+          <p className="text-base md:text-lg text-qit-purple/70 leading-relaxed mb-4">{t.body1}</p>
+          <p className="text-base md:text-lg text-qit-purple/70 leading-relaxed">
+            {t.body2pre}<span className="italic text-qit-coral">PriceLabs</span>{t.body2post}
           </p>
         </div>
 

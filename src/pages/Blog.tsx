@@ -86,15 +86,19 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <section className="bg-qit-purple text-white py-14 md:py-20">
+        <section className="bg-qit-beige py-20 md:py-28 border-b border-border">
           <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-            <span className="inline-block text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">
-              {L.eyebrow}
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-              {L.h1}
+            <div className="inline-flex items-center gap-3 mb-6">
+              <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+              <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">
+                {L.eyebrow}
+              </span>
+            </div>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-qit-purple mb-6 leading-[1.05] tracking-tight max-w-3xl">
+              {L.h1.split(" ").slice(0, -2).join(" ")}{" "}
+              <span className="italic font-normal text-qit-coral">{L.h1.split(" ").slice(-2).join(" ")}</span>
             </h1>
-            <p className="text-base md:text-lg text-white/80 max-w-2xl">
+            <p className="text-base md:text-lg text-qit-purple/70 max-w-2xl leading-relaxed">
               {L.intro}
             </p>
           </div>

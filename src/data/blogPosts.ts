@@ -36,6 +36,82 @@ export const categories: BlogCategory[] = [
 
 export const posts: BlogPost[] = [
   {
+    slug: "classement-meuble-tourisme-drome-ardeche",
+    title: "Classement meublé de tourisme en Drôme-Ardèche : est-ce vraiment intéressant en 2026 ?",
+    excerpt:
+      "Classement meublé de tourisme en Drôme-Ardèche : démarche, coût, abattement fiscal micro-BIC et impact concret sur la rentabilité de votre location courte durée.",
+    category: "Conseils propriétaires",
+    date: "2026-07-07",
+    readTime: "7 min",
+    image: classementMeuble,
+    imageAlt: "Gîte en pierre en Drôme-Ardèche avec terrasse, lavande et vignes en arrière-plan, classé meublé de tourisme",
+    content: `Depuis la loi de finances 2025 et la [loi Le Meur](/blog/location-courte-duree-ete-2026-drome-ardeche), le classement en meublé de tourisme est redevenu un sujet central pour les propriétaires en location courte durée. En Drôme-Ardèche, il peut faire une vraie différence sur la fiscalité, la visibilité de l'annonce et le prix moyen — à condition de bien comprendre ce qu'il implique.
+
+## 1. Qu'est-ce que le classement meublé de tourisme ?
+
+Le classement « meublé de tourisme » est une évaluation officielle de la qualité d'un hébergement touristique meublé, encadrée par [Atout France](https://www.classement.atout-france.fr/) et effectuée par un organisme accrédité. Le logement est noté de 1 à 5 étoiles selon plus de 130 critères : équipements, confort, services, accessibilité, développement durable.
+
+Ce classement est distinct du numéro d'enregistrement en mairie, qui reste une obligation déclarative pour de nombreuses communes (voir nos [obligations en location courte durée](/blog/obligations-location-courte-duree-drome-ardeche)).
+
+## 2. Pourquoi c'est devenu stratégique en 2026
+
+Depuis la loi de finances 2025, l'écart fiscal entre les meublés classés et non classés s'est nettement creusé :
+
+- **Meublé de tourisme non classé** : abattement micro-BIC réduit à 30 %, plafond de recettes abaissé à 15 000 € par an.
+- **Meublé de tourisme classé** : abattement micro-BIC maintenu à 50 %, plafond à 77 700 €, avec un bonus de 21 % dans certaines zones rurales.
+
+Concrètement, pour un bien qui génère 25 000 € de revenus locatifs en Drôme des Collines ou en Ardèche Verte, l'écart d'imposition entre classé et non classé peut représenter plusieurs milliers d'euros par an. Détails officiels sur [service-public.fr](https://www.service-public.fr/particuliers/vosdroits/F32805) et [economie.gouv.fr](https://www.economie.gouv.fr/particuliers/location-meublee-tourisme-fiscalite).
+
+## 3. Comment obtenir le classement : la démarche
+
+La démarche est plus simple qu'on ne l'imagine. Elle se déroule en trois étapes :
+
+1. **Choisir un organisme accrédité** par le Cofrac — la liste officielle est disponible sur le [site d'Atout France](https://www.classement.atout-france.fr/les-organismes-de-controle-accredites). En Drôme-Ardèche, plusieurs opérateurs interviennent (Gîtes de France, Clévacances, cabinets indépendants).
+2. **Réaliser une visite de contrôle** : l'inspecteur passe environ 1 h à 1 h 30 sur place, vérifie les critères et remet un rapport.
+3. **Recevoir la décision de classement** dans le mois qui suit. Le classement est valable **5 ans**.
+
+Coût moyen constaté en 2026 en Drôme-Ardèche : entre 150 € et 350 € HT selon l'organisme et la taille du logement. C'est un investissement modeste par rapport au gain fiscal potentiel.
+
+## 4. Ce que le classement change côté voyageurs
+
+Au-delà de la fiscalité, le classement joue aussi sur la performance de l'annonce :
+
+- **Signal qualité** affiché sur Airbnb, Booking et Abritel, particulièrement lisible sur Abritel et pour la clientèle familiale.
+- **Éligibilité aux chèques-vacances ANCV**, un vrai plus pour capter une clientèle française en juillet-août.
+- **Visibilité renforcée** sur les [offices de tourisme locaux](https://www.hermitage-tournonais-tourisme.com/) qui valorisent en priorité les hébergements classés.
+
+Sur nos biens en gestion, le passage au classement s'accompagne souvent d'une hausse du prix moyen de 5 à 10 % à qualité équivalente, sans perte de taux d'occupation.
+
+## 5. Faut-il viser 3, 4 ou 5 étoiles en Drôme-Ardèche ?
+
+Sur notre zone, le sweet spot est le **3 étoiles**. C'est un niveau atteignable pour la plupart des maisons de campagne, gîtes et appartements bien entretenus, sans travaux lourds. Le 4 étoiles demande des équipements plus poussés (linge haut de gamme, services additionnels) mais reste accessible pour des biens récents ou rénovés autour de Tain-l'Hermitage, Valence ou en [Drôme des Collines](/blog/louer-en-courte-duree-drome-ardeche).
+
+Le 5 étoiles vise une clientèle de niche et suppose un vrai positionnement premium — rarement pertinent pour la majorité des résidences secondaires.
+
+## 6. Les 4 critères qui bloquent le plus souvent
+
+À l'usage, voici les points où les propriétaires perdent des étoiles inutilement :
+
+- **Literie** : matelas de moins de 140 cm en chambre principale, oreillers vieillissants.
+- **Sanitaires** : nombre de points d'eau insuffisant pour la capacité annoncée.
+- **Information voyageurs** : livret d'accueil incomplet, absence d'informations sur les transports ou les urgences.
+- **Sécurité** : détecteur de fumée non installé, extincteur manquant en maison.
+
+Un audit préalable — que nous incluons dans notre [méthode d'accompagnement](/methode) — permet d'identifier ces points avant la visite officielle.
+
+## 7. Notre pratique chez Qit Concierge
+
+Sur les biens que nous prenons en gestion en Drôme-Ardèche, nous recommandons systématiquement d'évaluer l'opportunité du classement dès la mise en marché. Nous préparons le logement, orientons vers l'organisme le plus adapté et intégrons ensuite le classement dans la stratégie de [tarification dynamique PriceLabs](/blog/pourquoi-utiliser-pricelabs-drome-ardeche) et de diffusion multi-plateformes.
+
+Voir aussi : [comment optimiser son annonce Airbnb](/blog/annonce-airbnb-optimisation-checklist) et [comment bien choisir sa conciergerie en Drôme](/blog/conciergerie-airbnb-drome-choisir-prestataire).
+
+## En résumé
+
+En 2026, le classement meublé de tourisme n'est plus un simple label décoratif : c'est un vrai levier fiscal et commercial pour la location courte durée en Drôme-Ardèche. Pour un investissement de quelques centaines d'euros valable 5 ans, il permet de conserver un abattement micro-BIC favorable, de renforcer la crédibilité de l'annonce et souvent d'augmenter le prix moyen.
+
+Vous vous demandez si le classement est pertinent pour votre bien ? [Demandez une estimation gratuite](/#estimation) — nous intégrons ce point dans le diagnostic initial.`,
+  },
+  {
     slug: "location-courte-duree-ete-2026-drome-ardeche",
     title: "Location courte durée été 2026 : loi Le Meur, DPE, fiscalité",
     excerpt:

@@ -12,6 +12,7 @@ import pricelabsTarif from "@/assets/blog/pricelabs-tarification.jpg";
 import calendrierTrous from "@/assets/blog/calendrier-trous.jpg";
 import dromeArdecheZones from "@/assets/blog/drome-ardeche-zones.jpg";
 import ete2026DromeArdeche from "@/assets/blog/ete-2026-drome-ardeche.webp";
+import classementMeuble from "@/assets/blog/classement-meuble-tourisme.jpg";
 
 export type BlogCategory = "Conseils propriétaires" | "Revenue management" | "Drôme-Ardèche";
 

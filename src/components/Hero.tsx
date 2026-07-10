@@ -47,7 +47,7 @@ const Hero = () => {
               <span className="block">{c.h1a}</span>
               <span className="block italic font-normal text-qit-coral mt-1">{c.h1italic}</span>
               <span className="block mt-4">{c.h1b}</span>
-              <span className="block italic font-normal text-qit-purple/70 mt-1">{c.h1c}</span>
+              {c.h1c && <span className="block italic font-normal text-qit-purple/70 mt-1">{c.h1c}</span>}
             </h1>
 
             <p className="text-base md:text-lg text-qit-purple/80 leading-relaxed mb-10 max-w-lg">

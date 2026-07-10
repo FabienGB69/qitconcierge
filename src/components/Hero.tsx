@@ -11,8 +11,8 @@ const Hero = () => {
         eyebrow: "Conciergerie locative — Drôme · Ardèche · Vallée du Rhône",
         h1a: "Faites de votre bien",
         h1italic: "une source de revenus sereine.",
-        h1b: "Sans sacrifier votre temps",
-        h1c: "ou votre charge mentale.",
+        h1b: "Sans sacrifier votre temps.",
+        h1c: "",
         sub: "Nous prenons en charge votre location courte durée — annonce, réservations, accueil voyageurs, ménage, linge, maintenance. Maisons de campagne, appartements et résidences secondaires en Drôme-Ardèche.",
         cta: "Demander mon estimation gratuite",
         whatsapp: "Échanger sur WhatsApp",
@@ -22,8 +22,8 @@ const Hero = () => {
         eyebrow: "Short-term rental concierge — Drôme · Ardèche · Rhône Valley",
         h1a: "Turn your property",
         h1italic: "into a calm source of income.",
-        h1b: "Without sacrificing your time",
-        h1c: "or your mental load.",
+        h1b: "Without sacrificing your time.",
+        h1c: "",
         sub: "We take care of your short-term rental — listing, bookings, guest welcome, cleaning, linen, maintenance. Country houses, apartments and second homes in Drôme-Ardèche.",
         cta: "Request my free estimate",
         whatsapp: "Chat on WhatsApp",
@@ -47,7 +47,7 @@ const Hero = () => {
               <span className="block">{c.h1a}</span>
               <span className="block italic font-normal text-qit-coral mt-1">{c.h1italic}</span>
               <span className="block mt-4">{c.h1b}</span>
-              <span className="block italic font-normal text-qit-purple/70 mt-1">{c.h1c}</span>
+              {c.h1c && <span className="block italic font-normal text-qit-purple/70 mt-1">{c.h1c}</span>}
             </h1>
 
             <p className="text-base md:text-lg text-qit-purple/80 leading-relaxed mb-10 max-w-lg">

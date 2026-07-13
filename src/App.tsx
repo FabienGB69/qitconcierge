@@ -19,7 +19,7 @@ import Tarifs from "./pages/Tarifs";
 import ServicesPage from "./pages/Services";
 import Methode from "./pages/Methode";
 import APropos from "./pages/APropos";
-import OAuthConsent from "./pages/OAuthConsent";
+
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CookieConsent from "./components/CookieConsent";
 

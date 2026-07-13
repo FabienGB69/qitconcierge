@@ -1,10 +1,21 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+
+const safeNext = (raw: string | null): string => {
+  if (!raw) return "/admin";
+  try {
+    // Must be a same-origin relative path.
+    if (!raw.startsWith("/") || raw.startsWith("//")) return "/admin";
+    return raw;
+  } catch {
+    return "/admin";
+  }
+};
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -13,6 +24,15 @@ const Auth = () => {
   const isSignUp = false;
   const navigate = useNavigate();
   const { toast } = useToast();
+  const [params] = useSearchParams();
+  const next = safeNext(params.get("next"));
+
+  // If already signed in, forward straight to next.
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) navigate(next, { replace: true });
+    });
+  }, [navigate, next]);
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,12 +44,12 @@ const Auth = () => {
           email,
           password,
           options: {
-            emailRedirectTo: `${window.location.origin}/admin`
-          }
+            emailRedirectTo: `${window.location.origin}${next}`,
+          },
         });
-        
+
         if (error) throw error;
-        
+
         toast({
           title: "Inscription réussie",
           description: "Vérifiez votre email pour confirmer votre compte.",
@@ -39,16 +59,16 @@ const Auth = () => {
           email,
           password,
         });
-        
+
         if (error) throw error;
-        
-        navigate("/admin");
+
+        navigate(next, { replace: true });
       }
     } catch (error: any) {
       toast({
         title: "Erreur",
-        description: error.message === "Invalid login credentials" 
-          ? "Email ou mot de passe incorrect" 
+        description: error.message === "Invalid login credentials"
+          ? "Email ou mot de passe incorrect"
           : error.message,
         variant: "destructive",
       });

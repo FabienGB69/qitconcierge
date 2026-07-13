@@ -19,6 +19,7 @@ import Tarifs from "./pages/Tarifs";
 import ServicesPage from "./pages/Services";
 import Methode from "./pages/Methode";
 import APropos from "./pages/APropos";
+import OAuthConsent from "./pages/OAuthConsent";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CookieConsent from "./components/CookieConsent";
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/methode" element={<Methode />} />
           <Route path="/a-propos" element={<APropos />} />
+          <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
           <Route path="/conciergerie-airbnb-tain-hermitage" element={
             <LocalLanding
               slug="conciergerie-airbnb-tain-hermitage"

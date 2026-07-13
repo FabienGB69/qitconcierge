@@ -54,11 +54,11 @@ const Hero = () => {
               {c.sub}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <Button
                 asChild
                 size="lg"
-                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-14 px-7 text-base font-medium shadow-lg shadow-qit-coral/25"
+                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-14 px-7 text-base font-medium shadow-lg shadow-qit-coral/25 w-full sm:w-auto"
               >
                 <a href="/#contact">
                   {c.cta}
@@ -68,8 +68,8 @@ const Hero = () => {
               <Button
                 asChild
                 size="lg"
-                variant="ghost"
-                className="text-qit-purple hover:bg-qit-purple/5 rounded-full h-14 px-6 text-base"
+                variant="outline"
+                className="border-qit-purple/25 bg-white/70 backdrop-blur text-qit-purple hover:bg-white hover:text-qit-purple rounded-full h-14 px-6 text-base w-full sm:w-auto"
               >
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4" />

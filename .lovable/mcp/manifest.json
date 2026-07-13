@@ -26,20 +26,21 @@
           "openWorldHint": false
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "active_only": {
-              "description": "If true, only return active listings. Defaults to true.",
-              "type": "boolean"
+              "type": "boolean",
+              "description": "If true, only return active listings. Defaults to true."
             },
             "limit": {
-              "description": "Max number of rows to return. Defaults to 50.",
               "type": "integer",
               "minimum": 1,
-              "maximum": 100
+              "maximum": 100,
+              "description": "Max number of rows to return. Defaults to 50."
             }
-          }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       },
@@ -54,7 +55,6 @@
           "openWorldHint": false
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "name": {
@@ -64,8 +64,7 @@
             },
             "email": {
               "type": "string",
-              "format": "email",
-              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+              "format": "email"
             },
             "phone": {
               "type": "string",
@@ -98,8 +97,8 @@
             },
             "listing_url": {
               "type": "string",
-              "maxLength": 500,
-              "format": "uri"
+              "format": "uri",
+              "maxLength": 500
             },
             "goal": {
               "type": "string",
@@ -114,7 +113,9 @@
             "name",
             "email",
             "phone"
-          ]
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       },
@@ -128,20 +129,21 @@
           "openWorldHint": false
         },
         "inputSchema": {
-          "$schema": "http://json-schema.org/draft-07/schema#",
           "type": "object",
           "properties": {
             "status": {
-              "description": "Filter by status (e.g. 'new', 'contacted').",
               "type": "string",
-              "maxLength": 40
+              "maxLength": 40,
+              "description": "Filter by status (e.g. 'new', 'contacted')."
             },
             "limit": {
               "type": "integer",
               "minimum": 1,
               "maximum": 200
             }
-          }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "outputSchema": null
       }

@@ -47,7 +47,7 @@ const App = () => (
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/methode" element={<Methode />} />
           <Route path="/a-propos" element={<APropos />} />
-          <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
+          
           <Route path="/conciergerie-airbnb-tain-hermitage" element={
             <LocalLanding
               slug="conciergerie-airbnb-tain-hermitage"

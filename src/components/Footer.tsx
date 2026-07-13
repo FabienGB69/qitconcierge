@@ -45,17 +45,30 @@ const Footer = () => {
             <img src="https://cdn.simpleicons.org/bookingdotcom/ffffff" alt="Booking.com" loading="lazy" className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity" />
             <span aria-label="Abritel" className="font-bold text-lg tracking-tight text-white opacity-80 hover:opacity-100 transition-opacity">abritel</span>
           </div>
-          <a
-            href="https://www.instagram.com/qitconcierge"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="flex items-center gap-2 text-white opacity-80 hover:opacity-100 transition-opacity"
-            onClick={() => trackEvent("instagram_click", { location: "footer" })}
-          >
-            <Instagram className="h-5 w-5" />
-            <span className="text-sm font-medium">@qitconcierge</span>
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <a
+              href="https://www.instagram.com/qitconcierge"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex items-center gap-2 text-white opacity-80 hover:opacity-100 transition-opacity"
+              onClick={() => trackEvent("instagram_click", { location: "footer" })}
+            >
+              <Instagram className="h-5 w-5" />
+              <span className="text-sm font-medium">@qitconcierge</span>
+            </a>
+            <a
+              href="https://www.facebook.com/p/Qit-Concierge-61557639973847/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex items-center gap-2 text-white opacity-80 hover:opacity-100 transition-opacity"
+              onClick={() => trackEvent("facebook_click", { location: "footer" })}
+            >
+              <Facebook className="h-5 w-5" />
+              <span className="text-sm font-medium">Qit Concierge</span>
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-col items-center gap-3 pb-6 mb-6 border-b border-gray-800">

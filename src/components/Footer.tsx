@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Instagram, Mail, Phone } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const { isFR } = useLanguage();

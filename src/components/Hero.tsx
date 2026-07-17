@@ -58,7 +58,7 @@ const Hero = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-12 lg:h-13 px-5 lg:px-7 text-base font-medium shadow-lg shadow-qit-coral/25 w-full sm:w-auto"
+                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-12 lg:h-14 px-5 lg:px-7 text-base font-medium shadow-lg shadow-qit-coral/25 w-full sm:w-auto"
               >
                 <a href="/#contact">
                   {c.cta}
@@ -69,7 +69,7 @@ const Hero = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-qit-purple/25 bg-white/80 backdrop-blur text-qit-purple hover:bg-white hover:text-qit-purple rounded-full h-12 lg:h-13 px-4 lg:px-6 text-base w-full sm:w-auto"
+                className="border-qit-purple/25 bg-white/80 backdrop-blur text-qit-purple hover:bg-white hover:text-qit-purple rounded-full h-12 lg:h-14 px-4 lg:px-6 text-base w-full sm:w-auto"
               >
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4 shrink-0" />

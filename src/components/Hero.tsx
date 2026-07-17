@@ -34,31 +34,31 @@ const Hero = () => {
     <section className="relative w-full bg-qit-beige">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[100svh]">
         {/* Left — editorial copy */}
-        <div className="relative flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 pt-28 lg:pt-32 pb-16 lg:pb-24">
+        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 pt-28 lg:pt-28 pb-12 lg:pb-16 bg-qit-beige">
           <div className="max-w-xl">
-            <div className="flex items-center gap-3 mb-8">
-              <span className="h-px w-8 bg-qit-coral" aria-hidden="true" />
+            <div className="flex items-center gap-3 mb-6 lg:mb-8">
+              <span className="h-px w-8 bg-qit-coral shrink-0" aria-hidden="true" />
               <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">
                 {c.eyebrow}
               </span>
             </div>
 
-            <h1 className="font-serif text-qit-purple text-[2.25rem] sm:text-5xl lg:text-[3.6rem] xl:text-[4rem] leading-[1.05] tracking-tight mb-10">
+            <h1 className="font-serif text-qit-purple text-[2.25rem] sm:text-5xl lg:text-[3.2rem] xl:text-[3.6rem] leading-[1.05] tracking-tight mb-6 lg:mb-8">
               <span className="block">{c.h1a}</span>
               <span className="block italic font-normal text-qit-coral mt-1">{c.h1italic}</span>
-              <span className="block mt-4">{c.h1b}</span>
+              <span className="block mt-2 lg:mt-3">{c.h1b}</span>
               {c.h1c && <span className="block italic font-normal text-qit-purple/70 mt-1">{c.h1c}</span>}
             </h1>
 
-            <p className="text-base md:text-lg text-qit-purple/80 leading-relaxed mb-10 max-w-lg">
+            <p className="text-base md:text-lg text-qit-purple/80 leading-relaxed mb-6 lg:mb-8 max-w-lg">
               {c.sub}
             </p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 shrink-0">
               <Button
                 asChild
                 size="lg"
-                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-14 px-7 text-base font-medium shadow-lg shadow-qit-coral/25 w-full sm:w-auto"
+                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-12 lg:h-14 px-5 lg:px-7 text-base font-medium shadow-lg shadow-qit-coral/25 w-full sm:w-auto"
               >
                 <a href="/#contact">
                   {c.cta}
@@ -69,11 +69,11 @@ const Hero = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-qit-purple/25 bg-white/70 backdrop-blur text-qit-purple hover:bg-white hover:text-qit-purple rounded-full h-14 px-6 text-base w-full sm:w-auto"
+                className="border-qit-purple/25 bg-white/80 backdrop-blur text-qit-purple hover:bg-white hover:text-qit-purple rounded-full h-12 lg:h-14 px-4 lg:px-6 text-base w-full sm:w-auto"
               >
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  {c.whatsapp}
+                  <MessageCircle className="mr-2 h-4 w-4 shrink-0" />
+                  <span className="whitespace-nowrap">{c.whatsapp}</span>
                 </a>
               </Button>
             </div>

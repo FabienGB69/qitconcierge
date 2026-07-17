@@ -34,27 +34,29 @@ const Hero = () => {
     <section className="relative w-full bg-qit-beige">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[100svh]">
         {/* Left — editorial copy */}
-        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 pt-24 sm:pt-28 lg:pt-24 pb-10 lg:pb-12 bg-qit-beige">
-          <div className="max-w-xl">
-            <div className="flex items-center gap-3 mb-5 lg:mb-6">
-              <span className="h-px w-8 bg-qit-coral shrink-0" aria-hidden="true" />
-              <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">
-                {c.eyebrow}
-              </span>
+        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 pt-24 sm:pt-28 lg:pt-24 pb-10 lg:pb-12 bg-qit-beige min-h-0">
+          <div className="max-w-xl flex flex-col min-h-0">
+            <div className="min-h-0 overflow-y-auto pr-1">
+              <div className="flex items-center gap-3 mb-5 lg:mb-6">
+                <span className="h-px w-8 bg-qit-coral shrink-0" aria-hidden="true" />
+                <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">
+                  {c.eyebrow}
+                </span>
+              </div>
+
+              <h1 className="font-serif text-qit-purple text-[2.25rem] sm:text-5xl lg:text-[2.75rem] xl:text-[3rem] 2xl:text-[3.4rem] leading-[1.05] tracking-tight mb-5 lg:mb-6">
+                <span className="block">{c.h1a}</span>
+                <span className="block italic font-normal text-qit-coral mt-1">{c.h1italic}</span>
+                <span className="block mt-2 lg:mt-3">{c.h1b}</span>
+                {c.h1c && <span className="block italic font-normal text-qit-purple/70 mt-1">{c.h1c}</span>}
+              </h1>
+
+              <p className="text-base md:text-lg text-qit-purple/80 leading-relaxed mb-5 lg:mb-6 max-w-lg">
+                {c.sub}
+              </p>
             </div>
 
-            <h1 className="font-serif text-qit-purple text-[2.25rem] sm:text-5xl lg:text-[2.75rem] xl:text-[3rem] 2xl:text-[3.4rem] leading-[1.05] tracking-tight mb-5 lg:mb-6">
-              <span className="block">{c.h1a}</span>
-              <span className="block italic font-normal text-qit-coral mt-1">{c.h1italic}</span>
-              <span className="block mt-2 lg:mt-3">{c.h1b}</span>
-              {c.h1c && <span className="block italic font-normal text-qit-purple/70 mt-1">{c.h1c}</span>}
-            </h1>
-
-            <p className="text-base md:text-lg text-qit-purple/80 leading-relaxed mb-5 lg:mb-6 max-w-lg">
-              {c.sub}
-            </p>
-
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 shrink-0">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 shrink-0 pt-5 lg:pt-6">
               <Button
                 asChild
                 size="lg"

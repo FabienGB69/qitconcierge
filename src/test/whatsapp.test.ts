@@ -19,7 +19,7 @@ describe("WhatsApp link verification", () => {
   it("has a valid French-length number when configured with a French number", () => {
     const number = WHATSAPP_URL.replace("https://wa.me/", "");
     if (number.startsWith("33")) {
-      expect(number.length).toBe(12);
+      expect(number.length).toBe(11);
     }
   });
 

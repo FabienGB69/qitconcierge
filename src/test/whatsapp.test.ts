@@ -46,6 +46,6 @@ describe("WhatsApp link verification", () => {
   it("flags a French number with a leading zero", () => {
     const result = validateWhatsAppUrl("https://wa.me/330601777633");
     expect(result.valid).toBe(false);
-    expect(result.issues.some((i) => i.includes("12 chiffres"))).toBe(true);
+    expect(result.issues.some((i) => i.includes("0 national"))).toBe(true);
   });
 });

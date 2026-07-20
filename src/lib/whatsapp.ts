@@ -75,22 +75,26 @@ export function validateWhatsAppUrl(url: string): WhatsAppValidationResult {
       return result;
     }
 
-    const pathNumber = parsed.pathname.replace(/^\//, "");
-    if (!/^\d+$/.test(pathNumber)) {
-      issues.push("Le numéro de téléphone ne doit contenir que des chiffres");
-    } else {
-      result.number = pathNumber;
-      if (pathNumber.length < 10) {
-        issues.push("Le numéro semble trop court");
+      const pathNumber = parsed.pathname.replace(/^\//, "");
+      if (!/^\d+$/.test(pathNumber)) {
+        issues.push("Le numéro de téléphone ne doit contenir que des chiffres");
+      } else {
+        result.number = pathNumber;
+        if (pathNumber.length < 10) {
+          issues.push("Le numéro semble trop court");
+        }
+        if (pathNumber.length > 15) {
+          issues.push("Le numéro semble trop long");
+        }
+        // French number sanity check: 33 + 9 digits = 11 total.
+        if (pathNumber.startsWith("33")) {
+          if (pathNumber[2] === "0") {
+            issues.push("Le numéro français ne doit pas contenir de 0 national après l'indicatif 33");
+          } else if (pathNumber.length !== 11) {
+            issues.push("Un numéro français internationalisé doit contenir 11 chiffres (33 + 9)");
+          }
+        }
       }
-      if (pathNumber.length > 15) {
-        issues.push("Le numéro semble trop long");
-      }
-      // French number sanity check
-      if (pathNumber.startsWith("33") && pathNumber.length !== 12) {
-        issues.push("Un numéro français internationalisé doit contenir 12 chiffres (33 + 9)");
-      }
-    }
 
     const text = parsed.searchParams.get("text");
     result.hasPrefilledMessage = text !== null && text.length > 0;

@@ -33,14 +33,17 @@ const MentionsLegales = () => {
               <h2 className="text-xl font-semibold mb-3 text-qit-purple">Éditeur du site</h2>
               <p className="mb-2">Le présent site est édité par :</p>
               <div className="bg-qit-beige/40 rounded-lg p-4 border border-border text-sm">
-                <p className="font-medium text-qit-purple">Qit Concierge</p>
-                <p className="mt-1">Activité : conciergerie, gestion de locations courte durée, accompagnement propriétaire, gestion opérationnelle et optimisation des revenus locatifs.</p>
-                <p className="mt-2">Responsable de publication : Fabien GOMES-BANCEL</p>
-                <p>Email : guest.qitconcierge@gmail.com</p>
-                <p>Téléphone / WhatsApp : +33 6 01 77 76 33</p>
-                <p className="mt-2">Adresse du siège social : [à compléter]</p>
-                <p>SIRET : [à compléter]</p>
-                <p>Numéro de TVA intracommunautaire : [à compléter si applicable]</p>
+                <p className="font-medium text-qit-purple">GOMES FABIEN</p>
+                <p>Exploitant sous l'enseigne commerciale Pixeloria</p>
+                <p className="mt-1">Forme juridique : Entrepreneur individuel</p>
+                <p>SIREN : 798 262 416</p>
+                <p>Numéro RCS : 798 262 416 R.C.S. Lyon</p>
+                <p>Inscription au RCS : Greffe de Lyon, le 19/01/2015</p>
+                <p>Inscription au RNE : 15/01/2015</p>
+                <p>Numéro de TVA intracommunautaire : FR44798262416</p>
+                <p className="mt-2">Adresse : 61 C Avenue Gabriel Péri, 26600 Tain-l'Hermitage, France</p>
+                <p>Téléphone : 07 86 12 53 13</p>
+                <p>Email : <a href="mailto:contact@pixeloria.fr" className="text-qit-coral hover:underline">contact@pixeloria.fr</a></p>
               </div>
             </section>
 

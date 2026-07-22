@@ -43,7 +43,7 @@ const PolitiqueConfidentialite = () => {
               <p className="mb-2">Le responsable du traitement des données est :</p>
               <div className="bg-qit-beige/40 rounded-lg p-4 border border-border">
                 <p className="font-medium">Qit Concierge</p>
-                <p>Responsable : Fabien GOMEZ BANCEL</p>
+                <p>Responsable : Fabien GOMES-BANCEL</p>
                 <p>Email : guest.qitconcierge@gmail.com</p>
                 <p>Téléphone / WhatsApp : +33 6 01 77 76 33</p>
               </div>

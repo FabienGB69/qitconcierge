@@ -35,7 +35,7 @@ const MentionsLegales = () => {
               <div className="bg-qit-beige/40 rounded-lg p-4 border border-border text-sm">
                 <p className="font-medium text-qit-purple">Qit Concierge</p>
                 <p className="mt-1">Activité : conciergerie, gestion de locations courte durée, accompagnement propriétaire, gestion opérationnelle et optimisation des revenus locatifs.</p>
-                <p className="mt-2">Responsable de publication : Fabien GOMEZ BANCEL</p>
+                <p className="mt-2">Responsable de publication : Fabien GOMES-BANCEL</p>
                 <p>Email : guest.qitconcierge@gmail.com</p>
                 <p>Téléphone / WhatsApp : +33 6 01 77 76 33</p>
                 <p className="mt-2">Adresse du siège social : [à compléter]</p>

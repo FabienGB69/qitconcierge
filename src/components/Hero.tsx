@@ -34,7 +34,7 @@ const Hero = () => {
     <section className="relative w-full bg-qit-beige">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[100svh]">
         {/* Left — editorial copy */}
-        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 pt-24 sm:pt-28 lg:pt-20 pb-10 lg:pb-10 bg-qit-beige min-h-0">
+        <div className="relative z-10 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 pt-20 sm:pt-28 lg:pt-20 pb-8 sm:pb-10 lg:pb-10 bg-qit-beige min-h-0">
           <div className="max-w-xl flex flex-col min-h-0">
             <div className="min-h-0 overflow-y-auto pr-1">
               <div className="flex items-center gap-3 mb-5 lg:mb-4">

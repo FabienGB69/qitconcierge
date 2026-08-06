@@ -44,7 +44,7 @@ const Hero = () => {
                 </span>
               </div>
 
-              <h1 className="font-serif text-qit-purple text-[2.25rem] sm:text-5xl lg:text-[2.5rem] xl:text-[2.9rem] 2xl:text-[3.3rem] leading-[1.05] tracking-tight mb-5 lg:mb-5">
+              <h1 className="font-serif text-qit-purple text-[1.9rem] xs:text-[2.1rem] sm:text-5xl lg:text-[2.5rem] xl:text-[2.9rem] 2xl:text-[3.3rem] leading-[1.05] tracking-tight mb-4 sm:mb-5 lg:mb-5">
                 <span className="block">{c.h1a}</span>
                 <span className="block italic font-normal text-qit-coral mt-1">{c.h1italic}</span>
                 <span className="block mt-2 lg:mt-2">{c.h1b}</span>

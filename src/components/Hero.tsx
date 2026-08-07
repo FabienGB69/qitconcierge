@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import WhatsAppMessagePreview from "@/components/WhatsAppMessagePreview";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-drome-ardeche.jpg";
+
 
 const Hero = () => {
   const { isFR } = useLanguage();

@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import WhatsAppMessagePreview from "@/components/WhatsAppMessagePreview";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-drome-ardeche.jpg";
+
 
 const Hero = () => {
   const { isFR } = useLanguage();
@@ -29,6 +31,13 @@ const Hero = () => {
         whatsapp: "Chat on WhatsApp",
         scroll: "Scroll",
       };
+
+  const waMessage = isFR
+    ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."
+    : "Hello Qit Concierge, I'd like to know more about managing my short-term rental in Drôme-Ardèche.";
+  const waUrl = buildWhatsAppUrl(waMessage);
+
+
 
   return (
     <section className="relative w-full bg-qit-beige">
@@ -73,12 +82,14 @@ const Hero = () => {
                 variant="outline"
                 className="border-qit-purple/25 bg-white/80 backdrop-blur text-qit-purple hover:bg-white hover:text-qit-purple rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium w-full sm:w-auto"
               >
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <a href={waUrl} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4 shrink-0" />
                   <span className="whitespace-nowrap">{c.whatsapp}</span>
                 </a>
               </Button>
+              <WhatsAppMessagePreview message={waMessage} className="w-full sm:w-auto" />
             </div>
+
           </div>
 
 

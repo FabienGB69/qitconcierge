@@ -1,0 +1,1 @@
+update public.properties set booking_url = 'https://www.booking.com/hotel/fr/t3-havre-de-paix-lyon-7.fr.html' where id = '995e5419-80a6-4adb-af0f-9551779761b7';

@@ -32,6 +32,13 @@ const Hero = () => {
         scroll: "Scroll",
       };
 
+  const waMessage = isFR
+    ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."
+    : "Hello Qit Concierge, I'd like to know more about managing my short-term rental in Drôme-Ardèche.";
+  const waUrl = buildWhatsAppUrl(waMessage);
+
+
+
   return (
     <section className="relative w-full bg-qit-beige">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[100svh]">

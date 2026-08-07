@@ -445,7 +445,12 @@ const ContactCTA = () => {
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">{L.heading}</h2>
             <p className="text-lg text-white/80 mb-4">{L.lead}</p>
-            <p className="text-white/70 mb-8 text-sm">{L.sub}</p>
+            <p className="text-white/70 mb-2 text-sm">{L.sub}</p>
+            <p className="text-white/70 mb-8 text-sm">
+              {isFR ? "Votre interlocuteur : " : "Your contact: "}
+              <span className="font-medium text-white">Fabien GOMES-BANCEL</span>
+            </p>
+
 
             <div className="space-y-4">
               <div className="flex items-center">

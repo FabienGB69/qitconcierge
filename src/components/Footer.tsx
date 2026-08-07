@@ -92,7 +92,12 @@ const Footer = () => {
               {phoneDisplay}
             </a>
           </div>
+          <p className="mt-3 text-center text-sm text-gray-400">
+            {isFR ? "Responsable : " : "Contact: "}
+            <span className="font-medium text-gray-200">Fabien GOMES-BANCEL</span>
+          </p>
         </div>
+
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>{t.copyright}</p>

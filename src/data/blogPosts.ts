@@ -37,6 +37,72 @@ export const categories: BlogCategory[] = [
 
 export const posts: BlogPost[] = [
   {
+    slug: "aout-2026-fin-de-saison-drome-ardeche",
+    title: "Août 2026 en Drôme-Ardèche : réussir la fin de saison et préparer l'arrière-saison",
+    excerpt:
+      "Comment tenir les prix en août, combler les dernières nuits et préparer septembre-octobre en Drôme-Ardèche : tarification, annonce, ménage et réglementation.",
+    category: "Revenue management",
+    date: "2026-08-08",
+    readTime: "7 min",
+    image: aout2026,
+    imageAlt: "Terrasse d'une maison de campagne en pierre en Drôme-Ardèche au coucher du soleil en août, vignes et lavande en arrière-plan",
+    content: `Août est le mois le plus rentable de l'année en Drôme-Ardèche, mais c'est aussi celui où l'on perd le plus d'argent sans s'en rendre compte : nuits isolées invendues, prix figés depuis juin, arrière-saison non préparée. Voici comment tirer le maximum des dernières semaines d'été et enchaîner sur septembre-octobre, deux mois largement sous-exploités dans la région.
+
+## 1. Ne pas brader la deuxième quinzaine d'août
+
+La demande reste soutenue jusqu'au 20 août sur la vallée du Rhône, la Drôme provençale et l'Ardèche méridionale, portée par une clientèle française et par les visiteurs européens (Belgique, Pays-Bas, Suisse). La fréquentation touristique estivale régionale est suivie par [l'INSEE](https://www.insee.fr/fr/statistiques) et relayée par les observatoires locaux comme [Auvergne-Rhône-Alpes Tourisme](https://pro.auvergnerhonealpes-tourisme.com/).
+
+L'erreur classique consiste à baisser fortement les prix dès le 10 août parce que le calendrier n'est pas plein. En pratique, une baisse trop précoce détruit le prix moyen de tout le mois. La bonne approche : des paliers de baisse progressifs à J-14, J-7 puis J-3, pilotés automatiquement plutôt qu'à l'œil — c'est exactement le rôle de la [tarification dynamique avec PriceLabs](/blog/pourquoi-utiliser-pricelabs-drome-ardeche).
+
+## 2. Combler les trous de calendrier sans casser le prix moyen
+
+En août, les trous de calendrier sont surtout des créneaux de 2 à 4 nuits entre deux séjours d'une semaine. Trois leviers efficaces :
+
+- **Assouplir la durée minimale de séjour** sur les créneaux courts uniquement, pas sur l'ensemble du mois.
+- **Autoriser les arrivées en semaine** : beaucoup d'annonces restent bloquées sur un samedi-samedi hérité de la logique « location saisonnière ».
+- **Appliquer une remise last-minute ciblée** sur ces seuls créneaux.
+
+Nous détaillons la méthode complète dans notre article sur [les trous de calendrier et comment les combler](/blog/trous-de-calendrier-comment-les-combler).
+
+## 3. Préparer septembre-octobre dès maintenant
+
+L'arrière-saison est le vrai gisement de revenus en Drôme-Ardèche : vendanges dans l'Hermitage et à Crozes-Hermitage, randonnées dans le Vercors et les gorges de l'Ardèche, cyclotourisme sur la [ViaRhôna](https://www.viarhona.com/), températures encore douces. La clientèle change : couples, télétravailleurs, retraités, séjours de 3 à 5 nuits en semaine.
+
+Concrètement, en août il faut :
+
+1. **Ouvrir le calendrier jusqu'à fin octobre** et vérifier que les prix ne sont pas restés calés sur la grille estivale.
+2. **Réduire la durée minimale de séjour** à 2 nuits à partir de la mi-septembre.
+3. **Mettre à jour les photos et le texte de l'annonce** pour parler d'automne, de vendanges et de randonnée plutôt que de piscine — voir notre [checklist d'optimisation d'annonce Airbnb](/blog/annonce-airbnb-optimisation-checklist).
+4. **Activer les équipements d'arrière-saison** : chauffage d'appoint, plaids, bon wifi pour le télétravail.
+
+## 4. Le ménage et la maintenance : le point de rupture d'août
+
+Avec des rotations rapprochées, août est le mois où la qualité de service se dégrade le plus, et donc où les notes baissent. Une note qui perd 0,2 point en août pèse sur la visibilité de l'annonce jusqu'au printemps suivant.
+
+Deux réflexes : planifier les prestataires ménage et linge à l'avance sur tout le mois, et bloquer une demi-journée fin août pour la maintenance (joints, climatisation, extérieurs, literie). C'est aussi le bon moment pour un audit avant l'arrière-saison, comme décrit dans notre [méthode d'accompagnement](/methode).
+
+## 5. Les points réglementaires à vérifier avant la rentrée
+
+La rentrée 2026 est un bon repère pour remettre à plat la conformité de votre location :
+
+- **Numéro d'enregistrement** en mairie, obligatoire dans un nombre croissant de communes depuis la loi Le Meur (détails sur [service-public.fr](https://www.service-public.fr/particuliers/vosdroits/F2045)).
+- **Déclaration des revenus locatifs** et régime fiscal applicable, y compris l'abattement micro-BIC : voir [economie.gouv.fr](https://www.economie.gouv.fr/particuliers/location-meublee-tourisme-fiscalite).
+- **Classement meublé de tourisme**, à engager avant l'automne pour en profiter dès l'exercice suivant — nous l'expliquons dans [cet article dédié](/blog/classement-meuble-tourisme-drome-ardeche).
+- **DPE et obligations générales** : synthèse dans nos [obligations en location courte durée](/blog/obligations-location-courte-duree-drome-ardeche) et sur notre page [réglementation](/reglementation).
+
+## 6. Notre pratique chez Qit Concierge
+
+Sur les biens que nous gérons en Drôme-Ardèche, août se pilote au quotidien : ajustement automatique des prix, suivi des créneaux courts, coordination des prestataires et bascule progressive de l'annonce vers l'arrière-saison dès la mi-août. C'est ce travail discret qui fait la différence entre un mois « plein » et un mois réellement rentable.
+
+Voir aussi : [quelle plateforme choisir entre Airbnb, Booking et Abritel](/blog/airbnb-booking-abritel-quelle-plateforme-choisir) et [comment choisir sa conciergerie en Drôme](/blog/conciergerie-airbnb-drome-choisir-prestataire).
+
+## En résumé
+
+En août, l'enjeu n'est plus de remplir à tout prix mais de protéger le prix moyen, de combler intelligemment les nuits isolées et de préparer septembre-octobre pendant que la demande est encore là. Trois semaines de pilotage sérieux valent souvent plusieurs milliers d'euros sur l'exercice.
+
+Vous voulez savoir ce que votre bien peut générer sur la fin de saison et l'arrière-saison ? [Demandez une estimation gratuite](/#estimation).`,
+  },
+  {
     slug: "classement-meuble-tourisme-drome-ardeche",
     title: "Classement meublé de tourisme en Drôme-Ardèche : est-ce vraiment intéressant en 2026 ?",
     excerpt:

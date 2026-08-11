@@ -1,4 +1,5 @@
 import React from "react";
+import { Phone, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
@@ -44,6 +45,26 @@ const MentionsLegales = () => {
                 <p className="mt-2">Adresse : 61 C Avenue Gabriel Péri, 26600 Tain-l'Hermitage, France</p>
                 <p>Téléphone : 07 86 12 53 13</p>
                 <p>Email : <a href="mailto:contact@pixeloria.fr" className="text-qit-coral hover:underline">contact@pixeloria.fr</a></p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <a
+                    href="tel:+33786125313"
+                    onClick={() => trackEvent("editor_call_click", { location: "mentions_legales" })}
+                    aria-label="Appeler l'éditeur au 07 86 12 53 13"
+                    className="inline-flex items-center gap-2 rounded-md bg-qit-coral px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-qit-coral/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                  >
+                    <Phone size={16} />
+                    Appeler
+                  </a>
+                  <a
+                    href="mailto:contact@pixeloria.fr"
+                    onClick={() => trackEvent("editor_email_click", { location: "mentions_legales" })}
+                    aria-label="Envoyer un e-mail à l'éditeur : contact@pixeloria.fr"
+                    className="inline-flex items-center gap-2 rounded-md border border-qit-purple/30 bg-white px-4 py-2 text-sm font-medium text-qit-purple transition-colors hover:bg-qit-beige/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                  >
+                    <Mail size={16} />
+                    Envoyer un e-mail
+                  </a>
+                </div>
               </div>
             </section>
 

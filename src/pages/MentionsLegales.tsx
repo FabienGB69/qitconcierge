@@ -34,37 +34,72 @@ const MentionsLegales = () => {
               <h2 className="text-xl font-semibold mb-3 text-qit-purple">Éditeur du site</h2>
               <p className="mb-2">Le présent site est édité par :</p>
               <div className="bg-qit-beige/40 rounded-lg p-4 border border-border text-sm">
-                <p className="font-medium text-qit-purple">GOMES FABIEN</p>
-                <p>Exploitant sous l'enseigne commerciale Pixeloria</p>
-                <p className="mt-1">Forme juridique : Entrepreneur individuel</p>
-                <p>SIREN : 798 262 416</p>
-                <p>Numéro RCS : 798 262 416 R.C.S. Lyon</p>
-                <p>Inscription au RCS : Greffe de Lyon, le 19/01/2015</p>
-                <p>Inscription au RNE : 15/01/2015</p>
-                <p>Numéro de TVA intracommunautaire : FR44798262416</p>
-                <p className="mt-2">Adresse : 61 C Avenue Gabriel Péri, 26600 Tain-l'Hermitage, France</p>
-                <p>Téléphone : 07 86 12 53 13</p>
-                <p>Email : <a href="mailto:contact@pixeloria.fr" className="text-qit-coral hover:underline">contact@pixeloria.fr</a></p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <a
-                    href="tel:+33786125313"
-                    onClick={() => trackEvent("editor_call_click", { location: "mentions_legales" })}
-                    aria-label="Appeler l'éditeur au 07 86 12 53 13"
-                    className="inline-flex items-center gap-2 rounded-md bg-qit-coral px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-qit-coral/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
-                  >
-                    <Phone size={16} />
-                    Appeler
-                  </a>
-                  <a
-                    href="mailto:contact@pixeloria.fr"
-                    onClick={() => trackEvent("editor_email_click", { location: "mentions_legales" })}
-                    aria-label="Envoyer un e-mail à l'éditeur : contact@pixeloria.fr"
-                    className="inline-flex items-center gap-2 rounded-md border border-qit-purple/30 bg-white px-4 py-2 text-sm font-medium text-qit-purple transition-colors hover:bg-qit-beige/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
-                  >
-                    <Mail size={16} />
-                    Envoyer un e-mail
-                  </a>
+              <dl className="space-y-2">
+                <div>
+                  <dt className="font-medium text-qit-purple">GOMES FABIEN</dt>
+                  <dd>Exploitant sous l'enseigne commerciale Pixeloria</dd>
                 </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Forme juridique</dt>
+                  <dd>Entrepreneur individuel</dd>
+                </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">SIREN</dt>
+                  <dd>798 262 416</dd>
+                </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Numéro RCS</dt>
+                  <dd>798 262 416 R.C.S. Lyon</dd>
+                </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Inscription au RCS</dt>
+                  <dd>Greffe de Lyon, le 19/01/2015</dd>
+                </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Inscription au RNE</dt>
+                  <dd>15/01/2015</dd>
+                </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">TVA intracommunautaire</dt>
+                  <dd className="break-all">FR44798262416</dd>
+                </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Adresse</dt>
+                  <dd className="break-words">61 C Avenue Gabriel Péri, 26600 Tain-l'Hermitage, France</dd>
+                </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Téléphone</dt>
+                  <dd>
+                    <a href="tel:+33786125313" className="text-qit-coral hover:underline break-all">07 86 12 53 13</a>
+                  </dd>
+                </div>
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Email</dt>
+                  <dd>
+                    <a href="mailto:contact@pixeloria.fr" className="text-qit-coral hover:underline break-all">contact@pixeloria.fr</a>
+                  </dd>
+                </div>
+              </dl>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <a
+                  href="tel:+33786125313"
+                  onClick={() => trackEvent("editor_call_click", { location: "mentions_legales" })}
+                  aria-label="Appeler l'éditeur au 07 86 12 53 13"
+                  className="inline-flex items-center gap-2 rounded-md bg-qit-coral px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-qit-coral/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                >
+                  <Phone size={16} />
+                  Appeler
+                </a>
+                <a
+                  href="mailto:contact@pixeloria.fr"
+                  onClick={() => trackEvent("editor_email_click", { location: "mentions_legales" })}
+                  aria-label="Envoyer un e-mail à l'éditeur : contact@pixeloria.fr"
+                  className="inline-flex items-center gap-2 rounded-md border border-qit-purple/30 bg-white px-4 py-2 text-sm font-medium text-qit-purple transition-colors hover:bg-qit-beige/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                >
+                  <Mail size={16} />
+                  Envoyer un e-mail
+                </a>
+              </div>
               </div>
             </section>
 

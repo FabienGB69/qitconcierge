@@ -20,7 +20,7 @@ describe("Mentions légales — informations éditeur", () => {
   const requiredFields: Array<{ label: string; pattern: RegExp }> = [
     {
       label: "SIREN",
-      pattern: /SIREN\s*[:：]?\s*798\s*262\s*416/i,
+      pattern: /SIREN[\s\S]{0,80}798\s*262\s*416/i,
     },
     {
       label: "RCS (Greffe de Lyon)",

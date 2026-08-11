@@ -1,4 +1,5 @@
 import React from "react";
+import { Phone, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
@@ -46,6 +47,28 @@ const PolitiqueConfidentialite = () => {
                 <p>Responsable : Fabien GOMES-BANCEL</p>
                 <p>Email : guest.qitconcierge@gmail.com</p>
                 <p>Téléphone / WhatsApp : +33 6 01 77 76 33</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <a
+                    href="tel:+33601777633"
+                    aria-label="Appeler Qit Concierge au +33 6 01 77 76 33"
+                    className="inline-flex items-center gap-2 rounded-md bg-qit-coral px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-qit-coral/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                  >
+                    <Phone size={16} />
+                    Appeler
+                  </a>
+                  <a
+                    href="mailto:guest.qitconcierge@gmail.com"
+                    aria-label="Envoyer un e-mail à Qit Concierge : guest.qitconcierge@gmail.com"
+                    className="inline-flex items-center gap-2 rounded-md border border-qit-purple/30 bg-white px-4 py-2 text-sm font-medium text-qit-purple transition-colors hover:bg-qit-beige/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                  >
+                    <Mail size={16} />
+                    Envoyer un e-mail
+                  </a>
+                </div>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  Les informations légales complètes de l'éditeur (SIREN, RCS, TVA intracommunautaire) figurent dans les{' '}
+                  <a href="/mentions-legales" className="text-qit-coral hover:underline">Mentions légales</a>.
+                </p>
               </div>
             </section>
 

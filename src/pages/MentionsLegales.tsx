@@ -33,6 +33,7 @@ const MentionsLegales = () => {
             <section>
               <h2 className="text-xl font-semibold mb-3 text-qit-purple">Éditeur du site</h2>
               <p className="mb-2">Le présent site est édité par :</p>
+              <div className="bg-qit-beige/40 rounded-lg p-4 border border-border text-sm">
               <dl className="space-y-2">
                 <div>
                   <dt className="font-medium text-qit-purple">GOMES FABIEN</dt>

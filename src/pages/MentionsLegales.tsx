@@ -100,6 +100,7 @@ const MentionsLegales = () => {
                   Envoyer un e-mail
                 </a>
               </div>
+              </div>
             </section>
 
             <section>

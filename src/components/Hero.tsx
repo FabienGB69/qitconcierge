@@ -3,6 +3,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import WhatsAppMessagePreview from "@/components/WhatsAppMessagePreview";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 import heroImage from "@/assets/hero-drome-ardeche.jpg";
 
 
@@ -82,7 +83,12 @@ const Hero = () => {
                 variant="outline"
                 className="border-qit-purple/25 bg-white/80 backdrop-blur text-qit-purple hover:bg-white hover:text-qit-purple rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium w-full sm:w-auto"
               >
-                <a href={waUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("whatsapp_hero_click", { location: "hero", language: isFR ? "fr" : "en" })}
+                >
                   <MessageCircle className="mr-2 h-4 w-4 shrink-0" />
                   <span className="whitespace-nowrap">{c.whatsapp}</span>
                 </a>

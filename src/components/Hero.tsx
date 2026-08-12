@@ -70,7 +70,7 @@ const Hero = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium shadow-lg shadow-qit-coral/25 w-full sm:w-auto"
+                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium shadow-lg shadow-qit-coral/25 w-full sm:w-auto focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <a href="/#contact">
                   {c.cta}
@@ -81,7 +81,7 @@ const Hero = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-qit-purple/25 bg-white/80 backdrop-blur text-qit-purple hover:bg-white hover:text-qit-purple rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium w-full sm:w-auto"
+                className="rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium w-full sm:w-auto border-qit-purple/25 bg-white/80 backdrop-blur text-qit-purple hover:bg-qit-purple hover:text-white hover:border-qit-purple focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <a
                   href={waUrl}

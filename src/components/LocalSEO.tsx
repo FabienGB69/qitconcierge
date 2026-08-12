@@ -67,32 +67,42 @@ const LocalSEO = () => {
       };
 
   return (
-    <section className="py-14 md:py-20 bg-qit-beige/50 border-t border-border">
+    <section className="py-10 md:py-14 bg-qit-beige/30 border-t border-border">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-        <h2 className="text-2xl md:text-3xl font-bold text-qit-purple mb-6 leading-tight">{t.heading}</h2>
-        <p className="text-base text-muted-foreground leading-relaxed mb-6">{t.p1}</p>
-        <p className="text-base text-muted-foreground leading-relaxed mb-8">{t.p2}</p>
+        <h2 className="text-xl md:text-2xl font-bold text-qit-purple mb-4 leading-tight">{t.heading}</h2>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">{t.p1}</p>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">{t.p2}</p>
 
-        <h3 className="text-sm uppercase tracking-widest text-qit-coral font-semibold mb-4">{t.h3a}</h3>
-        <ul className="flex flex-wrap gap-2 mb-10">
-          {zones.map((zone) => (
-            <li key={zone} className="inline-flex items-center gap-1.5 rounded-full bg-white border border-border px-4 py-2 text-sm text-qit-purple">
+        <details className="group rounded-xl border border-border bg-white overflow-hidden">
+          <summary className="flex items-center justify-between cursor-pointer px-4 py-3 text-sm font-medium text-qit-purple hover:bg-qit-beige/40 transition-colors">
+            <span className="flex items-center gap-2">
               <MapPin className="h-3.5 w-3.5 text-qit-coral" />
-              {zone}
-            </li>
-          ))}
-        </ul>
+              {t.h3a}
+            </span>
+            <span className="text-xs text-muted-foreground group-open:hidden">{isFR ? "Afficher" : "Show"}</span>
+            <span className="text-xs text-muted-foreground hidden group-open:inline">{isFR ? "Masquer" : "Hide"}</span>
+          </summary>
+          <div className="px-4 pb-4 pt-1">
+            <ul className="flex flex-wrap gap-2 mb-6">
+              {zones.map((zone) => (
+                <li key={zone} className="inline-flex items-center gap-1.5 rounded-full bg-qit-beige/50 border border-border px-3 py-1.5 text-xs text-qit-purple/80">
+                  {zone}
+                </li>
+              ))}
+            </ul>
 
-        <h3 className="text-sm uppercase tracking-widest text-qit-coral font-semibold mb-4">{t.h3b}</h3>
-        <ul className="flex flex-wrap gap-2">
-          {t.links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className="inline-flex items-center rounded-full border border-qit-purple/20 bg-white px-4 py-2 text-sm text-qit-purple hover:bg-qit-purple hover:text-white transition-colors">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+            <h3 className="text-xs uppercase tracking-widest text-qit-coral font-semibold mb-3">{t.h3b}</h3>
+            <ul className="flex flex-wrap gap-2">
+              {t.links.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="inline-flex items-center rounded-full border border-border bg-qit-beige/50 px-3 py-1.5 text-xs text-qit-purple/80 hover:bg-qit-purple hover:text-white hover:border-qit-purple transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
       </div>
     </section>
   );

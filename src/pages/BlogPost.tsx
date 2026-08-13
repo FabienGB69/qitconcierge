@@ -157,6 +157,15 @@ const BlogPost = () => {
 
   if (!post) return <Navigate to="/blog" replace />;
 
+  const pageUrl = `https://qitconcierge.fr/blog/${post.slug}`;
+  const shareText = `${post.title} — Qit Concierge`;
+  const encodedUrl = encodeURIComponent(pageUrl);
+  const encodedText = encodeURIComponent(shareText);
+
+  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+  const xShareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
+  const whatsappShareUrl = `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
+
   const related = posts
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3);

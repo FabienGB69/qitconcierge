@@ -120,7 +120,7 @@ const BlogPost = () => {
             "@type": "BlogPosting",
             headline: post.title,
             description: post.excerpt,
-            image: [`https://qitconcierge.fr${post.image}`],
+            image: seoImage ? [seoImage] : undefined,
             url: `https://qitconcierge.fr/blog/${post.slug}`,
             datePublished: post.date,
             inLanguage: "fr-FR",

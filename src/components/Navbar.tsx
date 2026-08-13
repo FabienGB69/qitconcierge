@@ -91,10 +91,10 @@ const Navbar = () => {
               <Home className="h-5 w-5 text-qit-coral" />
               <Heart className="h-2.5 w-2.5 absolute bottom-0 right-0 text-qit-coral" />
             </div>
-            <h1 className="text-xl font-serif ml-2.5 tracking-tight">
+            <div className="text-xl font-serif ml-2.5 tracking-tight">
               <span className="text-qit-purple font-semibold">Qit</span>
               <span className="text-qit-purple/60 italic font-normal ml-0.5">Concierge</span>
-            </h1>
+            </div>
           </Link>
 
           <div className="hidden lg:flex items-center gap-7">

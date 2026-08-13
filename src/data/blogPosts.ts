@@ -106,7 +106,7 @@ Vous voulez savoir ce que votre bien peut générer sur la fin de saison et l'ar
     slug: "classement-meuble-tourisme-drome-ardeche",
     title: "Classement meublé de tourisme en Drôme-Ardèche : est-ce vraiment intéressant en 2026 ?",
     excerpt:
-      "Classement meublé de tourisme en Drôme-Ardèche : démarche, coût, abattement fiscal micro-BIC et impact concret sur la rentabilité de votre location courte durée.",
+      "Classement meublé de tourisme en Drôme-Ardèche : démarche, coût, abattement micro-BIC et impact réel sur la rentabilité de votre location.",
     category: "Conseils propriétaires",
     date: "2026-07-07",
     readTime: "7 min",
@@ -258,7 +258,7 @@ Si vous souhaitez un état des lieux concret avant la haute saison, nous proposo
     slug: "conciergerie-airbnb-drome-choisir-prestataire",
     title: "Conciergerie Airbnb en Drôme : comment bien choisir son prestataire ?",
     excerpt:
-      "Conciergerie Airbnb en Drôme : les critères concrets pour choisir un prestataire local fiable, en gestion courte durée autour de Tain-l'Hermitage, Romans, Valence et Drôme des Collines.",
+      "Conciergerie Airbnb en Drôme : les critères concrets pour choisir un prestataire local fiable autour de Tain-l'Hermitage, Romans et Valence.",
     category: "Conseils propriétaires",
     date: "2026-04-08",
     readTime: "9 min",

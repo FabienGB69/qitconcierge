@@ -7,6 +7,8 @@ interface SEOOptions {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  /** Open Graph type, e.g. "website" or "article". */
+  ogType?: string;
   /** Optional list of JSON-LD objects to inject into <head>. */
   jsonLd?: Array<Record<string, unknown>>;
 }
@@ -34,7 +36,7 @@ const setMetaByProperty = (property: string, content: string) => {
   el.setAttribute("content", content);
 };
 
-export const useSEO = ({ title, description, path, ogTitle, ogDescription, ogImage, jsonLd }: SEOOptions) => {
+export const useSEO = ({ title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd }: SEOOptions) => {
   useEffect(() => {
     document.title = title;
     setMetaByName("description", description);
@@ -51,7 +53,7 @@ export const useSEO = ({ title, description, path, ogTitle, ogDescription, ogIma
     setMetaByProperty("og:title", ogTitle ?? title);
     setMetaByProperty("og:description", ogDescription ?? description);
     setMetaByProperty("og:url", url);
-    setMetaByProperty("og:type", "website");
+    setMetaByProperty("og:type", ogType ?? "website");
 
     const image = ogImage ?? "https://qitconcierge.fr/og-image.jpg";
     setMetaByProperty("og:image", image);
@@ -79,5 +81,5 @@ export const useSEO = ({ title, description, path, ogTitle, ogDescription, ogIma
         .querySelectorAll(`script[${JSONLD_FLAG}="true"]`)
         .forEach((el) => el.remove());
     };
-  }, [title, description, path, ogTitle, ogDescription, ogImage, jsonLd]);
+  }, [title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd]);
 };

@@ -104,6 +104,7 @@ const BlogPost = () => {
     ogTitle: post?.title,
     ogDescription: post?.excerpt,
     ogImage: post ? `https://qitconcierge.fr${post.image}` : undefined,
+    ogType: "article",
     jsonLd: post
       ? [
           {

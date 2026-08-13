@@ -97,13 +97,21 @@ const BlogPost = () => {
     ? { back: "Retour au blog", qTitle: "Une question sur votre logement ?", qSub: "Demandez une estimation gratuite ou discutez avec nous sur WhatsApp.", estimate: "Demander une estimation", whatsapp: "Échanger sur WhatsApp", related: "À lire aussi dans", localTitle: "Conciergerie & gestion locale en Drôme-Ardèche", localSub: "Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain." }
     : { back: "Back to blog", qTitle: "A question about your property?", qSub: "Request a free estimate or chat with us on WhatsApp.", estimate: "Request an estimate", whatsapp: "Chat on WhatsApp", related: "Also read in", localTitle: "Local concierge & management in Drôme-Ardèche", localSub: "Discover how Qit Concierge supports owners on the ground." };
 
+  const seoTitle = post ? post.seoTitle ?? post.title : "Article | Blog Qit Concierge";
+  const seoDescription = post ? post.seoDescription ?? post.excerpt : "Article du blog Qit Concierge.";
+  const seoImage = post
+    ? post.image.startsWith("http")
+      ? post.image
+      : `https://qitconcierge.fr${post.image}`
+    : undefined;
+
   useSEO({
-    title: post ? post.title : "Article | Blog Qit Concierge",
-    description: post?.excerpt ?? "Article du blog Qit Concierge.",
+    title: seoTitle,
+    description: seoDescription,
     path: post ? `/blog/${post.slug}` : "/blog",
-    ogTitle: post?.title,
-    ogDescription: post?.excerpt,
-    ogImage: post ? `https://qitconcierge.fr${post.image}` : undefined,
+    ogTitle: seoTitle,
+    ogDescription: seoDescription,
+    ogImage: seoImage,
     ogType: "article",
     jsonLd: post
       ? [

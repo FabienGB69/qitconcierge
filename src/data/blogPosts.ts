@@ -26,6 +26,9 @@ export interface BlogPost {
   readTime: string;
   image: string;
   imageAlt?: string;
+  /** Optional SEO overrides (fallback: title / excerpt). */
+  seoTitle?: string;
+  seoDescription?: string;
   content: string; // markdown-lite (paragraphs separated by \n\n, ## headings supported)
 }
 
@@ -46,6 +49,9 @@ export const posts: BlogPost[] = [
     readTime: "7 min",
     image: aout2026,
     imageAlt: "Terrasse d'une maison de campagne en pierre en Drôme-Ardèche au coucher du soleil en août, vignes et lavande en arrière-plan",
+    seoTitle: "Août 2026 : réussir la fin de saison en Drôme-Ardèche",
+    seoDescription:
+      "Tenir les prix en août, combler les nuits isolées et préparer septembre-octobre en Drôme-Ardèche : tarification, annonce, ménage et réglementation.",
     content: `Août est le mois le plus rentable de l'année en Drôme-Ardèche, mais c'est aussi celui où l'on perd le plus d'argent sans s'en rendre compte : nuits isolées invendues, prix figés depuis juin, arrière-saison non préparée. Voici comment tirer le maximum des dernières semaines d'été et enchaîner sur septembre-octobre, deux mois largement sous-exploités dans la région.
 
 ## 1. Ne pas brader la deuxième quinzaine d'août

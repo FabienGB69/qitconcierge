@@ -265,6 +265,52 @@ const BlogPost = () => {
                 </Button>
               </div>
             </div>
+
+            <div className="mt-8 rounded-2xl bg-white border border-border p-6 md:p-8">
+              <div className="flex items-center gap-2 mb-4">
+                <Share2 className="h-5 w-5 text-qit-coral" aria-hidden="true" />
+                <h3 className="text-lg font-bold text-qit-purple">
+                  {isFR ? "Partager cet article" : "Share this article"}
+                </h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-5">
+                {isFR
+                  ? "Si ce contenu est utile à d'autres propriétaires, n'hésitez pas à le partager."
+                  : "If this content is useful to other owners, feel free to share it."}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={facebookShareUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-[#1877F2]/10 text-[#1877F2] px-4 py-2.5 text-sm font-semibold hover:bg-[#1877F2]/15 transition-colors"
+                  onClick={() => trackEvent("share_click", { network: "facebook", page: post.slug })}
+                >
+                  <Facebook className="h-4 w-4" aria-hidden="true" />
+                  Facebook
+                </a>
+                <a
+                  href={xShareUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-black/5 text-black px-4 py-2.5 text-sm font-semibold hover:bg-black/10 transition-colors"
+                  onClick={() => trackEvent("share_click", { network: "x", page: post.slug })}
+                >
+                  <XIcon className="h-4 w-4" aria-hidden="true" />
+                  X / Twitter
+                </a>
+                <a
+                  href={whatsappShareUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-[#25D366]/10 text-[#128C7E] px-4 py-2.5 text-sm font-semibold hover:bg-[#25D366]/15 transition-colors"
+                  onClick={() => trackEvent("share_click", { network: "whatsapp", page: post.slug })}
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  WhatsApp
+                </a>
+              </div>
+            </div>
           </div>
         </article>
 

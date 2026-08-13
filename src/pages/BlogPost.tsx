@@ -4,10 +4,11 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 import { getPostBySlug, posts } from "@/data/blogPosts";
-import { Calendar, Clock, ArrowLeft, MessageCircle } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, MessageCircle, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 
 const whatsappUrl = buildWhatsAppUrl(
   "Bonjour, je viens de lire un article sur votre blog."

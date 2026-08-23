@@ -6,8 +6,10 @@ export default defineConfig({
   testDir: "./tests/visual",
   snapshotDir: "./tests/visual/__screenshots__",
   fullyParallel: true,
-  retries: 0,
-  reporter: [["list"]],
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 2 : undefined,
+  reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : [["list"]],
   expect: {
     toHaveScreenshot: {
       maxDiffPixelRatio: 0.02,

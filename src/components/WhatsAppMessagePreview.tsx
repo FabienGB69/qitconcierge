@@ -34,7 +34,6 @@ const WhatsAppMessagePreview = ({ message, className = "" }: WhatsAppMessagePrev
       </div>
     </div>
 
-    </div>
   );
 };
 

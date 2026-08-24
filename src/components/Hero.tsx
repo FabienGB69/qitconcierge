@@ -18,7 +18,9 @@ const Hero = () => {
         h1c: "",
         sub: "Nous prenons en charge votre location courte durée — annonce, réservations, accueil voyageurs, ménage, linge, maintenance. Maisons de campagne, appartements et résidences secondaires en Drôme-Ardèche.",
         cta: "Demander mon estimation gratuite",
+        ctaAria: "Demander mon estimation gratuite — aller au formulaire de contact",
         whatsapp: "Échanger sur WhatsApp",
+        whatsappAria: "Échanger sur WhatsApp (ouvre une nouvelle fenêtre)",
         scroll: "Défiler",
       }
     : {
@@ -29,9 +31,12 @@ const Hero = () => {
         h1c: "",
         sub: "We take care of your short-term rental — listing, bookings, guest welcome, cleaning, linen, maintenance. Country houses, apartments and second homes in Drôme-Ardèche.",
         cta: "Request my free estimate",
+        ctaAria: "Request my free estimate — go to the contact form",
         whatsapp: "Chat on WhatsApp",
+        whatsappAria: "Chat on WhatsApp (opens in a new window)",
         scroll: "Scroll",
       };
+
 
   const waMessage = isFR
     ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."

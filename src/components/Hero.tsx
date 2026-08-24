@@ -41,27 +41,30 @@ const Hero = () => {
 
 
   return (
-    <section className="relative w-full bg-qit-beige">
+    <section className="relative w-full bg-qit-beige" aria-labelledby="hero-title">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[100svh]">
         {/* Left — editorial copy */}
         <div className="relative z-10 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 pt-20 sm:pt-28 lg:pt-20 pb-8 sm:pb-10 lg:pb-10 bg-qit-beige min-h-0">
           <div className="max-w-xl flex flex-col min-h-0">
             <div className="min-h-0 overflow-y-auto pr-1">
               <div className="flex items-center gap-3 mb-4 sm:mb-5 lg:mb-4">
-                <span className="h-px w-8 bg-qit-coral shrink-0" aria-hidden="true" />
-                <span className="text-[11px] uppercase tracking-[0.22em] text-qit-purple/70 font-medium">
+                <span className="h-px w-8 bg-qit-coral-deep shrink-0" aria-hidden="true" />
+                <p className="text-[11px] uppercase tracking-[0.22em] text-qit-purple font-medium">
                   {c.eyebrow}
-                </span>
+                </p>
               </div>
 
-              <h1 className="font-serif text-qit-purple text-[1.65rem] sm:text-5xl lg:text-[2.5rem] xl:text-[2.9rem] 2xl:text-[3.3rem] leading-[1.05] tracking-tight mb-4 sm:mb-5 lg:mb-5">
+              <h1
+                id="hero-title"
+                className="font-serif text-qit-purple text-[1.65rem] sm:text-5xl lg:text-[2.5rem] xl:text-[2.9rem] 2xl:text-[3.3rem] leading-[1.05] tracking-tight mb-4 sm:mb-5 lg:mb-5"
+              >
                 <span className="block">{c.h1a}</span>
-                <span className="block italic font-normal text-qit-coral mt-1">{c.h1italic}</span>
+                <span className="block italic font-normal text-qit-coral-deep mt-1">{c.h1italic}</span>
                 <span className="block mt-2 lg:mt-2">{c.h1b}</span>
-                {c.h1c && <span className="block italic font-normal text-qit-purple/70 mt-1">{c.h1c}</span>}
+                {c.h1c && <span className="block italic font-normal text-qit-purple/90 mt-1">{c.h1c}</span>}
               </h1>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-base xl:text-lg text-qit-purple/80 leading-relaxed mb-4 sm:mb-5 lg:mb-4 max-w-lg">
+              <p className="text-sm sm:text-base md:text-lg lg:text-base xl:text-lg text-qit-purple/90 leading-relaxed mb-4 sm:mb-5 lg:mb-4 max-w-lg">
                 {c.sub}
               </p>
             </div>
@@ -70,26 +73,27 @@ const Hero = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-qit-coral hover:bg-qit-coral/90 text-white rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium shadow-lg shadow-qit-coral/25 w-full sm:w-auto focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-qit-coral-deep hover:bg-qit-coral-deep/95 text-white rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium shadow-lg shadow-qit-coral-deep/25 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qit-purple focus-visible:ring-offset-2 focus-visible:ring-offset-qit-beige disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <a href="/#contact">
+                <a href="/#contact" aria-label={c.ctaAria}>
                   {c.cta}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </a>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium w-full sm:w-auto border-qit-purple/25 bg-white/80 backdrop-blur text-qit-purple hover:bg-qit-purple hover:text-white hover:border-qit-purple focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium w-full sm:w-auto border-qit-purple/40 bg-white text-qit-purple hover:bg-qit-purple hover:text-white hover:border-qit-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qit-purple focus-visible:ring-offset-2 focus-visible:ring-offset-qit-beige disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <a
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={c.whatsappAria}
                   onClick={() => trackEvent("whatsapp_hero_click", { location: "hero", language: isFR ? "fr" : "en" })}
                 >
-                  <MessageCircle className="mr-2 h-4 w-4 shrink-0" />
+                  <MessageCircle className="mr-2 h-4 w-4 shrink-0" aria-hidden="true" />
                   <span className="whitespace-nowrap">{c.whatsapp}</span>
                 </a>
               </Button>
@@ -100,11 +104,12 @@ const Hero = () => {
 
 
           {/* scroll cue */}
-          <div className="hidden lg:flex absolute bottom-10 left-20 xl:left-24 items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-qit-purple/50">
-            <span className="h-px w-10 bg-qit-purple/30" aria-hidden="true" />
+          <p className="hidden lg:flex absolute bottom-10 left-20 xl:left-24 items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-qit-purple">
+            <span className="h-px w-10 bg-qit-purple/60" aria-hidden="true" />
             {c.scroll}
-          </div>
+          </p>
         </div>
+
 
         {/* Right — image */}
         <div className="relative min-h-[60vh] lg:min-h-full overflow-hidden">

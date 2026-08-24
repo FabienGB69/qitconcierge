@@ -70,8 +70,10 @@ export default {
 				qit: {
 					purple: '#6b4e9b', // Couleur violette du logo pour "Qit"
 					coral: '#e37676',  // Couleur corail/rouge de l'icône maison
+					'coral-deep': '#b03c3c', // Variante accessible du corail (texte / boutons, contraste AA)
 					beige: '#f5f0df'   // Couleur de fond beige clair
 				}
+
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

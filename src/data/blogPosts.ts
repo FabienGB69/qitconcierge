@@ -85,7 +85,12 @@ Concrètement, en août il faut :
 
 Avec des rotations rapprochées, août est le mois où la qualité de service se dégrade le plus, et donc où les notes baissent. Une note qui perd 0,2 point en août pèse sur la visibilité de l'annonce jusqu'au printemps suivant.
 
-Deux réflexes : planifier les prestataires ménage et linge à l'avance sur tout le mois, et bloquer une demi-journée fin août pour la maintenance (joints, climatisation, extérieurs, literie). C'est aussi le bon moment pour un audit avant l'arrière-saison, comme décrit dans notre [méthode d'accompagnement](/methode).
+### Deux réflexes pour tenir la saison
+
+- **Planifier les prestataires** ménage et linge à l'avance sur tout le mois.
+- **Bloquer une demi-journée fin août** pour la maintenance (joints, climatisation, extérieurs, literie).
+
+C'est aussi le bon moment pour un audit avant l'arrière-saison, comme décrit dans notre [méthode d'accompagnement](/methode), et pour vérifier que votre [tarification de conciergerie](/tarifs) reste alignée sur vos objectifs de rentabilité.
 
 ## 5. Les points réglementaires à vérifier avant la rentrée
 

@@ -4,7 +4,8 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
 import { getPostBySlug, posts } from "@/data/blogPosts";
-import { Calendar, Clock, ArrowLeft, MessageCircle, Share2, Facebook } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, MessageCircle, Share2, Facebook, Linkedin, Link2 } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -60,6 +61,16 @@ const renderInline = (text: string, keyPrefix: string) => {
 
 const renderContent = (content: string) =>
   content.split("\n\n").map((block, i) => {
+    if (block.startsWith("### ")) {
+      return (
+        <h3
+          key={i}
+          className="text-lg md:text-xl font-bold text-qit-purple mt-6 mb-2 leading-snug"
+        >
+          {block.replace(/^###\s+/, "")}
+        </h3>
+      );
+    }
     if (block.startsWith("## ")) {
       return (
         <h2
@@ -101,8 +112,8 @@ const BlogPost = () => {
   const { slug } = useParams();
   const post = slug ? getPostBySlug(slug) : null;
   const L = isFR
-    ? { back: "Retour au blog", qTitle: "Une question sur votre logement ?", qSub: "Demandez une estimation gratuite ou discutez avec nous sur WhatsApp.", estimate: "Demander une estimation", whatsapp: "Échanger sur WhatsApp", related: "À lire aussi dans", localTitle: "Conciergerie & gestion locale en Drôme-Ardèche", localSub: "Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain." }
-    : { back: "Back to blog", qTitle: "A question about your property?", qSub: "Request a free estimate or chat with us on WhatsApp.", estimate: "Request an estimate", whatsapp: "Chat on WhatsApp", related: "Also read in", localTitle: "Local concierge & management in Drôme-Ardèche", localSub: "Discover how Qit Concierge supports owners on the ground." };
+    ? { back: "Retour au blog", qTitle: "Une question sur votre logement ?", qSub: "Demandez une estimation gratuite ou discutez avec nous sur WhatsApp.", estimate: "Demander une estimation", whatsapp: "Échanger sur WhatsApp", related: "À lire aussi dans", localTitle: "Conciergerie & gestion locale en Drôme-Ardèche", localSub: "Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain.", copy: "Copier le lien", copied: "Lien copié dans le presse-papiers" }
+    : { back: "Back to blog", qTitle: "A question about your property?", qSub: "Request a free estimate or chat with us on WhatsApp.", estimate: "Request an estimate", whatsapp: "Chat on WhatsApp", related: "Also read in", localTitle: "Local concierge & management in Drôme-Ardèche", localSub: "Discover how Qit Concierge supports owners on the ground.", copy: "Copy link", copied: "Link copied to clipboard" };
 
   const seoTitle = post ? post.seoTitle ?? post.title : "Article | Blog Qit Concierge";
   const seoDescription = post ? post.seoDescription ?? post.excerpt : "Article du blog Qit Concierge.";
@@ -112,6 +123,22 @@ const BlogPost = () => {
       : `https://qitconcierge.fr${post.image}`
     : undefined;
 
+  // Blog sequence (rel=prev / rel=next) based on publication date.
+  const prevPath = (() => {
+    if (!post) return undefined;
+    const desc = [...posts].sort((a, b) => +new Date(b.date) - +new Date(a.date));
+    const idx = desc.findIndex((p) => p.slug === post.slug);
+    const newer = idx > 0 ? desc[idx - 1] : null;
+    return newer ? `/blog/${newer.slug}` : undefined;
+  })();
+  const nextPath = (() => {
+    if (!post) return undefined;
+    const desc = [...posts].sort((a, b) => +new Date(b.date) - +new Date(a.date));
+    const idx = desc.findIndex((p) => p.slug === post.slug);
+    const older = idx >= 0 && idx < desc.length - 1 ? desc[idx + 1] : null;
+    return older ? `/blog/${older.slug}` : undefined;
+  })();
+
   useSEO({
     title: seoTitle,
     description: seoDescription,
@@ -120,6 +147,8 @@ const BlogPost = () => {
     ogDescription: seoDescription,
     ogImage: seoImage,
     ogType: "article",
+    prevPath,
+    nextPath,
     jsonLd: post
       ? [
           {
@@ -129,7 +158,12 @@ const BlogPost = () => {
             description: post.excerpt,
             image: seoImage ? [seoImage] : undefined,
             url: `https://qitconcierge.fr/blog/${post.slug}`,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://qitconcierge.fr/blog/${post.slug}`,
+            },
             datePublished: post.date,
+            dateModified: post.date,
             inLanguage: "fr-FR",
             author: {
               "@type": "Organization",
@@ -140,6 +174,10 @@ const BlogPost = () => {
               "@type": "Organization",
               name: "Qit Concierge",
               url: "https://qitconcierge.fr",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://qitconcierge.fr/og-image.jpg",
+              },
             },
           },
           {
@@ -158,13 +196,30 @@ const BlogPost = () => {
   if (!post) return <Navigate to="/blog" replace />;
 
   const pageUrl = `https://qitconcierge.fr/blog/${post.slug}`;
-  const shareText = `${post.title} — Qit Concierge`;
-  const encodedUrl = encodeURIComponent(pageUrl);
+  // Tracked share URL: lets analytics attribute inbound visits to blog shares.
+  const trackedShareUrl = `${pageUrl}?utm_source=share&utm_medium=social&utm_campaign=blog_${post.slug}`;
+  const shareHook = isFR
+    ? "Un article utile si vous louez en Drôme-Ardèche 👇"
+    : "A useful read if you rent in Drôme-Ardèche 👇";
+  const shareText = `${post.title}\n${shareHook}\n${trackedShareUrl}\n— Qit Concierge`;
+  const encodedTrackedUrl = encodeURIComponent(trackedShareUrl);
   const encodedText = encodeURIComponent(shareText);
+  const position = "article_footer";
 
-  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-  const xShareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
-  const whatsappShareUrl = `https://wa.me/?text=${encodedText}%20${encodedUrl}`;
+  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedTrackedUrl}`;
+  const xShareUrl = `https://twitter.com/intent/tweet?url=${encodedTrackedUrl}&text=${encodeURIComponent(post.title)}`;
+  const whatsappShareUrl = `https://wa.me/?text=${encodedText}`;
+  const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedTrackedUrl}`;
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(pageUrl);
+      toast.success(L.copied);
+      trackEvent("share_click", { network: "copy_link", slug: post.slug, position });
+    } catch {
+      toast.error(isFR ? "Impossible de copier le lien" : "Could not copy link");
+    }
+  };
 
   const related = posts
     .filter((p) => p.category === post.category && p.slug !== post.slug)
@@ -191,6 +246,9 @@ const BlogPost = () => {
     ],
   };
   const relatedLandings = landingsByCategory[post.category] ?? [];
+
+  const shareBtnClass =
+    "inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2.5 text-sm font-semibold transition-colors";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -283,8 +341,8 @@ const BlogPost = () => {
                   href={facebookShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-[#1877F2]/10 text-[#1877F2] px-4 py-2.5 text-sm font-semibold hover:bg-[#1877F2]/15 transition-colors"
-                  onClick={() => trackEvent("share_click", { network: "facebook", page: post.slug })}
+                  className={`${shareBtnClass} bg-[#1877F2]/10 text-[#1877F2] hover:bg-[#1877F2]/15`}
+                  onClick={() => trackEvent("share_click", { network: "facebook", slug: post.slug, position })}
                 >
                   <Facebook className="h-4 w-4" aria-hidden="true" />
                   Facebook
@@ -293,8 +351,8 @@ const BlogPost = () => {
                   href={xShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-black/5 text-black px-4 py-2.5 text-sm font-semibold hover:bg-black/10 transition-colors"
-                  onClick={() => trackEvent("share_click", { network: "x", page: post.slug })}
+                  className={`${shareBtnClass} bg-black/5 text-black hover:bg-black/10`}
+                  onClick={() => trackEvent("share_click", { network: "x", slug: post.slug, position })}
                 >
                   <XIcon className="h-4 w-4" aria-hidden="true" />
                   X / Twitter
@@ -303,12 +361,31 @@ const BlogPost = () => {
                   href={whatsappShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-[#25D366]/10 text-[#128C7E] px-4 py-2.5 text-sm font-semibold hover:bg-[#25D366]/15 transition-colors"
-                  onClick={() => trackEvent("share_click", { network: "whatsapp", page: post.slug })}
+                  className={`${shareBtnClass} bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/15`}
+                  onClick={() => trackEvent("share_click", { network: "whatsapp", slug: post.slug, position })}
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden="true" />
                   WhatsApp
                 </a>
+                <a
+                  href={linkedinShareUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${shareBtnClass} bg-[#0A66C2]/10 text-[#0A66C2] hover:bg-[#0A66C2]/15`}
+                  onClick={() => trackEvent("share_click", { network: "linkedin", slug: post.slug, position })}
+                >
+                  <Linkedin className="h-4 w-4" aria-hidden="true" />
+                  LinkedIn
+                </a>
+                <button
+                  type="button"
+                  onClick={handleCopyLink}
+                  aria-label={L.copy}
+                  className={`${shareBtnClass} bg-qit-purple/5 text-qit-purple hover:bg-qit-purple/10 cursor-pointer`}
+                >
+                  <Link2 className="h-4 w-4" aria-hidden="true" />
+                  {L.copy}
+                </button>
               </div>
             </div>
           </div>

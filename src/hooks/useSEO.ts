@@ -11,6 +11,10 @@ interface SEOOptions {
   ogType?: string;
   /** Optional list of JSON-LD objects to inject into <head>. */
   jsonLd?: Array<Record<string, unknown>>;
+  /** Relative path of the previous document in a sequence (rel="prev"). */
+  prevPath?: string;
+  /** Relative path of the next document in a sequence (rel="next"). */
+  nextPath?: string;
 }
 
 const SITE_URL = "https://qitconcierge.fr";
@@ -36,19 +40,40 @@ const setMetaByProperty = (property: string, content: string) => {
   el.setAttribute("content", content);
 };
 
-export const useSEO = ({ title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd }: SEOOptions) => {
+/** Ensure exactly one <link rel="..."> with the given href, removing stale ones. */
+const setLinkRel = (rel: string, href: string | undefined) => {
+  const selector = `link[rel="${rel}"]`;
+  if (!href) {
+    document.querySelectorAll(selector).forEach((el) => el.remove());
+    return;
+  }
+  let el = document.querySelector(selector) as HTMLLinkElement | null;
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", rel);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", href);
+};
+
+export const useSEO = ({
+  title,
+  description,
+  path,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogType,
+  jsonLd,
+  prevPath,
+  nextPath,
+}: SEOOptions) => {
   useEffect(() => {
     document.title = title;
     setMetaByName("description", description);
 
     const url = `${SITE_URL}${path}`;
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", url);
+    setLinkRel("canonical", url);
 
     setMetaByProperty("og:title", ogTitle ?? title);
     setMetaByProperty("og:description", ogDescription ?? description);
@@ -61,6 +86,10 @@ export const useSEO = ({ title, description, path, ogTitle, ogDescription, ogIma
     setMetaByName("twitter:title", ogTitle ?? title);
     setMetaByName("twitter:description", ogDescription ?? description);
     setMetaByName("twitter:image", image);
+
+    // Blog sequence navigation (rel=prev / rel=next).
+    setLinkRel("prev", prevPath ? `${SITE_URL}${prevPath}` : undefined);
+    setLinkRel("next", nextPath ? `${SITE_URL}${nextPath}` : undefined);
 
     // JSON-LD: replace any previously injected JSON-LD scripts (per route).
     document
@@ -81,5 +110,5 @@ export const useSEO = ({ title, description, path, ogTitle, ogDescription, ogIma
         .querySelectorAll(`script[${JSONLD_FLAG}="true"]`)
         .forEach((el) => el.remove());
     };
-  }, [title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd]);
+  }, [title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd, prevPath, nextPath]);
 };

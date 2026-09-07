@@ -15,10 +15,10 @@ Voir `.lovable/plan.md` pour le détail d'exécution.
 - [x] Étendre le tracking share_click : network + slug + position
 - [x] Vérifier que l'article d'août est dans le sitemap/flux et reste indexable (robots)
 
-## Phase 2 — Mentions légales
-- [ ] Boutons « Copier » pour l'adresse, le téléphone et l'e-mail
-- [ ] Test Playwright (petit viewport) : adresse, SIREN, RCS, TVA non coupés/tronqués
-- [ ] Accessibilité de la carte : balisage sémantique, libellés ARIA, navigation clavier
+## Phase 2 — Mentions légales ✅
+- [x] Boutons « Copier » pour l'adresse, le téléphone et l'e-mail (toast + event legal_copy)
+- [x] Test Playwright (360 & 390) : SIREN/RCS/TVA/adresse non coupés/tronqués + boutons copier présents
+- [x] Accessibilité : sections aria-labelledby, aria-label boutons copier, focus visible, sémantique dl/dt/dd renforcée
 
 ## Phase 3 — Analytics, WhatsApp & performance Hero
 - [ ] Tracking des clics sur tous les boutons du hero (incl. CTA estimation)

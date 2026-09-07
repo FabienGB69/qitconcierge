@@ -3,17 +3,17 @@
 Tâches issues de la session du 27/08/2026. Approche par phases.
 Voir `.lovable/plan.md` pour le détail d'exécution.
 
-## Phase 1 — Blog & SEO on-page (article d'août)
-- [ ] Vérifier/enrichir le JSON-LD Schema.org Article (BlogPosting) : image, auteur, dateModified, publisher logo
-- [ ] Vérifier aperçus OpenGraph / Twitter Card (titre, description, image absolue) et corriger si besoin
-- [ ] Ajouter/compléter les liens internes SEO dans l'article d'août (ancrage pertinent)
-- [ ] Optimiser la hiérarchie H1/H2/H3 de l'article d'août
-- [ ] Ajouter rel=canonical, rel=next/prev (et rel=me si pertinent) sur le blog
-- [ ] Bouton « Copier le lien » dans l'article : toast feedback + event analytics dédié
-- [ ] Personnaliser le texte du partage WhatsApp (titre + accroche + signature, lien tracké)
-- [ ] Ajouter un bouton de partage LinkedIn (texte prérempli)
-- [ ] Étendre le tracking share_click : plateforme, slug, position du partage
-- [ ] Vérifier que l'article d'août est dans le sitemap/flux et reste indexable (robots)
+## Phase 1 — Blog & SEO on-page (article d'août) ✅
+- [x] Vérifier/enrichir le JSON-LD Schema.org Article (BlogPosting) : dateModified, mainEntityOfPage, publisher.logo
+- [x] Vérifier aperçus OpenGraph / Twitter Card (titre, description, image absolue https)
+- [x] Ajouter/compléter les liens internes SEO dans l'article d'août (lien /tarifs ajouté)
+- [x] Optimiser la hiérarchie H1/H2/H3 de l'article d'août (support ### + 1 sous-titre)
+- [x] Ajouter rel=canonical, rel=next/prev sur le blog
+- [x] Bouton « Copier le lien » dans l'article : toast feedback + event share_click(copy_link)
+- [x] Personnaliser le texte du partage WhatsApp (titre + accroche + signature, lien tracké UTM)
+- [x] Ajouter un bouton de partage LinkedIn (texte prérempli)
+- [x] Étendre le tracking share_click : network + slug + position
+- [x] Vérifier que l'article d'août est dans le sitemap/flux et reste indexable (robots)
 
 ## Phase 2 — Mentions légales
 - [ ] Boutons « Copier » pour l'adresse, le téléphone et l'e-mail

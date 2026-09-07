@@ -1,10 +1,60 @@
-import React from "react";
-import { Phone, Mail } from "lucide-react";
+import { useState } from "react";
+import { Phone, Mail, Copy, Check } from "lucide-react";
+import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
 import { trackEvent } from "@/lib/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+const ADDRESS = "61 C Avenue Gabriel Péri, 26600 Tain-l'Hermitage, France";
+const PHONE_DISPLAY = "07 86 12 53 13";
+const PHONE_TEL = "+33786125313";
+const EMAIL = "contact@pixeloria.fr";
+
+type CopyField = "adresse" | "téléphone" | "e-mail";
+
+const CopyButton = ({ value, label }: { value: string; label: CopyField }) => {
+  const [copied, setCopied] = useState(false);
+  const onCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      toast.success(`Copié : ${label}`);
+      trackEvent("legal_copy", { field: label, location: "mentions_legales" });
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      toast.error("Copie impossible");
+    }
+  };
+  return (
+    <button
+      type="button"
+      onClick={onCopy}
+      aria-label={`Copier ${label} : ${value}`}
+      className="inline-flex items-center justify-center rounded-md border border-border bg-white px-2 py-1 text-xs font-medium text-qit-purple align-middle transition-colors hover:bg-qit-beige/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+    >
+      {copied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
+    </button>
+  );
+};
+
+const Section = ({
+  id,
+  title,
+  children,
+}: {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <section aria-labelledby={id}>
+    <h2 id={id} className="text-xl font-semibold mb-3 text-qit-purple scroll-mt-28">
+      {title}
+    </h2>
+    {children}
+  </section>
+);
 
 const MentionsLegales = () => {
   const { isEN } = useLanguage();
@@ -30,81 +80,88 @@ const MentionsLegales = () => {
           </header>
 
           <div className="space-y-10 text-foreground/90 leading-relaxed">
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Éditeur du site</h2>
+            <Section id="editeur" title="Éditeur du site">
               <p className="mb-2">Le présent site est édité par :</p>
               <div className="bg-qit-beige/40 rounded-lg p-4 border border-border text-sm">
-              <dl className="space-y-2">
-                <div>
-                  <dt className="font-medium text-qit-purple">GOMES FABIEN</dt>
-                  <dd>Exploitant sous l'enseigne commerciale Pixeloria</dd>
+                <dl className="space-y-2">
+                  <div>
+                    <dt className="font-medium text-qit-purple">GOMES FABIEN</dt>
+                    <dd>Exploitant sous l'enseigne commerciale Pixeloria</dd>
+                  </div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Forme juridique</dt>
+                    <dd>Entrepreneur individuel</dd>
+                  </div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">SIREN</dt>
+                    <dd>798 262 416</dd>
+                  </div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Numéro RCS</dt>
+                    <dd>798 262 416 R.C.S. Lyon</dd>
+                  </div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Inscription au RCS</dt>
+                    <dd>Greffe de Lyon, le 19/01/2015</dd>
+                  </div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Inscription au RNE</dt>
+                    <dd>15/01/2015</dd>
+                  </div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">TVA intracommunautaire</dt>
+                    <dd className="break-all">FR44798262416</dd>
+                  </div>
+                  <div className="flex flex-col gap-1 sm:flex-row sm:gap-3 sm:items-center">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Adresse</dt>
+                    <dd className="break-words flex items-start gap-2">
+                      <span>{ADDRESS}</span>
+                      <CopyButton value={ADDRESS} label="adresse" />
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1 sm:flex-row sm:gap-3 sm:items-center">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Téléphone</dt>
+                    <dd className="flex items-start gap-2">
+                      <a href={`tel:${PHONE_TEL}`} className="text-qit-coral hover:underline break-all">
+                        {PHONE_DISPLAY}
+                      </a>
+                      <CopyButton value={PHONE_DISPLAY} label="téléphone" />
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1 sm:flex-row sm:gap-3 sm:items-center">
+                    <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Email</dt>
+                    <dd className="flex items-start gap-2">
+                      <a href={`mailto:${EMAIL}`} className="text-qit-coral hover:underline break-all">
+                        {EMAIL}
+                      </a>
+                      <CopyButton value={EMAIL} label="e-mail" />
+                    </dd>
+                  </div>
+                </dl>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <a
+                    href={`tel:${PHONE_TEL}`}
+                    onClick={() => trackEvent("editor_call_click", { location: "mentions_legales" })}
+                    aria-label="Appeler l'éditeur au 07 86 12 53 13"
+                    className="inline-flex items-center gap-2 rounded-md bg-qit-coral px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-qit-coral/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                  >
+                    <Phone size={16} aria-hidden="true" />
+                    Appeler
+                  </a>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    onClick={() => trackEvent("editor_email_click", { location: "mentions_legales" })}
+                    aria-label="Envoyer un e-mail à l'éditeur : contact@pixeloria.fr"
+                    className="inline-flex items-center gap-2 rounded-md border border-qit-purple/30 bg-white px-4 py-2 text-sm font-medium text-qit-purple transition-colors hover:bg-qit-beige/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                  >
+                    <Mail size={16} aria-hidden="true" />
+                    Envoyer un e-mail
+                  </a>
                 </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Forme juridique</dt>
-                  <dd>Entrepreneur individuel</dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">SIREN</dt>
-                  <dd>798 262 416</dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Numéro RCS</dt>
-                  <dd>798 262 416 R.C.S. Lyon</dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Inscription au RCS</dt>
-                  <dd>Greffe de Lyon, le 19/01/2015</dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Inscription au RNE</dt>
-                  <dd>15/01/2015</dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">TVA intracommunautaire</dt>
-                  <dd className="break-all">FR44798262416</dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Adresse</dt>
-                  <dd className="break-words">61 C Avenue Gabriel Péri, 26600 Tain-l'Hermitage, France</dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Téléphone</dt>
-                  <dd>
-                    <a href="tel:+33786125313" className="text-qit-coral hover:underline break-all">07 86 12 53 13</a>
-                  </dd>
-                </div>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-3 sm:items-baseline">
-                  <dt className="text-qit-purple/70 font-medium sm:w-48 sm:shrink-0">Email</dt>
-                  <dd>
-                    <a href="mailto:contact@pixeloria.fr" className="text-qit-coral hover:underline break-all">contact@pixeloria.fr</a>
-                  </dd>
-                </div>
-              </dl>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <a
-                  href="tel:+33786125313"
-                  onClick={() => trackEvent("editor_call_click", { location: "mentions_legales" })}
-                  aria-label="Appeler l'éditeur au 07 86 12 53 13"
-                  className="inline-flex items-center gap-2 rounded-md bg-qit-coral px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-qit-coral/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
-                >
-                  <Phone size={16} />
-                  Appeler
-                </a>
-                <a
-                  href="mailto:contact@pixeloria.fr"
-                  onClick={() => trackEvent("editor_email_click", { location: "mentions_legales" })}
-                  aria-label="Envoyer un e-mail à l'éditeur : contact@pixeloria.fr"
-                  className="inline-flex items-center gap-2 rounded-md border border-qit-purple/30 bg-white px-4 py-2 text-sm font-medium text-qit-purple transition-colors hover:bg-qit-beige/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
-                >
-                  <Mail size={16} />
-                  Envoyer un e-mail
-                </a>
               </div>
-              </div>
-            </section>
+            </Section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Site réalisé par</h2>
+            <Section id="site-realise-par" title="Site réalisé par">
               <div className="bg-qit-beige/40 rounded-lg p-4 border border-border text-sm">
                 <p>
                   <a
@@ -127,59 +184,53 @@ const MentionsLegales = () => {
                   aria-label="Site web Pixeloria : https://pixeloria.fr (ouvre dans un nouvel onglet)"
                   className="inline-block text-qit-coral hover:underline rounded-sm px-1 py-1 -mx-1 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2 break-all"
                 >https://pixeloria.fr</a></p>
-                <p>Email : <a href="mailto:contact@pixeloria.fr" className="text-qit-coral hover:underline">contact@pixeloria.fr</a></p>
-                <p>Téléphone : 07 86 12 53 13</p>
+                <p>Email : <a href={`mailto:${EMAIL}`} className="text-qit-coral hover:underline">{EMAIL}</a></p>
+                <p>Téléphone : {PHONE_DISPLAY}</p>
               </div>
-            </section>
+            </Section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Hébergement</h2>
+            <Section id="hebergement" title="Hébergement">
               <p className="mb-2">Le site est hébergé par :</p>
               <div className="bg-qit-beige/40 rounded-lg p-4 border border-border text-sm">
                 <p>Nom de l'hébergeur : [à compléter : Lovable / Vercel / autre selon hébergement final]</p>
                 <p>Adresse : [à compléter]</p>
                 <p>Site web : [à compléter]</p>
               </div>
-            </section>
+            </Section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Propriété intellectuelle</h2>
+            <Section id="propriete-intellectuelle" title="Propriété intellectuelle">
               <p className="text-sm">
                 L'ensemble des contenus présents sur le site Qit Concierge, incluant notamment les textes, images, illustrations, éléments graphiques, logos, icônes, structure, mise en page et contenus éditoriaux, est protégé par le droit de la propriété intellectuelle.
               </p>
               <p className="text-sm mt-2">
                 Toute reproduction, représentation, modification, diffusion ou exploitation totale ou partielle du site, sans autorisation écrite préalable, est interdite.
               </p>
-            </section>
+            </Section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Responsabilité</h2>
+            <Section id="responsabilite" title="Responsabilité">
               <p className="text-sm">
                 Qit Concierge met tout en œuvre pour assurer l'exactitude et la mise à jour des informations diffusées sur le site. Toutefois, les informations présentées sont fournies à titre indicatif et peuvent évoluer.
               </p>
               <p className="text-sm mt-2">
                 Qit Concierge ne peut être tenue responsable d'une erreur, omission, indisponibilité temporaire du site ou mauvaise interprétation des informations publiées.
               </p>
-            </section>
+            </Section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Liens externes</h2>
+            <Section id="liens-externes" title="Liens externes">
               <p className="text-sm">
                 Le site peut contenir des liens vers des sites tiers, notamment Airbnb, Booking, Abritel, PriceLabs ou d'autres services partenaires. Qit Concierge n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leur fonctionnement ou leur politique de confidentialité.
               </p>
-            </section>
+            </Section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Données personnelles</h2>
+            <Section id="donnees-personnelles" title="Données personnelles">
               <p className="text-sm">
                 Les informations relatives à la collecte et au traitement des données personnelles sont détaillées dans la{' '}
                 <a href="/politique-confidentialite" className="text-qit-coral hover:underline">Politique de confidentialité</a>{' '}
                 accessible sur le site.
               </p>
-            </section>
+            </Section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Médiation de la consommation</h2>
+            <Section id="mediation" title="Médiation de la consommation">
               <p className="text-sm">
                 Conformément aux dispositions applicables, le client consommateur peut recourir gratuitement à un médiateur de la consommation en cas de litige non résolu avec Qit Concierge.
               </p>
@@ -187,15 +238,14 @@ const MentionsLegales = () => {
                 <p>Médiateur de la consommation : [à compléter]</p>
                 <p>Site web du médiateur : [à compléter]</p>
               </div>
-            </section>
+            </Section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-3 text-qit-purple">Contact</h2>
+            <Section id="contact" title="Contact">
               <p className="text-sm">
                 Pour toute question concernant le site ou son contenu, vous pouvez contacter Qit Concierge à l'adresse suivante :
               </p>
               <p className="text-sm mt-2 font-medium">guest.qitconcierge@gmail.com</p>
-            </section>
+            </Section>
           </div>
         </div>
         <div className="max-w-3xl mx-auto mt-10 pt-6 border-t border-border text-sm">

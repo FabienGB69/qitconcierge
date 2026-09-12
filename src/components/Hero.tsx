@@ -156,6 +156,7 @@ const Hero = () => {
             }
             className="absolute inset-0 w-full h-full object-cover"
             fetchPriority="high"
+            decoding="async"
             width={1280}
             height={1600}
           />

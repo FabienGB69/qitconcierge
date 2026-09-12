@@ -41,7 +41,13 @@ const Hero = () => {
   const waMessage = isFR
     ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."
     : "Hello Qit Concierge, I'd like to know more about managing my short-term rental in Drôme-Ardèche.";
-  const waUrl = buildWhatsAppUrl(waMessage);
+  const waUrl = buildWhatsAppUrl(waMessage, {
+    source: "hero",
+    medium: "wa_link",
+    campaign: "hero_cta",
+  });
+
+  const lang = isFR ? "fr" : "en";
 
 
 

@@ -31,6 +31,28 @@ describe("WhatsApp link verification", () => {
     );
   });
 
+  it("appends UTM context to the pre-filled message when provided", () => {
+    const url = buildWhatsAppUrl("Bonjour", {
+      source: "hero",
+      medium: "wa_link",
+      campaign: "hero_cta",
+    });
+    const decoded = decodeURIComponent(url.split("?text=")[1]);
+    expect(decoded).toBe("Bonjour\n\n(utm_source=hero|utm_medium=wa_link|utm_campaign=hero_cta)");
+  });
+
+  it("omits empty UTM fields from the appended note", () => {
+    const url = buildWhatsAppUrl("Bonjour", { source: "hero", medium: "", campaign: undefined });
+    const decoded = decodeURIComponent(url.split("?text=")[1]);
+    expect(decoded).toBe("Bonjour\n\n(utm_source=hero)");
+  });
+
+  it("builds a URL without a message note when no text is given but utm is", () => {
+    const url = buildWhatsAppUrl(undefined, { source: "hero" });
+    const decoded = decodeURIComponent(url.split("?text=")[1]);
+    expect(decoded).toBe("(utm_source=hero)");
+  });
+
   it("validates the default WhatsApp URL", () => {
     const result = validateWhatsAppUrl(WHATSAPP_URL);
     expect(result.valid).toBe(true);

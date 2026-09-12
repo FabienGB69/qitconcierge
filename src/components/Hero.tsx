@@ -41,7 +41,13 @@ const Hero = () => {
   const waMessage = isFR
     ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."
     : "Hello Qit Concierge, I'd like to know more about managing my short-term rental in Drôme-Ardèche.";
-  const waUrl = buildWhatsAppUrl(waMessage);
+  const waUrl = buildWhatsAppUrl(waMessage, {
+    source: "hero",
+    medium: "wa_link",
+    campaign: "hero_cta",
+  });
+
+  const lang = isFR ? "fr" : "en";
 
 
 
@@ -80,7 +86,17 @@ const Hero = () => {
                 size="lg"
                 className="bg-qit-coral-deep hover:bg-qit-coral-deep/95 text-white rounded-full h-12 lg:h-12 xl:h-14 px-5 lg:px-6 xl:px-7 text-base font-medium shadow-lg shadow-qit-coral-deep/25 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-qit-purple focus-visible:ring-offset-2 focus-visible:ring-offset-qit-beige disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <a href="/#contact" aria-label={c.ctaAria}>
+                <a
+                  href="/#contact"
+                  aria-label={c.ctaAria}
+                  onClick={() =>
+                    trackEvent("estimate_hero_click", {
+                      location: "hero",
+                      target: "#contact",
+                      language: lang,
+                    })
+                  }
+                >
                   {c.cta}
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </a>
@@ -96,7 +112,20 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={c.whatsappAria}
-                  onClick={() => trackEvent("whatsapp_hero_click", { location: "hero", language: isFR ? "fr" : "en" })}
+                  onClick={() => {
+                    trackEvent("whatsapp_hero_click", {
+                      location: "hero",
+                      language: lang,
+                      source: "hero",
+                      medium: "wa_link",
+                      campaign: "hero_cta",
+                    });
+                    trackEvent("whatsapp_message_sent", {
+                      location: "hero",
+                      language: lang,
+                      campaign: "hero_cta",
+                    });
+                  }}
                 >
                   <MessageCircle className="mr-2 h-4 w-4 shrink-0" aria-hidden="true" />
                   <span className="whitespace-nowrap">{c.whatsapp}</span>
@@ -127,6 +156,7 @@ const Hero = () => {
             }
             className="absolute inset-0 w-full h-full object-cover"
             fetchPriority="high"
+            decoding="async"
             width={1280}
             height={1600}
           />

@@ -101,13 +101,16 @@ function buildEntries(): SitemapEntry[] {
   return entries;
 }
 
+const XML_ENTITIES: Record<string, string> = {
+  "&": "&" + "amp;",
+  "<": "&" + "lt;",
+  ">": "&" + "gt;",
+  '"': "&" + "quot;",
+  "'": "&" + "apos;",
+};
+
 function escapeXml(value: string): string {
-  return value
-    .replace(/&/g, "&")
-    .replace(/</g, "<")
-    .replace(/>/g, ">")
-    .replace(/"/g, """)
-    .replace(/'/g, "'");
+  return value.replace(/[&<>"']/g, (ch) => XML_ENTITIES[ch] ?? ch);
 }
 
 function generateSitemap(entries: SitemapEntry[]): string {

@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
-import { getPostBySlug, posts } from "@/data/blogPosts";
+import { getPublishedPostBySlug, publishedPosts } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowLeft, MessageCircle, Share2, Facebook, Linkedin, Link2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";

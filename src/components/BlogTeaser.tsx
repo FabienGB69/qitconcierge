@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
-import { posts } from "@/data/blogPosts";
+import { publishedPosts } from "@/data/blogPosts";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const BlogTeaser = () => {
   const { isFR, language } = useLanguage();
-  // Show the 6 cards requested by Qit Concierge (latest curated set)
-  const featured = posts.slice(0, 6);
+  // Show the 6 most recent published cards (future-dated articles are hidden).
+  const featured = [...publishedPosts]
+    .sort((a, b) => +new Date(b.date) - +new Date(a.date))
+    .slice(0, 6);
   const t = isFR
     ? { heading: "Conseils pour mieux louer en Drôme-Ardèche", all: "Voir tous les articles", cta: "Faire analyser mon logement" }
     : { heading: "Tips to better rent in Drôme-Ardèche", all: "See all articles", cta: "Have my property analysed" };

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import FAQ from "@/components/FAQ";
+import FAQ, { faqsFR, faqsEN, stripMarkdownLinks } from "@/components/FAQ";
 import SectionCTA from "@/components/SectionCTA";
 import { useSEO } from "@/hooks/useSEO";
 import { useLanguage } from "@/contexts/LanguageContext";

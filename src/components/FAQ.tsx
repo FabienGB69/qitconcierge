@@ -47,6 +47,11 @@ export const faqsEN = [
   { q: "How do I get started with Qit Concierge?", a: "Just request an estimate. We assess your property, location, potential and goals, then propose a tailored strategy." },
 ];
 
+/** Remove markdown link syntax so FAQ JSON-LD answers are plain text. */
+export function stripMarkdownLinks(text: string): string {
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
+
 const goFurtherLandingsFR = [
   { href: "/conciergerie-airbnb-drome", label: "Conciergerie Airbnb Drôme" },
   { href: "/conciergerie-airbnb-ardeche", label: "Conciergerie Airbnb Ardèche" },

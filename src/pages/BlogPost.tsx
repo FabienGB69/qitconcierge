@@ -110,7 +110,7 @@ const renderContent = (content: string) =>
 const BlogPost = () => {
   const { isFR, language } = useLanguage();
   const { slug } = useParams();
-  const post = slug ? getPostBySlug(slug) : null;
+  const post = slug ? getPublishedPostBySlug(slug) : null;
   const L = isFR
     ? { back: "Retour au blog", qTitle: "Une question sur votre logement ?", qSub: "Demandez une estimation gratuite ou discutez avec nous sur WhatsApp.", estimate: "Demander une estimation", whatsapp: "Échanger sur WhatsApp", related: "À lire aussi dans", localTitle: "Conciergerie & gestion locale en Drôme-Ardèche", localSub: "Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain.", copy: "Copier le lien", copied: "Lien copié dans le presse-papiers" }
     : { back: "Back to blog", qTitle: "A question about your property?", qSub: "Request a free estimate or chat with us on WhatsApp.", estimate: "Request an estimate", whatsapp: "Chat on WhatsApp", related: "Also read in", localTitle: "Local concierge & management in Drôme-Ardèche", localSub: "Discover how Qit Concierge supports owners on the ground.", copy: "Copy link", copied: "Link copied to clipboard" };
@@ -126,14 +126,14 @@ const BlogPost = () => {
   // Blog sequence (rel=prev / rel=next) based on publication date.
   const prevPath = (() => {
     if (!post) return undefined;
-    const desc = [...posts].sort((a, b) => +new Date(b.date) - +new Date(a.date));
+    const desc = [...publishedPosts].sort((a, b) => +new Date(b.date) - +new Date(a.date));
     const idx = desc.findIndex((p) => p.slug === post.slug);
     const newer = idx > 0 ? desc[idx - 1] : null;
     return newer ? `/blog/${newer.slug}` : undefined;
   })();
   const nextPath = (() => {
     if (!post) return undefined;
-    const desc = [...posts].sort((a, b) => +new Date(b.date) - +new Date(a.date));
+    const desc = [...publishedPosts].sort((a, b) => +new Date(b.date) - +new Date(a.date));
     const idx = desc.findIndex((p) => p.slug === post.slug);
     const older = idx >= 0 && idx < desc.length - 1 ? desc[idx + 1] : null;
     return older ? `/blog/${older.slug}` : undefined;

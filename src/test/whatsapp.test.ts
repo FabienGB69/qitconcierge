@@ -31,26 +31,17 @@ describe("WhatsApp link verification", () => {
     );
   });
 
-  it("appends UTM context to the pre-filled message when provided", () => {
-    const url = buildWhatsAppUrl("Bonjour", {
-      source: "hero",
-      medium: "wa_link",
-      campaign: "hero_cta",
-    });
+  it("keeps the pre-filled message free of any tracking text", () => {
+    const url = buildWhatsAppUrl("Bonjour");
     const decoded = decodeURIComponent(url.split("?text=")[1]);
-    expect(decoded).toBe("Bonjour\n\n(utm_source=hero|utm_medium=wa_link|utm_campaign=hero_cta)");
+    expect(decoded).toBe("Bonjour");
+    expect(decoded).not.toMatch(/utm_/i);
   });
 
-  it("omits empty UTM fields from the appended note", () => {
-    const url = buildWhatsAppUrl("Bonjour", { source: "hero", medium: "", campaign: undefined });
-    const decoded = decodeURIComponent(url.split("?text=")[1]);
-    expect(decoded).toBe("Bonjour\n\n(utm_source=hero)");
-  });
-
-  it("builds a URL without a message note when no text is given but utm is", () => {
-    const url = buildWhatsAppUrl(undefined, { source: "hero" });
-    const decoded = decodeURIComponent(url.split("?text=")[1]);
-    expect(decoded).toBe("(utm_source=hero)");
+  it("builds a URL without a text param when no message is given", () => {
+    const url = buildWhatsAppUrl(undefined);
+    expect(url).toBe(WHATSAPP_URL);
+    expect(url).not.toContain("text=");
   });
 
   it("validates the default WhatsApp URL", () => {

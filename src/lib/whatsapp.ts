@@ -41,31 +41,17 @@ const raw = (import.meta.env.VITE_WHATSAPP_NUMBER as string | undefined) ?? "";
 export const WHATSAPP_NUMBER = normalizeWhatsAppNumber(raw);
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-export interface WhatsAppUtm {
-  source?: string;
-  medium?: string;
-  campaign?: string;
-}
-
 /**
- * wa.me does not natively support UTM query parameters, so tracking context
- * is appended to the pre-filled message body. This lets analytics tie an
- * inbound WhatsApp lead back to its entry point without breaking the link.
+ * Builds a wa.me deep link with an optional pre-filled message.
+ *
+ * Tracking context (source/medium/campaign) is intentionally NOT placed in the
+ * message body: the prospect sees and sends that text, so raw UTM tags would be
+ * confusing. Attribution is recorded client-side via trackEvent on the click
+ * handler, which carries the same fields without leaking technical text to the
+ * prospective client.
  */
-export const buildWhatsAppUrl = (text?: string, utm?: WhatsAppUtm) => {
-  let fullText = text ?? "";
-
-  if (utm) {
-    const params = [
-      `utm_source=${utm.source ?? ""}`,
-      `utm_medium=${utm.medium ?? ""}`,
-      `utm_campaign=${utm.campaign ?? ""}`,
-    ];
-    // Drop empty key=value pairs so the note stays clean.
-    const tag = params.filter((p) => !p.endsWith("=")).join("|");
-    fullText = fullText ? `${fullText}\n\n(${tag})` : `(${tag})`;
-  }
-
+export const buildWhatsAppUrl = (text?: string) => {
+  const fullText = text ?? "";
   const encoded = fullText ? `?text=${encodeURIComponent(fullText)}` : "";
   return `${WHATSAPP_URL}${encoded}`;
 };

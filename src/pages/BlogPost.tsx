@@ -221,7 +221,7 @@ const BlogPost = () => {
     }
   };
 
-  const related = posts
+  const related = publishedPosts
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3);
 

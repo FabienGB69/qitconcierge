@@ -90,7 +90,12 @@ function readBlogPosts(): BlogMeta[] {
 
 function buildEntries(): SitemapEntry[] {
   const entries: SitemapEntry[] = [...STATIC_ENTRIES];
+  const now = Date.now();
   for (const post of readBlogPosts()) {
+    // Only include posts whose publication date has passed, so a
+    // future-dated article (monthly article prepared in advance) is not
+    // referenced in the sitemap before it goes live.
+    if (post.date && +new Date(post.date) > now) continue;
     entries.push({
       path: `/blog/${post.slug}`,
       lastmod: post.date || undefined,

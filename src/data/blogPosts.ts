@@ -14,6 +14,7 @@ import dromeArdecheZones from "@/assets/blog/drome-ardeche-zones.jpg";
 import ete2026DromeArdeche from "@/assets/blog/ete-2026-drome-ardeche.webp";
 import classementMeuble from "@/assets/blog/classement-meuble-tourisme.jpg";
 import aout2026 from "@/assets/blog/aout-2026-drome-ardeche.jpg";
+import septembre2026 from "@/assets/blog/septembre-2026-drome-ardeche.jpg";
 
 export type BlogCategory = "Conseils propriétaires" | "Revenue management" | "Drôme-Ardèche";
 
@@ -39,6 +40,69 @@ export const categories: BlogCategory[] = [
 ];
 
 export const posts: BlogPost[] = [
+  {
+    slug: "septembre-2026-vendanges-drome-ardeche",
+    title: "Septembre 2026 en Drôme-Ardèche : cap sur les vendanges et les séjours de semaine",
+    excerpt:
+      "Septembre en Drôme-Ardèche : vendanges, clientèle de semaine, tarification d'arrière-saison et adaptation de votre annonce pour garder un bon taux d'occupation.",
+    category: "Revenue management",
+    date: "2026-09-01",
+    readTime: "6 min",
+    image: septembre2026,
+    imageAlt: "Vignes de l'Hermitage au coucher du soleil en septembre, vendangeurs dans les rangs et le Rhône en arrière-plan",
+    seoTitle: "Septembre 2026 : vendanges et location saisonnière en Drôme-Ardèche",
+    seoDescription:
+      "Vendanges, clientèle de semaine et tarification d'arrière-saison : comment garder un bon taux d'occupation en Drôme-Ardèche en septembre.",
+    content: `Septembre est le mois le plus sous-estimé de la saison en Drôme-Ardèche. Les familles sont rentrées, les prix d'août ne sont plus tenables, mais la demande ne disparaît pas : elle change. Vendanges dans l'Hermitage et Crozes-Hermitage, randonnées dans le Vercors, cyclotourisme, télétravail au vert — autant de raisons de séjourner à condition que votre annonce parle le bon langage.
+
+## 1. Comprendre la demande de septembre
+
+La clientèle estivale cède la place à des couples, des retraités, des groupes d'amis et des télétravailleurs. Les séjours se raccourcissent (3 à 5 nuits) et se déplacent en semaine. Les vendanges concentrent une demande ponctuelle autour de Tain-l'Hermitage, Crozes-Hermitage et des villages viticoles : une clientèle souvent professionnelle, qui réserve tard et au dernier moment.
+
+Les observatoires comme [Auvergne-Rhône-Alpes Tourisme](https://pro.auvergnerhonealpes-tourisme.com/) confirment chaque année la solidité de l'arrière-saison viticole et nature dans la région. La [ViaRhôna](https://www.viarhona.com/) draine aussi un flux régulier de cyclotouristes jusqu'à fin octobre le long de la vallée du Rhône.
+
+## 2. Adapter la tarification sans brader
+
+Erreur classique : conserver la grille d'août, voir le calendrier rester vide, puis baisser en panique. La bonne méthode est une transition graduelle :
+
+- **Repricer dès la fin août** avec des paliers automatiques plutôt qu'une baisse manuelle brutale — c'est exactement ce que permet la [tarification dynamique avec PriceLabs](/blog/pourquoi-utiliser-pricelabs-drome-ardeche).
+- **Différencier semaine et week-end** : les week-ends de septembre restent forts, la semaine doit être plus agressive.
+- **Surveiller les dates de vendanges locales** : une hausse ciblée de 10 à 15 % sur ces week-ends est souvent absorbée sans résistance.
+
+## 3. Mettre à jour l'annonce pour l'arrière-saison
+
+Une annonce qui parle encore piscine et barbecue en septembre envoie un mauvais signal aux voyageurs d'automne. Trois ajustements rapides :
+
+1. **Photos** : mettre en avant les extérieurs sous une lumière dorée, le salon cosy, le coin bureau pour le télétravail.
+2. **Titre et description** : mentionner les vendanges, la randonnée, le calme — notre [checklist d'optimisation d'annonce Airbnb](/blog/annonce-airbnb-optimisation-checklist) détaille chaque point.
+3. **Équipements** : chauffage d'appoint, plaids, bon wifi, à cocher et à mentionner explicitement.
+
+## 4. Assouplir les règles de séjour
+
+En septembre, la rigidité coûte cher :
+
+- **Durée minimale à 2 nuits** dès le début du mois, y compris le week-end.
+- **Arrivées et départs tous les jours**, plus de blocage samedi-samedi.
+- **Remises semaine** automatiques pour capter les télétravailleurs et les retraités.
+
+Ces réglages, combinés au traitement des dernières nuits isolées expliqué dans [notre article sur les trous de calendrier](/blog/trous-de-calendrier-comment-les-combler), font souvent la différence entre un septembre à 40 % d'occupation et un septembre à 70 %.
+
+## 5. Choisir les bons canaux de diffusion
+
+La clientèle d'arrière-saison ne réserve pas toutes au même endroit : Booking et Abritel performent particulièrement bien sur les séjours courts et la clientèle européenne, Airbnb reste fort sur les couples et le télétravail. Notre comparatif [Airbnb, Booking ou Abritel](/blog/airbnb-booking-abritel-quelle-plateforme-choisir) vous aide à arbitrer.
+
+## 6. Notre pratique chez Qit Concierge
+
+Sur les biens que nous gérons, septembre se prépare dès la mi-août : repricing progressif, bascule du contenu de l'annonce, ouverture des arrivées en semaine et suivi des week-ends de vendanges. C'est un mois où le pilotage fin se voit directement sur le compte en banque.
+
+Voir aussi : [comment choisir sa conciergerie en Drôme](/blog/conciergerie-airbnb-drome-choisir-prestataire) et notre [méthode d'accompagnement](/methode).
+
+## En résumé
+
+Septembre n'est pas une fin de saison, c'est une saison à part entière : clientèle de semaine, vendanges, arrière-saison douce. Les propriétaires qui adaptent leurs prix, leur annonce et leurs règles de séjour dès le 1er septembre conservent un excellent taux d'occupation jusqu'à la Toussaint.
+
+Vous voulez savoir ce que votre bien peut générer sur l'arrière-saison ? [Demandez une estimation gratuite](/#estimation).`,
+  },
   {
     slug: "aout-2026-fin-de-saison-drome-ardeche",
     title: "Août 2026 en Drôme-Ardèche : réussir la fin de saison et préparer l'arrière-saison",

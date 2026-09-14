@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { renderInlineLinks } from "@/lib/inlineLinks";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const faqsFR = [
+export const faqsFR = [
   { q: "Qu'est-ce que Qit Concierge prend en charge ?", a: "Qit Concierge peut prendre en charge la gestion complète de votre location courte durée : mise en ligne ou [optimisation de l'annonce](/blog/annonce-airbnb-optimisation-checklist), gestion Airbnb, [Booking et Abritel](/gestion-booking-abritel-drome-ardeche), communication voyageurs, instructions d'arrivée, ménage, linge, suivi qualité, calendrier et [optimisation des prix avec PriceLabs](/revenue-management-airbnb-drome-ardeche)." },
   { q: "Dans quelles zones intervenez-vous ?", a: "Nous intervenons principalement en [Drôme-Ardèche](/gestion-location-courte-duree-drome-ardeche) : [Tain-l'Hermitage](/conciergerie-airbnb-tain-hermitage), [Tournon-sur-Rhône](/conciergerie-airbnb-tournon), [Romans-sur-Isère](/conciergerie-airbnb-romans-sur-isere), [Valence](/conciergerie-airbnb-valence), [Saint-Vallier](/conciergerie-airbnb-saint-vallier), Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, Drôme des Collines, Ardèche Verte et Vallée du Rhône." },
   { q: "Travaillez-vous uniquement avec des logements haut de gamme ?", a: "Non. Qit Concierge accompagne des biens adaptés à la location courte durée : maisons de campagne, [maisons de campagne en Drôme](/gestion-gite-drome) et [maisons de campagne en Ardèche](/gestion-gite-ardeche), appartements, [résidences secondaires](/conciergerie-residence-secondaire-drome-ardeche) et logements touristiques bien situés." },
@@ -29,7 +29,7 @@ const faqsFR = [
   { q: "Comment démarrer avec Qit Concierge ?", a: "Il suffit de demander une estimation. Nous analysons votre logement, sa localisation, son potentiel, vos objectifs, puis nous vous proposons une stratégie adaptée." },
 ];
 
-const faqsEN = [
+export const faqsEN = [
   { q: "What does Qit Concierge take care of?", a: "Qit Concierge can take full responsibility for your short-term rental: listing creation or optimisation, Airbnb, Booking and Abritel management, guest communication, arrival instructions, cleaning, linen, quality control, calendar and price optimisation with PriceLabs." },
   { q: "Which areas do you cover?", a: "We mainly work in Drôme-Ardèche: Tain-l'Hermitage, Tournon-sur-Rhône, Romans-sur-Isère, Valence, Saint-Vallier, Saint-Donat-sur-l'Herbasse, Annonay, Saint-Péray, Guilherand-Granges, Drôme des Collines, Ardèche Verte and the Rhône Valley." },
   { q: "Do you only work with high-end properties?", a: "No. Qit Concierge supports properties well suited to short-term rental: country houses in Drôme and Ardèche, apartments, second homes and well-located holiday properties." },
@@ -46,6 +46,11 @@ const faqsEN = [
   { q: "Do you help with regulatory obligations?", a: "We help owners identify key topics: city hall declaration, registration number where applicable, condo rules, taxation, energy rating (DPE) and local rules. This guidance is not a substitute for legal or tax advice." },
   { q: "How do I get started with Qit Concierge?", a: "Just request an estimate. We assess your property, location, potential and goals, then propose a tailored strategy." },
 ];
+
+/** Remove markdown link syntax so FAQ JSON-LD answers are plain text. */
+export function stripMarkdownLinks(text: string): string {
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
 
 const goFurtherLandingsFR = [
   { href: "/conciergerie-airbnb-drome", label: "Conciergerie Airbnb Drôme" },

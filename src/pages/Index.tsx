@@ -36,39 +36,6 @@ const Index = () => {
       : "Short-term rental concierge in Drôme-Ardèche, France: Airbnb, Booking and Abritel management, cleaning, linen, guests and PriceLabs pricing. 25% fee, no subscription.",
     path: "/",
     ogImage: "https://qitconcierge.fr/og-image.jpg",
-    jsonLd: [
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://qitconcierge.fr/#localbusiness",
-        name: "Qit Concierge",
-        alternateName: "Qit Concierge Drôme-Ardèche",
-        url: "https://qitconcierge.fr/",
-        image: "https://qitconcierge.fr/og-image.jpg",
-        logo: "https://qitconcierge.fr/favicon.svg",
-        description:
-          "Conciergerie location courte durée en Drôme-Ardèche : gestion Airbnb, Booking et Abritel, ménage, linge, accueil voyageurs et optimisation des prix avec PriceLabs.",
-        email: "guest.qitconcierge@gmail.com",
-        telephone: "+33601777633",
-        priceRange: "25%",
-        currenciesAccepted: "EUR",
-        areaServed: [
-          { "@type": "AdministrativeArea", name: "Drôme" },
-          { "@type": "AdministrativeArea", name: "Ardèche" },
-        ],
-        knowsAbout: [
-          "Gestion Airbnb",
-          "Gestion Booking et Abritel",
-          "Revenue management PriceLabs",
-          "Ménage et linge",
-          "Accueil voyageurs",
-        ],
-        sameAs: [
-          "https://www.facebook.com/p/Qit-Concierge-61557639973847/",
-          "https://www.instagram.com/qitconcierge",
-        ],
-      },
-    ],
   });
 
   const cta1 = isFR

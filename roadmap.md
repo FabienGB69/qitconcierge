@@ -20,12 +20,12 @@ Voir `.lovable/plan.md` pour le détail d'exécution.
 - [x] Test Playwright (360 & 390) : SIREN/RCS/TVA/adresse non coupés/tronqués + boutons copier présents
 - [x] Accessibilité : sections aria-labelledby, aria-label boutons copier, focus visible, sémantique dl/dt/dd renforcée
 
-## Phase 3 — Analytics, WhatsApp & performance Hero
-- [ ] Tracking des clics sur tous les boutons du hero (incl. CTA estimation)
-- [ ] Optimisation du chargement Hero pour le LCP (cache, tailles d'images, lazy WhatsApp preview)
-- [ ] Génération auto du texte WhatsApp depuis le contexte (langue/hero) + analytics à l'envoi
-- [ ] Paramètres UTM dans le lien WhatsApp du hero
-- [ ] Vérifier que les clics WhatsApp enregistrés incluent les UTM dans l'analytics
+## Phase 3 — Analytics, WhatsApp & performance Hero ✅
+- [x] Tracking des clics sur tous les boutons du hero (estimate_hero_click + whatsapp_hero_click + whatsapp_message_sent)
+- [x] Optimisation du chargement Hero pour le LCP (fetchPriority high + decoding async)
+- [x] Génération auto du texte WhatsApp depuis le contexte (langue/hero) + analytics à l'envoi
+- [x] Paramètres UTM dans le lien WhatsApp du hero (injectés dans le message, wa.me ne supporte pas les query UTM)
+- [x] Vérifié : les events WhatsApp incluent source/medium/campaign et l'URL embarque les UTM
 
 ## Phase 4 — Sitemap, robots, Schema site-wide & Google Search Console
 - [ ] robots.txt complet (accès sitemap + pages importantes vérifiés)

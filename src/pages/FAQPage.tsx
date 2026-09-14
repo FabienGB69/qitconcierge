@@ -44,7 +44,14 @@ const FAQPage = () => {
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: [], // FAQ component renders the actual content client-side
+        mainEntity: (isFR ? faqsFR : faqsEN).map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: stripMarkdownLinks(item.a),
+          },
+        })),
       },
     ],
   });

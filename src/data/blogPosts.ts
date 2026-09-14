@@ -15,6 +15,7 @@ import ete2026DromeArdeche from "@/assets/blog/ete-2026-drome-ardeche.webp";
 import classementMeuble from "@/assets/blog/classement-meuble-tourisme.jpg";
 import aout2026 from "@/assets/blog/aout-2026-drome-ardeche.jpg";
 import septembre2026 from "@/assets/blog/septembre-2026-drome-ardeche.jpg";
+import octobre2026 from "@/assets/blog/octobre-2026-drome-ardeche.jpg";
 
 export type BlogCategory = "Conseils propriétaires" | "Revenue management" | "Drôme-Ardèche";
 
@@ -40,6 +41,67 @@ export const categories: BlogCategory[] = [
 ];
 
 export const posts: BlogPost[] = [
+  {
+    slug: "octobre-2026-toussaint-drome-ardeche",
+    title: "Octobre 2026 en Drôme-Ardèche : profiter de la Toussaint et des couleurs d'automne",
+    excerpt:
+      "Octobre en Drôme-Ardèche : vacances de la Toussaint, week-ends d'automne, clientèle famille et télétravail — comment adapter prix et annonce pour finir la saison en beauté.",
+    category: "Revenue management",
+    date: "2026-10-01",
+    readTime: "6 min",
+    image: octobre2026,
+    imageAlt: "Maison en pierre entourée de vignes et de châtaigniers aux couleurs d'automne en Drôme-Ardèche, brume matinale sur la vallée du Rhône",
+    seoTitle: "Octobre 2026 : Toussaint et location saisonnière en Drôme-Ardèche",
+    seoDescription:
+      "Vacances de la Toussaint, week-ends d'automne et télétravail : comment adapter prix et annonce en Drôme-Ardèche pour finir la saison en beauté.",
+    content: `Octobre clôt la belle saison en Drôme-Ardèche, mais il ne signe pas la fin des réservations. Vacances de la Toussaint, week-ends prolongés, châtaignes d'Ardèche, couleurs d'automne dans les vignes et le Vercors : la demande existe encore, à condition d'ajuster vos prix, votre annonce et vos règles de séjour.
+
+## 1. Ce qui attire les voyageurs en octobre
+
+Deux pics de demande structurent le mois : les **vacances de la Toussaint** (familles, souvent 4 à 7 nuits) et les **week-ends d'automne** (couples et groupes d'amis, 2 à 3 nuits). Les châtaigneraies d'Ardèche, les marchés d'automne, la randonnée douce et l'œnotourisme autour de Tain-l'Hermitage font le reste.
+
+Les données d'[Auvergne-Rhône-Alpes Tourisme](https://pro.auvergnerhonealpes-tourisme.com/) montrent que l'arrière-saison reste solide sur les séjours nature et gastronomie. Le [Parc naturel régional des Monts d'Ardèche](https://www.parc-monts-ardeche.fr/) communique aussi chaque année sur les castagnades et fêtes de la châtaigne, qui drainent une clientèle familiale fidèle.
+
+## 2. Caler la tarification sur la Toussaint
+
+La Toussaint est la dernière vraie fenêtre tarifaire de l'année :
+
+- **Remonter les prix de 10 à 20 %** sur la semaine de vacances scolaires, surtout pour les maisons familiales avec 2 chambres ou plus.
+- **Garder des prix agressifs hors vacances** : les semaines d'octobre en dehors de la Toussaint se vendent au prix, pas au prestige.
+- **Automatiser les paliers** : la [tarification dynamique avec PriceLabs](/blog/pourquoi-utiliser-pricelabs-drome-ardeche) permet d'appliquer ces variations sans y passer ses soirées.
+
+## 3. Adapter l'annonce à l'automne
+
+Une annonce figée sur l'été freine les réservations d'octobre. Trois réflexes :
+
+1. **Photos de saison** : cheminée ou poêle, salon chaleureux, extérieurs aux couleurs d'automne. Notre [checklist d'optimisation d'annonce Airbnb](/blog/annonce-airbnb-optimisation-checklist) détaille chaque point à vérifier.
+2. **Titre et description** : mentionner la Toussaint, la cheminée, la châtaigne, la randonnée — les mots que cherchent réellement les voyageurs d'octobre.
+3. **Équipements mis en avant** : chauffage, couettes chaudes, bon wifi, séjour confortable — autant d'arguments pour les familles et les télétravailleurs.
+
+## 4. Assouplir les règles de séjour
+
+Comme en septembre, la flexibilité paie :
+
+- **Durée minimale à 2 nuits**, y compris le week-end.
+- **Arrivées tous les jours** pour capter les courts séjours.
+- **Combler les nuits isolées** entre deux réservations — notre méthode est détaillée dans [l'article sur les trous de calendrier](/blog/trous-de-calendrier-comment-les-combler).
+
+## 5. Préparer la basse saison dès maintenant
+
+Octobre est aussi le bon mois pour préparer novembre-février : entretien du chauffage, vérification des équipements, mise à jour du classement meublé de tourisme si besoin, et réflexion sur les séjours longue durée ou le télétravail pour garder un revenu en hiver. Côté diffusion, notre comparatif [Airbnb, Booking ou Abritel](/blog/airbnb-booking-abritel-quelle-plateforme-choisir) vous aide à choisir les canaux qui performent le mieux hors saison.
+
+## 6. Notre pratique chez Qit Concierge
+
+Sur les biens que nous gérons, octobre se pilote finement : hausse ciblée sur la Toussaint, prix serrés le reste du mois, annonce basculée en mode automne dès le 1er octobre. C'est aussi le moment où nous planifions avec chaque propriétaire la stratégie d'hiver.
+
+Voir aussi : [comment choisir sa conciergerie en Drôme](/blog/conciergerie-airbnb-drome-choisir-prestataire) et notre [méthode d'accompagnement](/methode).
+
+## En résumé
+
+Octobre offre encore deux vraies opportunités : la Toussaint et les week-ends d'automne. Les propriétaires qui ajustent leurs prix, rafraîchissent leur annonce et assouplissent leurs règles terminent la saison avec un taux d'occupation que beaucoup de concurrents n'atteignent plus.
+
+Vous voulez savoir ce que votre bien peut générer en arrière-saison ? [Demandez une estimation gratuite](/#estimation).`,
+  },
   {
     slug: "septembre-2026-vendanges-drome-ardeche",
     title: "Septembre 2026 en Drôme-Ardèche : cap sur les vendanges et les séjours de semaine",

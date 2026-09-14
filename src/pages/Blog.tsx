@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
-import { posts, categories, BlogCategory } from "@/data/blogPosts";
+import { publishedPosts, categories, BlogCategory } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import SectionCTA from "@/components/SectionCTA";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -87,8 +87,8 @@ const Blog = () => {
   });
 
   const filtered = activeCategory
-    ? posts.filter((p) => p.category === activeCategory)
-    : posts;
+    ? publishedPosts.filter((p) => p.category === activeCategory)
+    : publishedPosts;
 
   const sorted = [...filtered].sort((a, b) => +new Date(b.date) - +new Date(a.date));
   const featured = !activeCategory && sorted.length > 0 ? sorted[0] : null;

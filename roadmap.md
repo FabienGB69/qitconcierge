@@ -34,8 +34,7 @@ Voir `.lovable/plan.md` pour le détail d'exécution.
 - [x] Google Search Console : propriété `sc-domain:qitconcierge.fr` vérifiée, sitemap soumis, homepage « Submitted and indexed » (canonical correct, crawl 2026-09-13) — 5 clics / 300 impressions sur 28 jours ; article d'août et page Nyons génèrent déjà des clics
 
 ## Récurrent
-- [ ] Article de blog automatique chaque début de mois (edge function + cron) — prochain attendu : 1er novembre (octobre publié le 2026-10-01)
+- [x] Filtrage par date de publication des articles (`isPostPublished` / `publishedPosts` / `getPublishedPostBySlug`) appliqué au blog, à l'article, au teaser et au sitemap — un article daté dans le futur reste masqué jusqu'à sa date.
+- [x] Article d'octobre 2026 prêt (slug `octobre-2026-toussaint-drome-ardeche`, date 2026-10-01) — masqué jusqu'au 1er octobre, sitemap exclu jusqu'à cette date.
+- [ ] Article de blog automatique chaque début de mois (edge function + cron) — prochain attendu : 1er novembre.
 - [ ] (Optionnel SEO) Page locale Montélimar — opportunité Semrush (conciergerie montelimar ~50 rech./mois) en attente de confirmation
-
-## Récurrent
-- [ ] Article de blog automatique chaque début de mois (edge function + cron), prochain le 1er septembre

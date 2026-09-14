@@ -785,3 +785,21 @@ Nous orientons les propriétaires vers les bons interlocuteurs et identifions le
 export const getPostBySlug = (slug: string) => posts.find((p) => p.slug === slug);
 export const getPostsByCategory = (category: BlogCategory) =>
   posts.filter((p) => p.category === category);
+
+/**
+ * A post is "published" once its publication date has passed. Used by every
+ * public surface (blog index, article page, teaser, sitemap) so that a
+ * future-dated article — e.g. the monthly article prepared in advance — stays
+ * hidden until its scheduled date (Qit Concierge publishes on the 1st of the
+ * month). The raw `posts` array is kept for internal/reference use only.
+ */
+export const isPostPublished = (post: BlogPost) =>
+  +new Date(post.date) <= Date.now();
+
+export const publishedPosts: BlogPost[] = posts.filter(isPostPublished);
+
+export const getPublishedPostBySlug = (slug: string) =>
+  posts.find((p) => p.slug === slug && isPostPublished(p));
+
+export const getPublishedPostsByCategory = (category: BlogCategory) =>
+  posts.filter((p) => p.category === category && isPostPublished(p));

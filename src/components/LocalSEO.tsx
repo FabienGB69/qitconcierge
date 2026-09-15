@@ -40,6 +40,7 @@ const internalLinksEN: { href: string; label: string }[] = [
   { href: "/conciergerie-airbnb-valence", label: "Concierge — Valence" },
   { href: "/conciergerie-airbnb-romans-sur-isere", label: "Concierge — Romans-sur-Isère" },
   { href: "/conciergerie-airbnb-saint-vallier", label: "Concierge — Saint-Vallier" },
+  { href: "/conciergerie-airbnb-montelimar", label: "Concierge — Montélimar" },
   { href: "/gestion-gite-drome", label: "Country house management — Drôme" },
   { href: "/gestion-gite-ardeche", label: "Country house management — Ardèche" },
   { href: "/conciergerie-residence-secondaire-drome-ardeche", label: "Second home — Drôme-Ardèche" },

@@ -48,6 +48,7 @@ const LANDINGS: Array<{ path: string; priority: string }> = [
   { path: "/gestion-booking-abritel-drome-ardeche", priority: "0.8" },
   { path: "/conciergerie-airbnb-nyons", priority: "0.85" },
   { path: "/conciergerie-airbnb-die", priority: "0.8" },
+  { path: "/conciergerie-airbnb-montelimar", priority: "0.85" },
 ];
 
 const STATIC_ENTRIES: SitemapEntry[] = [

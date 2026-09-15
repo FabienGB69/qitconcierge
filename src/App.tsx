@@ -201,6 +201,15 @@ const App = () => (
               intro="Qit Concierge gère votre location courte durée à Die et dans la vallée de la Drôme : optimisation Airbnb, Booking et Abritel, revenue management avec PriceLabs et coordination de partenaires locaux pour le ménage, l'accueil et la petite maintenance."
             />
           } />
+          <Route path="/conciergerie-airbnb-montelimar" element={
+            <LocalLanding
+              slug="conciergerie-airbnb-montelimar"
+              title="Conciergerie Airbnb Montélimar | Qit Concierge"
+              metaDescription="Conciergerie Airbnb à Montélimar : annonces Airbnb, Booking et Abritel optimisées, revenue management PriceLabs, ménage, linge et accueil voyageurs."
+              h1="Conciergerie Airbnb à Montélimar"
+              intro="Qit Concierge gère votre location courte durée à Montélimar et dans la vallée du Rhône : annonces optimisées sur Airbnb, Booking et Abritel, tarification dynamique avec PriceLabs, ménage, linge et accueil voyageurs."
+            />
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 
           <Route path="*" element={<NotFound />} />

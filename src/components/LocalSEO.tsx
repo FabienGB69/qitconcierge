@@ -24,6 +24,7 @@ const internalLinksFR: { href: string; label: string }[] = [
   { href: "/conciergerie-airbnb-valence", label: "Conciergerie Valence" },
   { href: "/conciergerie-airbnb-romans-sur-isere", label: "Conciergerie Romans-sur-Isère" },
   { href: "/conciergerie-airbnb-saint-vallier", label: "Conciergerie Saint-Vallier" },
+  { href: "/conciergerie-airbnb-montelimar", label: "Conciergerie Montélimar" },
   { href: "/gestion-gite-drome", label: "Gestion maison Drôme" },
   { href: "/gestion-gite-ardeche", label: "Gestion maison Ardèche" },
   { href: "/conciergerie-residence-secondaire-drome-ardeche", label: "Résidence secondaire Drôme-Ardèche" },

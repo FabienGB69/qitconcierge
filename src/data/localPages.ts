@@ -855,6 +855,55 @@ export const localPages: Record<string, LocalPageData> = {
       "pourquoi-utiliser-pricelabs-drome-ardeche",
     ],
   },
+
+  "conciergerie-airbnb-montelimar": {
+    area: "Montélimar",
+    region: "Drôme provençale / Vallée du Rhône",
+    keywordsLine:
+      "Conciergerie Airbnb Montélimar, gestion location courte durée Montélimar, location vacances Drôme, revenue management PriceLabs.",
+    whyParagraph:
+      "Montélimar cumule un tourisme de passage important (axe A7, vallée du Rhône), une clientèle affaires en semaine et une demande loisirs vers la Drôme provençale et l'Ardèche méridionale. Qit Concierge accompagne les propriétaires de Montélimar dans la gestion complète de leur location courte durée : annonces optimisées, tarification dynamique, accueil voyageurs et suivi qualité, avec un interlocuteur unique et un réseau de partenaires terrain.",
+    whyBullets: [
+      "Gestion adaptée au double marché de Montélimar : affaires en semaine, loisirs le week-end",
+      "Partenaires locaux pour le ménage, le linge, l'accueil et la maintenance",
+      "Annonces Airbnb, Booking et Abritel synchronisées",
+      "Revenue management PriceLabs calé sur les flux de la vallée du Rhône",
+      "Reporting transparent et commission alignée sur la performance (25% TTC)",
+    ],
+    services: SHARED_SERVICES,
+    localContext:
+      "Le marché courte durée à Montélimar est porté par trois flux : les déplacements professionnels en semaine, les étapes sur l'axe A7 entre Lyon et la Provence, et les séjours loisirs de printemps et d'été (Drôme provençale, gorges de l'Ardèche, Viviers, Grignan). Cette diversité permet un taux d'occupation plus régulier qu'en zone purement saisonnière, à condition d'ajuster durées minimales et prix selon les jours de la semaine.",
+    faq: [
+      {
+        q: "Qit Concierge intervient-elle à Montélimar ?",
+        a: "Oui. Montélimar se situe à environ 1h de notre base de Tain-l'Hermitage. Nous assurons le pilotage complet (annonces, pricing, voyageurs, calendrier, reporting) et coordonnons des partenaires terrain pour le ménage, le linge et la petite maintenance.",
+      },
+      {
+        q: "Quels types de logements gérez-vous à Montélimar ?",
+        a: "Appartements en centre-ville, maisons de ville, résidences secondaires et maisons de campagne des environs. Notre approche convient particulièrement aux propriétaires non disponibles sur place.",
+      },
+      {
+        q: "La clientèle affaires change-t-elle la gestion ?",
+        a: "Oui : séjours plus courts, arrivées tardives en semaine, besoin de wifi fiable et d'un espace de travail. Nous adaptons l'annonce, les durées minimales et la tarification pour capter ces réservations sans pénaliser les week-ends loisirs.",
+      },
+      PRICING_FAQ,
+      {
+        q: "Quelle saisonnalité attendre à Montélimar ?",
+        a: "Une demande plus lissée que dans les zones purement estivales : pic de mai à septembre, mais activité soutenue le reste de l'année grâce aux déplacements professionnels et aux étapes sur l'axe rhodanien.",
+      },
+    ],
+    relatedSlugs: [
+      "conciergerie-airbnb-nyons",
+      "conciergerie-airbnb-drome",
+      "gestion-location-courte-duree-drome-ardeche",
+      "revenue-management-airbnb-drome-ardeche",
+    ],
+    relatedBlogSlugs: [
+      "louer-en-courte-duree-drome-ardeche",
+      "pourquoi-utiliser-pricelabs-drome-ardeche",
+      "annonce-airbnb-optimisation-checklist",
+    ],
+  },
 };
 
 

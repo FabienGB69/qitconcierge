@@ -41,3 +41,30 @@ export const trackEvent = (name: string, params: EventParams = {}) => {
     console.warn("analytics error", err);
   }
 };
+
+/**
+ * Analytics context for a WhatsApp click. Kept strictly separate from the
+ * visible message: these fields go to the analytics provider ONLY, never
+ * into the wa.me URL the prospect sees.
+ */
+export interface WhatsAppClickContext {
+  location: string;
+  language: "fr" | "en";
+  source: string;
+  medium: string;
+  campaign: string;
+}
+
+/**
+ * Records both WhatsApp hero events (click + message intent) with the given
+ * attribution context. This is the single entry point for WhatsApp tracking,
+ * so no call site needs to build UTM strings near the visible message.
+ */
+export const trackWhatsAppClick = (ctx: WhatsAppClickContext) => {
+  trackEvent("whatsapp_hero_click", { ...ctx });
+  trackEvent("whatsapp_message_sent", {
+    location: ctx.location,
+    language: ctx.language,
+    campaign: ctx.campaign,
+  });
+};

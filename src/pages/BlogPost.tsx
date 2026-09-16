@@ -7,7 +7,7 @@ import { getPublishedPostBySlug, publishedPosts } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowLeft, MessageCircle, Share2, Facebook, Linkedin, Link2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, whatsAppMessage } from "@/lib/whatsapp";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackEvent } from "@/lib/analytics";
 

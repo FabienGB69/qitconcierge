@@ -76,7 +76,9 @@ const FAQ = () => {
   const faqs = isFR ? faqsFR : faqsEN;
   const landings = isFR ? goFurtherLandingsFR : goFurtherLandingsEN;
   const whatsappUrl = buildWhatsAppUrl(
-    isFR ? "Bonjour, j'ai une question concernant Qit Concierge." : "Hello, I have a question about Qit Concierge."
+    whatsAppMessage(
+      isFR ? "Bonjour, j'ai une question concernant Qit Concierge." : "Hello, I have a question about Qit Concierge."
+    )
   );
 
   const t = isFR

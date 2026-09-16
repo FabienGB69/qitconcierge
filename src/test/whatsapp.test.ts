@@ -3,6 +3,7 @@ import {
   WHATSAPP_URL,
   buildWhatsAppUrl,
   validateWhatsAppUrl,
+  whatsAppMessage,
 } from "@/lib/whatsapp";
 
 describe("WhatsApp link verification", () => {

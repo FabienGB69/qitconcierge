@@ -12,7 +12,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { trackEvent } from "@/lib/analytics";
 
 const whatsappUrl = buildWhatsAppUrl(
-  "Bonjour, je viens de lire un article sur votre blog."
+  whatsAppMessage("Bonjour, je viens de lire un article sur votre blog.")
 );
 
 const linkClass = "text-qit-coral underline underline-offset-2 hover:text-qit-coral/80";

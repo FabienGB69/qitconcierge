@@ -38,11 +38,13 @@ const Hero = () => {
       };
 
 
-  const waMessage = isFR
-    ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."
-    : "Hello Qit Concierge, I'd like to know more about managing my short-term rental in Drôme-Ardèche.";
-  // UTM/source attribution is recorded via trackEvent on click, not appended to
-  // the prospect's WhatsApp message (which they would see and send).
+  // Visible message only — marked via whatsAppMessage() so no tracking tag can
+  // leak into it. Attribution is recorded separately via trackWhatsAppClick.
+  const waMessage = whatsAppMessage(
+    isFR
+      ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."
+      : "Hello Qit Concierge, I'd like to know more about managing my short-term rental in Drôme-Ardèche."
+  );
   const waUrl = buildWhatsAppUrl(waMessage);
 
   const lang = isFR ? "fr" : "en";

@@ -25,7 +25,7 @@ describe("WhatsApp link verification", () => {
   });
 
   it("builds a pre-filled message URL with encoded text", () => {
-    const url = buildWhatsAppUrl("Bonjour, j'ai une question.");
+    const url = buildWhatsAppUrl(whatsAppMessage("Bonjour, j'ai une question."));
     expect(url).toMatch(/^https:\/\/wa\.me\/\d+\?text=/);
     expect(decodeURIComponent(url.split("?text=")[1])).toBe(
       "Bonjour, j'ai une question."
@@ -33,10 +33,27 @@ describe("WhatsApp link verification", () => {
   });
 
   it("keeps the pre-filled message free of any tracking text", () => {
-    const url = buildWhatsAppUrl("Bonjour");
+    const url = buildWhatsAppUrl(whatsAppMessage("Bonjour"));
     const decoded = decodeURIComponent(url.split("?text=")[1]);
     expect(decoded).toBe("Bonjour");
     expect(decoded).not.toMatch(/utm_/i);
+  });
+
+  it("strips leaked tracking tags from the visible message", () => {
+    const dirty =
+      "Bonjour, je suis intéressé. (utm_source=hero|utm_medium=wa_link|utm_campaign=hero_cta)";
+    const url = buildWhatsAppUrl(whatsAppMessage(dirty));
+    const decoded = decodeURIComponent(url.split("?text=")[1]);
+    expect(decoded).toBe("Bonjour, je suis intéressé.");
+    expect(decoded).not.toMatch(/utm_|source=|medium=|campaign=/i);
+  });
+
+  it("strips bare key=value tracking fragments without parentheses", () => {
+    const dirty = "Bonjour utm_source=hero merci";
+    const decoded = decodeURIComponent(
+      buildWhatsAppUrl(whatsAppMessage(dirty)).split("?text=")[1]
+    );
+    expect(decoded).toBe("Bonjour merci");
   });
 
   it("builds a URL without a text param when no message is given", () => {

@@ -42,17 +42,46 @@ export const WHATSAPP_NUMBER = normalizeWhatsAppNumber(raw);
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 /**
- * Builds a wa.me deep link with an optional pre-filled message.
- *
- * Tracking context (source/medium/campaign) is intentionally NOT placed in the
- * message body: the prospect sees and sends that text, so raw UTM tags would be
- * confusing. Attribution is recorded client-side via trackEvent on the click
- * handler, which carries the same fields without leaking technical text to the
- * prospective client.
+ * Visible message sent to the prospect. This is the ONLY content allowed in
+ * the wa.me `text` parameter. It is a branded type so analytics payloads
+ * (tracking objects, UTM strings) cannot be passed by mistake: only values
+ * produced by `whatsAppMessage()` are accepted.
  */
-export const buildWhatsAppUrl = (text?: string) => {
-  const fullText = text ?? "";
-  const encoded = fullText ? `?text=${encodeURIComponent(fullText)}` : "";
+export type WhatsAppMessage = string & { readonly __brand: "WhatsAppMessage" };
+
+/**
+ * Defensive cleanup: strips any tracking-looking fragment (utm_*, source=,
+ * medium=, campaign=, parenthesised tag lists) that could have leaked into
+ * the visible text, then trims.
+ */
+function sanitizeVisibleMessage(raw: string): string {
+  return raw
+    .replace(/\(?(utm_[a-z]+|source|medium|campaign)\s*=[^)\s|]+[)|]?/gi, "")
+    .replace(/[|]/g, " ")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+([.,!?])/g, "$1")
+    .trim();
+}
+
+/**
+ * Marks a plain string as a visible WhatsApp message. Applies the defensive
+ * sanitizer so even a misused call site cannot leak tracking tags into the
+ * text the prospect reads and sends.
+ */
+export function whatsAppMessage(raw: string): WhatsAppMessage {
+  return sanitizeVisibleMessage(raw) as WhatsAppMessage;
+}
+
+/**
+ * Builds a wa.me deep link from a VISIBLE message only.
+ *
+ * Strict separation of concerns: this function knows nothing about analytics.
+ * Attribution (source/medium/campaign) is recorded client-side via
+ * `trackWhatsAppClick` (see `@/lib/analytics`) on the click handler, never in
+ * the URL the prospect sees.
+ */
+export const buildWhatsAppUrl = (message?: WhatsAppMessage) => {
+  const encoded = message ? `?text=${encodeURIComponent(message)}` : "";
   return `${WHATSAPP_URL}${encoded}`;
 };
 

@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, MapPin, BookOpen } from "lucide-react";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, whatsAppMessage } from "@/lib/whatsapp";
 import { Link } from "react-router-dom";
 import { renderInlineLinks } from "@/lib/inlineLinks";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -76,7 +76,9 @@ const FAQ = () => {
   const faqs = isFR ? faqsFR : faqsEN;
   const landings = isFR ? goFurtherLandingsFR : goFurtherLandingsEN;
   const whatsappUrl = buildWhatsAppUrl(
-    isFR ? "Bonjour, j'ai une question concernant Qit Concierge." : "Hello, I have a question about Qit Concierge."
+    whatsAppMessage(
+      isFR ? "Bonjour, j'ai une question concernant Qit Concierge." : "Hello, I have a question about Qit Concierge."
+    )
   );
 
   const t = isFR

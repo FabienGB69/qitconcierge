@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, whatsAppMessage } from "@/lib/whatsapp";
 import WhatsAppMessagePreview from "@/components/WhatsAppMessagePreview";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackWhatsAppClick } from "@/lib/analytics";
 import heroImage from "@/assets/hero-drome-ardeche.jpg";
 
 
@@ -38,11 +38,13 @@ const Hero = () => {
       };
 
 
-  const waMessage = isFR
-    ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."
-    : "Hello Qit Concierge, I'd like to know more about managing my short-term rental in Drôme-Ardèche.";
-  // UTM/source attribution is recorded via trackEvent on click, not appended to
-  // the prospect's WhatsApp message (which they would see and send).
+  // Visible message only — marked via whatsAppMessage() so no tracking tag can
+  // leak into it. Attribution is recorded separately via trackWhatsAppClick.
+  const waMessage = whatsAppMessage(
+    isFR
+      ? "Bonjour Qit Concierge, je souhaite en savoir plus sur la gestion de mon bien en location courte durée en Drôme-Ardèche."
+      : "Hello Qit Concierge, I'd like to know more about managing my short-term rental in Drôme-Ardèche."
+  );
   const waUrl = buildWhatsAppUrl(waMessage);
 
   const lang = isFR ? "fr" : "en";
@@ -110,20 +112,15 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={c.whatsappAria}
-                  onClick={() => {
-                    trackEvent("whatsapp_hero_click", {
+                  onClick={() =>
+                    trackWhatsAppClick({
                       location: "hero",
                       language: lang,
                       source: "hero",
                       medium: "wa_link",
                       campaign: "hero_cta",
-                    });
-                    trackEvent("whatsapp_message_sent", {
-                      location: "hero",
-                      language: lang,
-                      campaign: "hero_cta",
-                    });
-                  }}
+                    })
+                  }
                 >
                   <MessageCircle className="mr-2 h-4 w-4 shrink-0" aria-hidden="true" />
                   <span className="whitespace-nowrap">{c.whatsapp}</span>

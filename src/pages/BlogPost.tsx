@@ -7,12 +7,12 @@ import { getPublishedPostBySlug, publishedPosts } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowLeft, MessageCircle, Share2, Facebook, Linkedin, Link2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, whatsAppMessage } from "@/lib/whatsapp";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackEvent } from "@/lib/analytics";
 
 const whatsappUrl = buildWhatsAppUrl(
-  "Bonjour, je viens de lire un article sur votre blog."
+  whatsAppMessage("Bonjour, je viens de lire un article sur votre blog.")
 );
 
 const linkClass = "text-qit-coral underline underline-offset-2 hover:text-qit-coral/80";

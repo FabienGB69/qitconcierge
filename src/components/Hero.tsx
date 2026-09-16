@@ -112,20 +112,15 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={c.whatsappAria}
-                  onClick={() => {
-                    trackEvent("whatsapp_hero_click", {
+                  onClick={() =>
+                    trackWhatsAppClick({
                       location: "hero",
                       language: lang,
                       source: "hero",
                       medium: "wa_link",
                       campaign: "hero_cta",
-                    });
-                    trackEvent("whatsapp_message_sent", {
-                      location: "hero",
-                      language: lang,
-                      campaign: "hero_cta",
-                    });
-                  }}
+                    })
+                  }
                 >
                   <MessageCircle className="mr-2 h-4 w-4 shrink-0" aria-hidden="true" />
                   <span className="whitespace-nowrap">{c.whatsapp}</span>

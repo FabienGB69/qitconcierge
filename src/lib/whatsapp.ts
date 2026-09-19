@@ -82,6 +82,75 @@ export function whatsAppMessage(raw: string): WhatsAppMessage {
 }
 
 /**
+ * Tronque proprement un message à la longueur maximale autorisée, en coupant
+ * sur une frontière de mot pour ne jamais laisser un mot coupé, et en ajoutant
+ * une ellipse. Si le message est déjà sous la limite, il est retourné tel quel.
+ */
+function truncateMessage(message: string, maxLength: number): string {
+  if (message.length <= maxLength) return message;
+
+  const budget = maxLength - 1; // réserve 1 caractère pour "…"
+  let cut = message.slice(0, budget);
+
+  // Reculer jusqu'à la dernière frontière de mot (espace ou ponctuation de fin).
+  const lastSpace = cut.search(/[\s,;:!?][^\s,;:!?]*$/);
+  if (lastSpace > budget * 0.5) {
+    cut = cut.slice(0, lastSpace);
+  }
+
+  return cut.replace(/[\s,;:!?]+$/, "") + "…";
+}
+
+export interface WhatsAppMessageCheck {
+  ok: boolean;
+  length: number;
+  maxLength: number;
+  /** Taille du message une fois encodé en URL (indicateur du poids du lien). */
+  encodedLength: number;
+  /** Message final garanti compatible (tronqué si besoin). */
+  safeMessage: WhatsAppMessage;
+  issues: string[];
+}
+
+/**
+ * Vérifie qu'un message WhatsApp reste correctement encodable et sous la
+ * limite de longueur mobile. Retourne toujours un `safeMessage` utilisable :
+ * jamais de mot coupé, jamais au-delà de la limite, et encodage validé par un
+ * aller-retour encodeURIComponent/decodeURIComponent.
+ */
+export function checkWhatsAppMessage(raw: string): WhatsAppMessageCheck {
+  const issues: string[] = [];
+  const cleaned = sanitizeVisibleMessage(raw);
+
+  // Vérifie l'aller-retour d'encodage : le texte doit survivre intact.
+  try {
+    const roundTrip = decodeURIComponent(encodeURIComponent(cleaned));
+    if (roundTrip !== cleaned) {
+      issues.push("L'encodage URL altère le message");
+    }
+  } catch {
+    issues.push("Le message contient des caractères non encodables");
+  }
+
+  let safe = cleaned;
+  if (cleaned.length > WHATSAPP_MESSAGE_MAX_LENGTH) {
+    issues.push(
+      `Le message dépasse ${WHATSAPP_MESSAGE_MAX_LENGTH} caractères (risque de troncature sur mobile) : tronqué proprement`
+    );
+    safe = truncateMessage(cleaned, WHATSAPP_MESSAGE_MAX_LENGTH);
+  }
+
+  return {
+    ok: issues.length === 0,
+    length: cleaned.length,
+    maxLength: WHATSAPP_MESSAGE_MAX_LENGTH,
+    encodedLength: encodeURIComponent(cleaned).length,
+    safeMessage: safe as WhatsAppMessage,
+    issues,
+  };
+}
+
+/**
  * Builds a wa.me deep link from a VISIBLE message only.
  *
  * Strict separation of concerns: this function knows nothing about analytics.

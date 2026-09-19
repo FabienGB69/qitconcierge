@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
 import {
   WHATSAPP_URL,
+  WHATSAPP_MESSAGE_MAX_LENGTH,
   buildWhatsAppUrl,
+  checkWhatsAppMessage,
   validateWhatsAppUrl,
   whatsAppMessage,
 } from "@/lib/whatsapp";

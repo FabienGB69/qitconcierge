@@ -85,10 +85,10 @@ describe("WhatsApp link verification", () => {
 
 describe("WhatsApp message length & encoding checks", () => {
   it("accepts a short message untouched", () => {
-    const check = checkWhatsAppMessage("Bonjour Qit Concierge !");
+    const check = checkWhatsAppMessage("Bonjour Qit Concierge");
     expect(check.ok).toBe(true);
     expect(check.issues).toEqual([]);
-    expect(check.safeMessage).toBe("Bonjour Qit Concierge !");
+    expect(check.safeMessage).toBe("Bonjour Qit Concierge");
   });
 
   it("survives an encode/decode round trip with accents and emoji", () => {

@@ -159,8 +159,12 @@ export function checkWhatsAppMessage(raw: string): WhatsAppMessageCheck {
  * the URL the prospect sees.
  */
 export const buildWhatsAppUrl = (message?: WhatsAppMessage) => {
-  const encoded = message ? `?text=${encodeURIComponent(message)}` : "";
-  return `${WHATSAPP_URL}${encoded}`;
+  if (!message) return WHATSAPP_URL;
+  // Garantit limite de longueur + encodage valide, même pour un message passé
+  // via whatsAppMessage() : aucune information utile n'est tronquée sans
+  // contrôle, la coupe se fait sur une frontière de mot.
+  const { safeMessage } = checkWhatsAppMessage(message);
+  return `${WHATSAPP_URL}?text=${encodeURIComponent(safeMessage)}`;
 };
 
 export interface WhatsAppValidationResult {

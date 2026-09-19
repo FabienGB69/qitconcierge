@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
 import {
   WHATSAPP_URL,
+  WHATSAPP_MESSAGE_MAX_LENGTH,
   buildWhatsAppUrl,
+  checkWhatsAppMessage,
   validateWhatsAppUrl,
   whatsAppMessage,
 } from "@/lib/whatsapp";
@@ -78,5 +80,41 @@ describe("WhatsApp link verification", () => {
     const result = validateWhatsAppUrl("https://wa.me/330601777633");
     expect(result.valid).toBe(false);
     expect(result.issues.some((i) => i.includes("0 national"))).toBe(true);
+  });
+});
+
+describe("WhatsApp message length & encoding checks", () => {
+  it("accepts a short message untouched", () => {
+    const check = checkWhatsAppMessage("Bonjour Qit Concierge");
+    expect(check.ok).toBe(true);
+    expect(check.issues).toEqual([]);
+    expect(check.safeMessage).toBe("Bonjour Qit Concierge");
+  });
+
+  it("survives an encode/decode round trip with accents and emoji", () => {
+    const msg = "Bonjour, mon gîte est à Tain-l'Hermitage — disponible dès août 😊";
+    const check = checkWhatsAppMessage(msg);
+    expect(check.ok).toBe(true);
+    expect(decodeURIComponent(encodeURIComponent(check.safeMessage))).toBe(msg);
+  });
+
+  it("truncates an over-long message at a word boundary, never mid-word", () => {
+    const long = "Bonjour, ".repeat(80) + "je souhaite une estimation pour ma maison de campagne.";
+    expect(long.length).toBeGreaterThan(WHATSAPP_MESSAGE_MAX_LENGTH);
+
+    const check = checkWhatsAppMessage(long);
+    expect(check.ok).toBe(false);
+    expect(check.issues.some((i) => i.includes("troncature"))).toBe(true);
+    expect(check.safeMessage.length).toBeLessThanOrEqual(WHATSAPP_MESSAGE_MAX_LENGTH);
+    expect(check.safeMessage.endsWith("…")).toBe(true);
+    // Aucun mot coupé : le caractère avant l'ellipse est alphanumérique.
+    expect(check.safeMessage.slice(-2, -1)).toMatch(/[a-zA-ZÀ-ÿ0-9]/);
+  });
+
+  it("buildWhatsAppUrl never emits a text param longer than the limit", () => {
+    const long = "mot ".repeat(200);
+    const url = buildWhatsAppUrl(whatsAppMessage(long));
+    const text = decodeURIComponent(url.split("?text=")[1]);
+    expect(text.length).toBeLessThanOrEqual(WHATSAPP_MESSAGE_MAX_LENGTH);
   });
 });

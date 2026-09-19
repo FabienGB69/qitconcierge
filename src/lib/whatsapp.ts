@@ -50,6 +50,15 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export type WhatsAppMessage = string & { readonly __brand: "WhatsAppMessage" };
 
 /**
+ * Longueur maximale (en caractères) du message prérempli.
+ * Sur certains appareils mobiles, un paramètre `text` trop long dans le lien
+ * wa.me est tronqué silencieusement ou fait échouer l'ouverture de
+ * l'application. On reste très en dessous des limites constatées (~1000-2000
+ * caractères selon l'OS) tout en gardant une marge pour l'encodage URL.
+ */
+export const WHATSAPP_MESSAGE_MAX_LENGTH = 400;
+
+/**
  * Defensive cleanup: strips any tracking-looking fragment (utm_*, source=,
  * medium=, campaign=, parenthesised tag lists) that could have leaked into
  * the visible text, then trims.

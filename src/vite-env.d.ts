@@ -5,7 +5,7 @@ declare module "*&as=srcset" {
   export default srcSet;
 }
 
-declare module "*?w=*" {
+declare module "*?w=768&format=jpg&quality=78" {
   const src: string;
   export default src;
 }

@@ -787,7 +787,7 @@ Nous orientons les propriétaires vers les bons interlocuteurs et identifions le
 export { scheduledBlogPosts } from "@/data/scheduledBlogPosts";
 
 /** Future monthly posts come first so each newly published article becomes featured. */
-export const posts: BlogPost[] = [...scheduledBlogPosts, ...existingPosts];
+export const posts: BlogPost[] = [...scheduledBlogPosts].reverse().concat(existingPosts);
 
 export const getPostBySlug = (slug: string) => posts.find((p) => p.slug === slug);
 export const getPostsByCategory = (category: BlogCategory) =>

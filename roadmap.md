@@ -22,7 +22,7 @@ Voir `.lovable/plan.md` pour le détail d'exécution.
 
 ## Phase 3 — Analytics, WhatsApp & performance Hero ✅
 - [x] Tracking des clics sur tous les boutons du hero (estimate_hero_click + whatsapp_hero_click + whatsapp_message_sent)
-- [x] Optimisation du chargement Hero pour le LCP (fetchPriority high + decoding async)
+- [x] Optimisation du chargement Hero pour le LCP (AVIF/WebP/JPEG responsifs, cache versionné, fetchPriority high + decoding async)
 - [x] Génération auto du texte WhatsApp depuis le contexte (langue/hero) + analytics à l'envoi
 - [x] Paramètres UTM dans le lien WhatsApp du hero (injectés dans le message, wa.me ne supporte pas les query UTM)
 - [x] Vérifié : les events WhatsApp incluent source/medium/campaign et l'URL embarque les UTM

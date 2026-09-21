@@ -16,6 +16,8 @@ import classementMeuble from "@/assets/blog/classement-meuble-tourisme.jpg";
 import aout2026 from "@/assets/blog/aout-2026-drome-ardeche.jpg";
 import septembre2026 from "@/assets/blog/septembre-2026-drome-ardeche.jpg";
 import octobre2026 from "@/assets/blog/octobre-2026-drome-ardeche.jpg";
+import { scheduledBlogPosts } from "@/data/scheduledBlogPosts";
+import { isPublicationDateReached } from "@/lib/publication";
 
 export type BlogCategory = "Conseils propriétaires" | "Revenue management" | "Drôme-Ardèche";
 
@@ -40,7 +42,7 @@ export const categories: BlogCategory[] = [
   "Drôme-Ardèche",
 ];
 
-export const posts: BlogPost[] = [
+const existingPosts: BlogPost[] = [
   {
     slug: "octobre-2026-toussaint-drome-ardeche",
     title: "Octobre 2026 en Drôme-Ardèche : profiter de la Toussaint et des couleurs d'automne",
@@ -782,6 +784,11 @@ Nous orientons les propriétaires vers les bons interlocuteurs et identifions le
   },
 ];
 
+export { scheduledBlogPosts } from "@/data/scheduledBlogPosts";
+
+/** Future monthly posts come first so each newly published article becomes featured. */
+export const posts: BlogPost[] = [...scheduledBlogPosts].reverse().concat(existingPosts);
+
 export const getPostBySlug = (slug: string) => posts.find((p) => p.slug === slug);
 export const getPostsByCategory = (category: BlogCategory) =>
   posts.filter((p) => p.category === category);
@@ -793,13 +800,13 @@ export const getPostsByCategory = (category: BlogCategory) =>
  * hidden until its scheduled date (Qit Concierge publishes on the 1st of the
  * month). The raw `posts` array is kept for internal/reference use only.
  */
-export const isPostPublished = (post: BlogPost) =>
-  +new Date(post.date) <= Date.now();
+export const isPostPublished = (post: BlogPost, now: Date = new Date()) =>
+  isPublicationDateReached(post.date, now);
 
-export const publishedPosts: BlogPost[] = posts.filter(isPostPublished);
+export const publishedPosts: BlogPost[] = posts.filter((post) => isPostPublished(post));
 
 export const getPublishedPostBySlug = (slug: string) =>
   posts.find((p) => p.slug === slug && isPostPublished(p));
 
 export const getPublishedPostsByCategory = (category: BlogCategory) =>
-  posts.filter((p) => p.category === category && isPostPublished(p));
+  posts.filter((post) => post.category === category && isPostPublished(post));

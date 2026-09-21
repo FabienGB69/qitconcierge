@@ -71,32 +71,41 @@ interface BlogMeta {
   date: string;
 }
 
-/** Extract { slug, date } pairs from src/data/blogPosts.ts without importing it. */
+/** Extract { slug, date } pairs from current and scheduled data files without importing assets. */
 function readBlogPosts(): BlogMeta[] {
-  const file = resolve(ROOT, "src/data/blogPosts.ts");
-  if (!existsSync(file)) return [];
-  const src = readFileSync(file, "utf8");
   const posts: BlogMeta[] = [];
-  // Match each object literal that starts with `slug:` inside the posts array.
-  const objectRe = /\{\s*slug:\s*"([^"]+)"[\s\S]*?\}/g;
-  let m: RegExpExecArray | null;
-  while ((m = objectRe.exec(src)) !== null) {
-    const block = m[0];
-    const slug = m[1];
-    const dateMatch = block.match(/date:\s*"([^"]+)"/);
-    if (slug) posts.push({ slug, date: dateMatch?.[1] ?? "" });
+  for (const relativePath of ["src/data/blogPosts.ts", "src/data/scheduledBlogPosts.ts"]) {
+    const file = resolve(ROOT, relativePath);
+    if (!existsSync(file)) continue;
+    const src = readFileSync(file, "utf8");
+    // Match each object literal that starts with `slug:` inside the posts array.
+    const objectRe = /\{\s*slug:\s*"([^"]+)"[\s\S]*?\}/g;
+    let m: RegExpExecArray | null;
+    while ((m = objectRe.exec(src)) !== null) {
+      const block = m[0];
+      const slug = m[1];
+      const dateMatch = block.match(/date:\s*"([^"]+)"/);
+      if (slug && !posts.some((post) => post.slug === slug)) {
+        posts.push({ slug, date: dateMatch?.[1] ?? "" });
+      }
+    }
   }
   return posts;
 }
 
 function buildEntries(): SitemapEntry[] {
   const entries: SitemapEntry[] = [...STATIC_ENTRIES];
-  const now = Date.now();
+  const todayInParis = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Paris",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
   for (const post of readBlogPosts()) {
     // Only include posts whose publication date has passed, so a
     // future-dated article (monthly article prepared in advance) is not
     // referenced in the sitemap before it goes live.
-    if (post.date && +new Date(post.date) > now) continue;
+    if (post.date && post.date > todayInParis) continue;
     entries.push({
       path: `/blog/${post.slug}`,
       lastmod: post.date || undefined,

@@ -36,5 +36,5 @@ Voir `.lovable/plan.md` pour le détail d'exécution.
 ## Récurrent
 - [x] Filtrage par date de publication des articles (`isPostPublished` / `publishedPosts` / `getPublishedPostBySlug`) appliqué au blog, à l'article, au teaser et au sitemap — un article daté dans le futur reste masqué jusqu'à sa date.
 - [x] Article d'octobre 2026 prêt (slug `octobre-2026-toussaint-drome-ardeche`, date 2026-10-01) — masqué jusqu'au 1er octobre, sitemap exclu jusqu'à cette date.
-- [ ] Préparer et publier automatiquement 12 mois d’articles, sans relecture préalable — prochain attendu : 1er novembre.
-- [ ] (Optionnel SEO) Page locale Montélimar — opportunité Semrush (conciergerie montelimar ~50 rech./mois) en attente de confirmation
+- [x] Douze articles préparés du 1er novembre 2026 au 1er octobre 2027, avec images et SEO ; publication automatique le premier du mois en heure française, sans relecture.
+- [x] Page locale Montélimar créée (opportunité Semrush « conciergerie montelimar »).

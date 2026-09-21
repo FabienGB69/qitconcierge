@@ -22,7 +22,7 @@ Voir `.lovable/plan.md` pour le détail d'exécution.
 
 ## Phase 3 — Analytics, WhatsApp & performance Hero ✅
 - [x] Tracking des clics sur tous les boutons du hero (estimate_hero_click + whatsapp_hero_click + whatsapp_message_sent)
-- [x] Optimisation du chargement Hero pour le LCP (fetchPriority high + decoding async)
+- [x] Optimisation du chargement Hero pour le LCP (AVIF/WebP/JPEG responsifs, cache versionné, fetchPriority high + decoding async)
 - [x] Génération auto du texte WhatsApp depuis le contexte (langue/hero) + analytics à l'envoi
 - [x] Paramètres UTM dans le lien WhatsApp du hero (injectés dans le message, wa.me ne supporte pas les query UTM)
 - [x] Vérifié : les events WhatsApp incluent source/medium/campaign et l'URL embarque les UTM
@@ -36,5 +36,5 @@ Voir `.lovable/plan.md` pour le détail d'exécution.
 ## Récurrent
 - [x] Filtrage par date de publication des articles (`isPostPublished` / `publishedPosts` / `getPublishedPostBySlug`) appliqué au blog, à l'article, au teaser et au sitemap — un article daté dans le futur reste masqué jusqu'à sa date.
 - [x] Article d'octobre 2026 prêt (slug `octobre-2026-toussaint-drome-ardeche`, date 2026-10-01) — masqué jusqu'au 1er octobre, sitemap exclu jusqu'à cette date.
-- [ ] Article de blog automatique chaque début de mois (edge function + cron) — prochain attendu : 1er novembre.
+- [ ] Préparer et publier automatiquement 12 mois d’articles, sans relecture préalable — prochain attendu : 1er novembre.
 - [ ] (Optionnel SEO) Page locale Montélimar — opportunité Semrush (conciergerie montelimar ~50 rech./mois) en attente de confirmation

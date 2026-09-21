@@ -4,7 +4,10 @@ import { buildWhatsAppUrl, whatsAppMessage } from "@/lib/whatsapp";
 import WhatsAppMessagePreview from "@/components/WhatsAppMessagePreview";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackEvent, trackWhatsAppClick } from "@/lib/analytics";
-import heroImage from "@/assets/hero-drome-ardeche.jpg";
+import heroAvifSrcSet from "@/assets/hero-drome-ardeche.jpg?w=480;768;1080&format=avif&quality=72&as=srcset";
+import heroWebpSrcSet from "@/assets/hero-drome-ardeche.jpg?w=480;768;1080&format=webp&quality=76&as=srcset";
+import heroJpegSrcSet from "@/assets/hero-drome-ardeche.jpg?w=480;768;1080&format=jpg&quality=78&as=srcset";
+import heroFallback from "@/assets/hero-drome-ardeche.jpg?w=768&format=jpg&quality=78";
 
 
 const Hero = () => {
@@ -142,19 +145,33 @@ const Hero = () => {
 
         {/* Right — image */}
         <div className="relative min-h-[60vh] lg:min-h-full overflow-hidden">
-          <img
-            src={heroImage}
-            alt={
-              isFR
-                ? "Intérieur chaleureux d'une maison de campagne en Drôme-Ardèche avec vue sur un champ de lavande"
-                : "Warm interior of a country house in Drôme-Ardèche with a lavender field view"
-            }
-            className="absolute inset-0 w-full h-full object-cover"
-            fetchPriority="high"
-            decoding="async"
-            width={1280}
-            height={1600}
-          />
+          <picture>
+            <source
+              type="image/avif"
+              srcSet={heroAvifSrcSet}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+            <source
+              type="image/webp"
+              srcSet={heroWebpSrcSet}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+            <img
+              src={heroFallback}
+              srcSet={heroJpegSrcSet}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              alt={
+                isFR
+                  ? "Intérieur chaleureux d'une maison de campagne en Drôme-Ardèche avec vue sur un champ de lavande"
+                  : "Warm interior of a country house in Drôme-Ardèche with a lavender field view"
+              }
+              className="absolute inset-0 w-full h-full object-cover"
+              fetchPriority="high"
+              decoding="async"
+              width={1080}
+              height={1920}
+            />
+          </picture>
           {/* soft beige fade on the left edge to blend with copy column */}
           <div
             className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-qit-beige to-transparent pointer-events-none"

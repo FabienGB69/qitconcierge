@@ -1,19 +1,26 @@
-# Optimiser le chargement du Hero
+# Douze mois d’articles programmés
 
-## Résultat attendu
-- Charger une image adaptée à la largeur réelle de l’écran, sans télécharger inutilement la version maximale.
-- Servir des formats modernes plus légers tout en gardant une image de secours compatible.
-- Conserver la priorité maximale de l’image principale et des dimensions stables pour éviter tout déplacement de la page.
-- Garder l’aperçu WhatsApp immédiatement stable visuellement ; ne le différer que si le gain est réel et sans saut de mise en page.
+## Objectif
+Préparer douze articles mensuels, du 1er novembre 2026 au 1er octobre 2027, puis les rendre visibles automatiquement à leur date, sans relecture préalable.
 
-## Mise en œuvre
-1. Ajouter la transformation d’images au moment de la construction du site.
-2. Générer plusieurs largeurs du visuel principal en AVIF, WebP et JPEG, puis laisser le navigateur choisir la meilleure.
-3. Déclarer précisément la place occupée par l’image selon mobile ou ordinateur, avec priorité haute et dimensions fixes.
-4. Vérifier que les fichiers générés portent une adresse versionnée, permettant leur mise en cache longue durée.
-5. Mesurer le rendu du Hero sur mobile et ordinateur, puis exécuter les tests existants et contrôler les erreurs.
+## Contenu
+- Rédiger chaque article dans le format éditorial existant : titre, extrait, date, temps de lecture, image, texte alternatif, SEO title et meta description.
+- Traiter un sujet saisonnier utile aux propriétaires chaque mois : basse saison, fêtes, obligations, vacances d’hiver, préparation de saison, Pâques, ponts de mai, été, haute saison, fin de saison, vendanges et Toussaint.
+- Ajouter une structure H1/H2 cohérente, des liens internes vers les services et articles pertinents, ainsi que des sources externes institutionnelles.
+- Utiliser une vignette originale et optimisée pour chaque article.
 
-## Détail technique
-- Utiliser `vite-imagetools` dans la configuration Vite.
-- Remplacer l’image simple par un élément `picture` et des `srcset` responsifs.
-- Ne pas charger paresseusement l’image LCP. L’aperçu WhatsApp étant très léger, éviter un découpage JavaScript qui risquerait un déplacement visuel sans gain significatif.
+## Publication automatique
+- Conserver tous les futurs articles invisibles sur le blog, l’accueil, leur URL directe et le sitemap avant leur date.
+- Les publier automatiquement le premier jour du mois selon l’heure française.
+- Générer automatiquement le sitemap au démarrage et au build en n’incluant que les articles déjà publiés.
+
+## Fiabilité
+- Ajouter des tests sur les douze dates, l’ordre des publications et l’absence d’exposition anticipée.
+- Vérifier les liens, les métadonnées SEO, le typecheck et les tests existants.
+- Vérifier le rendu du blog et d’un article programmé aux formats mobile et ordinateur.
+
+## Détails techniques
+- Étendre `src/data/blogPosts.ts` avec les douze articles et leurs imports d’images.
+- Centraliser la comparaison de date avec le fuseau `Europe/Paris` afin d’éviter un décalage à minuit.
+- Faire utiliser cette même règle au site et au script `scripts/generate-sitemap.ts`.
+- Ne pas ajouter de service externe ni de nouvelle collecte de données.

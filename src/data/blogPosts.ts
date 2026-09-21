@@ -803,10 +803,10 @@ export const getPostsByCategory = (category: BlogCategory) =>
 export const isPostPublished = (post: BlogPost, now: Date = new Date()) =>
   isPublicationDateReached(post.date, now);
 
-export const publishedPosts: BlogPost[] = posts.filter(isPostPublished);
+export const publishedPosts: BlogPost[] = posts.filter((post) => isPostPublished(post));
 
 export const getPublishedPostBySlug = (slug: string) =>
   posts.find((p) => p.slug === slug && isPostPublished(p));
 
 export const getPublishedPostsByCategory = (category: BlogCategory) =>
-  posts.filter((p) => p.category === category && isPostPublished(p));
+  posts.filter((post) => post.category === category && isPostPublished(post));

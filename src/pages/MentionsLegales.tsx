@@ -60,8 +60,58 @@ const MentionsLegales = () => {
   const { isEN } = useLanguage();
   useSEO({
     title: "Mentions légales — Qit Concierge",
-    description: "Mentions légales du site Qit Concierge : éditeur, hébergement, propriété intellectuelle et contact.",
+    description:
+      "Mentions légales de Qit Concierge (Pixeloria) : éditeur, hébergement, propriété intellectuelle, contact.",
     path: "/mentions-legales",
+    ogType: "website",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Mentions légales — Qit Concierge",
+        description:
+          "Mentions légales de Qit Concierge (Pixeloria) : éditeur, hébergement, propriété intellectuelle, contact.",
+        url: "https://qitconcierge.fr/mentions-legales",
+        inLanguage: "fr-FR",
+        isPartOf: {
+          "@type": "WebSite",
+          name: "Qit Concierge",
+          url: "https://qitconcierge.fr",
+        },
+        about: {
+          "@type": "Organization",
+          name: "Qit Concierge",
+          legalName: "GOMES FABIEN — Pixeloria",
+          identifier: "SIREN 798 262 416",
+          email: "contact@pixeloria.fr",
+          telephone: "+33786125313",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "61 C Avenue Gabriel Péri",
+            postalCode: "26600",
+            addressLocality: "Tain-l'Hermitage",
+            addressCountry: "FR",
+          },
+        },
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Accueil",
+              item: "https://qitconcierge.fr/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Mentions légales",
+              item: "https://qitconcierge.fr/mentions-legales",
+            },
+          ],
+        },
+      },
+    ],
   });
   return (
     <div className="min-h-screen flex flex-col bg-background">

@@ -39,7 +39,7 @@ Voir `.lovable/plan.md` pour le détail d'exécution.
 - [x] Douze articles préparés du 1er novembre 2026 au 1er octobre 2027, avec images et SEO ; publication automatique le premier du mois en heure française, sans relecture.
 - [x] Page locale Montélimar créée (opportunité Semrush « conciergerie montelimar »).
 
-## Phase 5 — Google Analytics
-- [ ] Connecter Google Analytics (connector) pour activer le suivi des clics (whatsapp_hero_click, estimate_hero_click, etc.)
-- [ ] Initialiser gtag.js au démarrage avec VITE_LOVABLE_CONNECTOR_GOOGLE_ANALYTICS_API_KEY
-- [ ] Tracer les changements de route SPA (page_view)
+## Phase 5 — Google Tag Manager ✅
+- [x] Intégrer Google Tag Manager (conteneur GTM-THZFCNSS) : script head + noscript iframe body dans index.html
+- [x] dataLayer actif ; les événements trackEvent existants (whatsapp_hero_click, estimate_hero_click, share_click…) poussent déjà dans dataLayer pour GTM
+- [ ] (optionnel) Configurer les tags/triggers GA4 dans l'interface GTM côté utilisateur

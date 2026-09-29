@@ -273,11 +273,30 @@ const MentionsLegales = () => {
             </Section>
 
             <Section id="donnees-personnelles" title="Données personnelles">
-              <p className="text-sm">
+              <p className="text-sm mb-4">
                 Les informations relatives à la collecte et au traitement des données personnelles sont détaillées dans la{' '}
-                <a href="/politique-confidentialite" className="text-qit-coral hover:underline">Politique de confidentialité</a>{' '}
-                accessible sur le site.
+                <Link to="/politique-confidentialite" className="text-qit-coral font-medium underline underline-offset-2 hover:text-qit-coral/80">
+                  Politique de confidentialité
+                </Link>
+                , accessible à tout moment depuis cette page et depuis le pied de page du site.
               </p>
+              <div className="rounded-lg border border-qit-coral/30 bg-qit-coral/5 p-4 sm:p-5">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-medium text-qit-purple">Politique de confidentialité</p>
+                    <p className="text-sm text-foreground/80">
+                      Données collectées, finalités, durées de conservation et vos droits.
+                    </p>
+                  </div>
+                  <Link
+                    to="/politique-confidentialite"
+                    onClick={() => trackEvent("legal_privacy_link_click", { location: "mentions_legales" })}
+                    className="inline-flex shrink-0 items-center gap-2 rounded-md bg-qit-coral px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-qit-coral/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-qit-coral focus-visible:ring-offset-2"
+                  >
+                    Consulter la politique
+                  </Link>
+                </div>
+              </div>
             </Section>
 
             <Section id="mediation" title="Médiation de la consommation">

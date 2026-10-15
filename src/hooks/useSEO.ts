@@ -114,5 +114,5 @@ export const useSEO = ({
         .querySelectorAll(`script[${JSONLD_FLAG}="true"]`)
         .forEach((el) => el.remove());
     };
-  }, [title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd, prevPath, nextPath]);
+  }, [title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd, prevPath, nextPath, noindex]);
 };

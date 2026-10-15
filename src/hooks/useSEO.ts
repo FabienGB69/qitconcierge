@@ -15,6 +15,8 @@ interface SEOOptions {
   prevPath?: string;
   /** Relative path of the next document in a sequence (rel="next"). */
   nextPath?: string;
+  /** When true, injects <meta name="robots" content="noindex, nofollow">. */
+  noindex?: boolean;
 }
 
 const SITE_URL = "https://qitconcierge.fr";
@@ -67,10 +69,12 @@ export const useSEO = ({
   jsonLd,
   prevPath,
   nextPath,
+  noindex,
 }: SEOOptions) => {
   useEffect(() => {
     document.title = title;
     setMetaByName("description", description);
+    setMetaByName("robots", noindex ? "noindex, nofollow" : "index, follow");
 
     const url = `${SITE_URL}${path}`;
     setLinkRel("canonical", url);
@@ -110,5 +114,5 @@ export const useSEO = ({
         .querySelectorAll(`script[${JSONLD_FLAG}="true"]`)
         .forEach((el) => el.remove());
     };
-  }, [title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd, prevPath, nextPath]);
+  }, [title, description, path, ogTitle, ogDescription, ogImage, ogType, jsonLd, prevPath, nextPath, noindex]);
 };

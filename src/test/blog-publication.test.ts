@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { posts, scheduledBlogPosts, publishedPosts } from "@/data/blogPosts";
+import {
+  posts,
+  scheduledBlogPosts,
+  publishedPosts,
+  getPostBySlug,
+  getPublishedPostBySlug,
+} from "@/data/blogPosts";
 import { getPublicationDay, isPublicationDateReached } from "@/lib/publication";
 
 const expectedDates = Array.from({ length: 12 }, (_, index) => {
@@ -23,6 +29,24 @@ describe("publication mensuelle automatique", () => {
     expect(isPublicationDateReached("2027-05-01", new Date("2027-04-30T22:00:00Z"))).toBe(true);
     expect(getPublicationDay(new Date("2027-01-31T22:59:59Z"))).toBe("2027-01-31");
     expect(getPublicationDay(new Date("2027-01-31T23:00:00Z"))).toBe("2027-02-01");
+  });
+
+  it("marque tout article non publié comme noindex (connu mais hors publication)", () => {
+    // Reproduit la logique de BlogPost : noindex si le slug existe mais n'est pas publié.
+    const isUnpublished = (slug: string) =>
+      !getPublishedPostBySlug(slug) && !!getPostBySlug(slug);
+
+    const futurePost = scheduledBlogPosts.find(
+      (post) => !isPublicationDateReached(post.date)
+    );
+    expect(futurePost).toBeDefined();
+    expect(isUnpublished(futurePost!.slug)).toBe(true);
+
+    const publishedPost = publishedPosts[0];
+    expect(isUnpublished(publishedPost.slug)).toBe(false);
+
+    // Un slug inconnu n'est pas « non publié » : il relève de la redirection 404/blog.
+    expect(isUnpublished("slug-qui-nexiste-pas")).toBe(false);
   });
 
   it("fournit toutes les métadonnées SEO et les liens attendus", () => {

@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useSEO } from "@/hooks/useSEO";
-import { getPublishedPostBySlug, publishedPosts } from "@/data/blogPosts";
+import { getPostBySlug, getPublishedPostBySlug, publishedPosts } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowLeft, MessageCircle, Share2, Facebook, Linkedin, Link2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -111,6 +111,9 @@ const BlogPost = () => {
   const { isFR, language } = useLanguage();
   const { slug } = useParams();
   const post = slug ? getPublishedPostBySlug(slug) : null;
+  // Un article connu mais pas encore publié ne doit jamais être indexé,
+  // même si la redirection vers /blog venait à ne pas se faire.
+  const isUnpublished = !post && !!slug && !!getPostBySlug(slug);
   const L = isFR
     ? { back: "Retour au blog", qTitle: "Une question sur votre logement ?", qSub: "Demandez une estimation gratuite ou discutez avec nous sur WhatsApp.", estimate: "Demander une estimation", whatsapp: "Échanger sur WhatsApp", related: "À lire aussi dans", localTitle: "Conciergerie & gestion locale en Drôme-Ardèche", localSub: "Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain.", copy: "Copier le lien", copied: "Lien copié dans le presse-papiers" }
     : { back: "Back to blog", qTitle: "A question about your property?", qSub: "Request a free estimate or chat with us on WhatsApp.", estimate: "Request an estimate", whatsapp: "Chat on WhatsApp", related: "Also read in", localTitle: "Local concierge & management in Drôme-Ardèche", localSub: "Discover how Qit Concierge supports owners on the ground.", copy: "Copy link", copied: "Link copied to clipboard" };
@@ -149,6 +152,7 @@ const BlogPost = () => {
     ogType: "article",
     prevPath,
     nextPath,
+    noindex: isUnpublished,
     jsonLd: post
       ? [
           {

@@ -152,6 +152,7 @@ const BlogPost = () => {
     ogType: "article",
     prevPath,
     nextPath,
+    noindex: isUnpublished,
     jsonLd: post
       ? [
           {

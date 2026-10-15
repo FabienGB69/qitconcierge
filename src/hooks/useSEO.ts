@@ -69,10 +69,12 @@ export const useSEO = ({
   jsonLd,
   prevPath,
   nextPath,
+  noindex,
 }: SEOOptions) => {
   useEffect(() => {
     document.title = title;
     setMetaByName("description", description);
+    setMetaByName("robots", noindex ? "noindex, nofollow" : "index, follow");
 
     const url = `${SITE_URL}${path}`;
     setLinkRel("canonical", url);

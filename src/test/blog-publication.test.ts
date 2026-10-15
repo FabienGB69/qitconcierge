@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { posts, scheduledBlogPosts, publishedPosts } from "@/data/blogPosts";
+import {
+  posts,
+  scheduledBlogPosts,
+  publishedPosts,
+  getPostBySlug,
+  getPublishedPostBySlug,
+} from "@/data/blogPosts";
 import { getPublicationDay, isPublicationDateReached } from "@/lib/publication";
 
 const expectedDates = Array.from({ length: 12 }, (_, index) => {

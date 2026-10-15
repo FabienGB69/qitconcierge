@@ -15,6 +15,8 @@ interface SEOOptions {
   prevPath?: string;
   /** Relative path of the next document in a sequence (rel="next"). */
   nextPath?: string;
+  /** When true, injects <meta name="robots" content="noindex, nofollow">. */
+  noindex?: boolean;
 }
 
 const SITE_URL = "https://qitconcierge.fr";

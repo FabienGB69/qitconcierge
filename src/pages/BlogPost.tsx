@@ -1,4 +1,7 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, useParams, Navigate, useSearchParams } from "react-router-dom";
+
+/** Clé du lien d'aperçu des articles programmés (ex. /blog/<slug>?apercu=qit-apercu). */
+export const PREVIEW_KEY = "qit-apercu";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -110,10 +113,15 @@ const renderContent = (content: string) =>
 const BlogPost = () => {
   const { isFR, language } = useLanguage();
   const { slug } = useParams();
-  const post = slug ? getPublishedPostBySlug(slug) : null;
+  const [searchParams] = useSearchParams();
+  const isPreview = searchParams.get("apercu") === PREVIEW_KEY;
+  const publishedPost = slug ? getPublishedPostBySlug(slug) : null;
+  const anyPost = slug ? getPostBySlug(slug) : null;
   // Un article connu mais pas encore publié ne doit jamais être indexé,
   // même si la redirection vers /blog venait à ne pas se faire.
-  const isUnpublished = !post && !!slug && !!getPostBySlug(slug);
+  const isUnpublished = !publishedPost && !!anyPost;
+  // Aperçu privé : affiche un article programmé via ?apercu=<clé>, toujours en noindex.
+  const post = publishedPost ?? (isPreview ? anyPost : null) ?? null;
   const L = isFR
     ? { back: "Retour au blog", qTitle: "Une question sur votre logement ?", qSub: "Demandez une estimation gratuite ou discutez avec nous sur WhatsApp.", estimate: "Demander une estimation", whatsapp: "Échanger sur WhatsApp", related: "À lire aussi dans", localTitle: "Conciergerie & gestion locale en Drôme-Ardèche", localSub: "Découvrez comment Qit Concierge accompagne les propriétaires sur le terrain.", copy: "Copier le lien", copied: "Lien copié dans le presse-papiers" }
     : { back: "Back to blog", qTitle: "A question about your property?", qSub: "Request a free estimate or chat with us on WhatsApp.", estimate: "Request an estimate", whatsapp: "Chat on WhatsApp", related: "Also read in", localTitle: "Local concierge & management in Drôme-Ardèche", localSub: "Discover how Qit Concierge supports owners on the ground.", copy: "Copy link", copied: "Link copied to clipboard" };

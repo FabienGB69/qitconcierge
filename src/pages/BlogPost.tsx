@@ -268,6 +268,12 @@ const BlogPost = () => {
       <main className="flex-1">
         <article className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            {isUnpublished && (
+              <div role="status" className="mb-6 rounded-xl border border-qit-coral/40 bg-qit-beige/60 px-4 py-3 text-sm text-qit-purple">
+                Aperçu privé — cet article sera publié automatiquement le{" "}
+                {new Date(post.date).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}. Il n'est pas visible ni indexé avant cette date.
+              </div>
+            )}
             <Link
               to="/blog"
               className="inline-flex items-center gap-1.5 text-sm text-qit-coral hover:underline mb-6"
